@@ -33,6 +33,9 @@ h7 {
 #toc {
   margin-left: 10px;
 }
+#toc .toc-title {
+  font-size: 32px;
+}
 #toc ol {
   list-style: none;
   list-style-position: inside;
