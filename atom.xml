@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>To Be Pro</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://entimm.github.io/"/>
+  <updated>2016-08-28T05:19:31.000Z</updated>
+  <id>https://entimm.github.io/</id>
+  
+  <author>
+    <name>enjoy</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://entimm.github.io/2016/08/28/hello-world/"/>
+    <id>https://entimm.github.io/2016/08/28/hello-world/</id>
+    <published>2016-08-28T05:19:31.000Z</published>
+    <updated>2016-08-28T05:19:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>欢快的使用谷歌搜索</title>
+    <link href="https://entimm.github.io/2016/06/24/%E6%AC%A2%E5%BF%AB%E7%9A%84%E4%BD%BF%E7%94%A8%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2/"/>
+    <id>https://entimm.github.io/2016/06/24/欢快的使用谷歌搜索/</id>
+    <published>2016-06-24T14:40:06.000Z</published>
+    <updated>2016-08-28T11:42:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="无障碍使用"><a href="#无障碍使用" class="headerlink" title="无障碍使用"></a>无障碍使用</h2><p>使用谷歌搜索的时候，要么无法访问，要么谷歌会将你的 google.com 重定向到具有特定国家或地区后缀的谷歌搜索地址，如 google.com.hk 等<br>当然，我们可以直接输入这类带地区后缀的地址, 这样有时也能实现访问, 当是很多时候却并不好用，也常有无法访问的时候</p>
+<p>避免谷歌重定向的方法是使用 google.com/<code>ncr</code> , 这种方法屡试不爽非常可靠，但是停止搜索一会后却又不行了，然后又得继续手动的输入这个地址</p>
+<p>那么有没有办法自动在 google.com 后面加入 ncr 呢，万能的谷歌插件没让人失望<br>这个插件便是 <code>NoCountryRedirect (NCR)</code></p>
+<p>谷歌使用是 <code>https</code> 协议，我们还需要让我们的输入 google.com 自动使用 https, 这样我们还需要1款插件 <code>HTTPS Everywhere</code></p>
+<p>好了，这样我们就能用谷歌愉快的进行各种搜索了</p>
+<h2 id="hosts来一计"><a href="#hosts来一计" class="headerlink" title="hosts来一计"></a>hosts来一计</h2><p><a href="https://github.com/racaljk/hosts" target="_blank" rel="external">https://github.com/racaljk/hosts</a></p>
+<h2 id="更好的使用"><a href="#更好的使用" class="headerlink" title="更好的使用"></a>更好的使用</h2><p>编辑 <code>hosts</code> 文件，在末尾加入 2 行</p>
+<pre><code>127.0.0.1 baidu.com
+127.0.0.1 www.baidu.com
+</code></pre><p>启动 <code>nginx</code> ,加入如下配置</p>
+<pre><code>server {
+    listen       80;
+    server_name  baidu.com www.baidu.com;
+    return 301 $scheme://www.google.com$request_uri;
+}
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;无障碍使用&quot;&gt;&lt;a href=&quot;#无障碍使用&quot; class=&quot;headerlink&quot; title=&quot;无障碍使用&quot;&gt;&lt;/a&gt;无障碍使用&lt;/h2&gt;&lt;p&gt;使用谷歌搜索的时候，要么无法访问，要么谷歌会将你的 google.com 重定向到具有特定国家或地区后缀的谷歌搜索地
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Cgi、FastCgi 与 PHP-FPM</title>
+    <link href="https://entimm.github.io/2016/05/28/FastCgi%20%E4%B8%8E%20PHP-FPM%20%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>https://entimm.github.io/2016/05/28/FastCgi 与 PHP-FPM 之间的区别/</id>
+    <published>2016-05-28T02:45:18.000Z</published>
+    <updated>2016-08-28T11:53:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="CGI-的作用"><a href="#CGI-的作用" class="headerlink" title="CGI 的作用"></a>CGI 的作用</h2><p>web server（比如说 nginx）只是内容的分发者。</p>
+<ul>
+<li>如果请求 <code>/index.html</code>，那么 web server 会去文件系统中找到这个文件，发送给浏览器，这里分发的是静态数据。</li>
+<li>如果现在请求的是 <code>/index.php</code>，根据配置文件，nginx 知道这个不是静态文件，需要去找 PHP 解析器来处理，那么他会把这个请求简单处理后交给 PHP 解析器。Nginx 会传哪些数据给 PHP 解析器呢？url、查询字符串、POST 数据、HTTP header等等，CGI就是规定要传哪些数据、以什么样的格式传递给后方处理这个请求的协议。</li>
+</ul>
+<p>当 web server 收到 <code>/index.php</code> 这个请求后，会启动对应的 CGI 程序，这里就是 PHP 的解析器。接下来 PHP 解析器会解析 php.ini 文件，初始化执行环境，然后处理请求，再以规定 CGI 规定的格式返回处理后的结果，退出进程。web server 再把结果返回给浏览器。</p>
+<p><strong>CGI 是个协议，跟进程什么的没关系</strong></p>
+<h2 id="fastCgi-是什么"><a href="#fastCgi-是什么" class="headerlink" title="fastCgi 是什么"></a>fastCgi 是什么</h2><p>fastCgi 是用来提高 CGI 程序性能的。</p>
+<p>那么 CGI 程序的性能问题在哪呢？”PHP 解析器会解析 php.ini 文件，初始化执行环境”，就是这里了。标准的 CGI 对每个请求都会执行这些步骤，所以处理每个请求的时间会比较长。</p>
+<p>那么 fastCgi 是怎么做的呢？首先，fastCgi 会先启一个 master，解析配置文件，初始化执行环境，然后再启动多个 worker。当请求过来时，master 会传递给一个 worker，然后立即可以接受下一个请求。这样就避免了重复的劳动，效率自然是高。而且当 worker 不够用时，master 可以根据配置预先启动几个 worker 等着；当然空闲 worker 太多时，也会停掉一些，这样就提高了性能，也节约了资源。这就是 fastCgi 对进程的管理。</p>
+<h2 id="PHP-FPM-是什么"><a href="#PHP-FPM-是什么" class="headerlink" title="PHP-FPM 是什么"></a>PHP-FPM 是什么</h2><p>PHP-FPM 是一个实现了 FastCgi 的程序，被 PHP 官方收录。</p>
+<p>PHP 的解释器是 php-cgi，它只是个 CGI 程序，只能解析请求，返回结果，不会进程管理。所以就出现了一些能够调度 php-cgi 进程的程序</p>
+<p><strong>来源：</strong> <a href="http://segmentfault.com/q/1010000000256516" target="_blank" rel="external">segmentfault.com/q/1010000000256516</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;CGI-的作用&quot;&gt;&lt;a href=&quot;#CGI-的作用&quot; class=&quot;headerlink&quot; title=&quot;CGI 的作用&quot;&gt;&lt;/a&gt;CGI 的作用&lt;/h2&gt;&lt;p&gt;web server（比如说 nginx）只是内容的分发者。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果请求 &lt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>PHP代码重构</title>
+    <link href="https://entimm.github.io/2016/05/21/PHP%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/"/>
+    <id>https://entimm.github.io/2016/05/21/PHP代码重构/</id>
+    <published>2016-05-21T02:20:23.000Z</published>
+    <updated>2016-08-28T11:53:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="删除-else"><a href="#删除-else" class="headerlink" title="删除 else"></a>删除 else</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">($arg)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>($arg == <span class="string">'foobar'</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>更好的写法</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">($arg)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>($arg == <span class="string">'foobar'</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="拆分为多个函数"><a href="#拆分为多个函数" class="headerlink" title="拆分为多个函数"></a>拆分为多个函数</h3><p>这种方式需要将函数名取的尽量清晰易懂，不要嫌长。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>($age &gt; <span class="number">18</span>)&#123;</div><div class="line">    doSomeThingA();</div><div class="line">    doSomeThingB();</div><div class="line">    doSomeThingC();</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">    doSomeThingD();</div><div class="line">    doSomeThingE();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="多层-if-嵌套的语法，把他写成线性的，就像写规则一样将其一条条罗列出来"><a href="#多层-if-嵌套的语法，把他写成线性的，就像写规则一样将其一条条罗列出来" class="headerlink" title="多层 if 嵌套的语法，把他写成线性的，就像写规则一样将其一条条罗列出来"></a>多层 if 嵌套的语法，把他写成线性的，就像写规则一样将其一条条罗列出来</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">match</span><span class="params">($age, $salary, $pretty)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>($age &gt; <span class="number">18</span>)&#123;</div><div class="line">         <span class="comment">// do some thing A;</span></div><div class="line">        <span class="keyword">if</span>($salary &gt; <span class="number">5000</span>)&#123;</div><div class="line">            <span class="comment">// do some thing B;</span></div><div class="line">            <span class="keyword">if</span>($pretty == <span class="keyword">true</span>)&#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>改写成这样</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">match</span><span class="params">($age, $salary, $pretty)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>($age &lt; <span class="number">18</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// do some thing A;</span></div><div class="line"></div><div class="line">    <span class="keyword">if</span>($salary &lt; <span class="number">5000</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// do some thing B;</span></div><div class="line"></div><div class="line">    <span class="keyword">return</span> $pretty == <span class="keyword">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">contry_initial</span><span class="params">($country)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> ($country===<span class="string">"China"</span> )&#123;</div><div class="line">       <span class="keyword">return</span> <span class="string">"CHN"</span>;</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>($country===<span class="string">"America"</span>)&#123;</div><div class="line">       <span class="keyword">return</span> <span class="string">"USA"</span>;</div><div class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>($country===<span class="string">"Japna"</span>)&#123;</div><div class="line">      <span class="keyword">return</span> <span class="string">"JPN"</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">       <span class="keyword">return</span> <span class="string">"OTHER"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>更好的写法</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">contry_initial</span><span class="params">($country)</span></span>&#123;</div><div class="line">  $countryList=[</div><div class="line">      <span class="string">"China"</span>=&gt; <span class="string">"CHN"</span>,</div><div class="line">      <span class="string">"America"</span>=&gt; <span class="string">"USA"</span>,</div><div class="line">      <span class="string">"Japna"</span>=&gt; <span class="string">"JPN"</span>,</div><div class="line">    ];</div><div class="line"></div><div class="line">    <span class="comment">// 也可以：array_key_exists($country, $countryList)</span></div><div class="line">    <span class="keyword">if</span>(in_array($country, array_keys($countryList))) &#123;</div><div class="line">        <span class="keyword">return</span> $countryList[$country];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="string">"Other"</span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果需要更加自由的定义映射表的话，可以这样写</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">contry_initial</span><span class="params">($country, array $countryList)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(in_array($country, array_keys($countryList))) &#123;</div><div class="line">        <span class="keyword">return</span> $countryList[$country];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="string">"Other"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>完全去掉if语句可以写成</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">contry_initial</span><span class="params">($country, array $countryList)</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> in_array($country, array_keys($countryList))?$countryList[$country]:<span class="string">"Other"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>最好的写法</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">contry_initial</span><span class="params">($country)</span></span>&#123;</div><div class="line">  $countryList=[</div><div class="line">      <span class="string">"China"</span>=&gt; <span class="string">"CHN"</span>,</div><div class="line">      <span class="string">"America"</span>=&gt; <span class="string">"USA"</span>,</div><div class="line">      <span class="string">"Japna"</span>=&gt; <span class="string">"JPN"</span>,</div><div class="line">    ];</div><div class="line">    <span class="keyword">return</span> <span class="keyword">isset</span>($countryList[$country]) ? $countryList[$country] : <span class="string">"Other"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>return能越早越好,少用 else 提前中断（return）</li>
+<li>if else 语句越少越好，可以用condition?a:b 表达的，就不要用if else</li>
+<li>有一一对应关系的，使用映射表。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;删除-else&quot;&gt;&lt;a href=&quot;#删除-else&quot; class=&quot;headerlink&quot; title=&quot;删除 else&quot;&gt;&lt;/a&gt;删除 else&lt;/h3&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;g
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>很有用的一些技巧</title>
+    <link href="https://entimm.github.io/2016/04/24/%E5%BE%88%E6%9C%89%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/"/>
+    <id>https://entimm.github.io/2016/04/24/很有用的一些技巧/</id>
+    <published>2016-04-23T18:21:39.000Z</published>
+    <updated>2016-08-28T12:19:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="在利用-xdebug-和-phpstorm-调试通过终端执行的-PHP-脚本时，在终端执行先语句，即可对该脚本进行调试"><a href="#在利用-xdebug-和-phpstorm-调试通过终端执行的-PHP-脚本时，在终端执行先语句，即可对该脚本进行调试" class="headerlink" title="在利用 xdebug 和 phpstorm 调试通过终端执行的 PHP 脚本时，在终端执行先语句，即可对该脚本进行调试"></a>在利用 xdebug 和 phpstorm 调试通过终端执行的 PHP 脚本时，在终端执行先语句，即可对该脚本进行调试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export XDEBUG_CONFIG = &quot;idekey=PHPSTORM&quot;</div></pre></td></tr></table></figure>
+<h3 id="通过SSH方式登录远程服务器时，通过下面方式免除每次都要输入密码"><a href="#通过SSH方式登录远程服务器时，通过下面方式免除每次都要输入密码" class="headerlink" title="通过SSH方式登录远程服务器时，通过下面方式免除每次都要输入密码"></a>通过SSH方式登录远程服务器时，通过下面方式免除每次都要输入密码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># 先在本机生成 authentication keys，注意不能输入 passphrase</div><div class="line"># 这里假设 A 是本机，B是远端</div><div class="line">a@A:~&gt; ssh-keygen -t rsa</div><div class="line"></div><div class="line"># 然后登录 B，并建立一个目录 ~/.ssh</div><div class="line">a@A:~&gt; ssh b@B mkdir -p .ssh</div><div class="line"></div><div class="line"># 最后把 A 的 id_rsa.pub 追加到 B 的 ~/.ssh/authorized_keys 中去</div><div class="line">a@A:~&gt; cat .ssh/id_rsa.pub | ssh b@B &apos;cat &gt;&gt; .ssh/authorized_keys&apos;</div><div class="line"></div><div class="line"># 然后就成功了</div><div class="line">a@A:~&gt; ssh b@B</div></pre></td></tr></table></figure>
+<h3 id="使用的-PHP-的内建服务器"><a href="#使用的-PHP-的内建服务器" class="headerlink" title="使用的 PHP 的内建服务器"></a>使用的 PHP 的内建服务器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">php -S 主机名或地址@端口号 -t 目录</div></pre></td></tr></table></figure>
+<h3 id="svn-检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用"><a href="#svn-检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用" class="headerlink" title="svn 检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用"></a>svn 检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn update --set-depth immediates</div></pre></td></tr></table></figure>
+<h3 id="git-新建一个全新的空白分支"><a href="#git-新建一个全新的空白分支" class="headerlink" title="git 新建一个全新的空白分支"></a>git 新建一个全新的空白分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git checkout --orphan 分支名</div><div class="line">git clean -f</div></pre></td></tr></table></figure>
+<h3 id="针对手机端-google-chrome-的样式优化（很好看）"><a href="#针对手机端-google-chrome-的样式优化（很好看）" class="headerlink" title="针对手机端 google chrome 的样式优化（很好看）"></a>针对手机端 google chrome 的样式优化（很好看）</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"theme-color"</span> <span class="attr">content</span>=<span class="string">"这里是你的 web 主题颜色"</span>&gt;</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;在利用-xdebug-和-phpstorm-调试通过终端执行的-PHP-脚本时，在终端执行先语句，即可对该脚本进行调试&quot;&gt;&lt;a href=&quot;#在利用-xdebug-和-phpstorm-调试通过终端执行的-PHP-脚本时，在终端执行先语句，即可对该脚本进行调试&quot; 
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
