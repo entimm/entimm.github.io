@@ -18,7 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#282c31">
-    <title>Tag:   | To Be Pro</title>
+    <title>Archives: 2016/5 | To Be Pro</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
@@ -83,7 +83,7 @@
         
     $(function() {
         // page-id...
-        var pageId = "categories/index.html";
+        var pageId = "archives/2016/05/index.html";
         pageId = pageId.substr(0, pageId.indexOf("/"));
         if(pageId === "") pageId = "index";
         
@@ -95,37 +95,59 @@
 
 <div class="container archive-body">
     <div class="row">
-        <div class="col-xs-3 well">
-            <div class="archive-title" >
-                <h2 class="tag-icon">标签</h2>
-                
-            </div>
+        <div class="col-xs-2 well">
+            <h2 class="archive-icon">2016/5</h2>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li></ul>
         </div>
         
-        <div class="all-list-box">
+        <div class="col-xs-10">
+            
+            <article class="post">
+                <div class="jumbotron">
+                    <h1><a href="/2016/05/28/FastCgi 与 PHP-FPM 之间的区别/" title="Cgi、FastCgi 与 PHP-FPM">Cgi、FastCgi 与 PHP-FPM</a></h1>
+
+                    
+                        <p>CGI 的作用web server（比如说 nginx）只是内容的分发者。
+
+如果请求 /index.html，那么 web server 会去文件系统中找到这个文件，发送给浏览器，这里分发的是静态数据。
+如果现在请求的是 /index.php，根据配置文件，nginx 知道这个</p>
+                    
+
+                    <p class="say-title">
+                        —— <img src="/images/avatar.png" class="img-circle index-post-avatar" />
+                        <a href="https://entimm.github.io" target="_blank" title="enjoy">enjoy</a>
+                        于2016-05-28自豪地唠嗑
+                    </p>
+                </div>
+            </article>
+            
+            <article class="post">
+                <div class="jumbotron">
+                    <h1><a href="/2016/05/21/PHP代码重构/" title="PHP代码重构">PHP代码重构</a></h1>
+
+                    
+                        <p>删除 else12345678function test($arg)&amp;#123;    if($arg == &#39;foobar&#39;)&amp;#123;        return true;    &amp;#125;else&amp;#123;        return false;    &amp;#125</p>
+                    
+
+                    <p class="say-title">
+                        —— <img src="/images/avatar.png" class="img-circle index-post-avatar" />
+                        <a href="https://entimm.github.io" target="_blank" title="enjoy">enjoy</a>
+                        于2016-05-21自豪地唠嗑
+                    </p>
+                </div>
+            </article>
+            
+            
+            
         </div>
     </div>
 </div>
-    
+
 <script>
 $(function() {
-    var box = $('.all-list-box');
-    var first = $('.archive-title a:first-of-type');
-    var list = $('.archive-title a');
-    
-    box.load(first.attr('data-src').toString() + ' #tag-list-body');
-    first.addClass('currentTag');
-    list.each(function() {
-        $(this).click(function() {
-            var listSrc = $(this).attr('data-src').toString() + ' #tag-list-body';
-            box.load(listSrc);
-            list.removeClass('currentTag');
-            $(this).addClass('currentTag');
-        });
-    });
+    $(".archive-list-count").addClass("badge");
 });
 </script>
-
 
     <footer id="footer">
         <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/XadillaX/hexadillax" target="_blank">Hexadillax</a> 主题</small><br />

@@ -6,6 +6,11 @@
     
     <meta name="author" content="enjoy">
     
+    <meta name="description" content="CGI 的作用web server（比如说 nginx）只是内容的分发者。
+
+如果请求 /index.html，那么 web server 会去文件系统中找到这个文件，发送给浏览器，这里分发的是静态数据。
+如果现在请求的是 /index.php，根据配置文件，nginx 知道这个不是静态文件，需要去">
+    
     
 
     
@@ -18,7 +23,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#282c31">
-    <title>curriculumvitae | To Be Pro</title>
+    <title>Cgi、FastCgi 与 PHP-FPM | To Be Pro</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
@@ -83,7 +88,7 @@
         
     $(function() {
         // page-id...
-        var pageId = "curriculumvitae/index.html";
+        var pageId = "2016/05/28/FastCgi 与 PHP-FPM 之间的区别/";
         pageId = pageId.substr(0, pageId.indexOf("/"));
         if(pageId === "") pageId = "index";
         
@@ -93,23 +98,37 @@
 
     <article class="post container">
     <div class="well post-body first-post last-post">
-        <h1>curriculumvitae</h1>
+        <h1>Cgi、FastCgi 与 PHP-FPM</h1>
         
         <div class="time-info">
-发表于:<time datetime="2016-08-28T09:48:20.000Z" itemprop="datePublished">2016-08-28</time>，更新于:<time datetime="2016-08-28T09:48:20.000Z" itemprop="dateModified">2016-08-28</time>，By <a href="https://entimm.github.io" title="enjoy">enjoy</a>
+发表于:<time datetime="2016-05-28T02:45:18.000Z" itemprop="datePublished">2016-05-28</time>，更新于:<time datetime="2016-08-28T11:53:25.000Z" itemprop="dateModified">2016-08-28</time>，By <a href="https://entimm.github.io" title="enjoy">enjoy</a>
         </div>
         
         <div class="post-body-inner">
             <div id="toc" class="toc-article well">
                 <strong class="toc-title">大纲</strong>
-                
-            </div>    
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CGI-的作用"><span class="toc-number">1.</span> <span class="toc-text">CGI 的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fastCgi-是什么"><span class="toc-number">2.</span> <span class="toc-text">fastCgi 是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP-FPM-是什么"><span class="toc-number">3.</span> <span class="toc-text">PHP-FPM 是什么</span></a></li></ol>
+            </div>
             
-            
+            <h2 id="CGI-的作用"><a href="#CGI-的作用" class="headerlink" title="CGI 的作用"></a>CGI 的作用</h2><p>web server（比如说 nginx）只是内容的分发者。</p>
+<ul>
+<li>如果请求 <code>/index.html</code>，那么 web server 会去文件系统中找到这个文件，发送给浏览器，这里分发的是静态数据。</li>
+<li>如果现在请求的是 <code>/index.php</code>，根据配置文件，nginx 知道这个不是静态文件，需要去找 PHP 解析器来处理，那么他会把这个请求简单处理后交给 PHP 解析器。Nginx 会传哪些数据给 PHP 解析器呢？url、查询字符串、POST 数据、HTTP header等等，CGI就是规定要传哪些数据、以什么样的格式传递给后方处理这个请求的协议。</li>
+</ul>
+<p>当 web server 收到 <code>/index.php</code> 这个请求后，会启动对应的 CGI 程序，这里就是 PHP 的解析器。接下来 PHP 解析器会解析 php.ini 文件，初始化执行环境，然后处理请求，再以规定 CGI 规定的格式返回处理后的结果，退出进程。web server 再把结果返回给浏览器。</p>
+<p><strong>CGI 是个协议，跟进程什么的没关系</strong></p>
+<h2 id="fastCgi-是什么"><a href="#fastCgi-是什么" class="headerlink" title="fastCgi 是什么"></a>fastCgi 是什么</h2><p>fastCgi 是用来提高 CGI 程序性能的。</p>
+<p>那么 CGI 程序的性能问题在哪呢？”PHP 解析器会解析 php.ini 文件，初始化执行环境”，就是这里了。标准的 CGI 对每个请求都会执行这些步骤，所以处理每个请求的时间会比较长。</p>
+<p>那么 fastCgi 是怎么做的呢？首先，fastCgi 会先启一个 master，解析配置文件，初始化执行环境，然后再启动多个 worker。当请求过来时，master 会传递给一个 worker，然后立即可以接受下一个请求。这样就避免了重复的劳动，效率自然是高。而且当 worker 不够用时，master 可以根据配置预先启动几个 worker 等着；当然空闲 worker 太多时，也会停掉一些，这样就提高了性能，也节约了资源。这就是 fastCgi 对进程的管理。</p>
+<h2 id="PHP-FPM-是什么"><a href="#PHP-FPM-是什么" class="headerlink" title="PHP-FPM 是什么"></a>PHP-FPM 是什么</h2><p>PHP-FPM 是一个实现了 FastCgi 的程序，被 PHP 官方收录。</p>
+<p>PHP 的解释器是 php-cgi，它只是个 CGI 程序，只能解析请求，返回结果，不会进程管理。所以就出现了一些能够调度 php-cgi 进程的程序</p>
+<p><strong>来源：</strong> <a href="http://segmentfault.com/q/1010000000256516" target="_blank" rel="external">segmentfault.com/q/1010000000256516</a></p>
+
+
 			
             <section class="comment">
 <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="/curriculumvitae/index.html" data-title="curriculumvitae" data-url="https://entimm.github.io/curriculumvitae/index.html"></div>
+	<div class="ds-thread" data-thread-key="/2016/05/28/FastCgi 与 PHP-FPM 之间的区别/" data-title="Cgi、FastCgi 与 PHP-FPM" data-url="https://entimm.github.io/2016/05/28/FastCgi 与 PHP-FPM 之间的区别/"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
