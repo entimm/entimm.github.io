@@ -3,10 +3,15 @@ function random(max) {
 }
 
 $(function() {
-    var idx = random(backArray.length - 1);
-    //var idx = backArray.length - 1;
-    $.backstretch(backRoot + backArray[idx]);
+    var bgimage = Cookies.get('bgcache');
+    if (!bgimage) {
+        var idx = random(backArray.length - 1);
+        bgimage = backRoot + backArray[idx];
+        Cookies.set('bgcache', bgimage, { expires: 0.01 });
+    }
+    $.backstretch(bgimage);
     //console.log("/images/background/" + backArray[idx]);
+    console.log(bgimage);
     
     $("nav[role=banner]").headroom({
         offset  : 10,
