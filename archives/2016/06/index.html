@@ -18,7 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ff2d6d">
-    <title>Tag:   | To Be Pro</title>
+    <title>Archives: 2016/6 | To Be Pro</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
@@ -83,7 +83,7 @@
         
     $(function() {
         // page-id...
-        var pageId = "categories/index.html";
+        var pageId = "archives/2016/06/index.html";
         pageId = pageId.substr(0, pageId.indexOf("/"));
         if(pageId === "") pageId = "index";
         
@@ -95,37 +95,40 @@
 
 <div class="container archive-body">
     <div class="row">
-        <div class="col-xs-3 well">
-            <div class="archive-title" >
-                <h2 class="tag-icon">标签</h2>
-                
-            </div>
+        <div class="col-xs-2 well">
+            <h2 class="archive-icon">2016/6</h2>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a><span class="archive-list-count">1</span></li></ul>
         </div>
         
-        <div class="all-list-box">
+        <div class="col-xs-10">
+            
+            <article class="post">
+                <div class="jumbotron">
+                    <h1><a href="/2016/06/24/欢快的使用谷歌搜索/" title=""></a></h1>
+
+                    
+                        <p>欢快的使用谷歌搜索无障碍使用使用谷歌搜索的时候，要么无法访问，要么谷歌会将你的 google.com 重定向到具有特定国家或地区后缀的谷歌搜索地址，如 google.com.hk 等当然，我们可以直接输入这类带地区后缀的地址, 这样有时也能实现访问, 当是很多时候却并不好用，也常</p>
+                    
+
+                    <p class="say-title">
+                        —— <img src="/images/avatar.png" class="img-circle index-post-avatar" />
+                        <a href="https://entimm.github.io" target="_blank" title="enjoy">enjoy</a>
+                        于2016-06-24自豪地唠嗑
+                    </p>
+                </div>
+            </article>
+            
+            
+            
         </div>
     </div>
 </div>
-    
+
 <script>
 $(function() {
-    var box = $('.all-list-box');
-    var first = $('.archive-title a:first-of-type');
-    var list = $('.archive-title a');
-    
-    box.load(first.attr('data-src').toString() + ' #tag-list-body');
-    first.addClass('currentTag');
-    list.each(function() {
-        $(this).click(function() {
-            var listSrc = $(this).attr('data-src').toString() + ' #tag-list-body';
-            box.load(listSrc);
-            list.removeClass('currentTag');
-            $(this).addClass('currentTag');
-        });
-    });
+    $(".archive-list-count").addClass("badge");
 });
 </script>
-
 
     <footer id="footer">
         <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/XadillaX/hexadillax" target="_blank">Hexadillax</a> 主题</small><br />
