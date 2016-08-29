@@ -99,13 +99,13 @@
         <h1>很有用的一些技巧</h1>
         
         <div class="time-info">
-发表于:<time datetime="2016-04-23T18:21:39.000Z" itemprop="datePublished">2016-04-24</time>，更新于:<time datetime="2016-08-28T12:19:08.000Z" itemprop="dateModified">2016-08-28</time>，By <a href="https://entimm.github.io" title="enjoy">enjoy</a>
+发表于:<time datetime="2016-04-23T18:21:39.000Z" itemprop="datePublished">2016-04-24</time>，更新于:<time datetime="2016-08-29T14:56:56.000Z" itemprop="dateModified">2016-08-29</time>，By <a href="https://entimm.github.io" title="enjoy">enjoy</a>
         </div>
         
         <div class="post-body-inner">
             <div id="toc" class="toc-article well">
                 <strong class="toc-title">大纲</strong>
-                <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#在利用-xdebug-和-phpstorm-调试通过终端执行的-PHP-脚本时，在终端执行先语句，即可对该脚本进行调试"><span class="toc-number">1.</span> <span class="toc-text">在利用 xdebug 和 phpstorm 调试通过终端执行的 PHP 脚本时，在终端执行先语句，即可对该脚本进行调试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过SSH方式登录远程服务器时，通过下面方式免除每次都要输入密码"><span class="toc-number">2.</span> <span class="toc-text">通过SSH方式登录远程服务器时，通过下面方式免除每次都要输入密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用的-PHP-的内建服务器"><span class="toc-number">3.</span> <span class="toc-text">使用的 PHP 的内建服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#svn-检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用"><span class="toc-number">4.</span> <span class="toc-text">svn 检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-新建一个全新的空白分支"><span class="toc-number">5.</span> <span class="toc-text">git 新建一个全新的空白分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#针对手机端-google-chrome-的样式优化（很好看）"><span class="toc-number">6.</span> <span class="toc-text">针对手机端 google chrome 的样式优化（很好看）</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#在利用-xdebug-和-phpstorm-调试通过终端执行的-PHP-脚本时，在终端执行先语句，即可对该脚本进行调试"><span class="toc-number">1.</span> <span class="toc-text">在利用 xdebug 和 phpstorm 调试通过终端执行的 PHP 脚本时，在终端执行先语句，即可对该脚本进行调试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#通过SSH方式登录远程服务器时，通过下面方式免除每次都要输入密码"><span class="toc-number">2.</span> <span class="toc-text">通过SSH方式登录远程服务器时，通过下面方式免除每次都要输入密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用的-PHP-的内建服务器"><span class="toc-number">3.</span> <span class="toc-text">使用的 PHP 的内建服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#svn-检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用"><span class="toc-number">4.</span> <span class="toc-text">svn 检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-新建一个全新的空白分支"><span class="toc-number">5.</span> <span class="toc-text">git 新建一个全新的空白分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#针对手机端-google-chrome-的样式优化（很好看）"><span class="toc-number">6.</span> <span class="toc-text">针对手机端 google chrome 的样式优化（很好看）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注释技巧"><span class="toc-number">7.</span> <span class="toc-text">注释技巧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正则匹配中文"><span class="toc-number">8.</span> <span class="toc-text">正则匹配中文</span></a></li></ol>
             </div>
             
             <h3 id="在利用-xdebug-和-phpstorm-调试通过终端执行的-PHP-脚本时，在终端执行先语句，即可对该脚本进行调试"><a href="#在利用-xdebug-和-phpstorm-调试通过终端执行的-PHP-脚本时，在终端执行先语句，即可对该脚本进行调试" class="headerlink" title="在利用 xdebug 和 phpstorm 调试通过终端执行的 PHP 脚本时，在终端执行先语句，即可对该脚本进行调试"></a>在利用 xdebug 和 phpstorm 调试通过终端执行的 PHP 脚本时，在终端执行先语句，即可对该脚本进行调试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export XDEBUG_CONFIG = &quot;idekey=PHPSTORM&quot;</div></pre></td></tr></table></figure>
@@ -114,6 +114,15 @@
 <h3 id="svn-检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用"><a href="#svn-检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用" class="headerlink" title="svn 检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用"></a>svn 检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn update --set-depth immediates</div></pre></td></tr></table></figure>
 <h3 id="git-新建一个全新的空白分支"><a href="#git-新建一个全新的空白分支" class="headerlink" title="git 新建一个全新的空白分支"></a>git 新建一个全新的空白分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git checkout --orphan 分支名</div><div class="line">git clean -f</div></pre></td></tr></table></figure>
 <h3 id="针对手机端-google-chrome-的样式优化（很好看）"><a href="#针对手机端-google-chrome-的样式优化（很好看）" class="headerlink" title="针对手机端 google chrome 的样式优化（很好看）"></a>针对手机端 google chrome 的样式优化（很好看）</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"theme-color"</span> <span class="attr">content</span>=<span class="string">"这里是你的 web 主题颜色"</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="注释技巧"><a href="#注释技巧" class="headerlink" title="注释技巧"></a>注释技巧</h3><ul>
+<li><p>TODO<br>说明在标识处有功能代码待编写，待实现的功能在说明中会简略说明。</p>
+</li>
+<li><p>FIXME<br>说明标识处代码需要修正，甚至代码是错误的，不能工作，需要修复，如何修正会在说明中简略说明。</p>
+</li>
+<li><p>XXX<br>说明标识处代码虽然实现了功能，但是实现的方法有待商榷，希望将来能改进，要改进的地方会在说明中简略说明。</p>
+</li>
+</ul>
+<h3 id="正则匹配中文"><a href="#正则匹配中文" class="headerlink" title="正则匹配中文"></a>正则匹配中文</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(!preg_match(<span class="string">"/^["</span>.chr(<span class="number">0xa1</span>).<span class="string">"-"</span>.chr(<span class="number">0xff</span>).<span class="string">"A-Za-z0-9_]+$/"</span>,$str)) <span class="comment">//GB2312汉字字母数字下划线正则表达式</span></div><div class="line"></div><div class="line"><span class="keyword">if</span>(!preg_match(<span class="string">"/^[\x&#123;4e00&#125;-\x&#123;9fa5&#125;A-Za-z0-9_]+$/u"</span>,$str)) <span class="comment">//UTF-8汉字字母数字下划线正则表达式</span></div></pre></td></tr></table></figure>
 
 
 			
@@ -140,7 +149,7 @@ var duoshuoQuery = {short_name:"entimm"};
 </article>
 
     <footer id="footer">
-        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/XadillaX/hexadillax" target="_blank">Hexadillax</a> 主题</small><br />
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/XadillaX/hexadillax" target="_blank">Hexadillax</a> 主题</small>
         <small>&copy; 2016 enjoy</small>
     </footer>
 

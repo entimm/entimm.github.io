@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://entimm.github.io/"/>
-  <updated>2016-08-28T05:19:31.000Z</updated>
+  <updated>2016-08-29T14:50:37.000Z</updated>
   <id>https://entimm.github.io/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>很有用的一些技巧</title>
+    <link href="https://entimm.github.io/2016/08/29/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <id>https://entimm.github.io/2016/08/29/快捷键/</id>
+    <published>2016-08-29T14:47:20.000Z</published>
+    <updated>2016-08-29T14:50:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h3><p>CMD-Shift-3<br>    全屏截图</p>
+<p>CMD-Shift-4<br>    区域截图：选区<br>    ⇧Shift － 重新定义截图区域的纵向高度或横向长度，不能同时实现。<br>    ⌥Option － 重新定义截图区域的尺寸，可以同时实现纵向和横向的改变，但只能围绕中心区域展开。<br>    ⌴空格键 － 按住并拖动鼠标，可以移动截图选框位置。<br>    Escape(Esc)键 － 退出截图模式。</p>
+<p>CMD-Shift-4 + 空格键<br>    区域截图：窗口</p>
+<p>screencapture -T ＋等待时间（秒）＋保存的截图名称及格式<br>    抓图</p>
+<h3 id="phpStorm"><a href="#phpStorm" class="headerlink" title="phpStorm"></a>phpStorm</h3><ul>
+<li>command + r 查找替换</li>
+<li>command + e 打开最近的文件</li>
+<li>command + shift + o 快速查询文件</li>
+<li>command + shift + f 关键字查找,更强大的查询器(机器不好的，最好还是先确定一下目录)</li>
+<li>command + shift + r 高级替换</li>
+<li>command + alt + b 找到当前类的所有子类</li>
+<li>alt + shift + c 查找最近修改的文件</li>
+<li>alt + f7 直接查询选中的字符</li>
+<li>ctrl + f7 文件中查询选中字符</li>
+<li>command + shift + +,- 展开或缩起</li>
+<li><p>command + . 折叠或展开选中的代码</p>
+</li>
+<li><p>alt + 回车 导入包，自动修正</p>
+</li>
+<li>command + n 快事为每个成员属性生成 getter 及 setter 方法</li>
+<li>ctrl + i 快速生成插入魔术方法</li>
+<li>ctrol + o 复写父类方法</li>
+<li>command + alt + l 对当前文件进行格式化排版</li>
+<li>command + d 复制当剪行</li>
+<li>command + / // 注释</li>
+<li>command + shift + / // 注释</li>
+<li>command + k 提交代码</li>
+<li>command + shif + k 提交远程分支</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;mac&quot;&gt;&lt;a href=&quot;#mac&quot; class=&quot;headerlink&quot; title=&quot;mac&quot;&gt;&lt;/a&gt;mac&lt;/h3&gt;&lt;p&gt;CMD-Shift-3&lt;br&gt;    全屏截图&lt;/p&gt;
+&lt;p&gt;CMD-Shift-4&lt;br&gt;    区域截图：选区&lt;br&gt;    ⇧
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -36,6 +84,621 @@
     <summary type="html">
     
       &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>常用代码片段</title>
+    <link href="https://entimm.github.io/2016/08/06/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/"/>
+    <id>https://entimm.github.io/2016/08/06/代码片段/</id>
+    <published>2016-08-06T06:26:44.000Z</published>
+    <updated>2016-08-29T16:30:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="utf-8"><a href="#utf-8" class="headerlink" title="utf-8"></a>utf-8</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">'Content-Type'</span> <span class="attr">content</span>=<span class="string">'text/html; charset=utf-8'</span> /&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">header(<span class="string">"Content-Type: text/html;charset=utf-8"</span>);</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;utf-8&quot;&gt;&lt;a href=&quot;#utf-8&quot; class=&quot;headerlink&quot; title=&quot;utf-8&quot;&gt;&lt;/a&gt;utf-8&lt;/h3&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>高并发</title>
+    <link href="https://entimm.github.io/2016/08/04/%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
+    <id>https://entimm.github.io/2016/08/04/高并发/</id>
+    <published>2016-08-04T13:53:43.000Z</published>
+    <updated>2016-08-29T15:36:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>就是在update时，代入之前的库存作为条件，如：<br>update stocks set count=count-1 where count=20 and productid=xxxx</p>
+<p>用同步队列，就可以实现。库存比如是1000，那就存1000个随机数到队列中，拿到随机数的人去换取真实的商品。这样数据库的压力都小。最多更新1000次。队列可以系统加载时创建，也可以做为持久化保存在文件中。</p>
+<h2 id="关于库存和秒杀的解决方案"><a href="#关于库存和秒杀的解决方案" class="headerlink" title="关于库存和秒杀的解决方案"></a>关于库存和秒杀的解决方案</h2><ol>
+<li>用额外的单进程处理一个队列，下单请求放到队列里，一个个处理，就不会有并发的问题了，但是要额外的后台进程以及延迟问题，不予考虑。</li>
+<li>根据update结果来判断，我们可以在sql2的时候加一个判断条件update … where 库存&gt;0，如果返回false，则说明库存不足，并回滚事务。</li>
+<li>借助文件排他锁，在处理下单请求的时候，用flock锁定一个文件，如果锁定失败说明有其他订单正在处理，此时要么等待要么直接提示用户”服务器繁忙”</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//阻塞(等待)模式</span></div><div class="line">$fp = fopen(<span class="string">"lock.txt"</span>, <span class="string">"w+"</span>);</div><div class="line"><span class="keyword">if</span>(flock($fp,LOCK_EX))</div><div class="line">&#123;</div><div class="line">    <span class="comment">//..处理订单</span></div><div class="line">    flock($fp,LOCK_UN);</div><div class="line">&#125;</div><div class="line"></div><div class="line">fclose($fp);</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//非阻塞模式</span></div><div class="line">$fp = fopen(<span class="string">"lock.txt"</span>, <span class="string">"w+"</span>);</div><div class="line"><span class="keyword">if</span>(flock($fp,LOCK_EX | LOCK_NB))</div><div class="line">&#123;</div><div class="line">    <span class="comment">//..处理订单</span></div><div class="line">    flock($fp,LOCK_UN);</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">echo</span> <span class="string">"系统繁忙，请稍后再试"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">fclose($fp);</div><div class="line"></div><div class="line"><span class="comment">//采用哪种方式，看并发数量吧。</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;就是在update时，代入之前的库存作为条件，如：&lt;br&gt;update stocks set count=count-1 where count=20 and productid=xxxx&lt;/p&gt;
+&lt;p&gt;用同步队列，就可以实现。库存比如是1000，那就存1000个随机数到队
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>web前端</title>
+    <link href="https://entimm.github.io/2016/07/26/web/"/>
+    <id>https://entimm.github.io/2016/07/26/web/</id>
+    <published>2016-07-26T03:42:33.000Z</published>
+    <updated>2016-08-29T15:41:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="js对象的定义是"><a href="#js对象的定义是" class="headerlink" title="js对象的定义是"></a>js对象的定义是</h3><pre><code>无序属性的集合，其属性可以包含基本值、对象或者函数
+一个Javascript函数也是一个对象，并且，所有的对象从技术上讲也只不过是函数
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Person=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name=<span class="string">"phodal"</span>;</div><div class="line">    <span class="keyword">this</span>.weight=<span class="number">50</span>;</div><div class="line">    <span class="keyword">this</span>.height=<span class="number">166</span>;</div><div class="line">    <span class="keyword">this</span>.future=<span class="function"><span class="keyword">function</span> <span class="title">dream</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"future"</span>;</div><div class="line">    &#125;;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> person=<span class="keyword">new</span> Person();</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> calc=&#123;</div><div class="line">    add: <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> a+b;</div><div class="line">    &#125;,</div><div class="line">    sub: <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> a-b;</div><div class="line">    &#125;,</div><div class="line">    dif: <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(a&gt;b)&#123;</div><div class="line">            <span class="keyword">return</span> a;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> b;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Calc</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">Calc.prototype.add=<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a+b;</div><div class="line">&#125;;</div><div class="line">Calc.prototype.sub=<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a-b;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Chinese=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.country=<span class="string">"China"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> Person=<span class="function"><span class="keyword">function</span>(<span class="params">name,weight,height</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name=name;</div><div class="line">    <span class="keyword">this</span>.weight=weight;</div><div class="line">    <span class="keyword">this</span>.height=height; </div><div class="line">    <span class="keyword">this</span>.futrue=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"future"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">Chinese.prototype=<span class="keyword">new</span> Person();</div><div class="line"></div><div class="line"><span class="keyword">var</span> phodal=<span class="keyword">new</span> Chinese(<span class="string">"phodal"</span>,<span class="number">50</span>,<span class="number">166</span>);</div></pre></td></tr></table></figure>
+<h3 id="浏览器渲染过程"><a href="#浏览器渲染过程" class="headerlink" title="浏览器渲染过程"></a>浏览器渲染过程</h3><ul>
+<li>解析HTML去构建DOM树</li>
+<li>渲染树形结构</li>
+<li>生成渲染的树形图布局</li>
+<li>绘制树形图</li>
+</ul>
+<p>第一步 Parse HTML，而 Parse HTML 实质上就是将其将解析为 DOM Tree。与此同时，CSS 解析器会解析 CSS 会产生 CSS 规则树。<br>随后会根据生成的 DOM 树和 CSS 规则树来构建 Render Tree，接着生成 Render Tree的布局，最后就是绘制出 Render Tree。</p>
+<h3 id="写好HTML应该会有下面的要点"><a href="#写好HTML应该会有下面的要点" class="headerlink" title="写好HTML应该会有下面的要点"></a>写好HTML应该会有下面的要点</h3><ul>
+<li>了解标准及遵守绝大多数标准</li>
+<li>注重可读性，从ID及CLASS的命名</li>
+<li>关注SEO与代码的联系</li>
+</ul>
+<h3 id="notice"><a href="#notice" class="headerlink" title="notice"></a>notice</h3><ul>
+<li>对于行内非替换元素，其占用空间（行高）由 line-height 决定，即使有内边距与边框。</li>
+</ul>
+<h3 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h3><pre><code>以现代标准而言，一个标准PC的操作系统应该提供以下的功能：
+
++ 进程管理（Processing management）
++ 内存管理（Memory management）
++ 文件系统（File system）
++ 网络通信（Networking）
++ 安全机制（Security）
++ 用户界面（User interface）
++ 驱动程序（Device drivers）
+</code></pre><h3 id="WEB服务"><a href="#WEB服务" class="headerlink" title="WEB服务"></a>WEB服务</h3><pre><code>WEB服务实际上是一组工具，并有多种不同的方法调用之。三种最普遍的手段是：
+
++ 远程过程调用（RPC）
++ 面向服务架构（SOA）
++ 表述性状态转移（REST）
+
+HTTP是用于客户端与服务端之间的通信。
+传输层的TCP是基于网络层的IP协议的,而应用层的HTTP协议又是基于传输层的TCP协议的。
+</code></pre><h3 id="打开网页时发生了什么"><a href="#打开网页时发生了什么" class="headerlink" title="打开网页时发生了什么"></a>打开网页时发生了什么</h3><ul>
+<li>浏览器需要查找域名的IP，从不同的缓存直至DNS服务器。</li>
+<li>浏览器会给web服务器发送一个HTTP请求</li>
+<li>服务器“处理”请求</li>
+<li>服务器发回一个HTML响应</li>
+<li>浏览器渲染HTML到页面。</li>
+</ul>
+<p>StackOverflow’s Answer:</p>
+<ul>
+<li>browser checks cache; if requested object is in cache and is fresh, skip to #9</li>
+<li>browser asks OS for server’s IP address</li>
+<li>OS makes a DNS lookup and replies the IP address to the browser</li>
+<li>browser opens a TCP connection to server (this step is much more complex with HTTPS)</li>
+<li>browser sends the HTTP request through TCP connection</li>
+<li>browser receives HTTP response and may close the TCP connection, or reuse it for another request</li>
+<li>browser checks if the response is a redirect (3xx result status codes), authorization request (401), error (4xx and 5xx), etc.; these are handled differently from normal responses (2xx)</li>
+<li>if cacheable, response is stored in cache</li>
+<li>browser decodes response (e.g. if it’s gzipped)</li>
+<li>browser determines what to do with response (e.g. is it a HTML page, is it an image, is it a sound clip?)</li>
+<li>browser renders response, or offers a download dialog for unrecognized types</li>
+</ul>
+<h3 id="一个HTTP响应由三部分组成"><a href="#一个HTTP响应由三部分组成" class="headerlink" title="一个HTTP响应由三部分组成"></a>一个HTTP响应由三部分组成</h3><ul>
+<li>状态行(状态码)</li>
+<li>消息报头(响应报头)</li>
+<li>响应正文(消息体)</li>
+</ul>
+<p>互联网上的一切信息都可以看作是一种资源。</p>
+<h3 id="Laravel-Resources"><a href="#Laravel-Resources" class="headerlink" title="Laravel Resources"></a>Laravel Resources</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">Verb</th>
+<th>Path</th>
+<th>Action</th>
+<th style="text-align:left">Route Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">GET</td>
+<td>/resource</td>
+<td>index</td>
+<td style="text-align:left">resource.index</td>
+</tr>
+<tr>
+<td style="text-align:left">GET</td>
+<td>/resource/create</td>
+<td>create</td>
+<td style="text-align:left">resource.create</td>
+</tr>
+<tr>
+<td style="text-align:left">POST</td>
+<td>/resource</td>
+<td>store</td>
+<td style="text-align:left">resource.store</td>
+</tr>
+<tr>
+<td style="text-align:left">GET</td>
+<td>/resource/{resource}</td>
+<td>show</td>
+<td style="text-align:left">resource.show</td>
+</tr>
+<tr>
+<td style="text-align:left">GET</td>
+<td>/resource/{resource}/edit</td>
+<td>edit</td>
+<td style="text-align:left">resource.edit</td>
+</tr>
+<tr>
+<td style="text-align:left">PUT/PATCH</td>
+<td>/resource/{resource}</td>
+<td>update</td>
+<td style="text-align:left">resource.update</td>
+</tr>
+<tr>
+<td style="text-align:left">DELETE</td>
+<td>/resource/{resource}</td>
+<td>destroy</td>
+<td style="text-align:left">resource.destroy</td>
+</tr>
+</tbody>
+</table>
+<h3 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h3><p>在 Controller 层应该做的事:</p>
+<ul>
+<li>处理请求的参数</li>
+<li>渲染和重定向</li>
+<li>选择 Model 和 Service</li>
+<li>处理 Session 和 Cookies</li>
+</ul>
+<p>控制器层起到不同层面间的组织作用，用于控制应用程序的流程。</p>
+<p>业务是善变的,Controller 是不容易变化的</p>
+<p>模型用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法</p>
+<h3 id="cookie-问题"><a href="#cookie-问题" class="headerlink" title="cookie 问题"></a>cookie 问题</h3><p>Cookie 存在一些明显的问题：不支持跨域、并且不是无状态的、不能使用CDN、与系统耦合等等</p>
+<p>JSON Web Token (JWT) 是一种基于 token 的认证方案</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>一般来说，自动测试应该从两部分考虑：</p>
+<ul>
+<li>单元测试</li>
+<li>功能测试</li>
+</ul>
+<h3 id="可读的代码"><a href="#可读的代码" class="headerlink" title="可读的代码"></a>可读的代码</h3><ul>
+<li>确保我们的变量名、函数名是易读的</li>
+<li>没有复杂的逻辑判断</li>
+<li>没有多层嵌套 (事不过三)</li>
+<li>减少复杂函数的出现（如,不超过三十行）</li>
+<li>然后，你要去测试它。这样你就知道需要什么，实际上要做到这些也不是一些难事</li>
+</ul>
+<p>短的精巧的函数有以下的特点：</p>
+<ul>
+<li>如果每个函数的粒度都很小，那么函数被复用的机会就更大；</li>
+<li>是这会让高层函数读起来就像一系列注释一样，容易理解；</li>
+<li>是如果函数都是细粒度，那么函数的复写也会更加容易。</li>
+</ul>
+<p>在提炼函数中我们所要做的就是——判断出原有的函数的意图，再依据我们的新意图来命名新的函数。然后判断依赖——变量值，处理这些变量。提取出函数，再对其测试。</p>
+<p>Intellij IDEA 提炼函数:</p>
+<pre><code>Mac: alt+command+M
+Windows/Linux: Ctrl+Alt+M
+鼠标: Refactor | Extract | Method
+</code></pre><p>内联函数:</p>
+<pre><code>Mac: alt+command+N
+Windows/Linux: Ctrl+Alt+N
+鼠标: Refactor | Inline
+</code></pre><p>查询取代临时变量:</p>
+<pre><code>Refactor | Replace Temp with Query
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;js对象的定义是&quot;&gt;&lt;a href=&quot;#js对象的定义是&quot; class=&quot;headerlink&quot; title=&quot;js对象的定义是&quot;&gt;&lt;/a&gt;js对象的定义是&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;无序属性的集合，其属性可以包含基本值、对象或者函数
+一个Javascript
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>web安全</title>
+    <link href="https://entimm.github.io/2016/07/17/web%E5%AE%89%E5%85%A8/"/>
+    <id>https://entimm.github.io/2016/07/17/web安全/</id>
+    <published>2016-07-17T03:42:49.000Z</published>
+    <updated>2016-08-29T15:42:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="https"><a href="#https" class="headerlink" title="https"></a>https</h3><p>http 协议下的网络连接都是基于明文的，信息很有可能被泄露篡改<br>理论上 https 是安全的</p>
+<h3 id="XSS-Cross-Site-Script"><a href="#XSS-Cross-Site-Script" class="headerlink" title="XSS(Cross-Site Script)"></a>XSS(Cross-Site Script)</h3><p>跨站脚本攻击本质上是一种注入攻击<br>简单的说就是利用各种手段把恶意代码添加到网页中，并让受害者执行这段脚本。 XSS 的例子只要百度一下有很多。 XSS 能做用户使用浏览器能做的一切事情。可以看到同源策略无法保证不受 XSS 攻击，因为此时攻击者就在同源之内。</p>
+<p>可以分为以下两类：<br>client(客户端型)<br>server(服务端型)<br>当一端 XSS 代码是在服务端被插入的，那么这就是服务端型 XSS ，同理，如果代码在客户端插入，就是客户端型 XSS 。</p>
+<p>其实只要做好无论任何情况下保证代码不被执行就能完全杜绝 XSS 攻击<br>任何时候都不要把不受信任的数据直接插入到 dom 中的任何位置,一定要做转义。</p>
+<h3 id="Http-Only"><a href="#Http-Only" class="headerlink" title="Http-Only"></a>Http-Only</h3><p>使用 Http-only 保护 cookie ，可以保证即使发生了 XSS ，用户的 cookie 也是安全的。使用 Http-only 保护的 cookie 是不会被 javascript 读写的。</p>
+<h3 id="CSP-Content-Security-Policy"><a href="#CSP-Content-Security-Policy" class="headerlink" title="CSP(Content Security Policy)"></a>CSP(Content Security Policy)</h3><p>CSP 的作用是限制一个页面的行为不论是否是 javacript 控制的。</p>
+<p>如何引入 CSP 呢？</p>
+<p>2.7.1 通过 response 头</p>
+<p>//只允许脚本从本源加载 Content-Security-Policy: script-src ‘self’<br>2.7.2 通过 html 的 meta 标签</p>
+<p>//作用同上</p>
+<meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+
+<p>那么 CSP 除了限制 script-src 之外还能限制什么呢？</p>
+<p>base-uri:限制这篇文档的 uri ；<br>child-src:限制子窗口的源(iframe 、弹窗等),取代 frame-src ；<br>connect-src:限制脚本可以访问的源；<br>font-src:限制字体的源；<br>form-action:限制表单能够提交到的源；<br>frame-ancestors:限制了当前页面可以被哪些页面以 iframe,frame,object 等方式加载；<br>frame-src:deprecated with child-src,限制了当前页面可以加载哪些源，与 frame-ancestors 对应；<br>img-src:限制图片可以从哪些源加载；<br>media-src:限制 video,audio, source,track 能够从哪些源加载；<br>object-src:限制插件可以从哪些源加载；<br>sandbox:强制打开沙盒模式；</p>
+<p>可以看出， CSP 是一个强大的策略，几乎可以限制了所有能够用到的资源的来源。使用好 CSP 可以很大成都降低 XSS 带来的风险。<br>另外， CSP 还提供一个报告的头 Content-Security-Policy-Report-Only ，使用这个头浏览器向服务器报告 CSP 状态，细节先不讨论。</p>
+<p>Content-Security-Policy-Report-Only:script-src’self’;<br>report-uri/csp-report-endpoint/</p>
+<h3 id="token"><a href="#token" class="headerlink" title="token"></a>token</h3><p>token 必须随机生成，并且有过期时间</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;https&quot;&gt;&lt;a href=&quot;#https&quot; class=&quot;headerlink&quot; title=&quot;https&quot;&gt;&lt;/a&gt;https&lt;/h3&gt;&lt;p&gt;http 协议下的网络连接都是基于明文的，信息很有可能被泄露篡改&lt;br&gt;理论上 https 是安全的&lt;/p&gt;
+&lt;h3
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>高级 PHP</title>
+    <link href="https://entimm.github.io/2016/07/16/%E9%AB%98%E7%BA%A7PHP/"/>
+    <id>https://entimm.github.io/2016/07/16/高级PHP/</id>
+    <published>2016-07-16T02:35:00.000Z</published>
+    <updated>2016-08-29T16:36:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="面向对象5原则"><a href="#面向对象5原则" class="headerlink" title="面向对象5原则"></a>面向对象5原则</h2><h3 id="单一职责原则（single-resposibility-principle）"><a href="#单一职责原则（single-resposibility-principle）" class="headerlink" title="单一职责原则（single-resposibility principle）"></a>单一职责原则（single-resposibility principle）</h3><p>其核心思想为：一个类，最好只做一件事，只有一个引起它的变化的原因</p>
+<h3 id="开放-封闭原则（The-Open-Close-principle）"><a href="#开放-封闭原则（The-Open-Close-principle）" class="headerlink" title="开放-封闭原则（The Open-Close principle）"></a>开放-封闭原则（The Open-Close principle）</h3><p>其核心思想为：对扩展开放，对修改封闭<br>软件实体（类、模块、函数）应该是可扩展的，但是不可修改的。也就是说，对于扩展是开放的，对于更改是封闭的。怎样可能在不改动模块源代码的情况下去更改它的行为呢？怎样才能在无需对模块进行改动的情况下改变它的功能呢？关键是抽象！因此在进行面向对象设计时要尽量考虑接口封装机制、抽象机制和多态技术。该原则同样适合于非面向对象的方法，是软件工程设计方法的重要原则之一</p>
+<h3 id="Liskov-替换原则（liskov-substitution-principle）"><a href="#Liskov-替换原则（liskov-substitution-principle）" class="headerlink" title="Liskov 替换原则（liskov-substitution principle）"></a>Liskov 替换原则（liskov-substitution principle）</h3><p>其核心思想：子类必须能够替换其基类<br>子类应当可以替换父类出现在父类能够出现的任何地方</p>
+<h3 id="依赖倒置原则（dependency-inversion-principle）"><a href="#依赖倒置原则（dependency-inversion-principle）" class="headerlink" title="依赖倒置原则（dependency-inversion principle）"></a>依赖倒置原则（dependency-inversion principle）</h3><p>其核心思想：依赖于抽象<br>1、高层模块不应该依赖于低层模块，二者都应该依赖于抽象。<br>2、抽象不应该依赖于细节。细节应该依赖于抽象。在进行业务设计时，于特定业务有关的依赖关系应该尽量依赖接口和抽象类，而不是依赖于具体类。具体类只负责相关业务的实现，修改具体类不影响与特定业务有关的依赖关系。</p>
+<h3 id="接口分离原则（interface-segregation-principle）"><a href="#接口分离原则（interface-segregation-principle）" class="headerlink" title="接口分离原则（interface-segregation principle）"></a>接口分离原则（interface-segregation principle）</h3><p>其核心思想：使用多个小的专门的接口，而不要使用一个大的总接口<br>具体而言，接口隔离原则体现在：接口应该是内聚的，应该避免“胖”接口。一个类对另外一个类的依赖应该建立在最小的接口上，不要强迫依赖不用的方法，这是一种接口污染</p>
+<h2 id="异常-vs-if-else"><a href="#异常-vs-if-else" class="headerlink" title="异常 vs if_else"></a>异常 vs if_else</h2><p>把这个大函数分成了若干小函数，在这个小函数里面抛异常，大函数里面扑获异常，不用再一个一个的判断小函数的返回值</p>
+<p>任何好的语言都应该提供完善的异常支持服务, 来使程序结构更优美可读行更好可维护,而不是靠一大堆的if else来控制程序的流程.</p>
+<p>要有上下层的概念，在上下层逻辑处理中,throw是Current Role反馈给Upper Role，try/catch是Current Role处理Lower Role反馈</p>
+<h2 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h2><p>把业务逻辑处理部分抽象出来作为一层，这一层在M之上，C之下，名为 Logic</p>
+<p>把可以作为公共的服务抽象出来作为一层，这一层不与任何一层耦合，仅提供自身的服务，名为Service<br>小到文件上传，下载，图片处理，储存<br>大到日志，错误处理，邮件，授权，队列，计划任务，支付，验证，加密，短信都可以做出单独的服务</p>
+<p>业务变了，C层和M层都不需要改动，只需要改动中间的 Logic 就好了</p>
+<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p>在Controller里面，做外部来的请求数据包的合法性校验和部分用户接口权限校验<br>用户相关逻辑放在logic层,做严格的数据合法性校验、业务逻辑约束校验、用户数据权限校验<br>在Model里面做数据的物理合法性校验<br>然后还可以建立一个service层,该层对应的是驱动层，比如支付驱动有支付宝、财付通、网银等等 然后支付服务就是来链接这些支付驱动的</p>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p>多态性是面向对象设计的重要特性，它展现了动态绑定的功能,多态的功能可以让软件在开发和维护时，达到充分的延伸性<br>通俗理解:让具有继承关系的不同类对象，可以对相同名称的成员函数调用，产生不同的反应结果</p>
+<h2 id="权限控制"><a href="#权限控制" class="headerlink" title="权限控制"></a>权限控制</h2><h3 id="RBAC（Role-Based-Access-Control）"><a href="#RBAC（Role-Based-Access-Control）" class="headerlink" title="RBAC（Role-Based Access Control）"></a>RBAC（Role-Based Access Control）</h3><p>基于角色的访问控制系统</p>
+<ul>
+<li>用户表</li>
+<li>权限表</li>
+<li>角色表</li>
+<li>角色权限表</li>
+<li>用户角色表</li>
+</ul>
+<h3 id="ACL（Access-Control-List）"><a href="#ACL（Access-Control-List）" class="headerlink" title="ACL（Access Control List）"></a>ACL（Access Control List）</h3><p>访问控制列表，是前几年盛行的一种权限设计，它的核心在于用户直接和权限挂钩</p>
+<p>RBAC的核心是用户只和角色关联，而角色代表对了权限，这样设计的优势在于使得对用户而言，只需角色即可以，而某角色可以拥有各种各样的权限并可继承<br>ACL和RBAC相比缺点在于由于用户和权限直接挂钩，导致在授予时的复杂性，虽然可以利用组来简化这个复杂性，但仍然会导致系统不好理解，而且在取出判断用户是否有该权限时比较的困难，一定程度上影响了效率</p>
+<p>ACL实质上是每一个权限接口维持一个权限列表，然后通过判断是否在列表中这个扁平快的方法，进行基础的权限控制，也有其不足：对于多人控制的某些系统，权限需要分为select，update，insert，delete等，人员需要分为管理员，用户，访客，超级管理员，这种情况下再使用ACL反而是增加工作量，增加后期维护难度，同时增加管理难度</p>
+<p>在这种情况下，RBAC应运而生RBAC，基于组的权限控制，ACL的升级版</p>
+<p>相比于ACL，RBAC的优势是将角色和角色绑定，将用户与权限之间的关联变为权限与角色之间的关联，从而简化了权限管理。当然普通的RBAC也有自身的缺点，就是权限是以角色为载体，单独用户的特殊的权限需要定制</p>
+<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>异常是运行中超出了你程序预期的一个东西。</p>
+<p>异常就是一个意外，影响了你的程序正常运行。但是如果你用好异常，会让你的程序便于解耦，结构更加清晰明了。</p>
+<p>异常对我们控制程序的流程来说非常重要。解耦了程序出现意想不到结果时信息传递的逻辑。每个业务模块发生异常最终通过 Laravel 的方便的异常处理，和友好的展示，并能根据情况来记录错误，这样让我们的程序更加健壮，方便开发和维护。</p>
+<h2 id="使用-OpCache-提升-PHP-5-5-程序性能"><a href="#使用-OpCache-提升-PHP-5-5-程序性能" class="headerlink" title="使用 OpCache 提升 PHP 5.5+ 程序性能"></a>使用 OpCache 提升 PHP 5.5+ 程序性能</h2><h3 id="what"><a href="#what" class="headerlink" title="what"></a>what</h3><p>PHP 5.5 以后内建了 OpCache , OpCache 的加速原理是把编译后的 bytecode 存储在内存里面, 避免重复编译 PHP 所造成的资源浪费.</p>
+<h3 id="how"><a href="#how" class="headerlink" title="how"></a>how</h3><p>修改 php.ini 文件,在文件最后面加入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">; 开关打开</div><div class="line">opcache.enable=1</div><div class="line"></div><div class="line">; 可用内存, 酌情而定, 单位 megabytes</div><div class="line">opcache.memory_consumption=256</div><div class="line"></div><div class="line">; 对多缓存文件限制, 命中率不到 100% 的话, 可以试着提高这个值</div><div class="line">opcache.max_accelerated_files=5000</div><div class="line"></div><div class="line">; Opcache 会在一定时间内去检查文件的修改时间, 这里设置检查的时间周期, 默认为 2, 定位为秒</div><div class="line">opcache.revalidate_freq=240</div></pre></td></tr></table></figure></p>
+<h3 id="APC-VS-OpCache"><a href="#APC-VS-OpCache" class="headerlink" title="APC VS OpCache"></a>APC VS OpCache</h3><p>APC 是将要被遗弃的项目, PHP 5.5 都不支持, 而在 PHP 5.5 和 5.6 版本, OpCache 是默认内建的, 并且支持 5.2 到 5.4 的安装.</p>
+<h3 id="关于composer-lock"><a href="#关于composer-lock" class="headerlink" title="关于composer.lock"></a>关于composer.lock</h3><h2 id="composer-lock"><a href="#composer-lock" class="headerlink" title="composer.lock"></a>composer.lock</h2><h3 id="什么是-composer-lock-文件"><a href="#什么是-composer-lock-文件" class="headerlink" title="什么是 composer.lock 文件?"></a>什么是 composer.lock 文件?</h3><p>composer.lock 文件是当你第一次使用 composer install 或者 执行 composer update 后生成的文件, 此文件里定义了当前项目的代码依赖, 还有最重要的, 这些代码依赖的对应的版本.</p>
+<h3 id="composer-lock-文件作用是什么"><a href="#composer-lock-文件作用是什么" class="headerlink" title="composer.lock 文件作用是什么?"></a>composer.lock 文件作用是什么?</h3><p>默认情况下, 当执行 composer install 的时候, Composer 会检查当前项目是否有 composer.lock 文件, 如果有的话, 就会按照此文件去下载代码依赖和其指定的版本.</p>
+<h3 id="把-composer-lock-文件加版本的好处有以下"><a href="#把-composer-lock-文件加版本的好处有以下" class="headerlink" title="把 composer.lock 文件加版本的好处有以下:"></a>把 composer.lock 文件加版本的好处有以下:</h3><p>团队开发的时, clone 下代码后, 使用 composer install 可以确保大家使用的依赖包都是同一个版本的, 避免没必要的混乱;<br>在一个现有的项目上开发的时候, 执行 composer update 后, 偶尔会发现刚刚更新了某个代码包把程序整挂了, 这个时候, 如果 composer.lock 是加入版本控制器的话, 直接一个 git diff 命令, 就可以查看到这次更新了那个包, 快速定位到问题的所在;<br>在线上部署的时候, 可以确保线上生成环境下使用所有代码是和开发时候使用的一致, 因为 composer.lock 会确保你在执行 composer install 命令后, 按照文件里面指定的版本去下载代码依赖包;</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;面向对象5原则&quot;&gt;&lt;a href=&quot;#面向对象5原则&quot; class=&quot;headerlink&quot; title=&quot;面向对象5原则&quot;&gt;&lt;/a&gt;面向对象5原则&lt;/h2&gt;&lt;h3 id=&quot;单一职责原则（single-resposibility-principle）&quot;&gt;&lt;a hr
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>面试可能会被问到的问题</title>
+    <link href="https://entimm.github.io/2016/07/16/%E9%9D%A2%E8%AF%95%E5%8F%AF%E8%83%BD%E4%BC%9A%E9%97%AE%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://entimm.github.io/2016/07/16/面试可能会问到的问题/</id>
+    <published>2016-07-16T01:20:04.000Z</published>
+    <updated>2016-08-29T15:33:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="抽象-vs-接口"><a href="#抽象-vs-接口" class="headerlink" title="抽象 vs 接口"></a>抽象 vs 接口</h3><p>抽象类是一种不能被实例化的类，只能作为其他类的父类来使用。<br>抽象类是通过关键字 abstract 来声明的。<br>抽象类与普通类相似，都包含成员变量和成员方法，两者的区别在于，抽象类中至少要包含一个抽象方法，<br>抽象方法没有方法体，该方法天生就是要被子类重写的。<br>抽象方法的格式为：abstract function abstractMethod();</p>
+<p>因为php中只支持单继承，如果想实现多重继承，就要使用接口。也就是说子类可以实现多个接口。<br>接口是通过interface关键字来声明的，接口中的成员常量和方法都是public的，方法可以不写关键字public，<br>接口中的方法也是没有方法体。接口中的方法也天生就是要被子类实现的。</p>
+<p>抽象类和接口实现的功能十分相似，最大的不同是接口能实现多继承。在应用中选择抽象类还是接口要看具体实现。<br>子类继承抽象类使用extends，子类实现接口使用implements。</p>
+<h3 id="文件上传注意事项"><a href="#文件上传注意事项" class="headerlink" title="文件上传注意事项"></a>文件上传注意事项</h3><ol>
+<li>首现要在php.ini中开启文件上传；</li>
+<li>在php.ini中有一个允许上传的最大值，默认是2MB。必要的时候可以更改；</li>
+<li>上传表单一定要记住在form标签中写上enctype=”multipart/form-data”；</li>
+</ol>
+<h3 id="cookie作用"><a href="#cookie作用" class="headerlink" title="cookie作用"></a>cookie作用</h3><ol>
+<li>记录用户访问的部分信息</li>
+<li>在页面间传递变量</li>
+</ol>
+<h3 id="php-的数据类型"><a href="#php-的数据类型" class="headerlink" title="php 的数据类型"></a>php 的数据类型</h3><p>php支持8种原始数据类型。<br>包括：<br>    四种标量类型（布尔型boolean，整型interger，浮点型float/double , 字符串string）<br>    两种复合类型(数组array ， 对象object)<br>    两种特殊类型（资源resource，NULL）</p>
+<h3 id="页面乱码处理"><a href="#页面乱码处理" class="headerlink" title="页面乱码处理"></a>页面乱码处理</h3><ol>
+<li>查看当前页面meta标签的charset</li>
+<li>header函数指定的charset</li>
+<li>数据库的字符集</li>
+</ol>
+<h3 id="ajax缺点"><a href="#ajax缺点" class="headerlink" title="ajax缺点"></a>ajax缺点</h3><p>不利于seo推广优化，因为搜索引擎无法直接访问到ajax请求的内容</p>
+<h3 id="字符串转整型"><a href="#字符串转整型" class="headerlink" title="字符串转整型"></a>字符串转整型</h3><ol>
+<li>强制类型转换</li>
+<li>settype(字符串变量,整型)</li>
+<li>intval(字符串变量)</li>
+</ol>
+<h3 id="处理正则表达式"><a href="#处理正则表达式" class="headerlink" title="处理正则表达式"></a>处理正则表达式</h3><pre><code>preg_quote -- 转义正则表达式字符 正则表达式的特殊字符包括：. \ + * ? [ ^ ] $ ( ) { } = ! &lt; &gt; | : -
+preg_replace -- 执行正则表达式的搜索和替换
+preg_replace_callback -- 用回调函数执行正则表达式的搜索和替换
+preg_split -- 用正则表达式分割字符串
+</code></pre><h3 id="字符串的常用函数"><a href="#字符串的常用函数" class="headerlink" title="字符串的常用函数"></a>字符串的常用函数</h3><pre><code>trim();--去除空格
+strlen();--字符串长度
+substr();--截取字符串
+str_replace();--替换字符串函数
+substr_replace() -- 对指定字符串中的部分字符串进行替换
+strstr();--检索字符串函数
+explode();--分割字符串函数
+strcasecmp();--比较字符串函数
+</code></pre><h2 id="留意一下"><a href="#留意一下" class="headerlink" title="留意一下"></a>留意一下</h2><ul>
+<li>count 可以递归计算数组</li>
+<li>echo可以一次输出多个值，中间用逗号隔开。而print一次只能输出一个值</li>
+<li>include 有返回值,require 没有</li>
+<li>当对一个不可见的对象属性使用empty() 时，__isset()方法如果存在的话，它将会被调用</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;抽象-vs-接口&quot;&gt;&lt;a href=&quot;#抽象-vs-接口&quot; class=&quot;headerlink&quot; title=&quot;抽象 vs 接口&quot;&gt;&lt;/a&gt;抽象 vs 接口&lt;/h3&gt;&lt;p&gt;抽象类是一种不能被实例化的类，只能作为其他类的父类来使用。&lt;br&gt;抽象类是通过关键字 abs
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>系统问题解决</title>
+    <link href="https://entimm.github.io/2016/07/14/play-os/"/>
+    <id>https://entimm.github.io/2016/07/14/play-os/</id>
+    <published>2016-07-14T15:30:26.000Z</published>
+    <updated>2016-08-29T16:29:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="在-OS-X-El-Capitan-安装-git-svn"><a href="#在-OS-X-El-Capitan-安装-git-svn" class="headerlink" title="在 OS X El Capitan 安装 git-svn"></a>在 OS X El Capitan 安装 git-svn</h3><p>在 Mountain Lion 和 Mavericks 系统中，安装 git-svn 中断的解决办法如下<br>不幸的是，由于 El Capitan 系统保护机制，上述操作无效了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo ln -s /Applications/Xcode.app/Contents/Developer/Library/Perl/5.18/darwin-thread-multi-2level/SVN /System/Library/Perl/Extras/5.18/SVN</div><div class="line">ln: /System/Library/Perl/Extras/5.18/SVN: Operation not permitted</div></pre></td></tr></table></figure></p>
+<p>下面操作是新的有效的解决办法<br>因为虽然不能写入 /System, 但是可以写入 /Library<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo mkdir /Library/Perl/5.18/auto</div><div class="line">sudo ln -s /Applications/Xcode.app/Contents/Developer/Library/Perl/5.18/darwin-thread-multi-2level/SVN /Library/Perl/5.18/darwin-thread-multi-2level</div><div class="line">sudo ln -s /Applications/Xcode.app/Contents/Developer/Library/Perl/5.18/darwin-thread-multi-2level/auto/SVN /Library/Perl/5.18/auto/</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;在-OS-X-El-Capitan-安装-git-svn&quot;&gt;&lt;a href=&quot;#在-OS-X-El-Capitan-安装-git-svn&quot; class=&quot;headerlink&quot; title=&quot;在 OS X El Capitan 安装 git-svn&quot;&gt;&lt;/a&gt;在 
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>mysql知识</title>
+    <link href="https://entimm.github.io/2016/07/10/mysql/"/>
+    <id>https://entimm.github.io/2016/07/10/mysql/</id>
+    <published>2016-07-10T07:46:16.000Z</published>
+    <updated>2016-08-29T16:38:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="MySQL存储引擎-MyISAM-和-InnoDB-的区别"><a href="#MySQL存储引擎-MyISAM-和-InnoDB-的区别" class="headerlink" title="MySQL存储引擎 MyISAM 和 InnoDB 的区别"></a>MySQL存储引擎 MyISAM 和 InnoDB 的区别</h2><ul>
+<li>MyISAM类型不支持事务处理等高级处理,而InnoDB类型支持.</li>
+<li>InnoDB不支持FULLTEXT类型的索引.</li>
+<li>InnoDB中不保存表的具体行数,但是MyISAM只要简单的读出保存好的行数即可.</li>
+<li>MyISAM支持表锁，只有读读之间是并发的，写写之间和读写之间（读和插入之间是可以并发的，去设置concurrent_insert参数，定期执行表优化操作，更新操作就没有办法了）是串行的，所以写起来慢；InnoDB支持行锁，这个一般指的是sql用到索引的时候，行锁是加在索引上的，不是加在数据记录上的，如果sql没有用到索引，仍然会锁定表，普通的select是不需要锁的，当查询的记录遇到锁时，用的是一致性的非锁定快照读，也就是根据数据库隔离级别策略，会去读被锁定行的快照，其它更新或加锁读语句用的是当前读，读取原始行；因为普通读与写不冲突</li>
+<li>MyISAM索引btree上的节点是一个指向数据物理位置的指针，所以查找起来很快；nnodb索引节点存的则是数据的主键，所以需要根据主键二次查找</li>
+<li>因为在使用索引的时候用的是行锁，锁的粒度小，竞争相同锁的情况就少，就增加了并发处理，所以并发读写的效率还是很优秀的，问题在于索引查询后的根据主键的二次查找导致效率低</li>
+</ul>
+<h2 id="数据库设计范式"><a href="#数据库设计范式" class="headerlink" title="数据库设计范式"></a>数据库设计范式</h2><p>第一范式:每个属性都不可再分解<br>第二范式:每个属性都依赖与主键<br>第三范式:除了主键外，其他属性都没有依赖关系</p>
+<h2 id="MYSQL-性能优化"><a href="#MYSQL-性能优化" class="headerlink" title="MYSQL 性能优化"></a>MYSQL 性能优化</h2><ul>
+<li>设计良好的数据库结构选择合适的存储引擎，选择合适的表字段数据类型,允许部分数据冗余（空间换时间）</li>
+<li>适当的添加索引</li>
+<li>优化 sql 语句，不同的语句，根据你选择的引擎、表中数据的分布情况、索引情况、数据库优化策略、查询中的锁策略等因素，最终查询的效率相差很大；优化要从整体去考虑，有时你优化一条语句后，其它查询反而效率被降低了，所以要取一个平衡点</li>
+<li>Cache（缓存数据）<br>  查询：查询之前，要在Memcached或Redis中查找结果，如果找到，则返回它；如果未找到，则到数据库服务器上执行查询，并将结果返回给Memcached或Redis<br>  插入：先把数据插入数据库，在内存中受此影响的数据库将变成无效</li>
+<li>读写分离</li>
+<li>分布数据（分割数据）找规律分表,减少单表中的数据量提高查询速度</li>
+</ul>
+<h2 id="关于缓存"><a href="#关于缓存" class="headerlink" title="关于缓存"></a>关于缓存</h2><ul>
+<li>一般的首页不应当有查询，对首页生成静态页面</li>
+<li>不经常改动的页面,生成静态页面.</li>
+</ul>
+<h2 id="切分"><a href="#切分" class="headerlink" title="切分"></a>切分</h2><ul>
+<li>垂直切分保证业务的独立性，防止不同业务争抢资源，毕竟业务是有优先级的</li>
+<li>切分后也可对不同片数据进行不同优化。如按时间切分，超过一定时间数据不允许修改，就可以引入压缩了，数据传输及读取减少很多</li>
+<li>数据是否存在明显的冷热（考虑旧数据归档）</li>
+</ul>
+<h2 id="MySQL数据库基本的三个优化法则"><a href="#MySQL数据库基本的三个优化法则" class="headerlink" title="MySQL数据库基本的三个优化法则"></a>MySQL数据库基本的三个优化法则</h2><ul>
+<li>系统服务优化，把MySQL的key_buffer、cache_buffer、query_cache等参数提高<br>（sort_buffer_size,read_buffer_size,read_rnd_buffer_size,join_buffer_size ）</li>
+<li>优化SQL语句，减少Ditinct、Group、Join等等语句的操作</li>
+<li>给所有经常查询的字段增加适当的索引</li>
+</ul>
+<h2 id="mysql要注意的地方及技巧"><a href="#mysql要注意的地方及技巧" class="headerlink" title="mysql要注意的地方及技巧"></a>mysql要注意的地方及技巧</h2><ul>
+<li>需要<code>utf8mb4</code>才能显示<code>emoji</code> </li>
+<li>join查询不一定优于子查询</li>
+<li>选取最适用的字段属性,尽可能减少定义字段长度,尽量把字段设置NOT NULL</li>
+<li>GUID替代AutoIncrement作为主键的唯一性保障</li>
+<li>把update和访问频繁的数据cache在内存中</li>
+<li>使用队列，控制消费速度</li>
+<li>只存储英文字母时，该字段可不需要采用utf8, 可选择字符长度更小的字符集</li>
+<li>使用mysql自带的query cache，对应用基本完全透明。但会受限于本机。而且只缓存查询结果，mc和redis可以缓存一些加工后的数据</li>
+</ul>
+<h2 id="不好操作"><a href="#不好操作" class="headerlink" title="不好操作"></a>不好操作</h2><ul>
+<li>主主复制（主键值分配、数据冲突）</li>
+<li>水平分表（如果将来一定会到这个规模，又可能用到，建议越早做越好）</li>
+</ul>
+<h2 id="关于主从复制、读写分离"><a href="#关于主从复制、读写分离" class="headerlink" title="关于主从复制、读写分离"></a>关于主从复制、读写分离</h2><ul>
+<li>增加了数据的冗余备份，提高了可用性</li>
+<li>扩展读</li>
+<li>极大程度的缓解X锁和S锁争用</li>
+<li>从库可配置myisam引擎及其他针对性设置，提升查询性能以及节约系统开销</li>
+<li>主库向从库发送binlog是异步的，从库恢复数据也是异步的</li>
+<li>当节点比较多时，使用多级缓存，减轻主的压力</li>
+<li>读产生了延迟，牺牲了一致性</li>
+</ul>
+<h2 id="关于数据库外键及其他高级特性-触发器、存储过程等"><a href="#关于数据库外键及其他高级特性-触发器、存储过程等" class="headerlink" title="关于数据库外键及其他高级特性(触发器、存储过程等)"></a>关于数据库外键及其他高级特性(触发器、存储过程等)</h2><ul>
+<li>增加数据库负担(外键作用：约束数据库的一致性)</li>
+<li>用户量大，并发度高时数据库很容易成为性能瓶颈</li>
+<li>数据库不容易水平伸缩，应用服务器能轻松地水平伸缩</li>
+<li>将这些特性分离到程序中作为数据逻辑</li>
+<li>不经常改的常数,可使用外键,来记录数据关系.而那些经常更改的,使用更高层的逻辑来记录数据关系.</li>
+</ul>
+<h2 id="mysql-vs-oracle"><a href="#mysql-vs-oracle" class="headerlink" title="mysql vs oracle"></a>mysql vs oracle</h2><ul>
+<li>Oracle目前还是最先进的关系数据库，其传统使用方法：存储使用EMC阵列（容量大，数据安全），IBM服务器，即IOE组合，这三个组合很强大（高可用，高性能），但是也高价格</li>
+<li>MySQL的优势:<ul>
+<li>省去了巨额license费用</li>
+<li>MySQL代码开源，可以根据业务特点定制和优化</li>
+<li>将MySQL运行在普通PC上，硬件费用大大降低</li>
+</ul>
+</li>
+</ul>
+<h2 id="关于-sql-mode"><a href="#关于-sql-mode" class="headerlink" title="关于 sql mode"></a>关于 sql mode</h2><ul>
+<li>查看当前 sql mode: <code>SELECT @@sql_mode</code></li>
+<li>谨慎使用 <code>SET sql_mode = &#39;&#39;</code></li>
+<li><code>SET sql_mode=(SELECT CONCAT(@@sql_mode,&#39;,&lt;mode_to_add&gt;&#39;));</code></li>
+<li><code>SET sql_mode=(SELECT REPLACE(@@sql_mode,&#39;&lt;mode_to_remove&gt;&#39;,&#39;&#39;));</code></li>
+</ul>
+<h3 id="mysql中int、bigint、smallint-和-tinyint的区别与长度的含义"><a href="#mysql中int、bigint、smallint-和-tinyint的区别与长度的含义" class="headerlink" title="mysql中int、bigint、smallint 和 tinyint的区别与长度的含义"></a>mysql中int、bigint、smallint 和 tinyint的区别与长度的含义</h3><ul>
+<li><p>bigint<br>从 -2^63 (-9223372036854775808) 到 2^63-1 (9223372036854775807) 的整型数据（所有数字）。存储大小为 8 个字节。<br>P.S. bigint已经有长度了，在mysql建表中的length，只是用于显示的位数</p>
+</li>
+<li><p>int<br>从 -2^31 (-2,147,483,648) 到 2^31 – 1 (2,147,483,647) 的整型数据（所有数字）。存储大小为 4 个字节。int 的 SQL-92 同义字为 integer。</p>
+</li>
+<li><p>smallint<br>从 -2^15 (-32,768) 到 2^15 – 1 (32,767) 的整型数据。存储大小为 2 个字节。</p>
+</li>
+<li><p>tinyint<br>从 0 到 255 的整型数据。存储大小为 1 字节。<br>int(M) 在 integer 数据类型中，M 表示最大显示宽度。在 int(M) 中，M 的值跟 int(M) 所占多少存储空间并无任何关系。和数字位数也无关系 int(3)、int(4)、int(8) 在磁盘上都是占用 4 btyes 的存储空间。<br>TinyINT(M) always has a range from -128..+127 signed or 0..255 unsigned. M is the display width.</p>
+</li>
+</ul>
+<h3 id="Importance-of-varchar-length-in-MySQL-table"><a href="#Importance-of-varchar-length-in-MySQL-table" class="headerlink" title="Importance of varchar length in MySQL table"></a>Importance of varchar length in MySQL table</h3><p>There’s one possible performance impact: in MySQL, temporary tables and MEMORY tables store a VARCHAR column as a fixed-length column, padded out to its maximum length. If you design VARCHAR columns much larger than the greatest size you need, you will consume more memory than you have to. This affects cache efficiency, sorting speed, etc.</p>
+<p>This is the var (variable) in varchar: you only store what you enter (and an extra 2 bytes to store length upto 65535)</p>
+<p>To be clear: Storing a string 100 characters in a varchar(200) field will take 101 bytes. Storing a string of 100 characters in a varchar(256) field will take 102 bytes. This is why you see varchar(255) so frequently; 255 characters is the longest string you can store in MySQL’s varchar type with only one byte of overhead. Anything larger requires two bytes of overhead. </p>
+<p>varchar(N) N is the number of characters, so varchar(255) charset utf8mb4 would actually use up to 1021 bytes</p>
+<p>Specifically, when doing sorting, larger column do take up more space, so if that hurts performance, then you need to worry about it and make them smaller. But if you only ever select 1 row from that table, then you can just make them all 255 and it won’t matter.</p>
+<p><a href="https://dba.stackexchange.com/questions/76469/mysql-varchar-length-and-performance" target="_blank" rel="external">看看这个</a></p>
+<h2 id="选择合适的-MySQL-日期时间类型来存储你的时间"><a href="#选择合适的-MySQL-日期时间类型来存储你的时间" class="headerlink" title="选择合适的 MySQL 日期时间类型来存储你的时间"></a>选择合适的 MySQL 日期时间类型来存储你的时间</h2><h3 id="范围"><a href="#范围" class="headerlink" title="范围"></a>范围</h3><p>timestamp（1970-2038）<br>datetime （1000-9999）<br>int 是从1970年开始累加的，但是 int 支持的范围是 1901-12-13 到 2038-01-19 03:14:07，如果需要更大的范围需要设置为 bigInt。但是这个时间不包含毫秒，如果需要毫秒，还需要定义为浮点数。<br>datetime 和 timestamp 原生自带6位的微秒。</p>
+<h3 id="用处"><a href="#用处" class="headerlink" title="用处"></a>用处</h3><p>timestamp 是自带时区转换的,可记录经常变化的更新/创建/发布/日志时间/购买时间/登录时间/注册时间等，并且是近来的时间，够用，时区自动处理，比如说做海外购或者业务可能拓展到海外<br>datetime 记录固定时间如服务器执行计划任务时间/健身锻炼计划时间等，在任何时区都是需要一个固定的时间要做某个事情。超出 timestamp 的时间，如果需要时区必须记得时区处理</p>
+<h3 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h3><p>状态值：tinyint；<br>有限范围值：根据范围选择tinyint(不要用enum)，smallint，mediumint ,int, bigint, float, double；<br>从技术上尽可能将字段设置成NOT NULL，但如果业务上要求该字段可以为NULL，而且如果该字段不会被建立索引，则保持NULL，否则可以用’’(空字符串)代替；</p>
+<h3 id="全文索引"><a href="#全文索引" class="headerlink" title="全文索引"></a>全文索引</h3><p>mysql5.6.4支持innodb的全文搜索</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;MySQL存储引擎-MyISAM-和-InnoDB-的区别&quot;&gt;&lt;a href=&quot;#MySQL存储引擎-MyISAM-和-InnoDB-的区别&quot; class=&quot;headerlink&quot; title=&quot;MySQL存储引擎 MyISAM 和 InnoDB 的区别&quot;&gt;&lt;/a
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>面试问题总结</title>
+    <link href="https://entimm.github.io/2016/06/30/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <id>https://entimm.github.io/2016/06/30/面试问题总结/</id>
+    <published>2016-06-30T14:53:48.000Z</published>
+    <updated>2016-08-29T15:05:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="php魔术方法-14项"><a href="#php魔术方法-14项" class="headerlink" title="php魔术方法(14项)"></a>php魔术方法(14项)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">__construct() 实例化类时自动调用.</div><div class="line">__destruct() 类对象使用结束时自动调用.</div><div class="line">__set() 在给未定义的属性赋值的时候调用.</div><div class="line">__get() 调用未定义的属性时候调用.</div><div class="line">__isset() 使用isset()或empty()函数时候会调用.</div><div class="line">__unset() 使用unset()时候会调用.</div><div class="line">__sleep() 使用serialize序列化时候调用.</div><div class="line">__wakeup() 使用unserialize反序列化的时候调用.</div><div class="line">__call() 调用一个不存在的方法的时候调用.</div><div class="line">__callStatic()调用一个不存在的静态方法是调用.</div><div class="line">__toString() 把对象转换成字符串的时候会调用.比如 echo.</div><div class="line">__invoke() 当尝试把对象当方法调用时调用.</div><div class="line">__set_state() 当使用var_export()函数时候调用.接受一个数组参数.</div><div class="line">__clone() 当使用clone复制一个对象时候调用.</div></pre></td></tr></table></figure>
+<h2 id="HTTP协议中几个状态码的含义"><a href="#HTTP协议中几个状态码的含义" class="headerlink" title="HTTP协议中几个状态码的含义."></a>HTTP协议中几个状态码的含义.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">100 Continue  继续,一般在发送post请求时,已发送了http header之后服务端将返回此信息,表示确认,之后发送具体参数信息</div><div class="line">200 OK   正常返回信息</div><div class="line">201 Created  请求成功并且服务器创建了新的资源</div><div class="line">202 Accepted  服务器已接受请求,但尚未处理</div><div class="line">301 Moved Permanently  请求的网页已永久移动到新位置.</div><div class="line">302 Found  临时性重定向.</div><div class="line">303 See Other  临时性重定向,且总是使用 GET 请求新的 URI.</div><div class="line">304 Not Modified  自从上次请求后,请求的网页未修改过.</div><div class="line">400 Bad Request  服务器无法理解请求的格式,客户端不应当尝试再次使用相同的内容发起请求.</div><div class="line">401 Unauthorized  请求未授权.</div><div class="line">403 Forbidden  禁止访问.</div><div class="line">404 Not Found  找不到如何与 URI 相匹配的资源.</div><div class="line">500 Internal Server Error  最常见的服务器端错误.</div><div class="line">503 Service Unavailable 服务器端暂时无法处理请求（可能是过载或维护）.</div><div class="line"></div><div class="line">100 Continue</div><div class="line">101 Switching Protocols</div><div class="line">200 OK</div><div class="line">201 Created</div><div class="line">202 Accepted</div><div class="line">203 Non-Authoritative Information</div><div class="line">204 No Content</div><div class="line">205 Reset Content</div><div class="line">206 Partial Content</div><div class="line">300 Multiple Choices</div><div class="line">301 Moved Permanently</div><div class="line">302 Found</div><div class="line">303 See Other</div><div class="line">304 Not Modified</div><div class="line">305 Use Proxy</div><div class="line">307 Temporary Redirect</div><div class="line">400 Bad Request</div><div class="line">401 Unauthorized</div><div class="line">402 Payment Required</div><div class="line">403 Forbidden</div><div class="line">404 Not Found</div><div class="line">405 Method Not Allowed</div><div class="line">406 Not Acceptable</div><div class="line">407 Proxy Authentication Required</div><div class="line">408 Request Time-out</div><div class="line">409 Conflict</div><div class="line">410 Gone</div><div class="line">411 Length Required</div><div class="line">412 Precondition Failed</div><div class="line">413 Request Entity Too Large</div><div class="line">414 Request-URI Too Large</div><div class="line">415 Unsupported Media Type</div><div class="line">416 Requested range not satisfiable</div><div class="line">417 Expectation Failed</div><div class="line">500 Internal Server Error</div><div class="line">501 Not Implemented</div><div class="line">502 Bad Gateway</div><div class="line">503 Service Unavailable</div><div class="line">504 Gateway Time-out</div><div class="line">505 HTTP Version not supported</div></pre></td></tr></table></figure>
+<h2 id="语句include和require的区别"><a href="#语句include和require的区别" class="headerlink" title="语句include和require的区别"></a>语句include和require的区别</h2><p>在失败的时候：<br><code>include</code> 产生一个 <code>warning</code> ,而 <code>require</code> 直接产生错误中断;</p>
+<p><code>require</code> 在运行前载入;<br><code>include</code> 在运行时载入;</p>
+<p><code>require_once</code> 和 <code>include_once</code> 可以避免重复包含同一文件.</p>
+<p>如果网站框架的设计能避免重复引用的话,推荐用include/require,<br>因为他们比_once速度稍快. </p>
+<h2 id="事务的特征-ACID"><a href="#事务的特征-ACID" class="headerlink" title="事务的特征(ACID)"></a>事务的特征(ACID)</h2><ul>
+<li>原子性(Atomicity) 构成事务的所有事件要么都完成要么都当什么也没发生过</li>
+<li>一致性(Consistency) 事务的结果应该符合预期，不应当超出预期之外导致不合理的结果</li>
+<li>隔离性(Isolation) 未完成的事务应当对其它事务不构成影响</li>
+<li>持久性(Durability) 事务的结果应当被永久保存下来</li>
+</ul>
+<h2 id="TCP传输的三次握手"><a href="#TCP传输的三次握手" class="headerlink" title="TCP传输的三次握手"></a>TCP传输的三次握手</h2><p>发送端首先发送一个带<code>SYN</code>标志的数据包给对方。接收端收到后，回传一个带有<code>SYN/ACK</code>标志的数据包以示确认。<br>最后，发送端再回传一个带<code>ACK</code>标志的数据包，代表“握手”结束。<br>若在握手过程中某个阶段莫名中断，<code>TCP</code>协议会再次以相同的顺序发送相同的数据包。</p>
+<h2 id="断开一个TCP连接则需要”四次握手”"><a href="#断开一个TCP连接则需要”四次握手”" class="headerlink" title="断开一个TCP连接则需要”四次握手”"></a>断开一个TCP连接则需要”四次握手”</h2><ul>
+<li><p>第一次握手：主动关闭方发送一个<code>FIN</code>，用来关闭主动方到被动关闭方的数据传送，也就是主动关闭方告诉被动关闭方：我已经不会再给你发数据了<br>(当然，在fin包之前发送出去的数据，如果没有收到对应的<code>ack</code>确认报文，主动关闭方依然会重发这些数据)，但是，此时主动关闭方还可以接受数据。</p>
+</li>
+<li><p>第二次握手：被动关闭方收到<code>FIN</code>包后，发送一个<code>ACK</code>给对方，确认序号为收到序号<code>+1</code>（与<code>SYN</code>相同，一个<code>FIN</code>占用一个序号）。</p>
+</li>
+<li><p>第三次握手：被动关闭方发送一个<code>FIN</code>，用来关闭被动关闭方到主动关闭方的数据传送，也就是告诉主动关闭方，我的数据也发送完了，不会再给你发数据了。</p>
+</li>
+<li><p>第四次握手：主动关闭方收到<code>FIN</code>后，发送一个<code>ACK</code>给被动关闭方，确认序号为收到序号+1，至此，完成四次挥手。</p>
+</li>
+</ul>
+<h2 id="TCP和UDP的区别"><a href="#TCP和UDP的区别" class="headerlink" title="TCP和UDP的区别"></a>TCP和UDP的区别</h2><p><code>TCP</code>（Transmission Control Protocol，传输控制协议）是基于连接的协议，也就是说，在正式收发数据前，必须和对方建立可靠的连接。一个<code>TCP</code>连接必须要经过三次“对话”才能建立起来</p>
+<p><code>UDP</code>（User Data Protocol，用户数据报协议）是与TCP相对应的协议。它是面向非连接的协议，它不与对方建立连接，而是直接就把数据包发送过去！<br>UDP适用于一次只传送少量数据、对可靠性要求不高的应用环境。</p>
+<h2 id="redis支持的数据类型"><a href="#redis支持的数据类型" class="headerlink" title="redis支持的数据类型"></a>redis支持的数据类型</h2><ul>
+<li>string</li>
+<li>list</li>
+<li>set</li>
+<li>order set</li>
+<li>hash</li>
+</ul>
+<h2 id="asp-php-jsp的优缺点"><a href="#asp-php-jsp的优缺点" class="headerlink" title="asp,php,jsp的优缺点"></a>asp,php,jsp的优缺点</h2><p>asp: 闭源且不跨平台<br>php: 开源且跨平台，简单快速，作为网站初期的首选<br>jsp: </p>
+<p>如果 uid 值为 10,2,5,6,3 的记录存在，那么 select uid from user where uid in (10,2,5,6,3);<br>结果顺序为按 uid 降序排列</p>
+<h2 id="php之multicurl"><a href="#php之multicurl" class="headerlink" title="php之multicurl"></a>php之multicurl</h2><p>multicurl所有的多线程就是异步、网络io支持并发，http请求支持并发<br>pthread是真正正宗的多线程，也是php唯一的多线程</p>
+<h2 id="php优化"><a href="#php优化" class="headerlink" title="php优化"></a>php优化</h2><ul>
+<li>CPU 密集部分用 C++ 或者 C 写 PHP 的扩展模块。</li>
+<li>OPcache 通过将PHP脚本预编译的字节码存储到共享内存中来提升PHP的性能,省去了每次加载和解析PHP脚本的开销。</li>
+</ul>
+<h2 id="php版本的差异"><a href="#php版本的差异" class="headerlink" title="php版本的差异"></a>php版本的差异</h2><ul>
+<li>在 PHP 5.5 之前，empty() 仅支持变量；5.5以后支持表达式了</li>
+</ul>
+<h2 id="教训"><a href="#教训" class="headerlink" title="教训"></a>教训</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">错误的写法</div><div class="line"><span class="keyword">select</span> uid <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">group</span> <span class="keyword">by</span> uid <span class="keyword">where</span> <span class="keyword">count</span>(*) &gt; <span class="number">60</span>;</div><div class="line">`where` 子句后面不能跟聚合条件</div><div class="line">`group by` 应该写在 `where` 子句后面</div><div class="line">这种情况应该用 `having`</div><div class="line"></div><div class="line">正确的写法</div><div class="line"><span class="keyword">select</span> uid <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">group</span> <span class="keyword">by</span> uid <span class="keyword">having</span> <span class="keyword">count</span>(*) &gt; <span class="number">60</span>;</div></pre></td></tr></table></figure>
+<h2 id="get-vs-post"><a href="#get-vs-post" class="headerlink" title="get vs post"></a>get vs post</h2><ul>
+<li>get 数据量长度受限制，这主要是受 url 长度限制</li>
+<li>安全</li>
+<li>get限制表单中数据集的范围为asc2码，而post可以支持整个iso10646字符集</li>
+</ul>
+<h2 id="echo-print-print-r-的区别"><a href="#echo-print-print-r-的区别" class="headerlink" title="echo(),print(),print_r()的区别"></a>echo(),print(),print_r()的区别</h2><p>echo是语言结构，没有返回值<br>print是函数，有返回值<br>print_r是函数，递归调用，用于输出数组对象</p>
+<h2 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h2><p>方法一：php函数跳转,缺点，header头之前不能有输出，跳转后的程序继续执行，可用exit中断执行后面的程序。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Header(<span class="string">"Location: 网址"</span>);     <span class="comment">//直接跳转</span></div><div class="line">header(<span class="string">"refresh:3;url=网址"</span>); <span class="comment">//三秒后跳转</span></div></pre></td></tr></table></figure></p>
+<p>方法二：利用meta<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">echo</span> <span class="string">"&lt;meta http-equiv=refresh content='0; url=网址'&gt;"</span>;</div></pre></td></tr></table></figure></p>
+<h2 id="遍历目录"><a href="#遍历目录" class="headerlink" title="遍历目录"></a>遍历目录</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">loaddir1</span><span class="params">($dirname)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>($handle=opendir($dirname))&#123;</div><div class="line">        <span class="keyword">while</span>(<span class="keyword">false</span>!==($files=readdir($handle)))&#123;</div><div class="line">            <span class="keyword">if</span>($files!=<span class="string">"."</span>&amp;&amp;$files!=<span class="string">".."</span>)&#123;</div><div class="line">                <span class="keyword">if</span>(is_file($dirname.<span class="string">'/'</span>.$files))&#123;</div><div class="line">                    <span class="keyword">echo</span> $dirname.<span class="string">'/'</span>.$files.<span class="string">'&lt;br&gt;'</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span>(is_dir($dirname.<span class="string">"/"</span>.$files))&#123;</div><div class="line">                    loaddir($dirname.<span class="string">"/"</span>.$files);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">loaddir2</span><span class="params">($path)</span></span></div><div class="line">&#123;</div><div class="line">    $files = <span class="keyword">array</span>();</div><div class="line">    <span class="keyword">if</span>($handle = opendir($path))&#123;</div><div class="line">        <span class="keyword">while</span>(($f = readdir($handle)) !== <span class="keyword">false</span>)&#123;</div><div class="line">            $p = $path .<span class="string">'/'</span>. $f;</div><div class="line">            <span class="keyword">if</span>($f == <span class="string">'..'</span> || $f == <span class="string">'.'</span>) <span class="keyword">continue</span>;</div><div class="line">            <span class="keyword">if</span>(is_file($p))&#123;</div><div class="line">                $files[] = $f;</div><div class="line">            &#125;<span class="keyword">elseif</span>(is_dir($p))&#123;</div><div class="line">                $files[$f] = myscandir($p);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        closedir($handle);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> $files;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="限制上传文件大小"><a href="#限制上传文件大小" class="headerlink" title="限制上传文件大小"></a>限制上传文件大小</h2><ul>
+<li>客户端的隐藏域MAX_FILE_SIZE的数值（可以被绕开）。</li>
+<li>服务器端的upload_max_filesize，post_max_size和memory_limit。这几项不能够用脚本来设置。</li>
+</ul>
+<h2 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h2><p>a.删除没有任何订单客户:DELETE FROM customerinfo WHERE customerid NOT in(SELECT customerid FROM orderinfo)<br>b.提取所有没有订单客户:SELECT FROM customerinfo WHERE customerid NOT in(SELECT customerid FROM orderinfo)<br>c.提高b的速度优化:SELECT FROM customerinfo LEFT JOIN orderid ON customerinfo.customerid=orderinfo.customerid<br>WHERE orderinfo.customerid IS NULL</p>
+<h2 id="fopen打开文件"><a href="#fopen打开文件" class="headerlink" title="fopen打开文件"></a>fopen打开文件</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$readcontents = fopen(<span class="string">'http://www.phpres.com/index.html'</span>, <span class="string">'rb'</span>);</div><div class="line">$contents = stream_get_contents($readcontents);</div><div class="line">fclose($readcontents);</div><div class="line"><span class="keyword">echo</span> $contents;</div></pre></td></tr></table></figure>
+<h2 id="char-vs-varchar"><a href="#char-vs-varchar" class="headerlink" title="char vs varchar"></a>char vs varchar</h2><p>Varchar是变长，节省存储空间，char是固定长度。查找效率要char型快，因为varchar是非定长，必须先查找长度，然后进行数据的提取，比char定长类型多了一个步骤，所以效率低一些</p>
+<h2 id="这些这些协议的全称和中文解释（都是工作在应用层）"><a href="#这些这些协议的全称和中文解释（都是工作在应用层）" class="headerlink" title="这些这些协议的全称和中文解释（都是工作在应用层）"></a>这些这些协议的全称和中文解释（都是工作在应用层）</h2><p>SMTP (Simple Mail Transfer Protocol) 简单邮件传输协议<br>POP3 (Post Office Protocol 3) 邮局协议第3版<br>HTTP (Hypertext Transfer Protocol) 超文本传输协议<br>FTP   (File Transfer Protocol）文件传输协议<br>DNS   (Domain Name System and Domain Name Service protocol) 域名系统（服务）协议</p>
+<h2 id="OSI七层网络模型的名称，由下到上"><a href="#OSI七层网络模型的名称，由下到上" class="headerlink" title="OSI七层网络模型的名称，由下到上"></a>OSI七层网络模型的名称，由下到上</h2><p>物理层、数据链路层、网络层、传输层、会话层、表示层、应用层</p>
+<h2 id="find命令和grep命令的区别"><a href="#find命令和grep命令的区别" class="headerlink" title="find命令和grep命令的区别"></a>find命令和grep命令的区别</h2><p>find：按照文件名查找<br>grep：按照文件内容查找</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;php魔术方法-14项&quot;&gt;&lt;a href=&quot;#php魔术方法-14项&quot; class=&quot;headerlink&quot; title=&quot;php魔术方法(14项)&quot;&gt;&lt;/a&gt;php魔术方法(14项)&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;ta
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>docker 技巧</title>
+    <link href="https://entimm.github.io/2016/06/28/docker%E6%8A%80%E5%B7%A7/"/>
+    <id>https://entimm.github.io/2016/06/28/docker技巧/</id>
+    <published>2016-06-28T01:39:42.000Z</published>
+    <updated>2016-08-29T15:09:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="删除-none-tag-镜像"><a href="#删除-none-tag-镜像" class="headerlink" title="删除 none tag 镜像"></a>删除 none tag 镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ocker rmi $(docker images | grep &quot;^&lt;none&gt;&quot; | awk &apos;&#123;print $3&#125;&apos;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rmi $(docker images -q --filter &quot;dangling=true&quot;)</div></pre></td></tr></table></figure>
+<h2 id="删除所有镜像"><a href="#删除所有镜像" class="headerlink" title="删除所有镜像"></a>删除所有镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker images -q | xargs docker rmi</div></pre></td></tr></table></figure>
+<h2 id="删除所有容器"><a href="#删除所有容器" class="headerlink" title="删除所有容器"></a>删除所有容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker ps -q -a | xargs docker rm</div></pre></td></tr></table></figure>
+<h2 id="删除所有停止运行的容器"><a href="#删除所有停止运行的容器" class="headerlink" title="删除所有停止运行的容器"></a>删除所有停止运行的容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rm $( docker ps -q -f status=exited)</div></pre></td></tr></table></figure>
+<h2 id="删除所有-dangling-unused-的镜像"><a href="#删除所有-dangling-unused-的镜像" class="headerlink" title="删除所有 dangling (unused) 的镜像"></a>删除所有 dangling (unused) 的镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rmi $( docker images -q -f dangling=true)</div></pre></td></tr></table></figure>
+<h2 id="xargs-with-–no-run-if-empty-is-even-better-as-it-does-cleanly-handle-the-case-when-there-is-nothing-to-be-removed"><a href="#xargs-with-–no-run-if-empty-is-even-better-as-it-does-cleanly-handle-the-case-when-there-is-nothing-to-be-removed" class="headerlink" title="xargs with –no-run-if-empty is even better as it does cleanly handle the case when there is nothing to be removed."></a>xargs with –no-run-if-empty is even better as it does cleanly handle the case when there is nothing to be removed.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># Delete all stopped containers</div><div class="line">docker ps -q -f status=exited | xargs --no-run-if-empty docker rm</div><div class="line"># Delete all dangling (unused) images</div><div class="line">docker images -q -f dangling=true | xargs --no-run-if-empty docker rmi</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;删除-none-tag-镜像&quot;&gt;&lt;a href=&quot;#删除-none-tag-镜像&quot; class=&quot;headerlink&quot; title=&quot;删除 none tag 镜像&quot;&gt;&lt;/a&gt;删除 none tag 镜像&lt;/h2&gt;&lt;figure class=&quot;highlight 
     
     </summary>
     
@@ -69,6 +732,29 @@
     <summary type="html">
     
       &lt;h2 id=&quot;无障碍使用&quot;&gt;&lt;a href=&quot;#无障碍使用&quot; class=&quot;headerlink&quot; title=&quot;无障碍使用&quot;&gt;&lt;/a&gt;无障碍使用&lt;/h2&gt;&lt;p&gt;使用谷歌搜索的时候，要么无法访问，要么谷歌会将你的 google.com 重定向到具有特定国家或地区后缀的谷歌搜索地
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>macos查看网络端口情况</title>
+    <link href="https://entimm.github.io/2016/06/23/macos%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%BB%9C%E7%AB%AF%E5%8F%A3%E6%83%85%E5%86%B5/"/>
+    <id>https://entimm.github.io/2016/06/23/macos查看网络端口情况/</id>
+    <published>2016-06-23T12:32:41.000Z</published>
+    <updated>2016-08-29T15:11:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="使用-netstat-命令"><a href="#使用-netstat-命令" class="headerlink" title="使用 netstat 命令"></a>使用 <code>netstat</code> 命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -nat | grep &lt;port&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -nat |grep LISTEN</div></pre></td></tr></table></figure>
+<h2 id="使用-lsof-命令"><a href="#使用-lsof-命令" class="headerlink" title="使用 lsof 命令"></a>使用 <code>lsof</code> 命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">lsof -n -P -i TCP -s TCP:LISTEN</div><div class="line"></div><div class="line">-n 表示主机以ip地址显示</div><div class="line">-P 表示端口以数字形式显示，默认为端口名称</div><div class="line">-i 意义较多，具体 man lsof, 主要是用来过滤lsof的输出结果</div><div class="line">-s 和 -i 配合使用，用于过滤输出</div></pre></td></tr></table></figure>
+<h2 id="使用-telnet-命令"><a href="#使用-telnet-命令" class="headerlink" title="使用 telnet 命令"></a>使用 <code>telnet</code> 命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">telnet 127.0.0.1 &lt;port&gt;</div></pre></td></tr></table></figure>
+<h2 id="使用-nc-命令"><a href="#使用-nc-命令" class="headerlink" title="使用 nc 命令"></a>使用 <code>nc</code> 命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">nc  -w &lt;time&gt; -n -z &lt;ip&gt; &lt;port_start-port_end&gt;</div><div class="line"></div><div class="line">-w 表示等待连接时间</div><div class="line">-n 尽量将端口号名称转换为端口号数字</div><div class="line">-z 对需要检查的端口没有输入输出，用于端口扫描模式</div><div class="line">ip 需要检查的ip地址</div><div class="line">port_start-port_end 可以是一个端口，也可以是一段端口,返回结果为开放的端口</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;使用-netstat-命令&quot;&gt;&lt;a href=&quot;#使用-netstat-命令&quot; class=&quot;headerlink&quot; title=&quot;使用 netstat 命令&quot;&gt;&lt;/a&gt;使用 &lt;code&gt;netstat&lt;/code&gt; 命令&lt;/h2&gt;&lt;figure class=&quot;h
     
     </summary>
     
@@ -149,23 +835,121 @@
   </entry>
   
   <entry>
-    <title>很有用的一些技巧</title>
-    <link href="https://entimm.github.io/2016/04/24/%E5%BE%88%E6%9C%89%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/"/>
-    <id>https://entimm.github.io/2016/04/24/很有用的一些技巧/</id>
-    <published>2016-04-23T18:21:39.000Z</published>
-    <updated>2016-08-28T12:19:08.000Z</updated>
+    <title>PHP小提示</title>
+    <link href="https://entimm.github.io/2016/05/11/tip/"/>
+    <id>https://entimm.github.io/2016/05/11/tip/</id>
+    <published>2016-05-10T16:25:07.000Z</published>
+    <updated>2016-08-29T16:37:38.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="在利用-xdebug-和-phpstorm-调试通过终端执行的-PHP-脚本时，在终端执行先语句，即可对该脚本进行调试"><a href="#在利用-xdebug-和-phpstorm-调试通过终端执行的-PHP-脚本时，在终端执行先语句，即可对该脚本进行调试" class="headerlink" title="在利用 xdebug 和 phpstorm 调试通过终端执行的 PHP 脚本时，在终端执行先语句，即可对该脚本进行调试"></a>在利用 xdebug 和 phpstorm 调试通过终端执行的 PHP 脚本时，在终端执行先语句，即可对该脚本进行调试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export XDEBUG_CONFIG = &quot;idekey=PHPSTORM&quot;</div></pre></td></tr></table></figure>
-<h3 id="通过SSH方式登录远程服务器时，通过下面方式免除每次都要输入密码"><a href="#通过SSH方式登录远程服务器时，通过下面方式免除每次都要输入密码" class="headerlink" title="通过SSH方式登录远程服务器时，通过下面方式免除每次都要输入密码"></a>通过SSH方式登录远程服务器时，通过下面方式免除每次都要输入密码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># 先在本机生成 authentication keys，注意不能输入 passphrase</div><div class="line"># 这里假设 A 是本机，B是远端</div><div class="line">a@A:~&gt; ssh-keygen -t rsa</div><div class="line"></div><div class="line"># 然后登录 B，并建立一个目录 ~/.ssh</div><div class="line">a@A:~&gt; ssh b@B mkdir -p .ssh</div><div class="line"></div><div class="line"># 最后把 A 的 id_rsa.pub 追加到 B 的 ~/.ssh/authorized_keys 中去</div><div class="line">a@A:~&gt; cat .ssh/id_rsa.pub | ssh b@B &apos;cat &gt;&gt; .ssh/authorized_keys&apos;</div><div class="line"></div><div class="line"># 然后就成功了</div><div class="line">a@A:~&gt; ssh b@B</div></pre></td></tr></table></figure>
-<h3 id="使用的-PHP-的内建服务器"><a href="#使用的-PHP-的内建服务器" class="headerlink" title="使用的 PHP 的内建服务器"></a>使用的 PHP 的内建服务器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">php -S 主机名或地址@端口号 -t 目录</div></pre></td></tr></table></figure>
-<h3 id="svn-检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用"><a href="#svn-检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用" class="headerlink" title="svn 检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用"></a>svn 检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn update --set-depth immediates</div></pre></td></tr></table></figure>
-<h3 id="git-新建一个全新的空白分支"><a href="#git-新建一个全新的空白分支" class="headerlink" title="git 新建一个全新的空白分支"></a>git 新建一个全新的空白分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git checkout --orphan 分支名</div><div class="line">git clean -f</div></pre></td></tr></table></figure>
-<h3 id="针对手机端-google-chrome-的样式优化（很好看）"><a href="#针对手机端-google-chrome-的样式优化（很好看）" class="headerlink" title="针对手机端 google chrome 的样式优化（很好看）"></a>针对手机端 google chrome 的样式优化（很好看）</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"theme-color"</span> <span class="attr">content</span>=<span class="string">"这里是你的 web 主题颜色"</span>&gt;</span></div></pre></td></tr></table></figure>
+    <content type="html"><![CDATA[<h2 id="关于引用传递"><a href="#关于引用传递" class="headerlink" title="关于引用传递"></a>关于引用传递</h2><p>一般在输出参数有多个的时候可以考虑使用引用</p>
+<h2 id="php中的’0’和javascript中的’0’"><a href="#php中的’0’和javascript中的’0’" class="headerlink" title="php中的’0’和javascript中的’0’"></a>php中的’0’和javascript中的’0’</h2><p>在php和js中转化布尔类型,php中被转换为false,而js中却是true</p>
+<h2 id="strrev"><a href="#strrev" class="headerlink" title="strrev"></a>strrev</h2><p>只能翻转英文</p>
+<h2 id="strlen-与mb-strlen"><a href="#strlen-与mb-strlen" class="headerlink" title="strlen()与mb_strlen()"></a>strlen()与mb_strlen()</h2><p>strlen 计算字符串的字节长度<br>mb_strlen 根据编码计算字符串字符的长度</p>
+<p>gbk 中  一个中文字符2个字节<br>utf8中  一个中文字符3个字节</p>
+<h2 id="变量的引用"><a href="#变量的引用" class="headerlink" title="变量的引用"></a>变量的引用</h2><pre><code>$a = &amp;$b;
+// 不会对$b造成影响
+unset($a);
+</code></pre><h2 id="变量的8种类型"><a href="#变量的8种类型" class="headerlink" title="变量的8种类型"></a>变量的8种类型</h2><p>整型 浮点型 字符串 布尔型 数组 对象 资源 null</p>
+<h2 id="关于时间复杂度"><a href="#关于时间复杂度" class="headerlink" title="关于时间复杂度"></a>关于时间复杂度</h2><p>PHP的时间复杂度还得算上php的自身函数所占用的时间复杂度</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;在利用-xdebug-和-phpstorm-调试通过终端执行的-PHP-脚本时，在终端执行先语句，即可对该脚本进行调试&quot;&gt;&lt;a href=&quot;#在利用-xdebug-和-phpstorm-调试通过终端执行的-PHP-脚本时，在终端执行先语句，即可对该脚本进行调试&quot; 
+      &lt;h2 id=&quot;关于引用传递&quot;&gt;&lt;a href=&quot;#关于引用传递&quot; class=&quot;headerlink&quot; title=&quot;关于引用传递&quot;&gt;&lt;/a&gt;关于引用传递&lt;/h2&gt;&lt;p&gt;一般在输出参数有多个的时候可以考虑使用引用&lt;/p&gt;
+&lt;h2 id=&quot;php中的’0’和javascript中
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>多种方法获取后缀名</title>
+    <link href="https://entimm.github.io/2016/05/09/%E5%A4%9A%E7%A7%8D%E6%96%B9%E6%B3%95%E8%8E%B7%E5%8F%96%E5%90%8E%E7%BC%80%E5%90%8D/"/>
+    <id>https://entimm.github.io/2016/05/09/多种方法获取后缀名/</id>
+    <published>2016-05-09T14:18:00.000Z</published>
+    <updated>2016-08-29T15:48:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext1</span><span class="params">($file_name)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> end(explode(<span class="string">'.'</span>, $file_name));  <span class="comment">// 字符串拆成数组,然后用end内部指针移动到最后一个单元并返回其值</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext2</span><span class="params">($file_name)</span></span></div><div class="line">&#123;</div><div class="line">        <span class="keyword">return</span> strrchr($file_name, <span class="string">'.'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext3</span><span class="params">($file_name)</span></span></div><div class="line">&#123;</div><div class="line">        <span class="keyword">return</span> substr($file_name, strrpos($file_name, <span class="string">'.'</span>));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext4</span><span class="params">($file_name)</span></span></div><div class="line">&#123;</div><div class="line">        <span class="keyword">return</span> array_pop(explode(<span class="string">'.'</span>, $file_name));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext5</span><span class="params">($file_name)</span></span></div><div class="line">&#123;</div><div class="line">        $p = pathinfo($file_name);</div><div class="line">        <span class="keyword">return</span> $p[<span class="string">'extension'</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext6</span><span class="params">($file_name)</span></span></div><div class="line">&#123;</div><div class="line">        <span class="keyword">return</span> strrev(substr(strrev($file_name), <span class="number">0</span>, strpos(strrev($file_name), <span class="string">'.'</span>)));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext7</span><span class="params">($filename)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> strrev(strstr(strrev($file_name), <span class="string">'.'</span>, <span class="keyword">true</span>));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext8</span><span class="params">($flie_name)</span></span></div><div class="line">&#123;</div><div class="line">        $a=strrev($a);    <span class="comment">//反转</span></div><div class="line">        $b=strstr($a, <span class="string">'.'</span>);<span class="comment">//截取第一个.及其后的所有</span></div><div class="line">        $a=str_replace($b, <span class="string">''</span>, $a);<span class="comment">//替换</span></div><div class="line">        $a=strrev($a);</div><div class="line">        <span class="keyword">return</span> $a;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext9</span><span class="params">($file_name)</span></span></div><div class="line">&#123;</div><div class="line">    preg_match(<span class="string">'/^[\w\.-]+(\.[\w]+)$/'</span>, $file_name,$arr);</div><div class="line">    <span class="keyword">return</span> $arr[<span class="number">1</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext10</span><span class="params">($flie_name)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">while</span> (strpos($flie_name, <span class="string">'.'</span>)) &#123;</div><div class="line">            $a = strpos($flie_name, <span class="string">'.'</span>)+<span class="number">1</span>;</div><div class="line">            $flie_name = substr($flie_name, $a);</div><div class="line">    &#125;</div><div class="line">    $ext = $flie_name;</div><div class="line">    <span class="keyword">return</span> $ext;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext11</span><span class="params">($file_name)</span></span></div><div class="line">&#123;</div><div class="line">    $file_name = strrev($file_name);</div><div class="line">    $n = strpos($file_name, <span class="string">'.'</span>);</div><div class="line">    $a = str_split($file_name, $n);</div><div class="line">    <span class="keyword">return</span> strrev($a[<span class="number">0</span>]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>谷歌搜索技巧</title>
+    <link href="https://entimm.github.io/2016/04/27/%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/"/>
+    <id>https://entimm.github.io/2016/04/27/谷歌搜索技巧/</id>
+    <published>2016-04-27T08:36:06.000Z</published>
+    <updated>2016-08-29T14:46:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>用<code>or</code>表达或的意思（空格）</li>
+<li>谷歌会忽略掉一些单词“and”、“the，”、“where”、“how”、“what”、“or”，如果确实要搜索这些单词，应该在这些词前紧跟一个<code>+</code> </li>
+<li>排除一个关键词，应该在这个词前紧跟一个<code>-</code></li>
+<li>搜索近似的关键词,紧跟<code>~</code></li>
+<li>如果是词组，且有严格的顺序，就用引号把它们包起来</li>
+<li>查找相似页面，<code>related:</code>后跟页面url</li>
+<li><code>*</code>通配符</li>
+<li><code>allinanchor</code>限制搜索的词语是网页中链接内包含的关键词（可使用多个关键词）</li>
+<li><code>allintext</code>限制搜索的词语是网页内文包含的关键词（可使用多个关键词）</li>
+<li><code>allintitle</code>限制搜索的词语是网页标题中包含的关键词（可使用多个关键词）</li>
+<li><code>allinurl</code>限制搜索的词语是网页网址中包含的关键词（可使用多个关键词）</li>
+<li><code>filetype</code>限制所搜索的文件一个特定的格式</li>
+<li><code>inanchor</code>限制搜索的词语是网页中链接内包含的关键词</li>
+<li><code>intext</code>限制搜索的词语是网页内文包含的关键词</li>
+<li><code>intitle</code>限制搜索的词语是网页标题中包含的关键词</li>
+<li><code>inurl</code>限制搜索的网页的地址</li>
+<li><code>site</code>限制所进行的搜索在指定的域名或网站内</li>
+<li>限定时间范围如：2014..2016</li>
+<li><code>author</code>指定作者</li>
+<li><code>defind</code>查询字词定义</li>
+<li>数学计算</li>
+<li>单位换算</li>
+<li>货币兑换，<code>usd in rmb</code></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;用&lt;code&gt;or&lt;/code&gt;表达或的意思（空格）&lt;/li&gt;
+&lt;li&gt;谷歌会忽略掉一些单词“and”、“the，”、“where”、“how”、“what”、“or”，如果确实要搜索这些单词，应该在这些词前紧跟一个&lt;code&gt;+&lt;/code&gt; &lt;/li&gt;
+&lt;l
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vagrant 常用操作</title>
+    <link href="https://entimm.github.io/2016/04/24/vagrant/"/>
+    <id>https://entimm.github.io/2016/04/24/vagrant/</id>
+    <published>2016-04-23T18:33:49.000Z</published>
+    <updated>2016-08-29T15:11:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="查看全局状态"><a href="#查看全局状态" class="headerlink" title="查看全局状态"></a>查看全局状态</h2><p>vagrant global-status</p>
+<h2 id="基本安装流程，以centos为例"><a href="#基本安装流程，以centos为例" class="headerlink" title="基本安装流程，以centos为例"></a>基本安装流程，以centos为例</h2><p>vagrant add centos cent.box</p>
+<p>vagrant init centos</p>
+<p>vagrant up</p>
+<p>vagrant ssh</p>
+<h2 id="销毁"><a href="#销毁" class="headerlink" title="销毁"></a>销毁</h2><p>vagrant destroy</p>
+<p>vagrant box remove centos</p>
+<h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><p>vagrant package –output newcentos.box</p>
+<h2 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h2><p>vagrant halt # 关闭虚拟机<br>vagrant reload # 重启虚拟机</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;查看全局状态&quot;&gt;&lt;a href=&quot;#查看全局状态&quot; class=&quot;headerlink&quot; title=&quot;查看全局状态&quot;&gt;&lt;/a&gt;查看全局状态&lt;/h2&gt;&lt;p&gt;vagrant global-status&lt;/p&gt;
+&lt;h2 id=&quot;基本安装流程，以centos为例&quot;&gt;&lt;a
     
     </summary>
     
