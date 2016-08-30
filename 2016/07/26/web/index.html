@@ -8,7 +8,10 @@
     
     <meta name="description" content="js对象的定义是无序属性的集合，其属性可以包含基本值、对象或者函数
 一个Javascript函数也是一个对象，并且，所有的对象从技术上讲也只不过是函数
-123456789var Person=function()&amp;#123;    this.name=&quot;phodal&quot;;    this.weight">
+123456789var Person=function()&amp;#123;    this.name=&quot;phodal&quot;;    this.weight=50;    this.height=166;    this.future=function dream()&amp;#123;        return &quot;future&quot;;    &amp;#125;;&amp;#125;;var person=new Person();
+123456789101112131415var calc=&amp;#123;    add: function(a,b)&amp;#123;        return a+b;    &amp;#125;,    sub: function(a,b)&amp;#123;        return a-b;    &amp;#125;,    dif: function(a,b)&amp;#123;        if(a&amp;gt;b)&amp;#123;            return a;        &amp;#125;else&amp;#123;            return b;        &amp;#125;    &amp;#125;&amp;#125;
+123456789function Calc()&amp;#123;&amp;#125;Calc.prototype.add=function(a,b)&amp;#123;    return a+b;&amp;#125;;Calc.prototype.sub=function(a,b)&amp;#123;    return a-b;&amp;#125;;
+原型继承123456789101112131415var Chinese=function()&amp;#123;    this.country=&quot;China&quot;;&amp;#125;var Person=function(name,weight,height)&amp;#123;    this.name=name;    this.weight=weight;    this.height=height;     this.futrue=function()&amp;#123;        return &quot;future&quot;;    &amp;#125;&amp;#125;Chinese.prototype=new Person();var phodal=new Chinese(&quot;phodal&quot;,50,166);">
     
     
 

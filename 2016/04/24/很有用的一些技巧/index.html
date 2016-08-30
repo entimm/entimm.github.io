@@ -7,7 +7,9 @@
     <meta name="author" content="enjoy">
     
     <meta name="description" content="在利用 xdebug 和 phpstorm 调试通过终端执行的 PHP 脚本时，在终端执行先语句，即可对该脚本进行调试1export XDEBUG_CONFIG = &amp;quot;idekey=PHPSTORM&amp;quot;
-通过SSH方式登录远程服务器时，通过下面方式免除每次都要输入密码1234567">
+通过SSH方式登录远程服务器时，通过下面方式免除每次都要输入密码123456789101112# 先在本机生成 authentication keys，注意不能输入 passphrase# 这里假设 A 是本机，B是远端a@A:~&amp;gt; ssh-keygen -t rsa# 然后登录 B，并建立一个目录 ~/.ssha@A:~&amp;gt; ssh b@B mkdir -p .ssh# 最后把 A 的 id_rsa.pub 追加到 B 的 ~/.ssh/authorized_keys 中去a@A:~&amp;gt; cat .ssh/id_rsa.pub | ssh b@B &amp;apos;cat &amp;gt;&amp;gt; .ssh/authorized_keys&amp;apos;# 然后就成功了a@A:~&amp;gt; ssh b@B
+使用的 PHP 的内建服务器1php -S 主机名或地址@端口号 -t 目录
+svn 检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用">
     
     
 
@@ -99,7 +101,7 @@
         <h1>很有用的一些技巧</h1>
         
         <div class="time-info">
-发表于:<time datetime="2016-04-23T18:21:39.000Z" itemprop="datePublished">2016-04-24</time>，更新于:<time datetime="2016-08-29T14:56:56.000Z" itemprop="dateModified">2016-08-29</time>，By <a href="https://entimm.github.io" title="enjoy">enjoy</a>
+发表于:<time datetime="2016-04-23T18:21:39.000Z" itemprop="datePublished">2016-04-24</time>，更新于:<time datetime="2016-08-30T05:17:39.000Z" itemprop="dateModified">2016-08-30</time>，By <a href="https://entimm.github.io" title="enjoy">enjoy</a>
         </div>
         
         <div class="post-body-inner">

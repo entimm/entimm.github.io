@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://entimm.github.io/"/>
-  <updated>2016-08-30T05:17:46.000Z</updated>
+  <updated>2016-08-30T08:59:07.000Z</updated>
   <id>https://entimm.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://entimm.github.io/2016/08/30/linux/"/>
     <id>https://entimm.github.io/2016/08/30/linux/</id>
     <published>2016-08-30T05:09:18.000Z</published>
-    <updated>2016-08-30T05:17:46.000Z</updated>
+    <updated>2016-08-30T08:59:07.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><h3 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h3><p>/etc/init.d/iptables stop<br>service iptables stop # 停止服务</p>
 <h3 id="查看防火墙信息"><a href="#查看防火墙信息" class="headerlink" title="查看防火墙信息"></a>查看防火墙信息</h3><p>/etc/init.d/iptables status</p>
@@ -28,11 +28,14 @@
 <h3 id="重启防火墙以便改动生效-或者直接重启系统"><a href="#重启防火墙以便改动生效-或者直接重启系统" class="headerlink" title="重启防火墙以便改动生效:(或者直接重启系统)"></a>重启防火墙以便改动生效:(或者直接重启系统)</h3><p>/etc/init.d/iptables restart</p>
 <h3 id="将更改进行保存"><a href="#将更改进行保存" class="headerlink" title="将更改进行保存"></a>将更改进行保存</h3><p>/etc/rc.d/init.d/iptables save</p>
 <p>另外直接在/etc/sysconfig/iptables中增加一行：<br>-A RH-Firewall-1-INPUT -m state –state NEW -m tcp -p tcp –dport 8080 -j ACCEPT</p>
-]]></content>
+<h2 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h2>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;防火墙&quot;&gt;&lt;a href=&quot;#防火墙&quot; class=&quot;headerlink&quot; title=&quot;防火墙&quot;&gt;&lt;/a&gt;防火墙&lt;/h2&gt;&lt;h3 id=&quot;关闭防火墙&quot;&gt;&lt;a href=&quot;#关闭防火墙&quot; class=&quot;headerlink&quot; title=&quot;关闭防火墙&quot;&gt;&lt;/a&gt;
+      &lt;h2 id=&quot;防火墙&quot;&gt;&lt;a href=&quot;#防火墙&quot; class=&quot;headerlink&quot; title=&quot;防火墙&quot;&gt;&lt;/a&gt;防火墙&lt;/h2&gt;&lt;h3 id=&quot;关闭防火墙&quot;&gt;&lt;a href=&quot;#关闭防火墙&quot; class=&quot;headerlink&quot; title=&quot;关闭防火墙&quot;&gt;&lt;/a&gt;关闭防火墙&lt;/h3&gt;&lt;p&gt;/etc/init.d/iptables stop&lt;br&gt;service iptables stop # 停止服务&lt;/p&gt;
+&lt;h3 id=&quot;查看防火墙信息&quot;&gt;&lt;a href=&quot;#查看防火墙信息&quot; class=&quot;headerlink&quot; title=&quot;查看防火墙信息&quot;&gt;&lt;/a&gt;查看防火墙信息&lt;/h3&gt;&lt;p&gt;/etc/init.d/iptables status&lt;/p&gt;
+&lt;h3 id=&quot;开放端口-8080&quot;&gt;&lt;a href=&quot;#开放端口-8080&quot; class=&quot;headerlink&quot; title=&quot;开放端口:8080&quot;&gt;&lt;/a&gt;开放端口:8080&lt;/h3&gt;&lt;p&gt;/sbin/iptables -I INPUT -p tcp –dport 8080 -j ACCEPT&lt;/p&gt;
+
     
     </summary>
     
@@ -44,7 +47,7 @@
     <link href="https://entimm.github.io/2016/08/29/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     <id>https://entimm.github.io/2016/08/29/快捷键/</id>
     <published>2016-08-29T14:47:20.000Z</published>
-    <updated>2016-08-29T14:50:37.000Z</updated>
+    <updated>2016-08-30T05:17:37.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h3><p>CMD-Shift-3<br>    全屏截图</p>
 <p>CMD-Shift-4<br>    区域截图：选区<br>    ⇧Shift － 重新定义截图区域的纵向高度或横向长度，不能同时实现。<br>    ⌥Option － 重新定义截图区域的尺寸，可以同时实现纵向和横向的改变，但只能围绕中心区域展开。<br>    ⌴空格键 － 按住并拖动鼠标，可以移动截图选框位置。<br>    Escape(Esc)键 － 退出截图模式。</p>
@@ -80,7 +83,9 @@
     <summary type="html">
     
       &lt;h3 id=&quot;mac&quot;&gt;&lt;a href=&quot;#mac&quot; class=&quot;headerlink&quot; title=&quot;mac&quot;&gt;&lt;/a&gt;mac&lt;/h3&gt;&lt;p&gt;CMD-Shift-3&lt;br&gt;    全屏截图&lt;/p&gt;
-&lt;p&gt;CMD-Shift-4&lt;br&gt;    区域截图：选区&lt;br&gt;    ⇧
+&lt;p&gt;CMD-Shift-4&lt;br&gt;    区域截图：选区&lt;br&gt;    ⇧Shift － 重新定义截图区域的纵向高度或横向长度，不能同时实现。&lt;br&gt;    ⌥Option － 重新定义截图区域的尺寸，可以同时实现纵向和横向的改变，但只能围绕中心区域展开。&lt;br&gt;    ⌴空格键 － 按住并拖动鼠标，可以移动截图选框位置。&lt;br&gt;    Escape(Esc)键 － 退出截图模式。&lt;/p&gt;
+&lt;p&gt;CMD-Shift-4 + 空格键&lt;br&gt;    区域截图：窗口&lt;/p&gt;
+
     
     </summary>
     
@@ -92,7 +97,7 @@
     <link href="https://entimm.github.io/2016/08/28/hello-world/"/>
     <id>https://entimm.github.io/2016/08/28/hello-world/</id>
     <published>2016-08-28T05:19:31.000Z</published>
-    <updated>2016-08-28T05:19:31.000Z</updated>
+    <updated>2016-08-30T05:17:14.000Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
@@ -107,7 +112,10 @@
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo server&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -139,7 +147,7 @@
     <link href="https://entimm.github.io/2016/08/06/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/"/>
     <id>https://entimm.github.io/2016/08/06/代码片段/</id>
     <published>2016-08-06T06:26:44.000Z</published>
-    <updated>2016-08-29T16:30:22.000Z</updated>
+    <updated>2016-08-30T05:17:42.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="utf-8"><a href="#utf-8" class="headerlink" title="utf-8"></a>utf-8</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">'Content-Type'</span> <span class="attr">content</span>=<span class="string">'text/html; charset=utf-8'</span> /&gt;</span></div></pre></td></tr></table></figure>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">header(<span class="string">"Content-Type: text/html;charset=utf-8"</span>);</div></pre></td></tr></table></figure>
@@ -159,7 +167,7 @@
     <link href="https://entimm.github.io/2016/08/04/laravel/"/>
     <id>https://entimm.github.io/2016/08/04/laravel/</id>
     <published>2016-08-04T13:56:29.000Z</published>
-    <updated>2016-08-30T05:14:07.000Z</updated>
+    <updated>2016-08-30T05:19:11.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="关于laravel的性能"><a href="#关于laravel的性能" class="headerlink" title="关于laravel的性能"></a>关于laravel的性能</h3><p>如果你在一个 Start Up 的话, 要求快速上线, 快速验证自己的想法, 高级语言之所以高级, 就是因为开发便捷性, 这个时候开发速度是最重要的, 你产品做了三个月, 甚至半年的, 但是, 你的对手可能用了几天时间一个原型就出来了, 几个星期就验证了 idea, 然后一边找风头, 一个月的时间内, 几百万美元的投资协议就签下, 随着后面的产品快速迭代, 迅速推出新的功能, 受到用户的喜爱, 几个月后, 用户量上好几百万, 然后, A 轮上千万美元的融资也下来了, 这个时候有负载问题, 有并发问题, 但是, 这个时候, 有了那么多钱, 并发真的需要那么担心吗? 年薪 50w ~ 100w, 请几个专家过来, 编译器都能给你重写.</p>
 <p>使用 ROR 的 Twitter, 使用 PHP 的 Facebook, 都是非常好的证明: “性能不是一个 Start Up 应该太担心的问题, 产品, 用户体验!</p>
@@ -171,7 +179,10 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;关于laravel的性能&quot;&gt;&lt;a href=&quot;#关于laravel的性能&quot; class=&quot;headerlink&quot; title=&quot;关于laravel的性能&quot;&gt;&lt;/a&gt;关于laravel的性能&lt;/h3&gt;&lt;p&gt;如果你在一个 Start Up 的话, 要求快速上线, 快速
+      &lt;h3 id=&quot;关于laravel的性能&quot;&gt;&lt;a href=&quot;#关于laravel的性能&quot; class=&quot;headerlink&quot; title=&quot;关于laravel的性能&quot;&gt;&lt;/a&gt;关于laravel的性能&lt;/h3&gt;&lt;p&gt;如果你在一个 Start Up 的话, 要求快速上线, 快速验证自己的想法, 高级语言之所以高级, 就是因为开发便捷性, 这个时候开发速度是最重要的, 你产品做了三个月, 甚至半年的, 但是, 你的对手可能用了几天时间一个原型就出来了, 几个星期就验证了 idea, 然后一边找风头, 一个月的时间内, 几百万美元的投资协议就签下, 随着后面的产品快速迭代, 迅速推出新的功能, 受到用户的喜爱, 几个月后, 用户量上好几百万, 然后, A 轮上千万美元的融资也下来了, 这个时候有负载问题, 有并发问题, 但是, 这个时候, 有了那么多钱, 并发真的需要那么担心吗? 年薪 50w ~ 100w, 请几个专家过来, 编译器都能给你重写.&lt;/p&gt;
+&lt;p&gt;使用 ROR 的 Twitter, 使用 PHP 的 Facebook, 都是非常好的证明: “性能不是一个 Start Up 应该太担心的问题, 产品, 用户体验!&lt;/p&gt;
+&lt;p&gt;至于这个, 例如对于 Web 前端页面, 加个 CDN, 服务器端加个 Cache, 优化下 SQL, 负载均衡, PHP 加个 OpCache这些得到的程序总体性能随随便便就是编译器优化的无数倍.&lt;/p&gt;
+&lt;p&gt;生产环境下的 Laravel 调优: 减少 providers 的加载&lt;/p&gt;
     
     </summary>
     
@@ -183,7 +194,7 @@
     <link href="https://entimm.github.io/2016/08/04/%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
     <id>https://entimm.github.io/2016/08/04/高并发/</id>
     <published>2016-08-04T13:53:43.000Z</published>
-    <updated>2016-08-29T15:36:54.000Z</updated>
+    <updated>2016-08-30T05:17:26.000Z</updated>
     
     <content type="html"><![CDATA[<p>就是在update时，代入之前的库存作为条件，如：<br>update stocks set count=count-1 where count=20 and productid=xxxx</p>
 <p>用同步队列，就可以实现。库存比如是1000，那就存1000个随机数到队列中，拿到随机数的人去换取真实的商品。这样数据库的压力都小。最多更新1000次。队列可以系统加载时创建，也可以做为持久化保存在文件中。</p>
@@ -199,7 +210,12 @@
     <summary type="html">
     
       &lt;p&gt;就是在update时，代入之前的库存作为条件，如：&lt;br&gt;update stocks set count=count-1 where count=20 and productid=xxxx&lt;/p&gt;
-&lt;p&gt;用同步队列，就可以实现。库存比如是1000，那就存1000个随机数到队
+&lt;p&gt;用同步队列，就可以实现。库存比如是1000，那就存1000个随机数到队列中，拿到随机数的人去换取真实的商品。这样数据库的压力都小。最多更新1000次。队列可以系统加载时创建，也可以做为持久化保存在文件中。&lt;/p&gt;
+&lt;h2 id=&quot;关于库存和秒杀的解决方案&quot;&gt;&lt;a href=&quot;#关于库存和秒杀的解决方案&quot; class=&quot;headerlink&quot; title=&quot;关于库存和秒杀的解决方案&quot;&gt;&lt;/a&gt;关于库存和秒杀的解决方案&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;用额外的单进程处理一个队列，下单请求放到队列里，一个个处理，就不会有并发的问题了，但是要额外的后台进程以及延迟问题，不予考虑。&lt;/li&gt;
+&lt;li&gt;根据update结果来判断，我们可以在sql2的时候加一个判断条件update … where 库存&amp;gt;0，如果返回false，则说明库存不足，并回滚事务。&lt;/li&gt;
+&lt;li&gt;借助文件排他锁，在处理下单请求的时候，用flock锁定一个文件，如果锁定失败说明有其他订单正在处理，此时要么等待要么直接提示用户”服务器繁忙”&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
@@ -378,7 +394,11 @@ Windows/Linux: Ctrl+Alt+N
     <summary type="html">
     
       &lt;h3 id=&quot;js对象的定义是&quot;&gt;&lt;a href=&quot;#js对象的定义是&quot; class=&quot;headerlink&quot; title=&quot;js对象的定义是&quot;&gt;&lt;/a&gt;js对象的定义是&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;无序属性的集合，其属性可以包含基本值、对象或者函数
-一个Javascript
+一个Javascript函数也是一个对象，并且，所有的对象从技术上讲也只不过是函数
+&lt;/code&gt;&lt;/pre&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; Person=&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name=&lt;span class=&quot;string&quot;&gt;&quot;phodal&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.weight=&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.height=&lt;span class=&quot;number&quot;&gt;166&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.future=&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;dream&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;future&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; person=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Person();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; calc=&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    add: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;a,b&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a+b;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    sub: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;a,b&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a-b;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    dif: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;a,b&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;(a&amp;gt;b)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; b;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Calc&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Calc.prototype.add=&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;a,b&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a+b;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Calc.prototype.sub=&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;a,b&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; a-b;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;原型继承&quot;&gt;&lt;a href=&quot;#原型继承&quot; class=&quot;headerlink&quot; title=&quot;原型继承&quot;&gt;&lt;/a&gt;原型继承&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; Chinese=&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.country=&lt;span class=&quot;string&quot;&gt;&quot;China&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; Person=&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;name,weight,height&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.name=name;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.weight=weight;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.height=height; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.futrue=&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;future&quot;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Chinese.prototype=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Person();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; phodal=&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Chinese(&lt;span class=&quot;string&quot;&gt;&quot;phodal&quot;&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;166&lt;/span&gt;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -414,7 +434,10 @@ Windows/Linux: Ctrl+Alt+N
     <summary type="html">
     
       &lt;h3 id=&quot;https&quot;&gt;&lt;a href=&quot;#https&quot; class=&quot;headerlink&quot; title=&quot;https&quot;&gt;&lt;/a&gt;https&lt;/h3&gt;&lt;p&gt;http 协议下的网络连接都是基于明文的，信息很有可能被泄露篡改&lt;br&gt;理论上 https 是安全的&lt;/p&gt;
-&lt;h3
+&lt;h3 id=&quot;XSS-Cross-Site-Script&quot;&gt;&lt;a href=&quot;#XSS-Cross-Site-Script&quot; class=&quot;headerlink&quot; title=&quot;XSS(Cross-Site Script)&quot;&gt;&lt;/a&gt;XSS(Cross-Site Script)&lt;/h3&gt;&lt;p&gt;跨站脚本攻击本质上是一种注入攻击&lt;br&gt;简单的说就是利用各种手段把恶意代码添加到网页中，并让受害者执行这段脚本。 XSS 的例子只要百度一下有很多。 XSS 能做用户使用浏览器能做的一切事情。可以看到同源策略无法保证不受 XSS 攻击，因为此时攻击者就在同源之内。&lt;/p&gt;
+&lt;p&gt;可以分为以下两类：&lt;br&gt;client(客户端型)&lt;br&gt;server(服务端型)&lt;br&gt;当一端 XSS 代码是在服务端被插入的，那么这就是服务端型 XSS ，同理，如果代码在客户端插入，就是客户端型 XSS 。&lt;/p&gt;
+&lt;p&gt;其实只要做好无论任何情况下保证代码不被执行就能完全杜绝 XSS 攻击&lt;br&gt;任何时候都不要把不受信任的数据直接插入到 dom 中的任何位置,一定要做转义。&lt;/p&gt;
+
     
     </summary>
     
@@ -426,7 +449,7 @@ Windows/Linux: Ctrl+Alt+N
     <link href="https://entimm.github.io/2016/07/16/%E9%AB%98%E7%BA%A7PHP/"/>
     <id>https://entimm.github.io/2016/07/16/高级PHP/</id>
     <published>2016-07-16T02:35:00.000Z</published>
-    <updated>2016-08-29T16:36:03.000Z</updated>
+    <updated>2016-08-30T05:17:24.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="面向对象5原则"><a href="#面向对象5原则" class="headerlink" title="面向对象5原则"></a>面向对象5原则</h2><h3 id="单一职责原则（single-resposibility-principle）"><a href="#单一职责原则（single-resposibility-principle）" class="headerlink" title="单一职责原则（single-resposibility principle）"></a>单一职责原则（single-resposibility principle）</h3><p>其核心思想为：一个类，最好只做一件事，只有一个引起它的变化的原因</p>
 <h3 id="开放-封闭原则（The-Open-Close-principle）"><a href="#开放-封闭原则（The-Open-Close-principle）" class="headerlink" title="开放-封闭原则（The Open-Close principle）"></a>开放-封闭原则（The Open-Close principle）</h3><p>其核心思想为：对扩展开放，对修改封闭<br>软件实体（类、模块、函数）应该是可扩展的，但是不可修改的。也就是说，对于扩展是开放的，对于更改是封闭的。怎样可能在不改动模块源代码的情况下去更改它的行为呢？怎样才能在无需对模块进行改动的情况下改变它的功能呢？关键是抽象！因此在进行面向对象设计时要尽量考虑接口封装机制、抽象机制和多态技术。该原则同样适合于非面向对象的方法，是软件工程设计方法的重要原则之一</p>
@@ -467,7 +490,10 @@ Windows/Linux: Ctrl+Alt+N
     
     <summary type="html">
     
-      &lt;h2 id=&quot;面向对象5原则&quot;&gt;&lt;a href=&quot;#面向对象5原则&quot; class=&quot;headerlink&quot; title=&quot;面向对象5原则&quot;&gt;&lt;/a&gt;面向对象5原则&lt;/h2&gt;&lt;h3 id=&quot;单一职责原则（single-resposibility-principle）&quot;&gt;&lt;a hr
+      &lt;h2 id=&quot;面向对象5原则&quot;&gt;&lt;a href=&quot;#面向对象5原则&quot; class=&quot;headerlink&quot; title=&quot;面向对象5原则&quot;&gt;&lt;/a&gt;面向对象5原则&lt;/h2&gt;&lt;h3 id=&quot;单一职责原则（single-resposibility-principle）&quot;&gt;&lt;a href=&quot;#单一职责原则（single-resposibility-principle）&quot; class=&quot;headerlink&quot; title=&quot;单一职责原则（single-resposibility principle）&quot;&gt;&lt;/a&gt;单一职责原则（single-resposibility principle）&lt;/h3&gt;&lt;p&gt;其核心思想为：一个类，最好只做一件事，只有一个引起它的变化的原因&lt;/p&gt;
+&lt;h3 id=&quot;开放-封闭原则（The-Open-Close-principle）&quot;&gt;&lt;a href=&quot;#开放-封闭原则（The-Open-Close-principle）&quot; class=&quot;headerlink&quot; title=&quot;开放-封闭原则（The Open-Close principle）&quot;&gt;&lt;/a&gt;开放-封闭原则（The Open-Close principle）&lt;/h3&gt;&lt;p&gt;其核心思想为：对扩展开放，对修改封闭&lt;br&gt;软件实体（类、模块、函数）应该是可扩展的，但是不可修改的。也就是说，对于扩展是开放的，对于更改是封闭的。怎样可能在不改动模块源代码的情况下去更改它的行为呢？怎样才能在无需对模块进行改动的情况下改变它的功能呢？关键是抽象！因此在进行面向对象设计时要尽量考虑接口封装机制、抽象机制和多态技术。该原则同样适合于非面向对象的方法，是软件工程设计方法的重要原则之一&lt;/p&gt;
+&lt;h3 id=&quot;Liskov-替换原则（liskov-substitution-principle）&quot;&gt;&lt;a href=&quot;#Liskov-替换原则（liskov-substitution-principle）&quot; class=&quot;headerlink&quot; title=&quot;Liskov 替换原则（liskov-substitution principle）&quot;&gt;&lt;/a&gt;Liskov 替换原则（liskov-substitution principle）&lt;/h3&gt;&lt;p&gt;其核心思想：子类必须能够替换其基类&lt;br&gt;子类应当可以替换父类出现在父类能够出现的任何地方&lt;/p&gt;
+
     
     </summary>
     
@@ -479,7 +505,7 @@ Windows/Linux: Ctrl+Alt+N
     <link href="https://entimm.github.io/2016/07/16/%E9%9D%A2%E8%AF%95%E5%8F%AF%E8%83%BD%E4%BC%9A%E9%97%AE%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>https://entimm.github.io/2016/07/16/面试可能会问到的问题/</id>
     <published>2016-07-16T01:20:04.000Z</published>
-    <updated>2016-08-29T15:33:25.000Z</updated>
+    <updated>2016-08-30T05:17:33.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="抽象-vs-接口"><a href="#抽象-vs-接口" class="headerlink" title="抽象 vs 接口"></a>抽象 vs 接口</h3><p>抽象类是一种不能被实例化的类，只能作为其他类的父类来使用。<br>抽象类是通过关键字 abstract 来声明的。<br>抽象类与普通类相似，都包含成员变量和成员方法，两者的区别在于，抽象类中至少要包含一个抽象方法，<br>抽象方法没有方法体，该方法天生就是要被子类重写的。<br>抽象方法的格式为：abstract function abstractMethod();</p>
 <p>因为php中只支持单继承，如果想实现多重继承，就要使用接口。也就是说子类可以实现多个接口。<br>接口是通过interface关键字来声明的，接口中的成员常量和方法都是public的，方法可以不写关键字public，<br>接口中的方法也是没有方法体。接口中的方法也天生就是要被子类实现的。</p>
@@ -527,7 +553,15 @@ strcasecmp();--比较字符串函数
     
     <summary type="html">
     
-      &lt;h3 id=&quot;抽象-vs-接口&quot;&gt;&lt;a href=&quot;#抽象-vs-接口&quot; class=&quot;headerlink&quot; title=&quot;抽象 vs 接口&quot;&gt;&lt;/a&gt;抽象 vs 接口&lt;/h3&gt;&lt;p&gt;抽象类是一种不能被实例化的类，只能作为其他类的父类来使用。&lt;br&gt;抽象类是通过关键字 abs
+      &lt;h3 id=&quot;抽象-vs-接口&quot;&gt;&lt;a href=&quot;#抽象-vs-接口&quot; class=&quot;headerlink&quot; title=&quot;抽象 vs 接口&quot;&gt;&lt;/a&gt;抽象 vs 接口&lt;/h3&gt;&lt;p&gt;抽象类是一种不能被实例化的类，只能作为其他类的父类来使用。&lt;br&gt;抽象类是通过关键字 abstract 来声明的。&lt;br&gt;抽象类与普通类相似，都包含成员变量和成员方法，两者的区别在于，抽象类中至少要包含一个抽象方法，&lt;br&gt;抽象方法没有方法体，该方法天生就是要被子类重写的。&lt;br&gt;抽象方法的格式为：abstract function abstractMethod();&lt;/p&gt;
+&lt;p&gt;因为php中只支持单继承，如果想实现多重继承，就要使用接口。也就是说子类可以实现多个接口。&lt;br&gt;接口是通过interface关键字来声明的，接口中的成员常量和方法都是public的，方法可以不写关键字public，&lt;br&gt;接口中的方法也是没有方法体。接口中的方法也天生就是要被子类实现的。&lt;/p&gt;
+&lt;p&gt;抽象类和接口实现的功能十分相似，最大的不同是接口能实现多继承。在应用中选择抽象类还是接口要看具体实现。&lt;br&gt;子类继承抽象类使用extends，子类实现接口使用implements。&lt;/p&gt;
+&lt;h3 id=&quot;文件上传注意事项&quot;&gt;&lt;a href=&quot;#文件上传注意事项&quot; class=&quot;headerlink&quot; title=&quot;文件上传注意事项&quot;&gt;&lt;/a&gt;文件上传注意事项&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;首现要在php.ini中开启文件上传；&lt;/li&gt;
+&lt;li&gt;在php.ini中有一个允许上传的最大值，默认是2MB。必要的时候可以更改；&lt;/li&gt;
+&lt;li&gt;上传表单一定要记住在form标签中写上enctype=”multipart/form-data”；&lt;/li&gt;
+&lt;/ol&gt;
+
     
     </summary>
     
@@ -661,7 +695,24 @@ strcasecmp();--比较字符串函数
     
     <summary type="html">
     
-      &lt;h2 id=&quot;MySQL存储引擎-MyISAM-和-InnoDB-的区别&quot;&gt;&lt;a href=&quot;#MySQL存储引擎-MyISAM-和-InnoDB-的区别&quot; class=&quot;headerlink&quot; title=&quot;MySQL存储引擎 MyISAM 和 InnoDB 的区别&quot;&gt;&lt;/a
+      &lt;h2 id=&quot;MySQL存储引擎-MyISAM-和-InnoDB-的区别&quot;&gt;&lt;a href=&quot;#MySQL存储引擎-MyISAM-和-InnoDB-的区别&quot; class=&quot;headerlink&quot; title=&quot;MySQL存储引擎 MyISAM 和 InnoDB 的区别&quot;&gt;&lt;/a&gt;MySQL存储引擎 MyISAM 和 InnoDB 的区别&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;MyISAM类型不支持事务处理等高级处理,而InnoDB类型支持.&lt;/li&gt;
+&lt;li&gt;InnoDB不支持FULLTEXT类型的索引.&lt;/li&gt;
+&lt;li&gt;InnoDB中不保存表的具体行数,但是MyISAM只要简单的读出保存好的行数即可.&lt;/li&gt;
+&lt;li&gt;MyISAM支持表锁，只有读读之间是并发的，写写之间和读写之间（读和插入之间是可以并发的，去设置concurrent_insert参数，定期执行表优化操作，更新操作就没有办法了）是串行的，所以写起来慢；InnoDB支持行锁，这个一般指的是sql用到索引的时候，行锁是加在索引上的，不是加在数据记录上的，如果sql没有用到索引，仍然会锁定表，普通的select是不需要锁的，当查询的记录遇到锁时，用的是一致性的非锁定快照读，也就是根据数据库隔离级别策略，会去读被锁定行的快照，其它更新或加锁读语句用的是当前读，读取原始行；因为普通读与写不冲突&lt;/li&gt;
+&lt;li&gt;MyISAM索引btree上的节点是一个指向数据物理位置的指针，所以查找起来很快；nnodb索引节点存的则是数据的主键，所以需要根据主键二次查找&lt;/li&gt;
+&lt;li&gt;因为在使用索引的时候用的是行锁，锁的粒度小，竞争相同锁的情况就少，就增加了并发处理，所以并发读写的效率还是很优秀的，问题在于索引查询后的根据主键的二次查找导致效率低&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;数据库设计范式&quot;&gt;&lt;a href=&quot;#数据库设计范式&quot; class=&quot;headerlink&quot; title=&quot;数据库设计范式&quot;&gt;&lt;/a&gt;数据库设计范式&lt;/h2&gt;&lt;p&gt;第一范式:每个属性都不可再分解&lt;br&gt;第二范式:每个属性都依赖与主键&lt;br&gt;第三范式:除了主键外，其他属性都没有依赖关系&lt;/p&gt;
+&lt;h2 id=&quot;MYSQL-性能优化&quot;&gt;&lt;a href=&quot;#MYSQL-性能优化&quot; class=&quot;headerlink&quot; title=&quot;MYSQL 性能优化&quot;&gt;&lt;/a&gt;MYSQL 性能优化&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;设计良好的数据库结构选择合适的存储引擎，选择合适的表字段数据类型,允许部分数据冗余（空间换时间）&lt;/li&gt;
+&lt;li&gt;适当的添加索引&lt;/li&gt;
+&lt;li&gt;优化 sql 语句，不同的语句，根据你选择的引擎、表中数据的分布情况、索引情况、数据库优化策略、查询中的锁策略等因素，最终查询的效率相差很大；优化要从整体去考虑，有时你优化一条语句后，其它查询反而效率被降低了，所以要取一个平衡点&lt;/li&gt;
+&lt;li&gt;Cache（缓存数据）&lt;br&gt;  查询：查询之前，要在Memcached或Redis中查找结果，如果找到，则返回它；如果未找到，则到数据库服务器上执行查询，并将结果返回给Memcached或Redis&lt;br&gt;  插入：先把数据插入数据库，在内存中受此影响的数据库将变成无效&lt;/li&gt;
+&lt;li&gt;读写分离&lt;/li&gt;
+&lt;li&gt;分布数据（分割数据）找规律分表,减少单表中的数据量提高查询速度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;关于缓存&quot;&gt;&lt;a href=&quot;#关于缓存&quot; class=&quot;headerlink&quot; title=&quot;关于缓存&quot;&gt;&lt;/a&gt;关于缓存&lt;/h2&gt;
     
     </summary>
     
@@ -741,7 +792,10 @@ strcasecmp();--比较字符串函数
     
     <summary type="html">
     
-      &lt;h2 id=&quot;php魔术方法-14项&quot;&gt;&lt;a href=&quot;#php魔术方法-14项&quot; class=&quot;headerlink&quot; title=&quot;php魔术方法(14项)&quot;&gt;&lt;/a&gt;php魔术方法(14项)&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;ta
+      &lt;h2 id=&quot;php魔术方法-14项&quot;&gt;&lt;a href=&quot;#php魔术方法-14项&quot; class=&quot;headerlink&quot; title=&quot;php魔术方法(14项)&quot;&gt;&lt;/a&gt;php魔术方法(14项)&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;__construct() 实例化类时自动调用.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;__destruct() 类对象使用结束时自动调用.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;__set() 在给未定义的属性赋值的时候调用.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;__get() 调用未定义的属性时候调用.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;__isset() 使用isset()或empty()函数时候会调用.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;__unset() 使用unset()时候会调用.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;__sleep() 使用serialize序列化时候调用.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;__wakeup() 使用unserialize反序列化的时候调用.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;__call() 调用一个不存在的方法的时候调用.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;__callStatic()调用一个不存在的静态方法是调用.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;__toString() 把对象转换成字符串的时候会调用.比如 echo.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;__invoke() 当尝试把对象当方法调用时调用.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;__set_state() 当使用var_export()函数时候调用.接受一个数组参数.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;__clone() 当使用clone复制一个对象时候调用.&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;HTTP协议中几个状态码的含义&quot;&gt;&lt;a href=&quot;#HTTP协议中几个状态码的含义&quot; class=&quot;headerlink&quot; title=&quot;HTTP协议中几个状态码的含义.&quot;&gt;&lt;/a&gt;HTTP协议中几个状态码的含义.&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;34&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;35&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;36&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;37&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;38&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;39&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;40&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;41&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;42&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;43&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;44&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;45&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;46&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;47&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;48&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;49&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;50&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;51&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;52&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;53&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;54&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;55&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;100 Continue  继续,一般在发送post请求时,已发送了http header之后服务端将返回此信息,表示确认,之后发送具体参数信息&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;200 OK   正常返回信息&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;201 Created  请求成功并且服务器创建了新的资源&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;202 Accepted  服务器已接受请求,但尚未处理&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;301 Moved Permanently  请求的网页已永久移动到新位置.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;302 Found  临时性重定向.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;303 See Other  临时性重定向,且总是使用 GET 请求新的 URI.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;304 Not Modified  自从上次请求后,请求的网页未修改过.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;400 Bad Request  服务器无法理解请求的格式,客户端不应当尝试再次使用相同的内容发起请求.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;401 Unauthorized  请求未授权.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;403 Forbidden  禁止访问.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;404 Not Found  找不到如何与 URI 相匹配的资源.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;500 Internal Server Error  最常见的服务器端错误.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;503 Service Unavailable 服务器端暂时无法处理请求（可能是过载或维护）.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;100 Continue&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;101 Switching Protocols&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;200 OK&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;201 Created&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;202 Accepted&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;203 Non-Authoritative Information&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;204 No Content&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;205 Reset Content&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;206 Partial Content&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;300 Multiple Choices&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;301 Moved Permanently&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;302 Found&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;303 See Other&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;304 Not Modified&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;305 Use Proxy&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;307 Temporary Redirect&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;400 Bad Request&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;401 Unauthorized&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;402 Payment Required&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;403 Forbidden&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;404 Not Found&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;405 Method Not Allowed&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;406 Not Acceptable&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;407 Proxy Authentication Required&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;408 Request Time-out&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;409 Conflict&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;410 Gone&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;411 Length Required&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;412 Precondition Failed&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;413 Request Entity Too Large&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;414 Request-URI Too Large&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;415 Unsupported Media Type&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;416 Requested range not satisfiable&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;417 Expectation Failed&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;500 Internal Server Error&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;501 Not Implemented&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;502 Bad Gateway&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;503 Service Unavailable&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;504 Gateway Time-out&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;505 HTTP Version not supported&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;语句include和require的区别&quot;&gt;&lt;a href=&quot;#语句include和require的区别&quot; class=&quot;headerlink&quot; title=&quot;语句include和require的区别&quot;&gt;&lt;/a&gt;语句include和require的区别&lt;/h2&gt;&lt;p&gt;在失败的时候：&lt;br&gt;&lt;code&gt;include&lt;/code&gt; 产生一个 &lt;code&gt;warning&lt;/code&gt; ,而 &lt;code&gt;require&lt;/code&gt; 直接产生错误中断;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;require&lt;/code&gt; 在运行前载入;&lt;br&gt;&lt;code&gt;include&lt;/code&gt; 在运行时载入;&lt;/p&gt;
     
     </summary>
     
@@ -753,7 +807,7 @@ strcasecmp();--比较字符串函数
     <link href="https://entimm.github.io/2016/06/28/docker%E6%8A%80%E5%B7%A7/"/>
     <id>https://entimm.github.io/2016/06/28/docker技巧/</id>
     <published>2016-06-28T01:39:42.000Z</published>
-    <updated>2016-08-29T15:09:16.000Z</updated>
+    <updated>2016-08-30T05:17:23.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="删除-none-tag-镜像"><a href="#删除-none-tag-镜像" class="headerlink" title="删除 none tag 镜像"></a>删除 none tag 镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ocker rmi $(docker images | grep &quot;^&lt;none&gt;&quot; | awk &apos;&#123;print $3&#125;&apos;)</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rmi $(docker images -q --filter &quot;dangling=true&quot;)</div></pre></td></tr></table></figure>
@@ -766,7 +820,10 @@ strcasecmp();--比较字符串函数
     
     <summary type="html">
     
-      &lt;h2 id=&quot;删除-none-tag-镜像&quot;&gt;&lt;a href=&quot;#删除-none-tag-镜像&quot; class=&quot;headerlink&quot; title=&quot;删除 none tag 镜像&quot;&gt;&lt;/a&gt;删除 none tag 镜像&lt;/h2&gt;&lt;figure class=&quot;highlight 
+      &lt;h2 id=&quot;删除-none-tag-镜像&quot;&gt;&lt;a href=&quot;#删除-none-tag-镜像&quot; class=&quot;headerlink&quot; title=&quot;删除 none tag 镜像&quot;&gt;&lt;/a&gt;删除 none tag 镜像&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;ocker rmi $(docker images | grep &amp;quot;^&amp;lt;none&amp;gt;&amp;quot; | awk &amp;apos;&amp;#123;print $3&amp;#125;&amp;apos;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;docker rmi $(docker images -q --filter &amp;quot;dangling=true&amp;quot;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;删除所有镜像&quot;&gt;&lt;a href=&quot;#删除所有镜像&quot; class=&quot;headerlink&quot; title=&quot;删除所有镜像&quot;&gt;&lt;/a&gt;删除所有镜像&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;docker images -q | xargs docker rmi&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;删除所有容器&quot;&gt;&lt;a href=&quot;#删除所有容器&quot; class=&quot;headerlink&quot; title=&quot;删除所有容器&quot;&gt;&lt;/a&gt;删除所有容器&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;docker ps -q -a | xargs docker rm&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -778,7 +835,7 @@ strcasecmp();--比较字符串函数
     <link href="https://entimm.github.io/2016/06/24/%E6%AC%A2%E5%BF%AB%E7%9A%84%E4%BD%BF%E7%94%A8%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2/"/>
     <id>https://entimm.github.io/2016/06/24/欢快的使用谷歌搜索/</id>
     <published>2016-06-24T14:40:06.000Z</published>
-    <updated>2016-08-28T11:42:02.000Z</updated>
+    <updated>2016-08-30T05:17:36.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="无障碍使用"><a href="#无障碍使用" class="headerlink" title="无障碍使用"></a>无障碍使用</h2><p>使用谷歌搜索的时候，要么无法访问，要么谷歌会将你的 google.com 重定向到具有特定国家或地区后缀的谷歌搜索地址，如 google.com.hk 等<br>当然，我们可以直接输入这类带地区后缀的地址, 这样有时也能实现访问, 当是很多时候却并不好用，也常有无法访问的时候</p>
 <p>避免谷歌重定向的方法是使用 google.com/<code>ncr</code> , 这种方法屡试不爽非常可靠，但是停止搜索一会后却又不行了，然后又得继续手动的输入这个地址</p>
@@ -799,7 +856,11 @@ strcasecmp();--比较字符串函数
     
     <summary type="html">
     
-      &lt;h2 id=&quot;无障碍使用&quot;&gt;&lt;a href=&quot;#无障碍使用&quot; class=&quot;headerlink&quot; title=&quot;无障碍使用&quot;&gt;&lt;/a&gt;无障碍使用&lt;/h2&gt;&lt;p&gt;使用谷歌搜索的时候，要么无法访问，要么谷歌会将你的 google.com 重定向到具有特定国家或地区后缀的谷歌搜索地
+      &lt;h2 id=&quot;无障碍使用&quot;&gt;&lt;a href=&quot;#无障碍使用&quot; class=&quot;headerlink&quot; title=&quot;无障碍使用&quot;&gt;&lt;/a&gt;无障碍使用&lt;/h2&gt;&lt;p&gt;使用谷歌搜索的时候，要么无法访问，要么谷歌会将你的 google.com 重定向到具有特定国家或地区后缀的谷歌搜索地址，如 google.com.hk 等&lt;br&gt;当然，我们可以直接输入这类带地区后缀的地址, 这样有时也能实现访问, 当是很多时候却并不好用，也常有无法访问的时候&lt;/p&gt;
+&lt;p&gt;避免谷歌重定向的方法是使用 google.com/&lt;code&gt;ncr&lt;/code&gt; , 这种方法屡试不爽非常可靠，但是停止搜索一会后却又不行了，然后又得继续手动的输入这个地址&lt;/p&gt;
+&lt;p&gt;那么有没有办法自动在 google.com 后面加入 ncr 呢，万能的谷歌插件没让人失望&lt;br&gt;这个插件便是 &lt;code&gt;NoCountryRedirect (NCR)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;谷歌使用是 &lt;code&gt;https&lt;/code&gt; 协议，我们还需要让我们的输入 google.com 自动使用 https, 这样我们还需要1款插件 &lt;code&gt;HTTPS Everywhere&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;好了，这样我们就能用谷歌愉快的进行各种搜索了&lt;/p&gt;
     
     </summary>
     
@@ -822,7 +883,10 @@ strcasecmp();--比较字符串函数
     
     <summary type="html">
     
-      &lt;h2 id=&quot;使用-netstat-命令&quot;&gt;&lt;a href=&quot;#使用-netstat-命令&quot; class=&quot;headerlink&quot; title=&quot;使用 netstat 命令&quot;&gt;&lt;/a&gt;使用 &lt;code&gt;netstat&lt;/code&gt; 命令&lt;/h2&gt;&lt;figure class=&quot;h
+      &lt;h2 id=&quot;使用-netstat-命令&quot;&gt;&lt;a href=&quot;#使用-netstat-命令&quot; class=&quot;headerlink&quot; title=&quot;使用 netstat 命令&quot;&gt;&lt;/a&gt;使用 &lt;code&gt;netstat&lt;/code&gt; 命令&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;netstat -nat | grep &amp;lt;port&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;netstat -nat |grep LISTEN&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;使用-lsof-命令&quot;&gt;&lt;a href=&quot;#使用-lsof-命令&quot; class=&quot;headerlink&quot; title=&quot;使用 lsof 命令&quot;&gt;&lt;/a&gt;使用 &lt;code&gt;lsof&lt;/code&gt; 命令&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;lsof -n -P -i TCP -s TCP:LISTEN&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-n 表示主机以ip地址显示&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-P 表示端口以数字形式显示，默认为端口名称&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-i 意义较多，具体 man lsof, 主要是用来过滤lsof的输出结果&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;-s 和 -i 配合使用，用于过滤输出&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;使用-telnet-命令&quot;&gt;&lt;a href=&quot;#使用-telnet-命令&quot; class=&quot;headerlink&quot; title=&quot;使用 telnet 命令&quot;&gt;&lt;/a&gt;使用 &lt;code&gt;telnet&lt;/code&gt; 命令&lt;/h2&gt;
     
     </summary>
     
@@ -834,7 +898,7 @@ strcasecmp();--比较字符串函数
     <link href="https://entimm.github.io/2016/05/28/FastCgi%20%E4%B8%8E%20PHP-FPM%20%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>https://entimm.github.io/2016/05/28/FastCgi 与 PHP-FPM 之间的区别/</id>
     <published>2016-05-28T02:45:18.000Z</published>
-    <updated>2016-08-28T11:53:25.000Z</updated>
+    <updated>2016-08-30T05:17:21.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="CGI-的作用"><a href="#CGI-的作用" class="headerlink" title="CGI 的作用"></a>CGI 的作用</h2><p>web server（比如说 nginx）只是内容的分发者。</p>
 <ul>
@@ -855,7 +919,12 @@ strcasecmp();--比较字符串函数
     
       &lt;h2 id=&quot;CGI-的作用&quot;&gt;&lt;a href=&quot;#CGI-的作用&quot; class=&quot;headerlink&quot; title=&quot;CGI 的作用&quot;&gt;&lt;/a&gt;CGI 的作用&lt;/h2&gt;&lt;p&gt;web server（比如说 nginx）只是内容的分发者。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;如果请求 &lt;
+&lt;li&gt;如果请求 &lt;code&gt;/index.html&lt;/code&gt;，那么 web server 会去文件系统中找到这个文件，发送给浏览器，这里分发的是静态数据。&lt;/li&gt;
+&lt;li&gt;如果现在请求的是 &lt;code&gt;/index.php&lt;/code&gt;，根据配置文件，nginx 知道这个不是静态文件，需要去找 PHP 解析器来处理，那么他会把这个请求简单处理后交给 PHP 解析器。Nginx 会传哪些数据给 PHP 解析器呢？url、查询字符串、POST 数据、HTTP header等等，CGI就是规定要传哪些数据、以什么样的格式传递给后方处理这个请求的协议。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当 web server 收到 &lt;code&gt;/index.php&lt;/code&gt; 这个请求后，会启动对应的 CGI 程序，这里就是 PHP 的解析器。接下来 PHP 解析器会解析 php.ini 文件，初始化执行环境，然后处理请求，再以规定 CGI 规定的格式返回处理后的结果，退出进程。web server 再把结果返回给浏览器。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;CGI 是个协议，跟进程什么的没关系&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;fastCgi-是什么&quot;&gt;&lt;a href=&quot;#fastCgi-是什么&quot; class=&quot;headerlink&quot; title=&quot;fastCgi 是什么&quot;&gt;&lt;/a&gt;fastCgi 是什么&lt;/h2&gt;
     
     </summary>
     
@@ -895,7 +964,11 @@ strcasecmp();--比较字符串函数
     
     <summary type="html">
     
-      &lt;h3 id=&quot;删除-else&quot;&gt;&lt;a href=&quot;#删除-else&quot; class=&quot;headerlink&quot; title=&quot;删除 else&quot;&gt;&lt;/a&gt;删除 else&lt;/h3&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;g
+      &lt;h3 id=&quot;删除-else&quot;&gt;&lt;a href=&quot;#删除-else&quot; class=&quot;headerlink&quot; title=&quot;删除 else&quot;&gt;&lt;/a&gt;删除 else&lt;/h3&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;($arg)&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;($arg == &lt;span class=&quot;string&quot;&gt;&#39;foobar&#39;&lt;/span&gt;)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;更好的写法&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;($arg)&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt;($arg == &lt;span class=&quot;string&quot;&gt;&#39;foobar&#39;&lt;/span&gt;)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;false&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;拆分为多个函数&quot;&gt;&lt;a href=&quot;#拆分为多个函数&quot; class=&quot;headerlink&quot; title=&quot;拆分为多个函数&quot;&gt;&lt;/a&gt;拆分为多个函数&lt;/h3&gt;&lt;p&gt;这种方式需要将函数名取的尽量清晰易懂，不要嫌长。&lt;/p&gt;
+
     
     </summary>
     
@@ -924,7 +997,9 @@ unset($a);
     <summary type="html">
     
       &lt;h2 id=&quot;关于引用传递&quot;&gt;&lt;a href=&quot;#关于引用传递&quot; class=&quot;headerlink&quot; title=&quot;关于引用传递&quot;&gt;&lt;/a&gt;关于引用传递&lt;/h2&gt;&lt;p&gt;一般在输出参数有多个的时候可以考虑使用引用&lt;/p&gt;
-&lt;h2 id=&quot;php中的’0’和javascript中
+&lt;h2 id=&quot;php中的’0’和javascript中的’0’&quot;&gt;&lt;a href=&quot;#php中的’0’和javascript中的’0’&quot; class=&quot;headerlink&quot; title=&quot;php中的’0’和javascript中的’0’&quot;&gt;&lt;/a&gt;php中的’0’和javascript中的’0’&lt;/h2&gt;&lt;p&gt;在php和js中转化布尔类型,php中被转换为false,而js中却是true&lt;/p&gt;
+&lt;h2 id=&quot;strrev&quot;&gt;&lt;a href=&quot;#strrev&quot; class=&quot;headerlink&quot; title=&quot;strrev&quot;&gt;&lt;/a&gt;strrev&lt;/h2&gt;&lt;p&gt;只能翻转英文&lt;/p&gt;
+&lt;h2 id=&quot;strlen-与mb-strlen&quot;&gt;&lt;a href=&quot;#strlen-与mb-strlen&quot; class=&quot;headerlink&quot; title=&quot;strlen()与mb_strlen()&quot;&gt;&lt;/a&gt;strlen()与mb_strlen()&lt;/h2&gt;
     
     </summary>
     

@@ -7,7 +7,11 @@
     <meta name="author" content="enjoy">
     
     <meta name="description" content="就是在update时，代入之前的库存作为条件，如：update stocks set count=count-1 where count=20 and productid=xxxx
-用同步队列，就可以实现。库存比如是1000，那就存1000个随机数到队列中，拿到随机数的人去换取真实的商品。这样数据库">
+用同步队列，就可以实现。库存比如是1000，那就存1000个随机数到队列中，拿到随机数的人去换取真实的商品。这样数据库的压力都小。最多更新1000次。队列可以系统加载时创建，也可以做为持久化保存在文件中。
+关于库存和秒杀的解决方案
+用额外的单进程处理一个队列，下单请求放到队列里，一个个处理，就不会有并发的问题了，但是要额外的后台进程以及延迟问题，不予考虑。
+根据update结果来判断，我们可以在sql2的时候加一个判断条件update … where 库存&amp;gt;0，如果返回false，则说明库存不足，并回滚事务。
+借助文件排他锁，在处理下单请求的时候，用flock锁定一个文件，如果锁定失败说明有其他订单正在处理，此时要么等待要么直接提示用户”服务器繁忙”">
     
     
 
@@ -99,7 +103,7 @@
         <h1>高并发</h1>
         
         <div class="time-info">
-发表于:<time datetime="2016-08-04T13:53:43.000Z" itemprop="datePublished">2016-08-04</time>，更新于:<time datetime="2016-08-29T15:36:54.000Z" itemprop="dateModified">2016-08-29</time>，By <a href="https://entimm.github.io" title="enjoy">enjoy</a>
+发表于:<time datetime="2016-08-04T13:53:43.000Z" itemprop="datePublished">2016-08-04</time>，更新于:<time datetime="2016-08-30T05:17:26.000Z" itemprop="dateModified">2016-08-30</time>，By <a href="https://entimm.github.io" title="enjoy">enjoy</a>
         </div>
         
         <div class="post-body-inner">

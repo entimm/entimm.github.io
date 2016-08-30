@@ -7,7 +7,9 @@
     <meta name="author" content="enjoy">
     
     <meta name="description" content="删除 none tag 镜像1ocker rmi $(docker images | grep &amp;quot;^&amp;lt;none&amp;gt;&amp;quot; | awk &amp;apos;&amp;#123;print $3&amp;#125;&amp;apos;)
-1docker rmi $(docker images -q --fil">
+1docker rmi $(docker images -q --filter &amp;quot;dangling=true&amp;quot;)
+删除所有镜像1docker images -q | xargs docker rmi
+删除所有容器1docker ps -q -a | xargs docker rm">
     
     
 
@@ -99,7 +101,7 @@
         <h1>docker 技巧</h1>
         
         <div class="time-info">
-发表于:<time datetime="2016-06-28T01:39:42.000Z" itemprop="datePublished">2016-06-28</time>，更新于:<time datetime="2016-08-29T15:09:16.000Z" itemprop="dateModified">2016-08-29</time>，By <a href="https://entimm.github.io" title="enjoy">enjoy</a>
+发表于:<time datetime="2016-06-28T01:39:42.000Z" itemprop="datePublished">2016-06-28</time>，更新于:<time datetime="2016-08-30T05:17:23.000Z" itemprop="dateModified">2016-08-30</time>，By <a href="https://entimm.github.io" title="enjoy">enjoy</a>
         </div>
         
         <div class="post-body-inner">

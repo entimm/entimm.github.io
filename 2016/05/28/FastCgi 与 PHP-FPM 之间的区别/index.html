@@ -9,7 +9,11 @@
     <meta name="description" content="CGI 的作用web server（比如说 nginx）只是内容的分发者。
 
 如果请求 /index.html，那么 web server 会去文件系统中找到这个文件，发送给浏览器，这里分发的是静态数据。
-如果现在请求的是 /index.php，根据配置文件，nginx 知道这个不是静态文件，需要去">
+如果现在请求的是 /index.php，根据配置文件，nginx 知道这个不是静态文件，需要去找 PHP 解析器来处理，那么他会把这个请求简单处理后交给 PHP 解析器。Nginx 会传哪些数据给 PHP 解析器呢？url、查询字符串、POST 数据、HTTP header等等，CGI就是规定要传哪些数据、以什么样的格式传递给后方处理这个请求的协议。
+
+当 web server 收到 /index.php 这个请求后，会启动对应的 CGI 程序，这里就是 PHP 的解析器。接下来 PHP 解析器会解析 php.ini 文件，初始化执行环境，然后处理请求，再以规定 CGI 规定的格式返回处理后的结果，退出进程。web server 再把结果返回给浏览器。
+CGI 是个协议，跟进程什么的没关系
+fastCgi 是什么">
     
     
 
@@ -101,7 +105,7 @@
         <h1>Cgi、FastCgi 与 PHP-FPM</h1>
         
         <div class="time-info">
-发表于:<time datetime="2016-05-28T02:45:18.000Z" itemprop="datePublished">2016-05-28</time>，更新于:<time datetime="2016-08-28T11:53:25.000Z" itemprop="dateModified">2016-08-28</time>，By <a href="https://entimm.github.io" title="enjoy">enjoy</a>
+发表于:<time datetime="2016-05-28T02:45:18.000Z" itemprop="datePublished">2016-05-28</time>，更新于:<time datetime="2016-08-30T05:17:21.000Z" itemprop="dateModified">2016-08-30</time>，By <a href="https://entimm.github.io" title="enjoy">enjoy</a>
         </div>
         
         <div class="post-body-inner">

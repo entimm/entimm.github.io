@@ -6,7 +6,13 @@
     
     <meta name="author" content="enjoy">
     
-    <meta name="description" content="抽象 vs 接口抽象类是一种不能被实例化的类，只能作为其他类的父类来使用。抽象类是通过关键字 abstract 来声明的。抽象类与普通类相似，都包含成员变量和成员方法，两者的区别在于，抽象类中至少要包含一个抽象方法，抽象方法没有方法体，该方法天生就是要被子类重写的。抽象方法的格式为：abstract">
+    <meta name="description" content="抽象 vs 接口抽象类是一种不能被实例化的类，只能作为其他类的父类来使用。抽象类是通过关键字 abstract 来声明的。抽象类与普通类相似，都包含成员变量和成员方法，两者的区别在于，抽象类中至少要包含一个抽象方法，抽象方法没有方法体，该方法天生就是要被子类重写的。抽象方法的格式为：abstract function abstractMethod();
+因为php中只支持单继承，如果想实现多重继承，就要使用接口。也就是说子类可以实现多个接口。接口是通过interface关键字来声明的，接口中的成员常量和方法都是public的，方法可以不写关键字public，接口中的方法也是没有方法体。接口中的方法也天生就是要被子类实现的。
+抽象类和接口实现的功能十分相似，最大的不同是接口能实现多继承。在应用中选择抽象类还是接口要看具体实现。子类继承抽象类使用extends，子类实现接口使用implements。
+文件上传注意事项
+首现要在php.ini中开启文件上传；
+在php.ini中有一个允许上传的最大值，默认是2MB。必要的时候可以更改；
+上传表单一定要记住在form标签中写上enctype=”multipart/form-data”；">
     
     
 
@@ -98,7 +104,7 @@
         <h1>面试可能会被问到的问题</h1>
         
         <div class="time-info">
-发表于:<time datetime="2016-07-16T01:20:04.000Z" itemprop="datePublished">2016-07-16</time>，更新于:<time datetime="2016-08-29T15:33:25.000Z" itemprop="dateModified">2016-08-29</time>，By <a href="https://entimm.github.io" title="enjoy">enjoy</a>
+发表于:<time datetime="2016-07-16T01:20:04.000Z" itemprop="datePublished">2016-07-16</time>，更新于:<time datetime="2016-08-30T05:17:33.000Z" itemprop="dateModified">2016-08-30</time>，By <a href="https://entimm.github.io" title="enjoy">enjoy</a>
         </div>
         
         <div class="post-body-inner">

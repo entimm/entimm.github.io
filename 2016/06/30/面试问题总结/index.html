@@ -6,7 +6,10 @@
     
     <meta name="author" content="enjoy">
     
-    <meta name="description" content="php魔术方法(14项)1234567891011121314__construct() 实例化类时自动调用.__destruct() 类对象使用结束时自动调用.__set() 在给未定义的属性赋值的时候调用.__get() 调用未定义的属性时候调用.__isset() 使用isset()或empt">
+    <meta name="description" content="php魔术方法(14项)1234567891011121314__construct() 实例化类时自动调用.__destruct() 类对象使用结束时自动调用.__set() 在给未定义的属性赋值的时候调用.__get() 调用未定义的属性时候调用.__isset() 使用isset()或empty()函数时候会调用.__unset() 使用unset()时候会调用.__sleep() 使用serialize序列化时候调用.__wakeup() 使用unserialize反序列化的时候调用.__call() 调用一个不存在的方法的时候调用.__callStatic()调用一个不存在的静态方法是调用.__toString() 把对象转换成字符串的时候会调用.比如 echo.__invoke() 当尝试把对象当方法调用时调用.__set_state() 当使用var_export()函数时候调用.接受一个数组参数.__clone() 当使用clone复制一个对象时候调用.
+HTTP协议中几个状态码的含义.12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455100 Continue  继续,一般在发送post请求时,已发送了http header之后服务端将返回此信息,表示确认,之后发送具体参数信息200 OK   正常返回信息201 Created  请求成功并且服务器创建了新的资源202 Accepted  服务器已接受请求,但尚未处理301 Moved Permanently  请求的网页已永久移动到新位置.302 Found  临时性重定向.303 See Other  临时性重定向,且总是使用 GET 请求新的 URI.304 Not Modified  自从上次请求后,请求的网页未修改过.400 Bad Request  服务器无法理解请求的格式,客户端不应当尝试再次使用相同的内容发起请求.401 Unauthorized  请求未授权.403 Forbidden  禁止访问.404 Not Found  找不到如何与 URI 相匹配的资源.500 Internal Server Error  最常见的服务器端错误.503 Service Unavailable 服务器端暂时无法处理请求（可能是过载或维护）.100 Continue101 Switching Protocols200 OK201 Created202 Accepted203 Non-Authoritative Information204 No Content205 Reset Content206 Partial Content300 Multiple Choices301 Moved Permanently302 Found303 See Other304 Not Modified305 Use Proxy307 Temporary Redirect400 Bad Request401 Unauthorized402 Payment Required403 Forbidden404 Not Found405 Method Not Allowed406 Not Acceptable407 Proxy Authentication Required408 Request Time-out409 Conflict410 Gone411 Length Required412 Precondition Failed413 Request Entity Too Large414 Request-URI Too Large415 Unsupported Media Type416 Requested range not satisfiable417 Expectation Failed500 Internal Server Error501 Not Implemented502 Bad Gateway503 Service Unavailable504 Gateway Time-out505 HTTP Version not supported
+语句include和require的区别在失败的时候：include 产生一个 warning ,而 require 直接产生错误中断;
+require 在运行前载入;include 在运行时载入;">
     
     
 

@@ -8,7 +8,7 @@
     
     <meta name="description" content="防火墙关闭防火墙/etc/init.d/iptables stopservice iptables stop # 停止服务
 查看防火墙信息/etc/init.d/iptables status
-开放端口:8080/sbin/iptables -I INPUT -p tcp –dport 8080 -">
+开放端口:8080/sbin/iptables -I INPUT -p tcp –dport 8080 -j ACCEPT">
     
     
 
@@ -100,13 +100,13 @@
         <h1>linux相关操作</h1>
         
         <div class="time-info">
-发表于:<time datetime="2016-08-30T05:09:18.000Z" itemprop="datePublished">2016-08-30</time>，更新于:<time datetime="2016-08-30T05:17:46.000Z" itemprop="dateModified">2016-08-30</time>，By <a href="https://entimm.github.io" title="enjoy">enjoy</a>
+发表于:<time datetime="2016-08-30T05:09:18.000Z" itemprop="datePublished">2016-08-30</time>，更新于:<time datetime="2016-08-30T08:59:07.000Z" itemprop="dateModified">2016-08-30</time>，By <a href="https://entimm.github.io" title="enjoy">enjoy</a>
         </div>
         
         <div class="post-body-inner">
             <div id="toc" class="toc-article well">
                 <strong class="toc-title">大纲</strong>
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#防火墙"><span class="toc-number">1.</span> <span class="toc-text">防火墙</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关闭防火墙"><span class="toc-number">1.1.</span> <span class="toc-text">关闭防火墙</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看防火墙信息"><span class="toc-number">1.2.</span> <span class="toc-text">查看防火墙信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开放端口-8080"><span class="toc-number">1.3.</span> <span class="toc-text">开放端口:8080</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重启防火墙以便改动生效-或者直接重启系统"><span class="toc-number">1.4.</span> <span class="toc-text">重启防火墙以便改动生效:(或者直接重启系统)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将更改进行保存"><span class="toc-number">1.5.</span> <span class="toc-text">将更改进行保存</span></a></li></ol></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#防火墙"><span class="toc-number">1.</span> <span class="toc-text">防火墙</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关闭防火墙"><span class="toc-number">1.1.</span> <span class="toc-text">关闭防火墙</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看防火墙信息"><span class="toc-number">1.2.</span> <span class="toc-text">查看防火墙信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开放端口-8080"><span class="toc-number">1.3.</span> <span class="toc-text">开放端口:8080</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重启防火墙以便改动生效-或者直接重启系统"><span class="toc-number">1.4.</span> <span class="toc-text">重启防火墙以便改动生效:(或者直接重启系统)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将更改进行保存"><span class="toc-number">1.5.</span> <span class="toc-text">将更改进行保存</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#待续"><span class="toc-number">2.</span> <span class="toc-text">待续</span></a></li></ol>
             </div>
             
             <h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><h3 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h3><p>/etc/init.d/iptables stop<br>service iptables stop # 停止服务</p>
@@ -115,7 +115,7 @@
 <h3 id="重启防火墙以便改动生效-或者直接重启系统"><a href="#重启防火墙以便改动生效-或者直接重启系统" class="headerlink" title="重启防火墙以便改动生效:(或者直接重启系统)"></a>重启防火墙以便改动生效:(或者直接重启系统)</h3><p>/etc/init.d/iptables restart</p>
 <h3 id="将更改进行保存"><a href="#将更改进行保存" class="headerlink" title="将更改进行保存"></a>将更改进行保存</h3><p>/etc/rc.d/init.d/iptables save</p>
 <p>另外直接在/etc/sysconfig/iptables中增加一行：<br>-A RH-Firewall-1-INPUT -m state –state NEW -m tcp -p tcp –dport 8080 -j ACCEPT</p>
-
+<h2 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h2>
 
 			
             <section class="comment">
