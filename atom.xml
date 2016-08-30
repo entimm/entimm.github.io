@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://entimm.github.io/"/>
-  <updated>2016-08-29T14:50:37.000Z</updated>
+  <updated>2016-08-30T05:17:46.000Z</updated>
   <id>https://entimm.github.io/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux相关操作</title>
+    <link href="https://entimm.github.io/2016/08/30/linux/"/>
+    <id>https://entimm.github.io/2016/08/30/linux/</id>
+    <published>2016-08-30T05:09:18.000Z</published>
+    <updated>2016-08-30T05:17:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><h3 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h3><p>/etc/init.d/iptables stop<br>service iptables stop # 停止服务</p>
+<h3 id="查看防火墙信息"><a href="#查看防火墙信息" class="headerlink" title="查看防火墙信息"></a>查看防火墙信息</h3><p>/etc/init.d/iptables status</p>
+<h3 id="开放端口-8080"><a href="#开放端口-8080" class="headerlink" title="开放端口:8080"></a>开放端口:8080</h3><p>/sbin/iptables -I INPUT -p tcp –dport 8080 -j ACCEPT</p>
+<h3 id="重启防火墙以便改动生效-或者直接重启系统"><a href="#重启防火墙以便改动生效-或者直接重启系统" class="headerlink" title="重启防火墙以便改动生效:(或者直接重启系统)"></a>重启防火墙以便改动生效:(或者直接重启系统)</h3><p>/etc/init.d/iptables restart</p>
+<h3 id="将更改进行保存"><a href="#将更改进行保存" class="headerlink" title="将更改进行保存"></a>将更改进行保存</h3><p>/etc/rc.d/init.d/iptables save</p>
+<p>另外直接在/etc/sysconfig/iptables中增加一行：<br>-A RH-Firewall-1-INPUT -m state –state NEW -m tcp -p tcp –dport 8080 -j ACCEPT</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;防火墙&quot;&gt;&lt;a href=&quot;#防火墙&quot; class=&quot;headerlink&quot; title=&quot;防火墙&quot;&gt;&lt;/a&gt;防火墙&lt;/h2&gt;&lt;h3 id=&quot;关闭防火墙&quot;&gt;&lt;a href=&quot;#关闭防火墙&quot; class=&quot;headerlink&quot; title=&quot;关闭防火墙&quot;&gt;&lt;/a&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>很有用的一些技巧</title>
@@ -91,6 +115,26 @@
   </entry>
   
   <entry>
+    <title>javascript</title>
+    <link href="https://entimm.github.io/2016/08/26/javascript/"/>
+    <id>https://entimm.github.io/2016/08/26/javascript/</id>
+    <published>2016-08-26T15:05:25.000Z</published>
+    <updated>2016-08-30T05:17:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="set-checked"><a href="#set-checked" class="headerlink" title="set checked"></a>set checked</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Check</span></div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"checkbox"</span>).checked = <span class="literal">true</span>;</div><div class="line"></div><div class="line"><span class="comment">//  Uncheck</span></div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"checkbox"</span>).checked = <span class="literal">false</span>;</div><div class="line">jQuery (<span class="number">1.6</span>+):</div><div class="line"></div><div class="line"><span class="comment">// Check</span></div><div class="line">$(<span class="string">"#checkbox"</span>).prop(<span class="string">"checked"</span>, <span class="literal">true</span>);</div><div class="line"></div><div class="line"><span class="comment">//  Uncheck</span></div><div class="line">$(<span class="string">"#checkbox"</span>).prop(<span class="string">"checked"</span>, <span class="literal">false</span>);</div><div class="line">jQuery (<span class="number">1.5</span>-):</div><div class="line"></div><div class="line"><span class="comment">// Check</span></div><div class="line">$(<span class="string">"#checkbox"</span>).attr(<span class="string">"checked"</span>, <span class="literal">true</span>);</div><div class="line"></div><div class="line"><span class="comment">//  Uncheck</span></div><div class="line">$(<span class="string">"#checkbox"</span>).attr(<span class="string">"checked"</span>, <span class="literal">false</span>);</div><div class="line"></div><div class="line"><span class="comment">//Check</span></div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'checkbox'</span>).setAttribute(<span class="string">'checked'</span>, <span class="string">'checked'</span>);</div><div class="line"></div><div class="line"><span class="comment">//UnCheck</span></div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'checkbox'</span>).removeAttribute(<span class="string">'checked'</span>);</div></pre></td></tr></table></figure>
+<h3 id="get-checked"><a href="#get-checked" class="headerlink" title="get checked"></a>get checked</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// traditional attr</span></div><div class="line">$(<span class="string">'#checkMeOut'</span>).attr(<span class="string">'checked'</span>); <span class="comment">// "checked"</span></div><div class="line"><span class="comment">// new property method</span></div><div class="line">$(<span class="string">'#checkMeOut'</span>).prop(<span class="string">'checked'</span>); <span class="comment">// true</span></div><div class="line"></div><div class="line">$(<span class="string">"#txtAge"</span>).get(<span class="number">0</span>).checked</div><div class="line">$(<span class="string">"#txtAge"</span>).is(<span class="string">":checked"</span>)</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;set-checked&quot;&gt;&lt;a href=&quot;#set-checked&quot; class=&quot;headerlink&quot; title=&quot;set checked&quot;&gt;&lt;/a&gt;set checked&lt;/h3&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>常用代码片段</title>
     <link href="https://entimm.github.io/2016/08/06/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/"/>
     <id>https://entimm.github.io/2016/08/06/代码片段/</id>
@@ -104,6 +148,30 @@
     <summary type="html">
     
       &lt;h3 id=&quot;utf-8&quot;&gt;&lt;a href=&quot;#utf-8&quot; class=&quot;headerlink&quot; title=&quot;utf-8&quot;&gt;&lt;/a&gt;utf-8&lt;/h3&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>laravel</title>
+    <link href="https://entimm.github.io/2016/08/04/laravel/"/>
+    <id>https://entimm.github.io/2016/08/04/laravel/</id>
+    <published>2016-08-04T13:56:29.000Z</published>
+    <updated>2016-08-30T05:14:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="关于laravel的性能"><a href="#关于laravel的性能" class="headerlink" title="关于laravel的性能"></a>关于laravel的性能</h3><p>如果你在一个 Start Up 的话, 要求快速上线, 快速验证自己的想法, 高级语言之所以高级, 就是因为开发便捷性, 这个时候开发速度是最重要的, 你产品做了三个月, 甚至半年的, 但是, 你的对手可能用了几天时间一个原型就出来了, 几个星期就验证了 idea, 然后一边找风头, 一个月的时间内, 几百万美元的投资协议就签下, 随着后面的产品快速迭代, 迅速推出新的功能, 受到用户的喜爱, 几个月后, 用户量上好几百万, 然后, A 轮上千万美元的融资也下来了, 这个时候有负载问题, 有并发问题, 但是, 这个时候, 有了那么多钱, 并发真的需要那么担心吗? 年薪 50w ~ 100w, 请几个专家过来, 编译器都能给你重写.</p>
+<p>使用 ROR 的 Twitter, 使用 PHP 的 Facebook, 都是非常好的证明: “性能不是一个 Start Up 应该太担心的问题, 产品, 用户体验!</p>
+<p>至于这个, 例如对于 Web 前端页面, 加个 CDN, 服务器端加个 Cache, 优化下 SQL, 负载均衡, PHP 加个 OpCache这些得到的程序总体性能随随便便就是编译器优化的无数倍.</p>
+<p>生产环境下的 Laravel 调优: 减少 providers 的加载</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>添加自定义的服务<br>1、在App\Providers下建立自己的服务类与服务提供者<br>2、在config\app下的providers数组中注册该服务提供者<br>3、使用$this-&gt;app[‘ServiceName’]来取得该服务类的示例，此时可以通过示例来调用服务类的方法等</p>
+<p>为服务创建facade<br>1、在App下建立Facades文件夹统一放置facades<br>2、在config\app下的aliases数组中为该facade注册别名<br>3、通过facade调用相应服务类的方法，例如My::sayHello()</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;关于laravel的性能&quot;&gt;&lt;a href=&quot;#关于laravel的性能&quot; class=&quot;headerlink&quot; title=&quot;关于laravel的性能&quot;&gt;&lt;/a&gt;关于laravel的性能&lt;/h3&gt;&lt;p&gt;如果你在一个 Start Up 的话, 要求快速上线, 快速
     
     </summary>
     
@@ -605,7 +673,7 @@ strcasecmp();--比较字符串函数
     <link href="https://entimm.github.io/2016/06/30/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
     <id>https://entimm.github.io/2016/06/30/面试问题总结/</id>
     <published>2016-06-30T14:53:48.000Z</published>
-    <updated>2016-08-29T15:05:55.000Z</updated>
+    <updated>2016-08-30T05:17:31.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="php魔术方法-14项"><a href="#php魔术方法-14项" class="headerlink" title="php魔术方法(14项)"></a>php魔术方法(14项)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">__construct() 实例化类时自动调用.</div><div class="line">__destruct() 类对象使用结束时自动调用.</div><div class="line">__set() 在给未定义的属性赋值的时候调用.</div><div class="line">__get() 调用未定义的属性时候调用.</div><div class="line">__isset() 使用isset()或empty()函数时候会调用.</div><div class="line">__unset() 使用unset()时候会调用.</div><div class="line">__sleep() 使用serialize序列化时候调用.</div><div class="line">__wakeup() 使用unserialize反序列化的时候调用.</div><div class="line">__call() 调用一个不存在的方法的时候调用.</div><div class="line">__callStatic()调用一个不存在的静态方法是调用.</div><div class="line">__toString() 把对象转换成字符串的时候会调用.比如 echo.</div><div class="line">__invoke() 当尝试把对象当方法调用时调用.</div><div class="line">__set_state() 当使用var_export()函数时候调用.接受一个数组参数.</div><div class="line">__clone() 当使用clone复制一个对象时候调用.</div></pre></td></tr></table></figure>
 <h2 id="HTTP协议中几个状态码的含义"><a href="#HTTP协议中几个状态码的含义" class="headerlink" title="HTTP协议中几个状态码的含义."></a>HTTP协议中几个状态码的含义.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">100 Continue  继续,一般在发送post请求时,已发送了http header之后服务端将返回此信息,表示确认,之后发送具体参数信息</div><div class="line">200 OK   正常返回信息</div><div class="line">201 Created  请求成功并且服务器创建了新的资源</div><div class="line">202 Accepted  服务器已接受请求,但尚未处理</div><div class="line">301 Moved Permanently  请求的网页已永久移动到新位置.</div><div class="line">302 Found  临时性重定向.</div><div class="line">303 See Other  临时性重定向,且总是使用 GET 请求新的 URI.</div><div class="line">304 Not Modified  自从上次请求后,请求的网页未修改过.</div><div class="line">400 Bad Request  服务器无法理解请求的格式,客户端不应当尝试再次使用相同的内容发起请求.</div><div class="line">401 Unauthorized  请求未授权.</div><div class="line">403 Forbidden  禁止访问.</div><div class="line">404 Not Found  找不到如何与 URI 相匹配的资源.</div><div class="line">500 Internal Server Error  最常见的服务器端错误.</div><div class="line">503 Service Unavailable 服务器端暂时无法处理请求（可能是过载或维护）.</div><div class="line"></div><div class="line">100 Continue</div><div class="line">101 Switching Protocols</div><div class="line">200 OK</div><div class="line">201 Created</div><div class="line">202 Accepted</div><div class="line">203 Non-Authoritative Information</div><div class="line">204 No Content</div><div class="line">205 Reset Content</div><div class="line">206 Partial Content</div><div class="line">300 Multiple Choices</div><div class="line">301 Moved Permanently</div><div class="line">302 Found</div><div class="line">303 See Other</div><div class="line">304 Not Modified</div><div class="line">305 Use Proxy</div><div class="line">307 Temporary Redirect</div><div class="line">400 Bad Request</div><div class="line">401 Unauthorized</div><div class="line">402 Payment Required</div><div class="line">403 Forbidden</div><div class="line">404 Not Found</div><div class="line">405 Method Not Allowed</div><div class="line">406 Not Acceptable</div><div class="line">407 Proxy Authentication Required</div><div class="line">408 Request Time-out</div><div class="line">409 Conflict</div><div class="line">410 Gone</div><div class="line">411 Length Required</div><div class="line">412 Precondition Failed</div><div class="line">413 Request Entity Too Large</div><div class="line">414 Request-URI Too Large</div><div class="line">415 Unsupported Media Type</div><div class="line">416 Requested range not satisfiable</div><div class="line">417 Expectation Failed</div><div class="line">500 Internal Server Error</div><div class="line">501 Not Implemented</div><div class="line">502 Bad Gateway</div><div class="line">503 Service Unavailable</div><div class="line">504 Gateway Time-out</div><div class="line">505 HTTP Version not supported</div></pre></td></tr></table></figure>
@@ -857,99 +925,6 @@ unset($a);
     
       &lt;h2 id=&quot;关于引用传递&quot;&gt;&lt;a href=&quot;#关于引用传递&quot; class=&quot;headerlink&quot; title=&quot;关于引用传递&quot;&gt;&lt;/a&gt;关于引用传递&lt;/h2&gt;&lt;p&gt;一般在输出参数有多个的时候可以考虑使用引用&lt;/p&gt;
 &lt;h2 id=&quot;php中的’0’和javascript中
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>多种方法获取后缀名</title>
-    <link href="https://entimm.github.io/2016/05/09/%E5%A4%9A%E7%A7%8D%E6%96%B9%E6%B3%95%E8%8E%B7%E5%8F%96%E5%90%8E%E7%BC%80%E5%90%8D/"/>
-    <id>https://entimm.github.io/2016/05/09/多种方法获取后缀名/</id>
-    <published>2016-05-09T14:18:00.000Z</published>
-    <updated>2016-08-29T15:48:16.000Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext1</span><span class="params">($file_name)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> end(explode(<span class="string">'.'</span>, $file_name));  <span class="comment">// 字符串拆成数组,然后用end内部指针移动到最后一个单元并返回其值</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext2</span><span class="params">($file_name)</span></span></div><div class="line">&#123;</div><div class="line">        <span class="keyword">return</span> strrchr($file_name, <span class="string">'.'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext3</span><span class="params">($file_name)</span></span></div><div class="line">&#123;</div><div class="line">        <span class="keyword">return</span> substr($file_name, strrpos($file_name, <span class="string">'.'</span>));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext4</span><span class="params">($file_name)</span></span></div><div class="line">&#123;</div><div class="line">        <span class="keyword">return</span> array_pop(explode(<span class="string">'.'</span>, $file_name));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext5</span><span class="params">($file_name)</span></span></div><div class="line">&#123;</div><div class="line">        $p = pathinfo($file_name);</div><div class="line">        <span class="keyword">return</span> $p[<span class="string">'extension'</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext6</span><span class="params">($file_name)</span></span></div><div class="line">&#123;</div><div class="line">        <span class="keyword">return</span> strrev(substr(strrev($file_name), <span class="number">0</span>, strpos(strrev($file_name), <span class="string">'.'</span>)));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext7</span><span class="params">($filename)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> strrev(strstr(strrev($file_name), <span class="string">'.'</span>, <span class="keyword">true</span>));</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext8</span><span class="params">($flie_name)</span></span></div><div class="line">&#123;</div><div class="line">        $a=strrev($a);    <span class="comment">//反转</span></div><div class="line">        $b=strstr($a, <span class="string">'.'</span>);<span class="comment">//截取第一个.及其后的所有</span></div><div class="line">        $a=str_replace($b, <span class="string">''</span>, $a);<span class="comment">//替换</span></div><div class="line">        $a=strrev($a);</div><div class="line">        <span class="keyword">return</span> $a;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext9</span><span class="params">($file_name)</span></span></div><div class="line">&#123;</div><div class="line">    preg_match(<span class="string">'/^[\w\.-]+(\.[\w]+)$/'</span>, $file_name,$arr);</div><div class="line">    <span class="keyword">return</span> $arr[<span class="number">1</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext10</span><span class="params">($flie_name)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">while</span> (strpos($flie_name, <span class="string">'.'</span>)) &#123;</div><div class="line">            $a = strpos($flie_name, <span class="string">'.'</span>)+<span class="number">1</span>;</div><div class="line">            $flie_name = substr($flie_name, $a);</div><div class="line">    &#125;</div><div class="line">    $ext = $flie_name;</div><div class="line">    <span class="keyword">return</span> $ext;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">get_ext11</span><span class="params">($file_name)</span></span></div><div class="line">&#123;</div><div class="line">    $file_name = strrev($file_name);</div><div class="line">    $n = strpos($file_name, <span class="string">'.'</span>);</div><div class="line">    $a = str_split($file_name, $n);</div><div class="line">    <span class="keyword">return</span> strrev($a[<span class="number">0</span>]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>谷歌搜索技巧</title>
-    <link href="https://entimm.github.io/2016/04/27/%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/"/>
-    <id>https://entimm.github.io/2016/04/27/谷歌搜索技巧/</id>
-    <published>2016-04-27T08:36:06.000Z</published>
-    <updated>2016-08-29T14:46:05.000Z</updated>
-    
-    <content type="html"><![CDATA[<ul>
-<li>用<code>or</code>表达或的意思（空格）</li>
-<li>谷歌会忽略掉一些单词“and”、“the，”、“where”、“how”、“what”、“or”，如果确实要搜索这些单词，应该在这些词前紧跟一个<code>+</code> </li>
-<li>排除一个关键词，应该在这个词前紧跟一个<code>-</code></li>
-<li>搜索近似的关键词,紧跟<code>~</code></li>
-<li>如果是词组，且有严格的顺序，就用引号把它们包起来</li>
-<li>查找相似页面，<code>related:</code>后跟页面url</li>
-<li><code>*</code>通配符</li>
-<li><code>allinanchor</code>限制搜索的词语是网页中链接内包含的关键词（可使用多个关键词）</li>
-<li><code>allintext</code>限制搜索的词语是网页内文包含的关键词（可使用多个关键词）</li>
-<li><code>allintitle</code>限制搜索的词语是网页标题中包含的关键词（可使用多个关键词）</li>
-<li><code>allinurl</code>限制搜索的词语是网页网址中包含的关键词（可使用多个关键词）</li>
-<li><code>filetype</code>限制所搜索的文件一个特定的格式</li>
-<li><code>inanchor</code>限制搜索的词语是网页中链接内包含的关键词</li>
-<li><code>intext</code>限制搜索的词语是网页内文包含的关键词</li>
-<li><code>intitle</code>限制搜索的词语是网页标题中包含的关键词</li>
-<li><code>inurl</code>限制搜索的网页的地址</li>
-<li><code>site</code>限制所进行的搜索在指定的域名或网站内</li>
-<li>限定时间范围如：2014..2016</li>
-<li><code>author</code>指定作者</li>
-<li><code>defind</code>查询字词定义</li>
-<li>数学计算</li>
-<li>单位换算</li>
-<li>货币兑换，<code>usd in rmb</code></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;ul&gt;
-&lt;li&gt;用&lt;code&gt;or&lt;/code&gt;表达或的意思（空格）&lt;/li&gt;
-&lt;li&gt;谷歌会忽略掉一些单词“and”、“the，”、“where”、“how”、“what”、“or”，如果确实要搜索这些单词，应该在这些词前紧跟一个&lt;code&gt;+&lt;/code&gt; &lt;/li&gt;
-&lt;l
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>vagrant 常用操作</title>
-    <link href="https://entimm.github.io/2016/04/24/vagrant/"/>
-    <id>https://entimm.github.io/2016/04/24/vagrant/</id>
-    <published>2016-04-23T18:33:49.000Z</published>
-    <updated>2016-08-29T15:11:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="查看全局状态"><a href="#查看全局状态" class="headerlink" title="查看全局状态"></a>查看全局状态</h2><p>vagrant global-status</p>
-<h2 id="基本安装流程，以centos为例"><a href="#基本安装流程，以centos为例" class="headerlink" title="基本安装流程，以centos为例"></a>基本安装流程，以centos为例</h2><p>vagrant add centos cent.box</p>
-<p>vagrant init centos</p>
-<p>vagrant up</p>
-<p>vagrant ssh</p>
-<h2 id="销毁"><a href="#销毁" class="headerlink" title="销毁"></a>销毁</h2><p>vagrant destroy</p>
-<p>vagrant box remove centos</p>
-<h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><p>vagrant package –output newcentos.box</p>
-<h2 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h2><p>vagrant halt # 关闭虚拟机<br>vagrant reload # 重启虚拟机</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;查看全局状态&quot;&gt;&lt;a href=&quot;#查看全局状态&quot; class=&quot;headerlink&quot; title=&quot;查看全局状态&quot;&gt;&lt;/a&gt;查看全局状态&lt;/h2&gt;&lt;p&gt;vagrant global-status&lt;/p&gt;
-&lt;h2 id=&quot;基本安装流程，以centos为例&quot;&gt;&lt;a
     
     </summary>
     

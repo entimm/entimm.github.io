@@ -14,6 +14,7 @@
 body {
   font-family: 'Helvetica', '微软雅黑', '黑体', '宋体', serif;
   color: #3a4145;
+  background-color: #666;
 }
 a {
   transition: color ease 0.3s;
