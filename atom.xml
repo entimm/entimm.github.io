@@ -43,11 +43,11 @@
   </entry>
   
   <entry>
-    <title>很有用的一些技巧</title>
+    <title>快捷键</title>
     <link href="https://entimm.github.io/2016/08/29/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     <id>https://entimm.github.io/2016/08/29/快捷键/</id>
     <published>2016-08-29T14:47:20.000Z</published>
-    <updated>2016-08-30T05:17:37.000Z</updated>
+    <updated>2016-09-04T05:15:30.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h3><p>CMD-Shift-3<br>    全屏截图</p>
 <p>CMD-Shift-4<br>    区域截图：选区<br>    ⇧Shift － 重新定义截图区域的纵向高度或横向长度，不能同时实现。<br>    ⌥Option － 重新定义截图区域的尺寸，可以同时实现纵向和横向的改变，但只能围绕中心区域展开。<br>    ⌴空格键 － 按住并拖动鼠标，可以移动截图选框位置。<br>    Escape(Esc)键 － 退出截图模式。</p>
@@ -86,36 +86,6 @@
 &lt;p&gt;CMD-Shift-4&lt;br&gt;    区域截图：选区&lt;br&gt;    ⇧Shift － 重新定义截图区域的纵向高度或横向长度，不能同时实现。&lt;br&gt;    ⌥Option － 重新定义截图区域的尺寸，可以同时实现纵向和横向的改变，但只能围绕中心区域展开。&lt;br&gt;    ⌴空格键 － 按住并拖动鼠标，可以移动截图选框位置。&lt;br&gt;    Escape(Esc)键 － 退出截图模式。&lt;/p&gt;
 &lt;p&gt;CMD-Shift-4 + 空格键&lt;br&gt;    区域截图：窗口&lt;/p&gt;
 
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://entimm.github.io/2016/08/28/hello-world/"/>
-    <id>https://entimm.github.io/2016/08/28/hello-world/</id>
-    <published>2016-08-28T05:19:31.000Z</published>
-    <updated>2016-08-30T05:17:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo server&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -1000,6 +970,52 @@ unset($a);
 &lt;h2 id=&quot;php中的’0’和javascript中的’0’&quot;&gt;&lt;a href=&quot;#php中的’0’和javascript中的’0’&quot; class=&quot;headerlink&quot; title=&quot;php中的’0’和javascript中的’0’&quot;&gt;&lt;/a&gt;php中的’0’和javascript中的’0’&lt;/h2&gt;&lt;p&gt;在php和js中转化布尔类型,php中被转换为false,而js中却是true&lt;/p&gt;
 &lt;h2 id=&quot;strrev&quot;&gt;&lt;a href=&quot;#strrev&quot; class=&quot;headerlink&quot; title=&quot;strrev&quot;&gt;&lt;/a&gt;strrev&lt;/h2&gt;&lt;p&gt;只能翻转英文&lt;/p&gt;
 &lt;h2 id=&quot;strlen-与mb-strlen&quot;&gt;&lt;a href=&quot;#strlen-与mb-strlen&quot; class=&quot;headerlink&quot; title=&quot;strlen()与mb_strlen()&quot;&gt;&lt;/a&gt;strlen()与mb_strlen()&lt;/h2&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>谷歌搜索技巧</title>
+    <link href="https://entimm.github.io/2016/04/27/%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E6%8A%80%E5%B7%A7/"/>
+    <id>https://entimm.github.io/2016/04/27/谷歌搜索技巧/</id>
+    <published>2016-04-27T08:36:06.000Z</published>
+    <updated>2016-08-30T05:17:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>用<code>or</code>表达或的意思（空格）</li>
+<li>谷歌会忽略掉一些单词“and”、“the，”、“where”、“how”、“what”、“or”，如果确实要搜索这些单词，应该在这些词前紧跟一个<code>+</code> </li>
+<li>排除一个关键词，应该在这个词前紧跟一个<code>-</code></li>
+<li>搜索近似的关键词,紧跟<code>~</code></li>
+<li>如果是词组，且有严格的顺序，就用引号把它们包起来</li>
+<li>查找相似页面，<code>related:</code>后跟页面url</li>
+<li><code>*</code>通配符</li>
+<li><code>allinanchor</code>限制搜索的词语是网页中链接内包含的关键词（可使用多个关键词）</li>
+<li><code>allintext</code>限制搜索的词语是网页内文包含的关键词（可使用多个关键词）</li>
+<li><code>allintitle</code>限制搜索的词语是网页标题中包含的关键词（可使用多个关键词）</li>
+<li><code>allinurl</code>限制搜索的词语是网页网址中包含的关键词（可使用多个关键词）</li>
+<li><code>filetype</code>限制所搜索的文件一个特定的格式</li>
+<li><code>inanchor</code>限制搜索的词语是网页中链接内包含的关键词</li>
+<li><code>intext</code>限制搜索的词语是网页内文包含的关键词</li>
+<li><code>intitle</code>限制搜索的词语是网页标题中包含的关键词</li>
+<li><code>inurl</code>限制搜索的网页的地址</li>
+<li><code>site</code>限制所进行的搜索在指定的域名或网站内</li>
+<li>限定时间范围如：2014..2016</li>
+<li><code>author</code>指定作者</li>
+<li><code>defind</code>查询字词定义</li>
+<li>数学计算</li>
+<li>单位换算</li>
+<li>货币兑换，<code>usd in rmb</code></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;用&lt;code&gt;or&lt;/code&gt;表达或的意思（空格）&lt;/li&gt;
+&lt;li&gt;谷歌会忽略掉一些单词“and”、“the，”、“where”、“how”、“what”、“or”，如果确实要搜索这些单词，应该在这些词前紧跟一个&lt;code&gt;+&lt;/code&gt; &lt;/li&gt;
+&lt;l
     
     </summary>
     
