@@ -4,7 +4,7 @@
 <html lang="zh-CN">
 <head>
     
-    <meta name="author" content="enjoy">
+    <meta name="author" content="entimm">
     
     <meta name="description" content="php魔术方法(14项)1234567891011121314__construct() 实例化类时自动调用.__destruct() 类对象使用结束时自动调用.__set() 在给未定义的属性赋值的时候调用.__get() 调用未定义的属性时候调用.__isset() 使用isset()或empty()函数时候会调用.__unset() 使用unset()时候会调用.__sleep() 使用serialize序列化时候调用.__wakeup() 使用unserialize反序列化的时候调用.__call() 调用一个不存在的方法的时候调用.__callStatic()调用一个不存在的静态方法是调用.__toString() 把对象转换成字符串的时候会调用.比如 echo.__invoke() 当尝试把对象当方法调用时调用.__set_state() 当使用var_export()函数时候调用.接受一个数组参数.__clone() 当使用clone复制一个对象时候调用.
 HTTP协议中几个状态码的含义.12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455100 Continue  继续,一般在发送post请求时,已发送了http header之后服务端将返回此信息,表示确认,之后发送具体参数信息200 OK   正常返回信息201 Created  请求成功并且服务器创建了新的资源202 Accepted  服务器已接受请求,但尚未处理301 Moved Permanently  请求的网页已永久移动到新位置.302 Found  临时性重定向.303 See Other  临时性重定向,且总是使用 GET 请求新的 URI.304 Not Modified  自从上次请求后,请求的网页未修改过.400 Bad Request  服务器无法理解请求的格式,客户端不应当尝试再次使用相同的内容发起请求.401 Unauthorized  请求未授权.403 Forbidden  禁止访问.404 Not Found  找不到如何与 URI 相匹配的资源.500 Internal Server Error  最常见的服务器端错误.503 Service Unavailable 服务器端暂时无法处理请求（可能是过载或维护）.100 Continue101 Switching Protocols200 OK201 Created202 Accepted203 Non-Authoritative Information204 No Content205 Reset Content206 Partial Content300 Multiple Choices301 Moved Permanently302 Found303 See Other304 Not Modified305 Use Proxy307 Temporary Redirect400 Bad Request401 Unauthorized402 Payment Required403 Forbidden404 Not Found405 Method Not Allowed406 Not Acceptable407 Proxy Authentication Required408 Request Time-out409 Conflict410 Gone411 Length Required412 Precondition Failed413 Request Entity Too Large414 Request-URI Too Large415 Unsupported Media Type416 Requested range not satisfiable417 Expectation Failed500 Internal Server Error501 Not Implemented502 Bad Gateway503 Service Unavailable504 Gateway Time-out505 HTTP Version not supported
@@ -14,7 +14,7 @@ require 在运行前载入;include 在运行时载入;">
     
 
     
-    <link rel="alternative" href="atom.xml" title="I am Pro" type="application/atom+xml">
+    <link rel="alternative" href="atom.xml" title="Entimm&#39;s Technology Journal" type="application/atom+xml">
     
     
     
@@ -23,7 +23,7 @@ require 在运行前载入;include 在运行时载入;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#282c31">
-    <title>面试问题总结 | I am Pro</title>
+    <title>面试问题总结 | Entimm&#39;s Technology Journal</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
@@ -55,7 +55,7 @@ require 在运行前载入;include 在运行时载入;">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="https://entimm.github.io" title="I am Pro">I am Pro</a>
+                <a class="navbar-brand" href="https://entimm.github.io" title="Entimm's Technology Journal">Entimm&#39;s Technology Journal</a>
             </div>
 
             <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
@@ -101,7 +101,7 @@ require 在运行前载入;include 在运行时载入;">
         <h1>面试问题总结</h1>
         
         <div class="time-info">
-发表于:<time datetime="2016-06-30T14:53:48.000Z" itemprop="datePublished">2016-06-30</time>，更新于:<time datetime="2016-08-30T05:17:31.000Z" itemprop="dateModified">2016-08-30</time>，By <a href="https://entimm.github.io" title="enjoy">enjoy</a>
+发表于:<time datetime="2016-06-30T14:53:48.000Z" itemprop="datePublished">2016-06-30</time>，更新于:<time datetime="2016-09-05T16:17:00.000Z" itemprop="dateModified">2016-09-06</time>，By <a href="https://entimm.github.io" title="entimm">entimm</a>
         </div>
         
         <div class="post-body-inner">
@@ -143,7 +143,7 @@ require 在运行前载入;include 在运行时载入;">
 <li>hash</li>
 </ul>
 <h2 id="asp-php-jsp的优缺点"><a href="#asp-php-jsp的优缺点" class="headerlink" title="asp,php,jsp的优缺点"></a>asp,php,jsp的优缺点</h2><p>asp: 闭源且不跨平台<br>php: 开源且跨平台，简单快速，作为网站初期的首选<br>jsp: </p>
-<p>如果 uid 值为 10,2,5,6,3 的记录存在，那么 select uid from user where uid in (10,2,5,6,3);<br>结果顺序为按 uid 降序排列</p>
+<p>如果 uid 值为 10,2,5,6,3 的记录存在，那么 select uid from user where uid in (10,2,5,6,3);<br>结果顺序为按 uid 升序排列</p>
 <h2 id="php之multicurl"><a href="#php之multicurl" class="headerlink" title="php之multicurl"></a>php之multicurl</h2><p>multicurl所有的多线程就是异步、网络io支持并发，http请求支持并发<br>pthread是真正正宗的多线程，也是php唯一的多线程</p>
 <h2 id="php优化"><a href="#php优化" class="headerlink" title="php优化"></a>php优化</h2><ul>
 <li>CPU 密集部分用 C++ 或者 C 写 PHP 的扩展模块。</li>
@@ -166,7 +166,7 @@ require 在运行前载入;include 在运行时载入;">
 <li>客户端的隐藏域MAX_FILE_SIZE的数值（可以被绕开）。</li>
 <li>服务器端的upload_max_filesize，post_max_size和memory_limit。这几项不能够用脚本来设置。</li>
 </ul>
-<h2 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h2><p>a.删除没有任何订单客户:DELETE FROM customerinfo WHERE customerid NOT in(SELECT customerid FROM orderinfo)<br>b.提取所有没有订单客户:SELECT FROM customerinfo WHERE customerid NOT in(SELECT customerid FROM orderinfo)<br>c.提高b的速度优化:SELECT FROM customerinfo LEFT JOIN orderid ON customerinfo.customerid=orderinfo.customerid<br>WHERE orderinfo.customerid IS NULL</p>
+<h2 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h2><p>a.删除没有任何订单客户:DELETE FROM customerinfo WHERE customerid NOT in (SELECT customerid FROM orderinfo)<br>b.提取所有没有订单客户:SELECT <em> FROM customerinfo WHERE customerid NOT in (SELECT customerid FROM orderinfo)<br>c.提高b的速度优化:SELECT </em> FROM customerinfo LEFT JOIN orderid ON customerinfo.customerid=orderinfo.customerid<br>WHERE orderinfo.customerid IS NULL</p>
 <h2 id="fopen打开文件"><a href="#fopen打开文件" class="headerlink" title="fopen打开文件"></a>fopen打开文件</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$readcontents = fopen(<span class="string">'http://www.phpres.com/index.html'</span>, <span class="string">'rb'</span>);</div><div class="line">$contents = stream_get_contents($readcontents);</div><div class="line">fclose($readcontents);</div><div class="line"><span class="keyword">echo</span> $contents;</div></pre></td></tr></table></figure>
 <h2 id="char-vs-varchar"><a href="#char-vs-varchar" class="headerlink" title="char vs varchar"></a>char vs varchar</h2><p>Varchar是变长，节省存储空间，char是固定长度。查找效率要char型快，因为varchar是非定长，必须先查找长度，然后进行数据的提取，比char定长类型多了一个步骤，所以效率低一些</p>
 <h2 id="这些这些协议的全称和中文解释（都是工作在应用层）"><a href="#这些这些协议的全称和中文解释（都是工作在应用层）" class="headerlink" title="这些这些协议的全称和中文解释（都是工作在应用层）"></a>这些这些协议的全称和中文解释（都是工作在应用层）</h2><p>SMTP (Simple Mail Transfer Protocol) 简单邮件传输协议<br>POP3 (Post Office Protocol 3) 邮局协议第3版<br>HTTP (Hypertext Transfer Protocol) 超文本传输协议<br>FTP   (File Transfer Protocol）文件传输协议<br>DNS   (Domain Name System and Domain Name Service protocol) 域名系统（服务）协议</p>
@@ -199,7 +199,7 @@ var duoshuoQuery = {short_name:"entimm"};
 
     <footer id="footer">
         <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/XadillaX/hexadillax" target="_blank">Hexadillax</a> 主题</small>
-        <small>&copy; 2016 enjoy</small>
+        <small>&copy; 2016 entimm</small>
     </footer>
 
     

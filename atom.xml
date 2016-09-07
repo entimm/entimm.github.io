@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>I am Pro</title>
+  <title>Entimm&#39;s Technology Journal</title>
   
   <link href="/atom.xml" rel="self"/>
   
@@ -9,7 +9,7 @@
   <id>https://entimm.github.io/</id>
   
   <author>
-    <name>enjoy</name>
+    <name>entimm</name>
     
   </author>
   
@@ -164,13 +164,12 @@
     <link href="https://entimm.github.io/2016/08/04/%E9%AB%98%E5%B9%B6%E5%8F%91/"/>
     <id>https://entimm.github.io/2016/08/04/高并发/</id>
     <published>2016-08-04T13:53:43.000Z</published>
-    <updated>2016-08-30T05:17:26.000Z</updated>
+    <updated>2016-09-05T15:57:49.000Z</updated>
     
-    <content type="html"><![CDATA[<p>就是在update时，代入之前的库存作为条件，如：<br>update stocks set count=count-1 where count=20 and productid=xxxx</p>
-<p>用同步队列，就可以实现。库存比如是1000，那就存1000个随机数到队列中，拿到随机数的人去换取真实的商品。这样数据库的压力都小。最多更新1000次。队列可以系统加载时创建，也可以做为持久化保存在文件中。</p>
+    <content type="html"><![CDATA[<p>用同步队列，就可以实现。库存比如是1000，那就存1000个随机数到队列中，拿到随机数的人去换取真实的商品。这样数据库的压力都小。最多更新1000次。队列可以系统加载时创建，也可以做为持久化保存在文件中。</p>
 <h2 id="关于库存和秒杀的解决方案"><a href="#关于库存和秒杀的解决方案" class="headerlink" title="关于库存和秒杀的解决方案"></a>关于库存和秒杀的解决方案</h2><ol>
 <li>用额外的单进程处理一个队列，下单请求放到队列里，一个个处理，就不会有并发的问题了，但是要额外的后台进程以及延迟问题，不予考虑。</li>
-<li>根据update结果来判断，我们可以在sql2的时候加一个判断条件update … where 库存&gt;0，如果返回false，则说明库存不足，并回滚事务。</li>
+<li>根据update结果来判断，我们可以加一个判断条件update … where 库存&gt;0，如果返回false，则说明库存不足，并回滚事务。</li>
 <li>借助文件排他锁，在处理下单请求的时候，用flock锁定一个文件，如果锁定失败说明有其他订单正在处理，此时要么等待要么直接提示用户”服务器繁忙”</li>
 </ol>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//阻塞(等待)模式</span></div><div class="line">$fp = fopen(<span class="string">"lock.txt"</span>, <span class="string">"w+"</span>);</div><div class="line"><span class="keyword">if</span>(flock($fp,LOCK_EX))</div><div class="line">&#123;</div><div class="line">    <span class="comment">//..处理订单</span></div><div class="line">    flock($fp,LOCK_UN);</div><div class="line">&#125;</div><div class="line"></div><div class="line">fclose($fp);</div></pre></td></tr></table></figure>
@@ -179,13 +178,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;就是在update时，代入之前的库存作为条件，如：&lt;br&gt;update stocks set count=count-1 where count=20 and productid=xxxx&lt;/p&gt;
-&lt;p&gt;用同步队列，就可以实现。库存比如是1000，那就存1000个随机数到队列中，拿到随机数的人去换取真实的商品。这样数据库的压力都小。最多更新1000次。队列可以系统加载时创建，也可以做为持久化保存在文件中。&lt;/p&gt;
-&lt;h2 id=&quot;关于库存和秒杀的解决方案&quot;&gt;&lt;a href=&quot;#关于库存和秒杀的解决方案&quot; class=&quot;headerlink&quot; title=&quot;关于库存和秒杀的解决方案&quot;&gt;&lt;/a&gt;关于库存和秒杀的解决方案&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;用额外的单进程处理一个队列，下单请求放到队列里，一个个处理，就不会有并发的问题了，但是要额外的后台进程以及延迟问题，不予考虑。&lt;/li&gt;
-&lt;li&gt;根据update结果来判断，我们可以在sql2的时候加一个判断条件update … where 库存&amp;gt;0，如果返回false，则说明库存不足，并回滚事务。&lt;/li&gt;
-&lt;li&gt;借助文件排他锁，在处理下单请求的时候，用flock锁定一个文件，如果锁定失败说明有其他订单正在处理，此时要么等待要么直接提示用户”服务器繁忙”&lt;/li&gt;
-&lt;/ol&gt;
+      &lt;p&gt;用同步队列，就可以实现。库存比如是1000，那就存1000个随机数到队列中，拿到随机数的人去换取真实的商品。这样数据库的压力都小。最多更新1000次。队列可以系统加载时创建，也可以做为持久化保存在文件中。&lt;/p&gt;
+&lt;h2 id=&quot;关于库存和秒杀的解决方案&quot;&gt;&lt;a href=
     
     </summary>
     
@@ -419,7 +413,7 @@ Windows/Linux: Ctrl+Alt+N
     <link href="https://entimm.github.io/2016/07/16/%E9%AB%98%E7%BA%A7PHP/"/>
     <id>https://entimm.github.io/2016/07/16/高级PHP/</id>
     <published>2016-07-16T02:35:00.000Z</published>
-    <updated>2016-08-30T05:17:24.000Z</updated>
+    <updated>2016-09-05T16:19:58.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="面向对象5原则"><a href="#面向对象5原则" class="headerlink" title="面向对象5原则"></a>面向对象5原则</h2><h3 id="单一职责原则（single-resposibility-principle）"><a href="#单一职责原则（single-resposibility-principle）" class="headerlink" title="单一职责原则（single-resposibility principle）"></a>单一职责原则（single-resposibility principle）</h3><p>其核心思想为：一个类，最好只做一件事，只有一个引起它的变化的原因</p>
 <h3 id="开放-封闭原则（The-Open-Close-principle）"><a href="#开放-封闭原则（The-Open-Close-principle）" class="headerlink" title="开放-封闭原则（The Open-Close principle）"></a>开放-封闭原则（The Open-Close principle）</h3><p>其核心思想为：对扩展开放，对修改封闭<br>软件实体（类、模块、函数）应该是可扩展的，但是不可修改的。也就是说，对于扩展是开放的，对于更改是封闭的。怎样可能在不改动模块源代码的情况下去更改它的行为呢？怎样才能在无需对模块进行改动的情况下改变它的功能呢？关键是抽象！因此在进行面向对象设计时要尽量考虑接口封装机制、抽象机制和多态技术。该原则同样适合于非面向对象的方法，是软件工程设计方法的重要原则之一</p>
@@ -428,7 +422,7 @@ Windows/Linux: Ctrl+Alt+N
 <h3 id="接口分离原则（interface-segregation-principle）"><a href="#接口分离原则（interface-segregation-principle）" class="headerlink" title="接口分离原则（interface-segregation principle）"></a>接口分离原则（interface-segregation principle）</h3><p>其核心思想：使用多个小的专门的接口，而不要使用一个大的总接口<br>具体而言，接口隔离原则体现在：接口应该是内聚的，应该避免“胖”接口。一个类对另外一个类的依赖应该建立在最小的接口上，不要强迫依赖不用的方法，这是一种接口污染</p>
 <h2 id="异常-vs-if-else"><a href="#异常-vs-if-else" class="headerlink" title="异常 vs if_else"></a>异常 vs if_else</h2><p>把这个大函数分成了若干小函数，在这个小函数里面抛异常，大函数里面扑获异常，不用再一个一个的判断小函数的返回值</p>
 <p>任何好的语言都应该提供完善的异常支持服务, 来使程序结构更优美可读行更好可维护,而不是靠一大堆的if else来控制程序的流程.</p>
-<p>要有上下层的概念，在上下层逻辑处理中,throw是Current Role反馈给Upper Role，try/catch是Current Role处理Lower Role反馈</p>
+<p>要有上下层的概念，在上下层逻辑处理中,throw 是 Current Role 反馈给 Upper Role，try/catch 是 Current Role 处理 Lower Role 反馈</p>
 <h2 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h2><p>把业务逻辑处理部分抽象出来作为一层，这一层在M之上，C之下，名为 Logic</p>
 <p>把可以作为公共的服务抽象出来作为一层，这一层不与任何一层耦合，仅提供自身的服务，名为Service<br>小到文件上传，下载，图片处理，储存<br>大到日志，错误处理，邮件，授权，队列，计划任务，支付，验证，加密，短信都可以做出单独的服务</p>
 <p>业务变了，C层和M层都不需要改动，只需要改动中间的 Logic 就好了</p>
@@ -694,7 +688,7 @@ strcasecmp();--比较字符串函数
     <link href="https://entimm.github.io/2016/06/30/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
     <id>https://entimm.github.io/2016/06/30/面试问题总结/</id>
     <published>2016-06-30T14:53:48.000Z</published>
-    <updated>2016-08-30T05:17:31.000Z</updated>
+    <updated>2016-09-05T16:17:00.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="php魔术方法-14项"><a href="#php魔术方法-14项" class="headerlink" title="php魔术方法(14项)"></a>php魔术方法(14项)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">__construct() 实例化类时自动调用.</div><div class="line">__destruct() 类对象使用结束时自动调用.</div><div class="line">__set() 在给未定义的属性赋值的时候调用.</div><div class="line">__get() 调用未定义的属性时候调用.</div><div class="line">__isset() 使用isset()或empty()函数时候会调用.</div><div class="line">__unset() 使用unset()时候会调用.</div><div class="line">__sleep() 使用serialize序列化时候调用.</div><div class="line">__wakeup() 使用unserialize反序列化的时候调用.</div><div class="line">__call() 调用一个不存在的方法的时候调用.</div><div class="line">__callStatic()调用一个不存在的静态方法是调用.</div><div class="line">__toString() 把对象转换成字符串的时候会调用.比如 echo.</div><div class="line">__invoke() 当尝试把对象当方法调用时调用.</div><div class="line">__set_state() 当使用var_export()函数时候调用.接受一个数组参数.</div><div class="line">__clone() 当使用clone复制一个对象时候调用.</div></pre></td></tr></table></figure>
 <h2 id="HTTP协议中几个状态码的含义"><a href="#HTTP协议中几个状态码的含义" class="headerlink" title="HTTP协议中几个状态码的含义."></a>HTTP协议中几个状态码的含义.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">100 Continue  继续,一般在发送post请求时,已发送了http header之后服务端将返回此信息,表示确认,之后发送具体参数信息</div><div class="line">200 OK   正常返回信息</div><div class="line">201 Created  请求成功并且服务器创建了新的资源</div><div class="line">202 Accepted  服务器已接受请求,但尚未处理</div><div class="line">301 Moved Permanently  请求的网页已永久移动到新位置.</div><div class="line">302 Found  临时性重定向.</div><div class="line">303 See Other  临时性重定向,且总是使用 GET 请求新的 URI.</div><div class="line">304 Not Modified  自从上次请求后,请求的网页未修改过.</div><div class="line">400 Bad Request  服务器无法理解请求的格式,客户端不应当尝试再次使用相同的内容发起请求.</div><div class="line">401 Unauthorized  请求未授权.</div><div class="line">403 Forbidden  禁止访问.</div><div class="line">404 Not Found  找不到如何与 URI 相匹配的资源.</div><div class="line">500 Internal Server Error  最常见的服务器端错误.</div><div class="line">503 Service Unavailable 服务器端暂时无法处理请求（可能是过载或维护）.</div><div class="line"></div><div class="line">100 Continue</div><div class="line">101 Switching Protocols</div><div class="line">200 OK</div><div class="line">201 Created</div><div class="line">202 Accepted</div><div class="line">203 Non-Authoritative Information</div><div class="line">204 No Content</div><div class="line">205 Reset Content</div><div class="line">206 Partial Content</div><div class="line">300 Multiple Choices</div><div class="line">301 Moved Permanently</div><div class="line">302 Found</div><div class="line">303 See Other</div><div class="line">304 Not Modified</div><div class="line">305 Use Proxy</div><div class="line">307 Temporary Redirect</div><div class="line">400 Bad Request</div><div class="line">401 Unauthorized</div><div class="line">402 Payment Required</div><div class="line">403 Forbidden</div><div class="line">404 Not Found</div><div class="line">405 Method Not Allowed</div><div class="line">406 Not Acceptable</div><div class="line">407 Proxy Authentication Required</div><div class="line">408 Request Time-out</div><div class="line">409 Conflict</div><div class="line">410 Gone</div><div class="line">411 Length Required</div><div class="line">412 Precondition Failed</div><div class="line">413 Request Entity Too Large</div><div class="line">414 Request-URI Too Large</div><div class="line">415 Unsupported Media Type</div><div class="line">416 Requested range not satisfiable</div><div class="line">417 Expectation Failed</div><div class="line">500 Internal Server Error</div><div class="line">501 Not Implemented</div><div class="line">502 Bad Gateway</div><div class="line">503 Service Unavailable</div><div class="line">504 Gateway Time-out</div><div class="line">505 HTTP Version not supported</div></pre></td></tr></table></figure>
@@ -729,7 +723,7 @@ strcasecmp();--比较字符串函数
 <li>hash</li>
 </ul>
 <h2 id="asp-php-jsp的优缺点"><a href="#asp-php-jsp的优缺点" class="headerlink" title="asp,php,jsp的优缺点"></a>asp,php,jsp的优缺点</h2><p>asp: 闭源且不跨平台<br>php: 开源且跨平台，简单快速，作为网站初期的首选<br>jsp: </p>
-<p>如果 uid 值为 10,2,5,6,3 的记录存在，那么 select uid from user where uid in (10,2,5,6,3);<br>结果顺序为按 uid 降序排列</p>
+<p>如果 uid 值为 10,2,5,6,3 的记录存在，那么 select uid from user where uid in (10,2,5,6,3);<br>结果顺序为按 uid 升序排列</p>
 <h2 id="php之multicurl"><a href="#php之multicurl" class="headerlink" title="php之multicurl"></a>php之multicurl</h2><p>multicurl所有的多线程就是异步、网络io支持并发，http请求支持并发<br>pthread是真正正宗的多线程，也是php唯一的多线程</p>
 <h2 id="php优化"><a href="#php优化" class="headerlink" title="php优化"></a>php优化</h2><ul>
 <li>CPU 密集部分用 C++ 或者 C 写 PHP 的扩展模块。</li>
@@ -752,7 +746,7 @@ strcasecmp();--比较字符串函数
 <li>客户端的隐藏域MAX_FILE_SIZE的数值（可以被绕开）。</li>
 <li>服务器端的upload_max_filesize，post_max_size和memory_limit。这几项不能够用脚本来设置。</li>
 </ul>
-<h2 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h2><p>a.删除没有任何订单客户:DELETE FROM customerinfo WHERE customerid NOT in(SELECT customerid FROM orderinfo)<br>b.提取所有没有订单客户:SELECT FROM customerinfo WHERE customerid NOT in(SELECT customerid FROM orderinfo)<br>c.提高b的速度优化:SELECT FROM customerinfo LEFT JOIN orderid ON customerinfo.customerid=orderinfo.customerid<br>WHERE orderinfo.customerid IS NULL</p>
+<h2 id="sql"><a href="#sql" class="headerlink" title="sql"></a>sql</h2><p>a.删除没有任何订单客户:DELETE FROM customerinfo WHERE customerid NOT in (SELECT customerid FROM orderinfo)<br>b.提取所有没有订单客户:SELECT <em> FROM customerinfo WHERE customerid NOT in (SELECT customerid FROM orderinfo)<br>c.提高b的速度优化:SELECT </em> FROM customerinfo LEFT JOIN orderid ON customerinfo.customerid=orderinfo.customerid<br>WHERE orderinfo.customerid IS NULL</p>
 <h2 id="fopen打开文件"><a href="#fopen打开文件" class="headerlink" title="fopen打开文件"></a>fopen打开文件</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$readcontents = fopen(<span class="string">'http://www.phpres.com/index.html'</span>, <span class="string">'rb'</span>);</div><div class="line">$contents = stream_get_contents($readcontents);</div><div class="line">fclose($readcontents);</div><div class="line"><span class="keyword">echo</span> $contents;</div></pre></td></tr></table></figure>
 <h2 id="char-vs-varchar"><a href="#char-vs-varchar" class="headerlink" title="char vs varchar"></a>char vs varchar</h2><p>Varchar是变长，节省存储空间，char是固定长度。查找效率要char型快，因为varchar是非定长，必须先查找长度，然后进行数据的提取，比char定长类型多了一个步骤，所以效率低一些</p>
 <h2 id="这些这些协议的全称和中文解释（都是工作在应用层）"><a href="#这些这些协议的全称和中文解释（都是工作在应用层）" class="headerlink" title="这些这些协议的全称和中文解释（都是工作在应用层）"></a>这些这些协议的全称和中文解释（都是工作在应用层）</h2><p>SMTP (Simple Mail Transfer Protocol) 简单邮件传输协议<br>POP3 (Post Office Protocol 3) 邮局协议第3版<br>HTTP (Hypertext Transfer Protocol) 超文本传输协议<br>FTP   (File Transfer Protocol）文件传输协议<br>DNS   (Domain Name System and Domain Name Service protocol) 域名系统（服务）协议</p>
@@ -777,9 +771,9 @@ strcasecmp();--比较字符串函数
     <link href="https://entimm.github.io/2016/06/28/docker%E6%8A%80%E5%B7%A7/"/>
     <id>https://entimm.github.io/2016/06/28/docker技巧/</id>
     <published>2016-06-28T01:39:42.000Z</published>
-    <updated>2016-08-30T05:17:23.000Z</updated>
+    <updated>2016-09-05T15:55:19.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="删除-none-tag-镜像"><a href="#删除-none-tag-镜像" class="headerlink" title="删除 none tag 镜像"></a>删除 none tag 镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ocker rmi $(docker images | grep &quot;^&lt;none&gt;&quot; | awk &apos;&#123;print $3&#125;&apos;)</div></pre></td></tr></table></figure>
+    <content type="html"><![CDATA[<h2 id="删除-none-tag-镜像"><a href="#删除-none-tag-镜像" class="headerlink" title="删除 none tag 镜像"></a>删除 none tag 镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rmi $(docker images | grep &quot;^&lt;none&gt;&quot; | awk &apos;&#123;print $3&#125;&apos;)</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rmi $(docker images -q --filter &quot;dangling=true&quot;)</div></pre></td></tr></table></figure>
 <h2 id="删除所有镜像"><a href="#删除所有镜像" class="headerlink" title="删除所有镜像"></a>删除所有镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker images -q | xargs docker rmi</div></pre></td></tr></table></figure>
 <h2 id="删除所有容器"><a href="#删除所有容器" class="headerlink" title="删除所有容器"></a>删除所有容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker ps -q -a | xargs docker rm</div></pre></td></tr></table></figure>
@@ -790,7 +784,7 @@ strcasecmp();--比较字符串函数
     
     <summary type="html">
     
-      &lt;h2 id=&quot;删除-none-tag-镜像&quot;&gt;&lt;a href=&quot;#删除-none-tag-镜像&quot; class=&quot;headerlink&quot; title=&quot;删除 none tag 镜像&quot;&gt;&lt;/a&gt;删除 none tag 镜像&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;ocker rmi $(docker images | grep &amp;quot;^&amp;lt;none&amp;gt;&amp;quot; | awk &amp;apos;&amp;#123;print $3&amp;#125;&amp;apos;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;h2 id=&quot;删除-none-tag-镜像&quot;&gt;&lt;a href=&quot;#删除-none-tag-镜像&quot; class=&quot;headerlink&quot; title=&quot;删除 none tag 镜像&quot;&gt;&lt;/a&gt;删除 none tag 镜像&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;docker rmi $(docker images | grep &amp;quot;^&amp;lt;none&amp;gt;&amp;quot; | awk &amp;apos;&amp;#123;print $3&amp;#125;&amp;apos;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;docker rmi $(docker images -q --filter &amp;quot;dangling=true&amp;quot;)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;删除所有镜像&quot;&gt;&lt;a href=&quot;#删除所有镜像&quot; class=&quot;headerlink&quot; title=&quot;删除所有镜像&quot;&gt;&lt;/a&gt;删除所有镜像&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;docker images -q | xargs docker rmi&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;删除所有容器&quot;&gt;&lt;a href=&quot;#删除所有容器&quot; class=&quot;headerlink&quot; title=&quot;删除所有容器&quot;&gt;&lt;/a&gt;删除所有容器&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;docker ps -q -a | xargs docker rm&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;

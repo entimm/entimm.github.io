@@ -4,7 +4,7 @@
 <html lang="zh-CN">
 <head>
     
-    <meta name="author" content="enjoy">
+    <meta name="author" content="entimm">
     
     <meta name="description" content="面向对象5原则单一职责原则（single-resposibility principle）其核心思想为：一个类，最好只做一件事，只有一个引起它的变化的原因
 开放-封闭原则（The Open-Close principle）其核心思想为：对扩展开放，对修改封闭软件实体（类、模块、函数）应该是可扩展的，但是不可修改的。也就是说，对于扩展是开放的，对于更改是封闭的。怎样可能在不改动模块源代码的情况下去更改它的行为呢？怎样才能在无需对模块进行改动的情况下改变它的功能呢？关键是抽象！因此在进行面向对象设计时要尽量考虑接口封装机制、抽象机制和多态技术。该原则同样适合于非面向对象的方法，是软件工程设计方法的重要原则之一
@@ -13,7 +13,7 @@ Liskov 替换原则（liskov-substitution principle）其核心思想：子类�
     
 
     
-    <link rel="alternative" href="atom.xml" title="I am Pro" type="application/atom+xml">
+    <link rel="alternative" href="atom.xml" title="Entimm&#39;s Technology Journal" type="application/atom+xml">
     
     
     
@@ -22,7 +22,7 @@ Liskov 替换原则（liskov-substitution principle）其核心思想：子类�
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#282c31">
-    <title>高级 PHP | I am Pro</title>
+    <title>高级 PHP | Entimm&#39;s Technology Journal</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
@@ -54,7 +54,7 @@ Liskov 替换原则（liskov-substitution principle）其核心思想：子类�
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="https://entimm.github.io" title="I am Pro">I am Pro</a>
+                <a class="navbar-brand" href="https://entimm.github.io" title="Entimm's Technology Journal">Entimm&#39;s Technology Journal</a>
             </div>
 
             <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
@@ -100,7 +100,7 @@ Liskov 替换原则（liskov-substitution principle）其核心思想：子类�
         <h1>高级 PHP</h1>
         
         <div class="time-info">
-发表于:<time datetime="2016-07-16T02:35:00.000Z" itemprop="datePublished">2016-07-16</time>，更新于:<time datetime="2016-08-30T05:17:24.000Z" itemprop="dateModified">2016-08-30</time>，By <a href="https://entimm.github.io" title="enjoy">enjoy</a>
+发表于:<time datetime="2016-07-16T02:35:00.000Z" itemprop="datePublished">2016-07-16</time>，更新于:<time datetime="2016-09-05T16:19:58.000Z" itemprop="dateModified">2016-09-06</time>，By <a href="https://entimm.github.io" title="entimm">entimm</a>
         </div>
         
         <div class="post-body-inner">
@@ -116,7 +116,7 @@ Liskov 替换原则（liskov-substitution principle）其核心思想：子类�
 <h3 id="接口分离原则（interface-segregation-principle）"><a href="#接口分离原则（interface-segregation-principle）" class="headerlink" title="接口分离原则（interface-segregation principle）"></a>接口分离原则（interface-segregation principle）</h3><p>其核心思想：使用多个小的专门的接口，而不要使用一个大的总接口<br>具体而言，接口隔离原则体现在：接口应该是内聚的，应该避免“胖”接口。一个类对另外一个类的依赖应该建立在最小的接口上，不要强迫依赖不用的方法，这是一种接口污染</p>
 <h2 id="异常-vs-if-else"><a href="#异常-vs-if-else" class="headerlink" title="异常 vs if_else"></a>异常 vs if_else</h2><p>把这个大函数分成了若干小函数，在这个小函数里面抛异常，大函数里面扑获异常，不用再一个一个的判断小函数的返回值</p>
 <p>任何好的语言都应该提供完善的异常支持服务, 来使程序结构更优美可读行更好可维护,而不是靠一大堆的if else来控制程序的流程.</p>
-<p>要有上下层的概念，在上下层逻辑处理中,throw是Current Role反馈给Upper Role，try/catch是Current Role处理Lower Role反馈</p>
+<p>要有上下层的概念，在上下层逻辑处理中,throw 是 Current Role 反馈给 Upper Role，try/catch 是 Current Role 处理 Lower Role 反馈</p>
 <h2 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h2><p>把业务逻辑处理部分抽象出来作为一层，这一层在M之上，C之下，名为 Logic</p>
 <p>把可以作为公共的服务抽象出来作为一层，这一层不与任何一层耦合，仅提供自身的服务，名为Service<br>小到文件上传，下载，图片处理，储存<br>大到日志，错误处理，邮件，授权，队列，计划任务，支付，验证，加密，短信都可以做出单独的服务</p>
 <p>业务变了，C层和M层都不需要改动，只需要改动中间的 Logic 就好了</p>
@@ -171,7 +171,7 @@ var duoshuoQuery = {short_name:"entimm"};
 
     <footer id="footer">
         <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/XadillaX/hexadillax" target="_blank">Hexadillax</a> 主题</small>
-        <small>&copy; 2016 enjoy</small>
+        <small>&copy; 2016 entimm</small>
     </footer>
 
     

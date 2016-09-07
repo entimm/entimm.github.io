@@ -4,9 +4,9 @@
 <html lang="zh-CN">
 <head>
     
-    <meta name="author" content="enjoy">
+    <meta name="author" content="entimm">
     
-    <meta name="description" content="删除 none tag 镜像1ocker rmi $(docker images | grep &amp;quot;^&amp;lt;none&amp;gt;&amp;quot; | awk &amp;apos;&amp;#123;print $3&amp;#125;&amp;apos;)
+    <meta name="description" content="删除 none tag 镜像1docker rmi $(docker images | grep &amp;quot;^&amp;lt;none&amp;gt;&amp;quot; | awk &amp;apos;&amp;#123;print $3&amp;#125;&amp;apos;)
 1docker rmi $(docker images -q --filter &amp;quot;dangling=true&amp;quot;)
 删除所有镜像1docker images -q | xargs docker rmi
 删除所有容器1docker ps -q -a | xargs docker rm">
@@ -14,7 +14,7 @@
     
 
     
-    <link rel="alternative" href="atom.xml" title="I am Pro" type="application/atom+xml">
+    <link rel="alternative" href="atom.xml" title="Entimm&#39;s Technology Journal" type="application/atom+xml">
     
     
     
@@ -23,7 +23,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#282c31">
-    <title>docker 技巧 | I am Pro</title>
+    <title>docker 技巧 | Entimm&#39;s Technology Journal</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
@@ -55,7 +55,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="https://entimm.github.io" title="I am Pro">I am Pro</a>
+                <a class="navbar-brand" href="https://entimm.github.io" title="Entimm's Technology Journal">Entimm&#39;s Technology Journal</a>
             </div>
 
             <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
@@ -101,7 +101,7 @@
         <h1>docker 技巧</h1>
         
         <div class="time-info">
-发表于:<time datetime="2016-06-28T01:39:42.000Z" itemprop="datePublished">2016-06-28</time>，更新于:<time datetime="2016-08-30T05:17:23.000Z" itemprop="dateModified">2016-08-30</time>，By <a href="https://entimm.github.io" title="enjoy">enjoy</a>
+发表于:<time datetime="2016-06-28T01:39:42.000Z" itemprop="datePublished">2016-06-28</time>，更新于:<time datetime="2016-09-05T15:55:19.000Z" itemprop="dateModified">2016-09-05</time>，By <a href="https://entimm.github.io" title="entimm">entimm</a>
         </div>
         
         <div class="post-body-inner">
@@ -110,7 +110,7 @@
                 <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#删除-none-tag-镜像"><span class="toc-number">1.</span> <span class="toc-text">删除 none tag 镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除所有镜像"><span class="toc-number">2.</span> <span class="toc-text">删除所有镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除所有容器"><span class="toc-number">3.</span> <span class="toc-text">删除所有容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除所有停止运行的容器"><span class="toc-number">4.</span> <span class="toc-text">删除所有停止运行的容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除所有-dangling-unused-的镜像"><span class="toc-number">5.</span> <span class="toc-text">删除所有 dangling (unused) 的镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xargs-with-–no-run-if-empty-is-even-better-as-it-does-cleanly-handle-the-case-when-there-is-nothing-to-be-removed"><span class="toc-number">6.</span> <span class="toc-text">xargs with –no-run-if-empty is even better as it does cleanly handle the case when there is nothing to be removed.</span></a></li></ol>
             </div>
             
-            <h2 id="删除-none-tag-镜像"><a href="#删除-none-tag-镜像" class="headerlink" title="删除 none tag 镜像"></a>删除 none tag 镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ocker rmi $(docker images | grep &quot;^&lt;none&gt;&quot; | awk &apos;&#123;print $3&#125;&apos;)</div></pre></td></tr></table></figure>
+            <h2 id="删除-none-tag-镜像"><a href="#删除-none-tag-镜像" class="headerlink" title="删除 none tag 镜像"></a>删除 none tag 镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rmi $(docker images | grep &quot;^&lt;none&gt;&quot; | awk &apos;&#123;print $3&#125;&apos;)</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rmi $(docker images -q --filter &quot;dangling=true&quot;)</div></pre></td></tr></table></figure>
 <h2 id="删除所有镜像"><a href="#删除所有镜像" class="headerlink" title="删除所有镜像"></a>删除所有镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker images -q | xargs docker rmi</div></pre></td></tr></table></figure>
 <h2 id="删除所有容器"><a href="#删除所有容器" class="headerlink" title="删除所有容器"></a>删除所有容器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker ps -q -a | xargs docker rm</div></pre></td></tr></table></figure>
@@ -144,7 +144,7 @@ var duoshuoQuery = {short_name:"entimm"};
 
     <footer id="footer">
         <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/XadillaX/hexadillax" target="_blank">Hexadillax</a> 主题</small>
-        <small>&copy; 2016 enjoy</small>
+        <small>&copy; 2016 entimm</small>
     </footer>
 
     
