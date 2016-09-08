@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>https://entimm.github.io/2016/07/17/web%E5%AE%89%E5%85%A8/</loc>
+        <lastmod>2016-09-08T03:51:16.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://entimm.github.io/2016/07/10/mysql/</loc>
+        <lastmod>2016-09-07T16:10:30.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://entimm.github.io/2016/07/16/%E9%AB%98%E7%BA%A7PHP/</loc>
         <lastmod>2016-09-05T16:19:58.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -135,14 +151,6 @@
     </url>
 
     <url>
-        <loc>https://entimm.github.io/2016/07/10/mysql/</loc>
-        <lastmod>2016-08-29T16:38:04.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://entimm.github.io/2016/05/11/tip/</loc>
         <lastmod>2016-08-29T16:37:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -153,14 +161,6 @@
     <url>
         <loc>https://entimm.github.io/2016/07/14/play-os/</loc>
         <lastmod>2016-08-29T16:29:03.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://entimm.github.io/2016/07/17/web%E5%AE%89%E5%85%A8/</loc>
-        <lastmod>2016-08-29T15:42:37.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

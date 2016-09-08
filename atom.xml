@@ -374,10 +374,10 @@ Windows/Linux: Ctrl+Alt+N
     <link href="https://entimm.github.io/2016/07/17/web%E5%AE%89%E5%85%A8/"/>
     <id>https://entimm.github.io/2016/07/17/web安全/</id>
     <published>2016-07-17T03:42:49.000Z</published>
-    <updated>2016-08-29T15:42:37.000Z</updated>
+    <updated>2016-09-08T03:51:16.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="https"><a href="#https" class="headerlink" title="https"></a>https</h3><p>http 协议下的网络连接都是基于明文的，信息很有可能被泄露篡改<br>理论上 https 是安全的</p>
-<h3 id="XSS-Cross-Site-Script"><a href="#XSS-Cross-Site-Script" class="headerlink" title="XSS(Cross-Site Script)"></a>XSS(Cross-Site Script)</h3><p>跨站脚本攻击本质上是一种注入攻击<br>简单的说就是利用各种手段把恶意代码添加到网页中，并让受害者执行这段脚本。 XSS 的例子只要百度一下有很多。 XSS 能做用户使用浏览器能做的一切事情。可以看到同源策略无法保证不受 XSS 攻击，因为此时攻击者就在同源之内。</p>
+<h3 id="XSS-Cross-Site-Script"><a href="#XSS-Cross-Site-Script" class="headerlink" title="XSS(Cross-Site Script)"></a>XSS(Cross-Site Script)</h3><p>跨站脚本攻击本质上是一种注入攻击<br>简单的说就是利用各种手段把恶意代码添加到网页中，并让受害者执行这段脚本。 XSS 能做用户使用浏览器能做的一切事情。可以看到同源策略无法保证不受 XSS 攻击，因为此时攻击者就在同源之内。</p>
 <p>可以分为以下两类：<br>client(客户端型)<br>server(服务端型)<br>当一端 XSS 代码是在服务端被插入的，那么这就是服务端型 XSS ，同理，如果代码在客户端插入，就是客户端型 XSS 。</p>
 <p>其实只要做好无论任何情况下保证代码不被执行就能完全杜绝 XSS 攻击<br>任何时候都不要把不受信任的数据直接插入到 dom 中的任何位置,一定要做转义。</p>
 <h3 id="Http-Only"><a href="#Http-Only" class="headerlink" title="Http-Only"></a>Http-Only</h3><p>使用 Http-only 保护 cookie ，可以保证即使发生了 XSS ，用户的 cookie 也是安全的。使用 Http-only 保护的 cookie 是不会被 javascript 读写的。</p>
@@ -398,7 +398,7 @@ Windows/Linux: Ctrl+Alt+N
     <summary type="html">
     
       &lt;h3 id=&quot;https&quot;&gt;&lt;a href=&quot;#https&quot; class=&quot;headerlink&quot; title=&quot;https&quot;&gt;&lt;/a&gt;https&lt;/h3&gt;&lt;p&gt;http 协议下的网络连接都是基于明文的，信息很有可能被泄露篡改&lt;br&gt;理论上 https 是安全的&lt;/p&gt;
-&lt;h3 id=&quot;XSS-Cross-Site-Script&quot;&gt;&lt;a href=&quot;#XSS-Cross-Site-Script&quot; class=&quot;headerlink&quot; title=&quot;XSS(Cross-Site Script)&quot;&gt;&lt;/a&gt;XSS(Cross-Site Script)&lt;/h3&gt;&lt;p&gt;跨站脚本攻击本质上是一种注入攻击&lt;br&gt;简单的说就是利用各种手段把恶意代码添加到网页中，并让受害者执行这段脚本。 XSS 的例子只要百度一下有很多。 XSS 能做用户使用浏览器能做的一切事情。可以看到同源策略无法保证不受 XSS 攻击，因为此时攻击者就在同源之内。&lt;/p&gt;
+&lt;h3 id=&quot;XSS-Cross-Site-Script&quot;&gt;&lt;a href=&quot;#XSS-Cross-Site-Script&quot; class=&quot;headerlink&quot; title=&quot;XSS(Cross-Site Script)&quot;&gt;&lt;/a&gt;XSS(Cross-Site Script)&lt;/h3&gt;&lt;p&gt;跨站脚本攻击本质上是一种注入攻击&lt;br&gt;简单的说就是利用各种手段把恶意代码添加到网页中，并让受害者执行这段脚本。 XSS 能做用户使用浏览器能做的一切事情。可以看到同源策略无法保证不受 XSS 攻击，因为此时攻击者就在同源之内。&lt;/p&gt;
 &lt;p&gt;可以分为以下两类：&lt;br&gt;client(客户端型)&lt;br&gt;server(服务端型)&lt;br&gt;当一端 XSS 代码是在服务端被插入的，那么这就是服务端型 XSS ，同理，如果代码在客户端插入，就是客户端型 XSS 。&lt;/p&gt;
 &lt;p&gt;其实只要做好无论任何情况下保证代码不被执行就能完全杜绝 XSS 攻击&lt;br&gt;任何时候都不要把不受信任的数据直接插入到 dom 中的任何位置,一定要做转义。&lt;/p&gt;
 
@@ -557,19 +557,19 @@ strcasecmp();--比较字符串函数
     <link href="https://entimm.github.io/2016/07/10/mysql/"/>
     <id>https://entimm.github.io/2016/07/10/mysql/</id>
     <published>2016-07-10T07:46:16.000Z</published>
-    <updated>2016-08-29T16:38:04.000Z</updated>
+    <updated>2016-09-07T16:10:30.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="MySQL存储引擎-MyISAM-和-InnoDB-的区别"><a href="#MySQL存储引擎-MyISAM-和-InnoDB-的区别" class="headerlink" title="MySQL存储引擎 MyISAM 和 InnoDB 的区别"></a>MySQL存储引擎 MyISAM 和 InnoDB 的区别</h2><ul>
 <li>MyISAM类型不支持事务处理等高级处理,而InnoDB类型支持.</li>
 <li>InnoDB不支持FULLTEXT类型的索引.</li>
 <li>InnoDB中不保存表的具体行数,但是MyISAM只要简单的读出保存好的行数即可.</li>
-<li>MyISAM支持表锁，只有读读之间是并发的，写写之间和读写之间（读和插入之间是可以并发的，去设置concurrent_insert参数，定期执行表优化操作，更新操作就没有办法了）是串行的，所以写起来慢；InnoDB支持行锁，这个一般指的是sql用到索引的时候，行锁是加在索引上的，不是加在数据记录上的，如果sql没有用到索引，仍然会锁定表，普通的select是不需要锁的，当查询的记录遇到锁时，用的是一致性的非锁定快照读，也就是根据数据库隔离级别策略，会去读被锁定行的快照，其它更新或加锁读语句用的是当前读，读取原始行；因为普通读与写不冲突</li>
+<li>MyISAM支持表锁，只有读读之间是并发的，写写之间和读写之间（读和插入之间是可以并发的，去设置concurrent_insert参数，定期执行表优化操作，更新操作就没有办法了）是串行的，所以写起来慢；InnoDB支持行锁，这个一般指的是sql用到索引的时候，行锁是加在索引上的，不是加在数据记录上的，如果sql没有用到索引，仍然会锁定表，普通的select是不需要锁的</li>
 <li>MyISAM索引btree上的节点是一个指向数据物理位置的指针，所以查找起来很快；nnodb索引节点存的则是数据的主键，所以需要根据主键二次查找</li>
 <li>因为在使用索引的时候用的是行锁，锁的粒度小，竞争相同锁的情况就少，就增加了并发处理，所以并发读写的效率还是很优秀的，问题在于索引查询后的根据主键的二次查找导致效率低</li>
 </ul>
 <h2 id="数据库设计范式"><a href="#数据库设计范式" class="headerlink" title="数据库设计范式"></a>数据库设计范式</h2><p>第一范式:每个属性都不可再分解<br>第二范式:每个属性都依赖与主键<br>第三范式:除了主键外，其他属性都没有依赖关系</p>
 <h2 id="MYSQL-性能优化"><a href="#MYSQL-性能优化" class="headerlink" title="MYSQL 性能优化"></a>MYSQL 性能优化</h2><ul>
-<li>设计良好的数据库结构选择合适的存储引擎，选择合适的表字段数据类型,允许部分数据冗余（空间换时间）</li>
+<li>选择合适的存储引擎,设计良好的数据库结构，选择合适的表字段数据类型,允许部分数据冗余（空间换时间）</li>
 <li>适当的添加索引</li>
 <li>优化 sql 语句，不同的语句，根据你选择的引擎、表中数据的分布情况、索引情况、数据库优化策略、查询中的锁策略等因素，最终查询的效率相差很大；优化要从整体去考虑，有时你优化一条语句后，其它查询反而效率被降低了，所以要取一个平衡点</li>
 <li>Cache（缓存数据）<br>  查询：查询之前，要在Memcached或Redis中查找结果，如果找到，则返回它；如果未找到，则到数据库服务器上执行查询，并将结果返回给Memcached或Redis<br>  插入：先把数据插入数据库，在内存中受此影响的数据库将变成无效</li>
@@ -607,7 +607,6 @@ strcasecmp();--比较字符串函数
 <h2 id="关于主从复制、读写分离"><a href="#关于主从复制、读写分离" class="headerlink" title="关于主从复制、读写分离"></a>关于主从复制、读写分离</h2><ul>
 <li>增加了数据的冗余备份，提高了可用性</li>
 <li>扩展读</li>
-<li>极大程度的缓解X锁和S锁争用</li>
 <li>从库可配置myisam引擎及其他针对性设置，提升查询性能以及节约系统开销</li>
 <li>主库向从库发送binlog是异步的，从库恢复数据也是异步的</li>
 <li>当节点比较多时，使用多级缓存，减轻主的压力</li>
@@ -628,12 +627,6 @@ strcasecmp();--比较字符串函数
 <li>将MySQL运行在普通PC上，硬件费用大大降低</li>
 </ul>
 </li>
-</ul>
-<h2 id="关于-sql-mode"><a href="#关于-sql-mode" class="headerlink" title="关于 sql mode"></a>关于 sql mode</h2><ul>
-<li>查看当前 sql mode: <code>SELECT @@sql_mode</code></li>
-<li>谨慎使用 <code>SET sql_mode = &#39;&#39;</code></li>
-<li><code>SET sql_mode=(SELECT CONCAT(@@sql_mode,&#39;,&lt;mode_to_add&gt;&#39;));</code></li>
-<li><code>SET sql_mode=(SELECT REPLACE(@@sql_mode,&#39;&lt;mode_to_remove&gt;&#39;,&#39;&#39;));</code></li>
 </ul>
 <h3 id="mysql中int、bigint、smallint-和-tinyint的区别与长度的含义"><a href="#mysql中int、bigint、smallint-和-tinyint的区别与长度的含义" class="headerlink" title="mysql中int、bigint、smallint 和 tinyint的区别与长度的含义"></a>mysql中int、bigint、smallint 和 tinyint的区别与长度的含义</h3><ul>
 <li><p>bigint<br>从 -2^63 (-9223372036854775808) 到 2^63-1 (9223372036854775807) 的整型数据（所有数字）。存储大小为 8 个字节。<br>P.S. bigint已经有长度了，在mysql建表中的length，只是用于显示的位数</p>
@@ -663,13 +656,13 @@ strcasecmp();--比较字符串函数
 &lt;li&gt;MyISAM类型不支持事务处理等高级处理,而InnoDB类型支持.&lt;/li&gt;
 &lt;li&gt;InnoDB不支持FULLTEXT类型的索引.&lt;/li&gt;
 &lt;li&gt;InnoDB中不保存表的具体行数,但是MyISAM只要简单的读出保存好的行数即可.&lt;/li&gt;
-&lt;li&gt;MyISAM支持表锁，只有读读之间是并发的，写写之间和读写之间（读和插入之间是可以并发的，去设置concurrent_insert参数，定期执行表优化操作，更新操作就没有办法了）是串行的，所以写起来慢；InnoDB支持行锁，这个一般指的是sql用到索引的时候，行锁是加在索引上的，不是加在数据记录上的，如果sql没有用到索引，仍然会锁定表，普通的select是不需要锁的，当查询的记录遇到锁时，用的是一致性的非锁定快照读，也就是根据数据库隔离级别策略，会去读被锁定行的快照，其它更新或加锁读语句用的是当前读，读取原始行；因为普通读与写不冲突&lt;/li&gt;
+&lt;li&gt;MyISAM支持表锁，只有读读之间是并发的，写写之间和读写之间（读和插入之间是可以并发的，去设置concurrent_insert参数，定期执行表优化操作，更新操作就没有办法了）是串行的，所以写起来慢；InnoDB支持行锁，这个一般指的是sql用到索引的时候，行锁是加在索引上的，不是加在数据记录上的，如果sql没有用到索引，仍然会锁定表，普通的select是不需要锁的&lt;/li&gt;
 &lt;li&gt;MyISAM索引btree上的节点是一个指向数据物理位置的指针，所以查找起来很快；nnodb索引节点存的则是数据的主键，所以需要根据主键二次查找&lt;/li&gt;
 &lt;li&gt;因为在使用索引的时候用的是行锁，锁的粒度小，竞争相同锁的情况就少，就增加了并发处理，所以并发读写的效率还是很优秀的，问题在于索引查询后的根据主键的二次查找导致效率低&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;数据库设计范式&quot;&gt;&lt;a href=&quot;#数据库设计范式&quot; class=&quot;headerlink&quot; title=&quot;数据库设计范式&quot;&gt;&lt;/a&gt;数据库设计范式&lt;/h2&gt;&lt;p&gt;第一范式:每个属性都不可再分解&lt;br&gt;第二范式:每个属性都依赖与主键&lt;br&gt;第三范式:除了主键外，其他属性都没有依赖关系&lt;/p&gt;
 &lt;h2 id=&quot;MYSQL-性能优化&quot;&gt;&lt;a href=&quot;#MYSQL-性能优化&quot; class=&quot;headerlink&quot; title=&quot;MYSQL 性能优化&quot;&gt;&lt;/a&gt;MYSQL 性能优化&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;设计良好的数据库结构选择合适的存储引擎，选择合适的表字段数据类型,允许部分数据冗余（空间换时间）&lt;/li&gt;
+&lt;li&gt;选择合适的存储引擎,设计良好的数据库结构，选择合适的表字段数据类型,允许部分数据冗余（空间换时间）&lt;/li&gt;
 &lt;li&gt;适当的添加索引&lt;/li&gt;
 &lt;li&gt;优化 sql 语句，不同的语句，根据你选择的引擎、表中数据的分布情况、索引情况、数据库优化策略、查询中的锁策略等因素，最终查询的效率相差很大；优化要从整体去考虑，有时你优化一条语句后，其它查询反而效率被降低了，所以要取一个平衡点&lt;/li&gt;
 &lt;li&gt;Cache（缓存数据）&lt;br&gt;  查询：查询之前，要在Memcached或Redis中查找结果，如果找到，则返回它；如果未找到，则到数据库服务器上执行查询，并将结果返回给Memcached或Redis&lt;br&gt;  插入：先把数据插入数据库，在内存中受此影响的数据库将变成无效&lt;/li&gt;

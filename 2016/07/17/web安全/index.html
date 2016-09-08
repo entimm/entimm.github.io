@@ -7,7 +7,7 @@
     <meta name="author" content="entimm">
     
     <meta name="description" content="httpshttp 协议下的网络连接都是基于明文的，信息很有可能被泄露篡改理论上 https 是安全的
-XSS(Cross-Site Script)跨站脚本攻击本质上是一种注入攻击简单的说就是利用各种手段把恶意代码添加到网页中，并让受害者执行这段脚本。 XSS 的例子只要百度一下有很多。 XSS 能做用户使用浏览器能做的一切事情。可以看到同源策略无法保证不受 XSS 攻击，因为此时攻击者就在同源之内。
+XSS(Cross-Site Script)跨站脚本攻击本质上是一种注入攻击简单的说就是利用各种手段把恶意代码添加到网页中，并让受害者执行这段脚本。 XSS 能做用户使用浏览器能做的一切事情。可以看到同源策略无法保证不受 XSS 攻击，因为此时攻击者就在同源之内。
 可以分为以下两类：client(客户端型)server(服务端型)当一端 XSS 代码是在服务端被插入的，那么这就是服务端型 XSS ，同理，如果代码在客户端插入，就是客户端型 XSS 。
 其实只要做好无论任何情况下保证代码不被执行就能完全杜绝 XSS 攻击任何时候都不要把不受信任的数据直接插入到 dom 中的任何位置,一定要做转义。">
     
@@ -101,7 +101,7 @@ XSS(Cross-Site Script)跨站脚本攻击本质上是一种注入攻击简单的�
         <h1>web安全</h1>
         
         <div class="time-info">
-发表于:<time datetime="2016-07-17T03:42:49.000Z" itemprop="datePublished">2016-07-17</time>，更新于:<time datetime="2016-08-29T15:42:37.000Z" itemprop="dateModified">2016-08-29</time>，By <a href="https://entimm.github.io" title="entimm">entimm</a>
+发表于:<time datetime="2016-07-17T03:42:49.000Z" itemprop="datePublished">2016-07-17</time>，更新于:<time datetime="2016-09-08T03:51:16.000Z" itemprop="dateModified">2016-09-08</time>，By <a href="https://entimm.github.io" title="entimm">entimm</a>
         </div>
         
         <div class="post-body-inner">
@@ -111,7 +111,7 @@ XSS(Cross-Site Script)跨站脚本攻击本质上是一种注入攻击简单的�
             </div>
             
             <h3 id="https"><a href="#https" class="headerlink" title="https"></a>https</h3><p>http 协议下的网络连接都是基于明文的，信息很有可能被泄露篡改<br>理论上 https 是安全的</p>
-<h3 id="XSS-Cross-Site-Script"><a href="#XSS-Cross-Site-Script" class="headerlink" title="XSS(Cross-Site Script)"></a>XSS(Cross-Site Script)</h3><p>跨站脚本攻击本质上是一种注入攻击<br>简单的说就是利用各种手段把恶意代码添加到网页中，并让受害者执行这段脚本。 XSS 的例子只要百度一下有很多。 XSS 能做用户使用浏览器能做的一切事情。可以看到同源策略无法保证不受 XSS 攻击，因为此时攻击者就在同源之内。</p>
+<h3 id="XSS-Cross-Site-Script"><a href="#XSS-Cross-Site-Script" class="headerlink" title="XSS(Cross-Site Script)"></a>XSS(Cross-Site Script)</h3><p>跨站脚本攻击本质上是一种注入攻击<br>简单的说就是利用各种手段把恶意代码添加到网页中，并让受害者执行这段脚本。 XSS 能做用户使用浏览器能做的一切事情。可以看到同源策略无法保证不受 XSS 攻击，因为此时攻击者就在同源之内。</p>
 <p>可以分为以下两类：<br>client(客户端型)<br>server(服务端型)<br>当一端 XSS 代码是在服务端被插入的，那么这就是服务端型 XSS ，同理，如果代码在客户端插入，就是客户端型 XSS 。</p>
 <p>其实只要做好无论任何情况下保证代码不被执行就能完全杜绝 XSS 攻击<br>任何时候都不要把不受信任的数据直接插入到 dom 中的任何位置,一定要做转义。</p>
 <h3 id="Http-Only"><a href="#Http-Only" class="headerlink" title="Http-Only"></a>Http-Only</h3><p>使用 Http-only 保护 cookie ，可以保证即使发生了 XSS ，用户的 cookie 也是安全的。使用 Http-only 保护的 cookie 是不会被 javascript 读写的。</p>

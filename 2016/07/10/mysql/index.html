@@ -10,13 +10,13 @@
 MyISAM类型不支持事务处理等高级处理,而InnoDB类型支持.
 InnoDB不支持FULLTEXT类型的索引.
 InnoDB中不保存表的具体行数,但是MyISAM只要简单的读出保存好的行数即可.
-MyISAM支持表锁，只有读读之间是并发的，写写之间和读写之间（读和插入之间是可以并发的，去设置concurrent_insert参数，定期执行表优化操作，更新操作就没有办法了）是串行的，所以写起来慢；InnoDB支持行锁，这个一般指的是sql用到索引的时候，行锁是加在索引上的，不是加在数据记录上的，如果sql没有用到索引，仍然会锁定表，普通的select是不需要锁的，当查询的记录遇到锁时，用的是一致性的非锁定快照读，也就是根据数据库隔离级别策略，会去读被锁定行的快照，其它更新或加锁读语句用的是当前读，读取原始行；因为普通读与写不冲突
+MyISAM支持表锁，只有读读之间是并发的，写写之间和读写之间（读和插入之间是可以并发的，去设置concurrent_insert参数，定期执行表优化操作，更新操作就没有办法了）是串行的，所以写起来慢；InnoDB支持行锁，这个一般指的是sql用到索引的时候，行锁是加在索引上的，不是加在数据记录上的，如果sql没有用到索引，仍然会锁定表，普通的select是不需要锁的
 MyISAM索引btree上的节点是一个指向数据物理位置的指针，所以查找起来很快；nnodb索引节点存的则是数据的主键，所以需要根据主键二次查找
 因为在使用索引的时候用的是行锁，锁的粒度小，竞争相同锁的情况就少，就增加了并发处理，所以并发读写的效率还是很优秀的，问题在于索引查询后的根据主键的二次查找导致效率低
 
 数据库设计范式第一范式:每个属性都不可再分解第二范式:每个属性都依赖与主键第三范式:除了主键外，其他属性都没有依赖关系
 MYSQL 性能优化
-设计良好的数据库结构选择合适的存储引擎，选择合适的表字段数据类型,允许部分数据冗余（空间换时间）
+选择合适的存储引擎,设计良好的数据库结构，选择合适的表字段数据类型,允许部分数据冗余（空间换时间）
 适当的添加索引
 优化 sql 语句，不同的语句，根据你选择的引擎、表中数据的分布情况、索引情况、数据库优化策略、查询中的锁策略等因素，最终查询的效率相差很大；优化要从整体去考虑，有时你优化一条语句后，其它查询反而效率被降低了，所以要取一个平衡点
 Cache（缓存数据）  查询：查询之前，要在Memcached或Redis中查找结果，如果找到，则返回它；如果未找到，则到数据库服务器上执行查询，并将结果返回给Memcached或Redis  插入：先把数据插入数据库，在内存中受此影响的数据库将变成无效
@@ -115,26 +115,26 @@ Cache（缓存数据）  查询：查询之前，要在Memcached或Redis中查�
         <h1>mysql知识</h1>
         
         <div class="time-info">
-发表于:<time datetime="2016-07-10T07:46:16.000Z" itemprop="datePublished">2016-07-10</time>，更新于:<time datetime="2016-08-29T16:38:04.000Z" itemprop="dateModified">2016-08-30</time>，By <a href="https://entimm.github.io" title="entimm">entimm</a>
+发表于:<time datetime="2016-07-10T07:46:16.000Z" itemprop="datePublished">2016-07-10</time>，更新于:<time datetime="2016-09-07T16:10:30.000Z" itemprop="dateModified">2016-09-08</time>，By <a href="https://entimm.github.io" title="entimm">entimm</a>
         </div>
         
         <div class="post-body-inner">
             <div id="toc" class="toc-article well">
                 <strong class="toc-title">大纲</strong>
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL存储引擎-MyISAM-和-InnoDB-的区别"><span class="toc-number">1.</span> <span class="toc-text">MySQL存储引擎 MyISAM 和 InnoDB 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库设计范式"><span class="toc-number">2.</span> <span class="toc-text">数据库设计范式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MYSQL-性能优化"><span class="toc-number">3.</span> <span class="toc-text">MYSQL 性能优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于缓存"><span class="toc-number">4.</span> <span class="toc-text">关于缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切分"><span class="toc-number">5.</span> <span class="toc-text">切分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL数据库基本的三个优化法则"><span class="toc-number">6.</span> <span class="toc-text">MySQL数据库基本的三个优化法则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql要注意的地方及技巧"><span class="toc-number">7.</span> <span class="toc-text">mysql要注意的地方及技巧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不好操作"><span class="toc-number">8.</span> <span class="toc-text">不好操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于主从复制、读写分离"><span class="toc-number">9.</span> <span class="toc-text">关于主从复制、读写分离</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于数据库外键及其他高级特性-触发器、存储过程等"><span class="toc-number">10.</span> <span class="toc-text">关于数据库外键及其他高级特性(触发器、存储过程等)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql-vs-oracle"><span class="toc-number">11.</span> <span class="toc-text">mysql vs oracle</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于-sql-mode"><span class="toc-number">12.</span> <span class="toc-text">关于 sql mode</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mysql中int、bigint、smallint-和-tinyint的区别与长度的含义"><span class="toc-number">12.1.</span> <span class="toc-text">mysql中int、bigint、smallint 和 tinyint的区别与长度的含义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Importance-of-varchar-length-in-MySQL-table"><span class="toc-number">12.2.</span> <span class="toc-text">Importance of varchar length in MySQL table</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择合适的-MySQL-日期时间类型来存储你的时间"><span class="toc-number">13.</span> <span class="toc-text">选择合适的 MySQL 日期时间类型来存储你的时间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#范围"><span class="toc-number">13.1.</span> <span class="toc-text">范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用处"><span class="toc-number">13.2.</span> <span class="toc-text">用处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sql"><span class="toc-number">13.3.</span> <span class="toc-text">sql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全文索引"><span class="toc-number">13.4.</span> <span class="toc-text">全文索引</span></a></li></ol></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL存储引擎-MyISAM-和-InnoDB-的区别"><span class="toc-number">1.</span> <span class="toc-text">MySQL存储引擎 MyISAM 和 InnoDB 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库设计范式"><span class="toc-number">2.</span> <span class="toc-text">数据库设计范式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MYSQL-性能优化"><span class="toc-number">3.</span> <span class="toc-text">MYSQL 性能优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于缓存"><span class="toc-number">4.</span> <span class="toc-text">关于缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#切分"><span class="toc-number">5.</span> <span class="toc-text">切分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL数据库基本的三个优化法则"><span class="toc-number">6.</span> <span class="toc-text">MySQL数据库基本的三个优化法则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql要注意的地方及技巧"><span class="toc-number">7.</span> <span class="toc-text">mysql要注意的地方及技巧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不好操作"><span class="toc-number">8.</span> <span class="toc-text">不好操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于主从复制、读写分离"><span class="toc-number">9.</span> <span class="toc-text">关于主从复制、读写分离</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于数据库外键及其他高级特性-触发器、存储过程等"><span class="toc-number">10.</span> <span class="toc-text">关于数据库外键及其他高级特性(触发器、存储过程等)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql-vs-oracle"><span class="toc-number">11.</span> <span class="toc-text">mysql vs oracle</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mysql中int、bigint、smallint-和-tinyint的区别与长度的含义"><span class="toc-number">11.1.</span> <span class="toc-text">mysql中int、bigint、smallint 和 tinyint的区别与长度的含义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Importance-of-varchar-length-in-MySQL-table"><span class="toc-number">11.2.</span> <span class="toc-text">Importance of varchar length in MySQL table</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择合适的-MySQL-日期时间类型来存储你的时间"><span class="toc-number">12.</span> <span class="toc-text">选择合适的 MySQL 日期时间类型来存储你的时间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#范围"><span class="toc-number">12.1.</span> <span class="toc-text">范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用处"><span class="toc-number">12.2.</span> <span class="toc-text">用处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sql"><span class="toc-number">12.3.</span> <span class="toc-text">sql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全文索引"><span class="toc-number">12.4.</span> <span class="toc-text">全文索引</span></a></li></ol></li></ol>
             </div>
             
             <h2 id="MySQL存储引擎-MyISAM-和-InnoDB-的区别"><a href="#MySQL存储引擎-MyISAM-和-InnoDB-的区别" class="headerlink" title="MySQL存储引擎 MyISAM 和 InnoDB 的区别"></a>MySQL存储引擎 MyISAM 和 InnoDB 的区别</h2><ul>
 <li>MyISAM类型不支持事务处理等高级处理,而InnoDB类型支持.</li>
 <li>InnoDB不支持FULLTEXT类型的索引.</li>
 <li>InnoDB中不保存表的具体行数,但是MyISAM只要简单的读出保存好的行数即可.</li>
-<li>MyISAM支持表锁，只有读读之间是并发的，写写之间和读写之间（读和插入之间是可以并发的，去设置concurrent_insert参数，定期执行表优化操作，更新操作就没有办法了）是串行的，所以写起来慢；InnoDB支持行锁，这个一般指的是sql用到索引的时候，行锁是加在索引上的，不是加在数据记录上的，如果sql没有用到索引，仍然会锁定表，普通的select是不需要锁的，当查询的记录遇到锁时，用的是一致性的非锁定快照读，也就是根据数据库隔离级别策略，会去读被锁定行的快照，其它更新或加锁读语句用的是当前读，读取原始行；因为普通读与写不冲突</li>
+<li>MyISAM支持表锁，只有读读之间是并发的，写写之间和读写之间（读和插入之间是可以并发的，去设置concurrent_insert参数，定期执行表优化操作，更新操作就没有办法了）是串行的，所以写起来慢；InnoDB支持行锁，这个一般指的是sql用到索引的时候，行锁是加在索引上的，不是加在数据记录上的，如果sql没有用到索引，仍然会锁定表，普通的select是不需要锁的</li>
 <li>MyISAM索引btree上的节点是一个指向数据物理位置的指针，所以查找起来很快；nnodb索引节点存的则是数据的主键，所以需要根据主键二次查找</li>
 <li>因为在使用索引的时候用的是行锁，锁的粒度小，竞争相同锁的情况就少，就增加了并发处理，所以并发读写的效率还是很优秀的，问题在于索引查询后的根据主键的二次查找导致效率低</li>
 </ul>
 <h2 id="数据库设计范式"><a href="#数据库设计范式" class="headerlink" title="数据库设计范式"></a>数据库设计范式</h2><p>第一范式:每个属性都不可再分解<br>第二范式:每个属性都依赖与主键<br>第三范式:除了主键外，其他属性都没有依赖关系</p>
 <h2 id="MYSQL-性能优化"><a href="#MYSQL-性能优化" class="headerlink" title="MYSQL 性能优化"></a>MYSQL 性能优化</h2><ul>
-<li>设计良好的数据库结构选择合适的存储引擎，选择合适的表字段数据类型,允许部分数据冗余（空间换时间）</li>
+<li>选择合适的存储引擎,设计良好的数据库结构，选择合适的表字段数据类型,允许部分数据冗余（空间换时间）</li>
 <li>适当的添加索引</li>
 <li>优化 sql 语句，不同的语句，根据你选择的引擎、表中数据的分布情况、索引情况、数据库优化策略、查询中的锁策略等因素，最终查询的效率相差很大；优化要从整体去考虑，有时你优化一条语句后，其它查询反而效率被降低了，所以要取一个平衡点</li>
 <li>Cache（缓存数据）<br>  查询：查询之前，要在Memcached或Redis中查找结果，如果找到，则返回它；如果未找到，则到数据库服务器上执行查询，并将结果返回给Memcached或Redis<br>  插入：先把数据插入数据库，在内存中受此影响的数据库将变成无效</li>
@@ -172,7 +172,6 @@ Cache（缓存数据）  查询：查询之前，要在Memcached或Redis中查�
 <h2 id="关于主从复制、读写分离"><a href="#关于主从复制、读写分离" class="headerlink" title="关于主从复制、读写分离"></a>关于主从复制、读写分离</h2><ul>
 <li>增加了数据的冗余备份，提高了可用性</li>
 <li>扩展读</li>
-<li>极大程度的缓解X锁和S锁争用</li>
 <li>从库可配置myisam引擎及其他针对性设置，提升查询性能以及节约系统开销</li>
 <li>主库向从库发送binlog是异步的，从库恢复数据也是异步的</li>
 <li>当节点比较多时，使用多级缓存，减轻主的压力</li>
@@ -193,12 +192,6 @@ Cache（缓存数据）  查询：查询之前，要在Memcached或Redis中查�
 <li>将MySQL运行在普通PC上，硬件费用大大降低</li>
 </ul>
 </li>
-</ul>
-<h2 id="关于-sql-mode"><a href="#关于-sql-mode" class="headerlink" title="关于 sql mode"></a>关于 sql mode</h2><ul>
-<li>查看当前 sql mode: <code>SELECT @@sql_mode</code></li>
-<li>谨慎使用 <code>SET sql_mode = &#39;&#39;</code></li>
-<li><code>SET sql_mode=(SELECT CONCAT(@@sql_mode,&#39;,&lt;mode_to_add&gt;&#39;));</code></li>
-<li><code>SET sql_mode=(SELECT REPLACE(@@sql_mode,&#39;&lt;mode_to_remove&gt;&#39;,&#39;&#39;));</code></li>
 </ul>
 <h3 id="mysql中int、bigint、smallint-和-tinyint的区别与长度的含义"><a href="#mysql中int、bigint、smallint-和-tinyint的区别与长度的含义" class="headerlink" title="mysql中int、bigint、smallint 和 tinyint的区别与长度的含义"></a>mysql中int、bigint、smallint 和 tinyint的区别与长度的含义</h3><ul>
 <li><p>bigint<br>从 -2^63 (-9223372036854775808) 到 2^63-1 (9223372036854775807) 的整型数据（所有数字）。存储大小为 8 个字节。<br>P.S. bigint已经有长度了，在mysql建表中的length，只是用于显示的位数</p>
