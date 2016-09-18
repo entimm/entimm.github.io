@@ -58,7 +58,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="https://entimm.github.io" title="Entimm's Blog">Entimm&#39;s Blog</a>
+                <a class="navbar-brand" href="https://entimm.com" title="Entimm's Blog">Entimm&#39;s Blog</a>
             </div>
 
             <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
@@ -104,13 +104,13 @@
         <h1>面试可能会被问到的问题</h1>
         
         <div class="time-info">
-发表于:<time datetime="2016-07-16T01:20:04.000Z" itemprop="datePublished">2016-07-16</time>，更新于:<time datetime="2016-08-30T05:17:33.000Z" itemprop="dateModified">2016-08-30</time>，By <a href="https://entimm.github.io" title="entimm">entimm</a>
+发表于:<time datetime="2016-07-16T01:20:04.000Z" itemprop="datePublished">2016-07-16</time>，更新于:<time datetime="2016-09-08T15:47:56.000Z" itemprop="dateModified">2016-09-08</time>，By <a href="https://entimm.com" title="entimm">entimm</a>
         </div>
         
         <div class="post-body-inner">
             <div id="toc" class="toc-article well">
                 <strong class="toc-title">大纲</strong>
-                <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象-vs-接口"><span class="toc-number">1.</span> <span class="toc-text">抽象 vs 接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件上传注意事项"><span class="toc-number">2.</span> <span class="toc-text">文件上传注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie作用"><span class="toc-number">3.</span> <span class="toc-text">cookie作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#php-的数据类型"><span class="toc-number">4.</span> <span class="toc-text">php 的数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页面乱码处理"><span class="toc-number">5.</span> <span class="toc-text">页面乱码处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ajax缺点"><span class="toc-number">6.</span> <span class="toc-text">ajax缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串转整型"><span class="toc-number">7.</span> <span class="toc-text">字符串转整型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#处理正则表达式"><span class="toc-number">8.</span> <span class="toc-text">处理正则表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串的常用函数"><span class="toc-number">9.</span> <span class="toc-text">字符串的常用函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#留意一下"><span class="toc-number"></span> <span class="toc-text">留意一下</span></a>
+                <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象-vs-接口"><span class="toc-number">1.</span> <span class="toc-text">抽象 vs 接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件上传注意事项"><span class="toc-number">2.</span> <span class="toc-text">文件上传注意事项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie作用"><span class="toc-number">3.</span> <span class="toc-text">cookie作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#php-的数据类型"><span class="toc-number">4.</span> <span class="toc-text">php 的数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#页面乱码处理"><span class="toc-number">5.</span> <span class="toc-text">页面乱码处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ajax缺点"><span class="toc-number">6.</span> <span class="toc-text">ajax缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串转整型"><span class="toc-number">7.</span> <span class="toc-text">字符串转整型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#处理正则表达式"><span class="toc-number">8.</span> <span class="toc-text">处理正则表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串的常用函数"><span class="toc-number">9.</span> <span class="toc-text">字符串的常用函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程-线程"><span class="toc-number">10.</span> <span class="toc-text">进程 线程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#留意一下"><span class="toc-number"></span> <span class="toc-text">留意一下</span></a>
             </div>
             
             <h3 id="抽象-vs-接口"><a href="#抽象-vs-接口" class="headerlink" title="抽象 vs 接口"></a>抽象 vs 接口</h3><p>抽象类是一种不能被实例化的类，只能作为其他类的父类来使用。<br>抽象类是通过关键字 abstract 来声明的。<br>抽象类与普通类相似，都包含成员变量和成员方法，两者的区别在于，抽象类中至少要包含一个抽象方法，<br>抽象方法没有方法体，该方法天生就是要被子类重写的。<br>抽象方法的格式为：abstract function abstractMethod();</p>
@@ -149,7 +149,8 @@ substr_replace() -- 对指定字符串中的部分字符串进行替换
 strstr();--检索字符串函数
 explode();--分割字符串函数
 strcasecmp();--比较字符串函数
-</code></pre><h2 id="留意一下"><a href="#留意一下" class="headerlink" title="留意一下"></a>留意一下</h2><ul>
+</code></pre><h3 id="进程-线程"><a href="#进程-线程" class="headerlink" title="进程 线程"></a>进程 线程</h3><p>进程和线程都是一个时间段的描述，是CPU工作时间段的描述，不过是颗粒大小不同<br>进程的颗粒度太大，每次都要有上下文环境的调入，保存，调出。<br>线程是共享了进程的上下文环境，的更为细小的CPU时间段</p>
+<h2 id="留意一下"><a href="#留意一下" class="headerlink" title="留意一下"></a>留意一下</h2><ul>
 <li>count 可以递归计算数组</li>
 <li>echo可以一次输出多个值，中间用逗号隔开。而print一次只能输出一个值</li>
 <li>include 有返回值,require 没有</li>
@@ -160,7 +161,7 @@ strcasecmp();--比较字符串函数
 			
             <section class="comment">
 <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="/2016/07/16/面试可能会问到的问题/" data-title="面试可能会被问到的问题" data-url="https://entimm.github.io/2016/07/16/面试可能会问到的问题/"></div>
+	<div class="ds-thread" data-thread-key="/2016/07/16/面试可能会问到的问题/" data-title="面试可能会被问到的问题" data-url="https://entimm.com/2016/07/16/面试可能会问到的问题/"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
