@@ -94,153 +94,24 @@
     
 <article class="post container">
     <div class="jumbotron">
-        <h1><a href="/2016/06/24/欢快的使用谷歌搜索/" title="欢快的使用谷歌搜索">欢快的使用谷歌搜索</a></h1>
+        <h1><a href="/2016/08/30/代码片段/" title="常用代码片段">常用代码片段</a></h1>
 
         
-            <p>无障碍使用使用谷歌搜索的时候，要么无法访问，要么谷歌会将你的 google.com 重定向到具有特定国家或地区后缀的谷歌搜索地址，如 google.com.hk 等当然，我们可以直接输入这类带地区后缀的地址, 这样有时也能实现访问, 当是很多时候却并不好用，也常有无法访问的时候
-</p>
+            <p>utf-81&lt;meta http-equiv='Content-Type' content='text/html; charset=utf-8' /&gt;
+1header("Content-Type: text/html;charset=utf-8");</p>
         
 
         <p class="say-title">
             <img src="/images/avatar.png" class="img-circle index-post-avatar" />
             <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
-            2016-06-24 
+            2016-08-30 
         </p>
     </div>
 </article>
 
 <article class="post container">
     <div class="jumbotron">
-        <h1><a href="/2016/06/23/macos查看网络端口情况/" title="macos查看网络端口情况">macos查看网络端口情况</a></h1>
-
-        
-            <p>使用 netstat 命令1netstat -nat | grep &amp;lt;port&amp;gt;
-1netstat -nat |grep LISTEN
-使用 lsof 命令123456lsof -n -P -i TCP -s TCP:LISTEN-n 表示主机以ip地址显示-P 表示</p>
-        
-
-        <p class="say-title">
-            <img src="/images/avatar.png" class="img-circle index-post-avatar" />
-            <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
-            2016-06-23 
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/2016/05/28/FastCgi 与 PHP-FPM 之间的区别/" title="Cgi、FastCgi 与 PHP-FPM">Cgi、FastCgi 与 PHP-FPM</a></h1>
-
-        
-            <p>CGI 的作用web server（比如说 nginx）只是内容的分发者。
-
-如果请求 /index.html，那么 web server 会去文件系统中找到这个文件，发送给浏览器，这里分发的是静态数据。
-如果现在请求的是 /index.php，根据配置文件，nginx 知道这个</p>
-        
-
-        <p class="say-title">
-            <img src="/images/avatar.png" class="img-circle index-post-avatar" />
-            <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
-            2016-05-28 
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/2016/05/21/PHP代码重构/" title="PHP代码重构">PHP代码重构</a></h1>
-
-        
-            <p>删除 else12345678function test($arg)&amp;#123;    if($arg == &#39;foobar&#39;)&amp;#123;        return true;    &amp;#125;else&amp;#123;        return false;    &amp;#125</p>
-        
-
-        <p class="say-title">
-            <img src="/images/avatar.png" class="img-circle index-post-avatar" />
-            <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
-            2016-05-21 
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/2016/05/11/tip/" title="PHP小提示">PHP小提示</a></h1>
-
-        
-            <p>关于引用传递一般在输出参数有多个的时候可以考虑使用引用
-php中的’0’和javascript中的’0’在php和js中转化布尔类型,php中被转换为false,而js中却是true
-strrev只能翻转英文
-strlen()与mb_strlen()</p>
-        
-
-        <p class="say-title">
-            <img src="/images/avatar.png" class="img-circle index-post-avatar" />
-            <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
-            2016-05-11 
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/2016/04/27/谷歌搜索技巧/" title="谷歌搜索技巧">谷歌搜索技巧</a></h1>
-
-        
-            <p>
-用or表达或的意思（空格）
-谷歌会忽略掉一些单词“and”、“the，”、“where”、“how”、“what”、“or”，如果确实要搜索这些单词，应该在这些词前紧跟一个+ 
-排除一个关键词，应该在这个词前紧跟一个-
-搜索近似的关键词,紧跟~
-如果是词组，且有严格的顺序，就用</p>
-        
-
-        <p class="say-title">
-            <img src="/images/avatar.png" class="img-circle index-post-avatar" />
-            <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
-            2016-04-27 
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/2016/04/24/vagrant/" title="vagrant 常用操作">vagrant 常用操作</a></h1>
-
-        
-            <p>查看全局状态vagrant global-status
-基本安装流程，以centos为例vagrant add centos cent.box
-vagrant init centos
-vagrant up</p>
-        
-
-        <p class="say-title">
-            <img src="/images/avatar.png" class="img-circle index-post-avatar" />
-            <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
-            2016-04-24 
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/2016/04/24/很有用的一些技巧/" title="很有用的一些技巧">很有用的一些技巧</a></h1>
-
-        
-            <p>在利用 xdebug 和 phpstorm 调试通过终端执行的 PHP 脚本时，在终端执行先语句，即可对该脚本进行调试1export XDEBUG_CONFIG = &amp;quot;idekey=PHPSTORM&amp;quot;
-通过SSH方式登录远程服务器时，通过下面方式免除每次都要输</p>
-        
-
-        <p class="say-title">
-            <img src="/images/avatar.png" class="img-circle index-post-avatar" />
-            <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
-            2016-04-24 
-        </p>
-    </div>
-</article>
-
-<article class="post container">
-    <div class="jumbotron">
-        <h1><a href="/2016/04/24/常用正则技巧总结/" title="常用正则技巧总结">常用正则技巧总结</a></h1>
+        <h1><a href="/2016/08/30/常用正则技巧总结/" title="常用正则技巧总结">常用正则技巧总结</a></h1>
 
         
             <p>正则字符
@@ -259,25 +130,151 @@ vagrant up</p>
         <p class="say-title">
             <img src="/images/avatar.png" class="img-circle index-post-avatar" />
             <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
-            2016-04-24 
+            2016-08-30 
         </p>
     </div>
 </article>
 
 <article class="post container">
     <div class="jumbotron">
-        <h1><a href="/2016/04/24/PHP cURL 应用/" title="利用 CURL 进行数据抓取总结">利用 CURL 进行数据抓取总结</a></h1>
+        <h1><a href="/2016/08/30/欢快的使用谷歌搜索/" title="欢快的使用谷歌搜索">欢快的使用谷歌搜索</a></h1>
 
         
-            <p>POSTCURLOPT_POST 的设置可以指定当前提交是否为POST方式
-CURLOPT_POSTFIELDS则用于设定提交的参数，可以是参数串，也可以是参数数组
-Referer对于一些程序，它可能判断来源网址，如果发现referer不是自己的网站，则拒绝访问，这时候，我们就需</p>
+            <p>无障碍使用使用谷歌搜索的时候，要么无法访问，要么谷歌会将你的 google.com 重定向到具有特定国家或地区后缀的谷歌搜索地址，如 google.com.hk 等当然，我们可以直接输入这类带地区后缀的地址, 这样有时也能实现访问, 当是很多时候却并不好用，也常有无法访问的时候
+</p>
         
 
         <p class="say-title">
             <img src="/images/avatar.png" class="img-circle index-post-avatar" />
             <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
-            2016-04-24 
+            2016-08-30 
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2016/08/30/谷歌搜索技巧/" title="谷歌搜索技巧">谷歌搜索技巧</a></h1>
+
+        
+            <p>
+用or表达或的意思（空格）
+谷歌会忽略掉一些单词“and”、“the，”、“where”、“how”、“what”、“or”，如果确实要搜索这些单词，应该在这些词前紧跟一个+ 
+排除一个关键词，应该在这个词前紧跟一个-
+搜索近似的关键词,紧跟~
+如果是词组，且有严格的顺序，就用</p>
+        
+
+        <p class="say-title">
+            <img src="/images/avatar.png" class="img-circle index-post-avatar" />
+            <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
+            2016-08-30 
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2016/08/30/tip/" title="PHP小提示">PHP小提示</a></h1>
+
+        
+            <p>关于引用传递一般在输出参数有多个的时候可以考虑使用引用
+php中的’0’和javascript中的’0’在php和js中转化布尔类型,php中被转换为false,而js中却是true
+strrev只能翻转英文
+strlen()与mb_strlen()</p>
+        
+
+        <p class="say-title">
+            <img src="/images/avatar.png" class="img-circle index-post-avatar" />
+            <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
+            2016-08-30 
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2016/08/30/play-os/" title="系统问题解决">系统问题解决</a></h1>
+
+        
+            <p>在 OS X El Capitan 安装 git-svn在 Mountain Lion 和 Mavericks 系统中，安装 git-svn 中断的解决办法如下不幸的是，由于 El Capitan 系统保护机制，上述操作无效了12$ sudo ln -s /Application</p>
+        
+
+        <p class="say-title">
+            <img src="/images/avatar.png" class="img-circle index-post-avatar" />
+            <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
+            2016-08-30 
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2016/08/29/web/" title="web前端">web前端</a></h1>
+
+        
+            <p>js对象的定义是无序属性的集合，其属性可以包含基本值、对象或者函数
+一个Javascript函数也是一个对象，并且，所有的对象从技术上讲也只不过是函数
+123456789var Person=function()&amp;#123;    this.name=&quot;phodal&quot;;    t</p>
+        
+
+        <p class="say-title">
+            <img src="/images/avatar.png" class="img-circle index-post-avatar" />
+            <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
+            2016-08-29 
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2016/08/29/macos查看网络端口情况/" title="macos查看网络端口情况">macos查看网络端口情况</a></h1>
+
+        
+            <p>使用 netstat 命令1netstat -nat | grep &amp;lt;port&amp;gt;
+1netstat -nat |grep LISTEN
+使用 lsof 命令123456lsof -n -P -i TCP -s TCP:LISTEN-n 表示主机以ip地址显示-P 表示</p>
+        
+
+        <p class="say-title">
+            <img src="/images/avatar.png" class="img-circle index-post-avatar" />
+            <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
+            2016-08-29 
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2016/08/29/vagrant/" title="vagrant 常用操作">vagrant 常用操作</a></h1>
+
+        
+            <p>查看全局状态vagrant global-status
+基本安装流程，以centos为例vagrant add centos cent.box
+vagrant init centos
+vagrant up</p>
+        
+
+        <p class="say-title">
+            <img src="/images/avatar.png" class="img-circle index-post-avatar" />
+            <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
+            2016-08-29 
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2016/08/28/PHP代码重构/" title="PHP代码重构">PHP代码重构</a></h1>
+
+        
+            <p>删除 else12345678function test($arg)&amp;#123;    if($arg == &#39;foobar&#39;)&amp;#123;        return true;    &amp;#125;else&amp;#123;        return false;    &amp;#125</p>
+        
+
+        <p class="say-title">
+            <img src="/images/avatar.png" class="img-circle index-post-avatar" />
+            <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
+            2016-08-28 
         </p>
     </div>
 </article>

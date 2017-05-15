@@ -1,0 +1,165 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="entimm">
+    
+    <meta name="description" content="httpshttp 协议下的网络连接都是基于明文的，信息很有可能被泄露篡改理论上 https 是安全的
+XSS(Cross-Site Script)跨站脚本攻击本质上是一种注入攻击简单的说就是利用各种手段把恶意代码添加到网页中，并让受害者执行这段脚本。 XSS 能做用户使用浏览器能做的一切事情。可以看到同源策略无法保证不受 XSS 攻击，因为此时攻击者就在同源之内。
+可以分为以下两类：client(客户端型)server(服务端型)当一端 XSS 代码是在服务端被插入的，那么这就是服务端型 XSS ，同理，如果代码在客户端插入，就是客户端型 XSS 。
+其实只要做好无论任何情况下保证代码不被执行就能完全杜绝 XSS 攻击任何时候都不要把不受信任的数据直接插入到 dom 中的任何位置,一定要做转义。">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="Entimm&#39;s Blog" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#282c31">
+    <title>web安全 | Entimm&#39;s Blog</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script> 
+    <script src="/js/common.js"></script>
+    <script src="/js/js.cookie.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://entimm.com" title="Entimm's Blog">Entimm&#39;s Blog</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index"><a href="/">首页</a></li>
+                    
+                    <li id="nav-archives"><a href="/archives">归档</a></li>
+                    
+                    <li id="nav-tags"><a href="/tags">标签</a></li>
+                    
+                    <li id="nav-categories"><a href="/categories">分类</a></li>
+                    
+                    <li id="nav-curriculumvitae"><a href="/curriculumvitae">关于</a></li>
+                    
+                    <li id="nav-contact"><a href="mailto:entimm@gmail.com">联系</a></li>
+                    
+                    
+                    <li><a href="https://github.com/entimm" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <script>
+    var backRoot = "/images/background/";
+    var backArray = [ "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg",  ];
+        
+    $(function() {
+        // page-id...
+        var pageId = "2016/09/08/web安全/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+        
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>web安全</h1>
+        
+        <div class="time-info">
+发表于:<time datetime="2016-09-08T03:51:16.000Z" itemprop="datePublished">2016-09-08</time>，更新于:<time datetime="2016-09-08T03:51:16.000Z" itemprop="dateModified">2016-09-08</time>，By <a href="https://entimm.com" title="entimm">entimm</a>
+        </div>
+        
+        <div class="post-body-inner">
+            <div id="toc" class="toc-article well">
+                <strong class="toc-title">大纲</strong>
+                <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#https"><span class="toc-number">1.</span> <span class="toc-text">https</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XSS-Cross-Site-Script"><span class="toc-number">2.</span> <span class="toc-text">XSS(Cross-Site Script)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Http-Only"><span class="toc-number">3.</span> <span class="toc-text">Http-Only</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSP-Content-Security-Policy"><span class="toc-number">4.</span> <span class="toc-text">CSP(Content Security Policy)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#token"><span class="toc-number">5.</span> <span class="toc-text">token</span></a></li></ol>
+            </div>
+            
+            <h3 id="https"><a href="#https" class="headerlink" title="https"></a>https</h3><p>http 协议下的网络连接都是基于明文的，信息很有可能被泄露篡改<br>理论上 https 是安全的</p>
+<h3 id="XSS-Cross-Site-Script"><a href="#XSS-Cross-Site-Script" class="headerlink" title="XSS(Cross-Site Script)"></a>XSS(Cross-Site Script)</h3><p>跨站脚本攻击本质上是一种注入攻击<br>简单的说就是利用各种手段把恶意代码添加到网页中，并让受害者执行这段脚本。 XSS 能做用户使用浏览器能做的一切事情。可以看到同源策略无法保证不受 XSS 攻击，因为此时攻击者就在同源之内。</p>
+<p>可以分为以下两类：<br>client(客户端型)<br>server(服务端型)<br>当一端 XSS 代码是在服务端被插入的，那么这就是服务端型 XSS ，同理，如果代码在客户端插入，就是客户端型 XSS 。</p>
+<p>其实只要做好无论任何情况下保证代码不被执行就能完全杜绝 XSS 攻击<br>任何时候都不要把不受信任的数据直接插入到 dom 中的任何位置,一定要做转义。</p>
+<h3 id="Http-Only"><a href="#Http-Only" class="headerlink" title="Http-Only"></a>Http-Only</h3><p>使用 Http-only 保护 cookie ，可以保证即使发生了 XSS ，用户的 cookie 也是安全的。使用 Http-only 保护的 cookie 是不会被 javascript 读写的。</p>
+<h3 id="CSP-Content-Security-Policy"><a href="#CSP-Content-Security-Policy" class="headerlink" title="CSP(Content Security Policy)"></a>CSP(Content Security Policy)</h3><p>CSP 的作用是限制一个页面的行为不论是否是 javacript 控制的。</p>
+<p>如何引入 CSP 呢？</p>
+<p>2.7.1 通过 response 头</p>
+<p>//只允许脚本从本源加载 Content-Security-Policy: script-src ‘self’<br>2.7.2 通过 html 的 meta 标签</p>
+<p>//作用同上</p>
+<meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+
+<p>那么 CSP 除了限制 script-src 之外还能限制什么呢？</p>
+<p>base-uri:限制这篇文档的 uri ；<br>child-src:限制子窗口的源(iframe 、弹窗等),取代 frame-src ；<br>connect-src:限制脚本可以访问的源；<br>font-src:限制字体的源；<br>form-action:限制表单能够提交到的源；<br>frame-ancestors:限制了当前页面可以被哪些页面以 iframe,frame,object 等方式加载；<br>frame-src:deprecated with child-src,限制了当前页面可以加载哪些源，与 frame-ancestors 对应；<br>img-src:限制图片可以从哪些源加载；<br>media-src:限制 video,audio, source,track 能够从哪些源加载；<br>object-src:限制插件可以从哪些源加载；<br>sandbox:强制打开沙盒模式；</p>
+<p>可以看出， CSP 是一个强大的策略，几乎可以限制了所有能够用到的资源的来源。使用好 CSP 可以很大成都降低 XSS 带来的风险。<br>另外， CSP 还提供一个报告的头 Content-Security-Policy-Report-Only ，使用这个头浏览器向服务器报告 CSP 状态，细节先不讨论。</p>
+<p>Content-Security-Policy-Report-Only:script-src’self’;<br>report-uri/csp-report-endpoint/</p>
+<h3 id="token"><a href="#token" class="headerlink" title="token"></a>token</h3><p>token 必须随机生成，并且有过期时间</p>
+
+
+			
+            <section class="comment">
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="/2016/09/08/web安全/" data-title="web安全" data-url="https://entimm.com/2016/09/08/web安全/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"entimm"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+</section>
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/XadillaX/hexadillax" target="_blank">Hexadillax</a> 主题</small>
+        <small>&copy; 2016 entimm</small>
+    </footer>
+
+    
+
+
+</body>
+</html>
+
