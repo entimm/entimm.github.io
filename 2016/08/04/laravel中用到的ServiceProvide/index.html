@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>laravel中用到的ServiceProvide | Entimm&#39;s Blog</title>
+  <meta name="description" content="null" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="Entimm's Blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="路由全局限制如果你希望路由参数可以总是遵循正则表达式，则可以使用 pattern 方法。你应该在 RouteServiceProvider 的 boot 方法里定义这些模式： 123456789101112/** * 定义你的路由模型绑定，模式过滤器等。 * * @param  \Illuminate\Routing\Router  $router * @return void */public">
+<meta property="og:type" content="article">
+<meta property="og:title" content="laravel中用到的ServiceProvide">
+<meta property="og:url" content="https://entimm.com/2016/08/04/laravel中用到的ServiceProvide/index.html">
+<meta property="og:site_name" content="Entimm&#39;s Blog">
+<meta property="og:description" content="路由全局限制如果你希望路由参数可以总是遵循正则表达式，则可以使用 pattern 方法。你应该在 RouteServiceProvider 的 boot 方法里定义这些模式： 123456789101112/** * 定义你的路由模型绑定，模式过滤器等。 * * @param  \Illuminate\Routing\Router  $router * @return void */public">
+<meta property="og:updated_time" content="2017-05-18T16:25:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="laravel中用到的ServiceProvide">
+<meta name="twitter:description" content="路由全局限制如果你希望路由参数可以总是遵循正则表达式，则可以使用 pattern 方法。你应该在 RouteServiceProvider 的 boot 方法里定义这些模式： 123456789101112/** * 定义你的路由模型绑定，模式过滤器等。 * * @param  \Illuminate\Routing\Router  $router * @return void */public">
+    
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+
+<body>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				Entimm's Blog
+			</a>
+			<div class='menu'>
+				<ul class='h-list'>
+					
+						<li>
+							<a class='flat-box nav-home' href='/'>
+								Home
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-archives' href='/archives'>
+								Archives
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-about me' href='/aboutme'>
+								About Me
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-github stars' href='/github-stars'>
+								GitHub Stars
+							</a>
+						</li>
+					
+				</ul>
+				<div class='underline'></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon icon-search"></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search flat-box"></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu flat-box"></span></a></li>
+			</ul>
+		</div>
+		
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				Word of Forks
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a href='javascript:void(0)'><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
+				<li class='s-top'><a href='javascript:void(0)'><span class="icon icon-arrow_upward flat-box"></span></a></li>
+				<li class='s-toc'><a href='javascript:void(0)'><span class="icon icon-format_list_numbered flat-box"></span></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<aside class="menu-phone">
+	<nav>
+		
+			<a href="/" class="nav-home nav">
+				Home
+			</a>
+		
+			<a href="/archives" class="nav-archives nav">
+				Archives
+			</a>
+		
+			<a href="/aboutme" class="nav-about me nav">
+				About Me
+			</a>
+		
+			<a href="/github-stars" class="nav-github stars nav">
+				GitHub Stars
+			</a>
+		
+	</nav>
+</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        <article id="post-laravel中用到的ServiceProvide"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/2016/08/04/laravel中用到的ServiceProvide/">
+    	laravel中用到的ServiceProvide
+    </a>
+  </h2>
+	<time>
+	  Aug 4, 2016
+	</time>
+	
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#路由"><span class="toc-number">1.</span> <span class="toc-text">路由</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#全局限制"><span class="toc-number">1.1.</span> <span class="toc-text">全局限制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由模型绑定"><span class="toc-number">1.2.</span> <span class="toc-text">路由模型绑定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#响应"><span class="toc-number">2.</span> <span class="toc-text">响应</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#响应宏"><span class="toc-number">2.1.</span> <span class="toc-text">响应宏</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#视图"><span class="toc-number">3.</span> <span class="toc-text">视图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#把数据共享给所有视图"><span class="toc-number">3.1.</span> <span class="toc-text">把数据共享给所有视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#视图组件"><span class="toc-number">3.2.</span> <span class="toc-text">视图组件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在视图组件内使用通配符"><span class="toc-number">3.2.1.</span> <span class="toc-text">在视图组件内使用通配符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#视图创建者"><span class="toc-number">3.3.</span> <span class="toc-text">视图创建者</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板"><span class="toc-number">4.</span> <span class="toc-text">模板</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#服务注入"><span class="toc-number">4.1.</span> <span class="toc-text">服务注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扩充-Blade"><span class="toc-number">4.2.</span> <span class="toc-text">扩充 Blade</span></a></li></ol></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><h3 id="全局限制"><a href="#全局限制" class="headerlink" title="全局限制"></a>全局限制</h3><p>如果你希望路由参数可以总是遵循正则表达式，则可以使用 pattern 方法。你应该在 RouteServiceProvider 的 boot 方法里定义这些模式：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 定义你的路由模型绑定，模式过滤器等。</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span>  \Illuminate\Routing\Router  $router</div><div class="line"> * <span class="doctag">@return</span> void</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">(Router $router)</span></span></div><div class="line">&#123;</div><div class="line">    $router-&gt;pattern(<span class="string">'id'</span>, <span class="string">'[0-9]+'</span>);</div><div class="line"></div><div class="line">    <span class="keyword">parent</span>::boot($router);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>模式一旦被定义，便会自动应用到所有使用该参数名称的路由上：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Route::get(<span class="string">'user/&#123;id&#125;'</span>, <span class="function"><span class="keyword">function</span> <span class="params">($id)</span> </span>&#123;</div><div class="line">    <span class="comment">// Only called if &#123;id&#125; is numeric.</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="路由模型绑定"><a href="#路由模型绑定" class="headerlink" title="路由模型绑定"></a>路由模型绑定</h3><p>Laravel 路由模型绑定提供了一个方便的方式来注入类实例到你的路由中。例如，除了注入一个用户的 ID，你也可以注入与指定 ID 相符的完整 User 类实例。</p>
+<p>首先，使用路由的 model 方法为指定参数指定类。必须在 RouteServiceProvider::boot 方法中定义你的模型绑定：</p>
+<p>绑定参数至模型</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">(Router $router)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">parent</span>::boot($router);</div><div class="line"></div><div class="line">    $router-&gt;model(<span class="string">'user'</span>, <span class="string">'App\User'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>接着，定义包含 {user} 参数的路由：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$router-&gt;get(<span class="string">'profile/&#123;user&#125;'</span>, <span class="function"><span class="keyword">function</span><span class="params">(App\User $user)</span> </span>&#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>因为我们已经绑定 {user} 参数至 App\User 模型，所以 User 实例会被注入至该路由。所以，举个例子，一个至 profile/1 的请求会注入 ID 为 1 的 User 实例。</p>
+<p>注意：如果符合的模型不存在于数据库中，就会自动抛出一个 404 异常。</p>
+<p>如果你希望指定你自己的「不存在」行为，只需传递一个闭包作为 model 方法的第三个参数：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$router-&gt;model(<span class="string">'user'</span>, <span class="string">'App\User'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> NotFoundHttpException;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>如果你希望使用你自己的解析逻辑，那么你必须使用 Route::bind 方法。你传递至 bind 方法的闭包会获取 URI 的部分值，且会返回你想注入至路由的类实例：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$router-&gt;bind(<span class="string">'user'</span>, <span class="function"><span class="keyword">function</span><span class="params">($value)</span> </span>&#123;</div><div class="line">    <span class="keyword">return</span> App\User::where(<span class="string">'name'</span>, $value)-&gt;first();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="响应"><a href="#响应" class="headerlink" title="响应"></a>响应</h2><h3 id="响应宏"><a href="#响应宏" class="headerlink" title="响应宏"></a>响应宏</h3><p>如果你想要自定义可以在很多路由和控制器重复使用的响应，可以使用 Illuminate\Contracts\Routing\ResponseFactory 实现的方法 macro。</p>
+<p>举个例子，来自 服务提供者的 boot 方法</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Providers</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">ServiceProvider</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Contracts</span>\<span class="title">Routing</span>\<span class="title">ResponseFactory</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ResponseMacroServiceProvider</span> <span class="keyword">extends</span> <span class="title">ServiceProvider</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 提供注册后运行的服务。</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span>  ResponseFactory  $factory</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">(ResponseFactory $factory)</span></span></div><div class="line">    &#123;</div><div class="line">        $factory-&gt;macro(<span class="string">'caps'</span>, <span class="function"><span class="keyword">function</span> <span class="params">($value)</span> <span class="title">use</span> <span class="params">($factory)</span> </span>&#123;</div><div class="line">            <span class="keyword">return</span> $factory-&gt;make(strtoupper($value));</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>macro 函数第一个参数为宏名称，第二个参数为闭包函数。宏的闭包函数会在 ResponseFactory 的实现或者辅助函数 response 调用宏名称的时候被运行：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span> response()-&gt;caps(<span class="string">'foo'</span>);</div></pre></td></tr></table></figure>
+<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><h3 id="把数据共享给所有视图"><a href="#把数据共享给所有视图" class="headerlink" title="把数据共享给所有视图"></a>把数据共享给所有视图</h3><p>有时候你可能需要共享一些数据给应用程序的所有渲染视图，这时可以通过使用视图 factory 的 share 方法来完成。通常情况下，你会把这些调用 share 方法的代码放在一个服务提供者的 boot 方法内。你可以选择直接写在 AppServiceProvider 或是自己生成一个不同的服务提供者来放置这些代码：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Providers</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppServiceProvider</span> <span class="keyword">extends</span> <span class="title">ServiceProvider</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 启动任何应用程序的服务。</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        view()-&gt;share(<span class="string">'key'</span>, <span class="string">'value'</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 注册服务提供者。</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">register</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">//</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="视图组件"><a href="#视图组件" class="headerlink" title="视图组件"></a>视图组件</h3><p>视图组件就是在视图被渲染前，会被调用的闭包或类方法。如果你想在每次渲染某些视图时绑定数据，视图组件可以帮你把这样的程序逻辑都组织到同一个地方。</p>
+<p>让我们在 服务提供者 内注册我们的视图组件。下面例子将使用 View 辅助函数来获取底层 Illuminate\Contracts\View\Factory contract 实现。请注意，Laravel 没有默认的目录来放置视图组件。你可以随意把它们放到任何地方。举例来说，你可以创建一个 App\Http\ViewComposers 目录：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Providers</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">ServiceProvider</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ComposerServiceProvider</span> <span class="keyword">extends</span> <span class="title">ServiceProvider</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 在容器内注册所有绑定。</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// 使用对象型态的视图组件...</span></div><div class="line">        view()-&gt;composer(</div><div class="line">            <span class="string">'profile'</span>, <span class="string">'App\Http\ViewComposers\ProfileComposer'</span></div><div class="line">        );</div><div class="line"></div><div class="line">        <span class="comment">// 使用闭包型态的视图组件...</span></div><div class="line">        view()-&gt;composer(<span class="string">'dashboard'</span>, <span class="function"><span class="keyword">function</span> <span class="params">($view)</span> </span>&#123;</div><div class="line"></div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 注册服务提供者。</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">register</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">//</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>现在我们已经注册好了视图组件，在每次 profile 视图渲染的时候，ProfileComposer@compose 方法都将会被运行。接下来我们来看看这个视图组件类要如何定义：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Http</span>\<span class="title">ViewComposers</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Contracts</span>\<span class="title">View</span>\<span class="title">View</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Users</span>\<span class="title">Repository</span> <span class="title">as</span> <span class="title">UserRepository</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProfileComposer</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 用户对象的实例。</div><div class="line">     *</div><div class="line">     * <span class="doctag">@var</span> UserRepository</div><div class="line">     */</div><div class="line">    <span class="keyword">protected</span> $users;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 创建一个新的个人数据视图组件。</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span>  UserRepository  $users</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">(UserRepository $users)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">// 所有依赖都会自动地被服务容器解析...</span></div><div class="line">        <span class="keyword">$this</span>-&gt;users = $users;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 将数据绑定到视图。</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span>  View  $view</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">compose</span><span class="params">(View $view)</span></span></div><div class="line">    &#123;</div><div class="line">        $view-&gt;with(<span class="string">'count'</span>, <span class="keyword">$this</span>-&gt;users-&gt;count());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在视图被渲染之前，视图组件的 compose 方法会被调用，并传入一个 Illuminate\Contracts\View\View 实例。你可以使用 with 方法来把数据绑定到视图。</p>
+<p>备注：所有的 视图组件 都会被服务容器所解析，因此你可以在视图组件的构造器、类型提示中注入所需的任何依赖。</p>
+<h4 id="在视图组件内使用通配符"><a href="#在视图组件内使用通配符" class="headerlink" title="在视图组件内使用通配符"></a>在视图组件内使用通配符</h4><p>你可以在 composer 方法的第一个参数中传递一个视图数组，来同时对多个视图附加同一个视图组件：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">view()-&gt;composer(</div><div class="line">    [<span class="string">'profile'</span>, <span class="string">'dashboard'</span>],</div><div class="line">    <span class="string">'App\Http\ViewComposers\MyViewComposer'</span></div><div class="line">);</div></pre></td></tr></table></figure>
+<p>视图的 composer 方法可以接受 * 作为通配符，所以你可以对所有视图附加 composer。如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">view()-&gt;composer(<span class="string">'*'</span>, <span class="function"><span class="keyword">function</span> <span class="params">($view)</span> </span>&#123;</div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="视图创建者"><a href="#视图创建者" class="headerlink" title="视图创建者"></a>视图创建者</h3><p>视图 创建者 几乎和视图组件运作方式一样；只是视图创建者会在视图初始化后就立即运行，而不是像视图组件一样要一直等到视图即将被渲染完成时才会被运行。要注册一个创建者，只要使用 creator 方法即可：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">view()-&gt;creator(<span class="string">'profile'</span>, <span class="string">'App\Http\ViewCreators\ProfileCreator'</span>);</div></pre></td></tr></table></figure>
+<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><h3 id="服务注入"><a href="#服务注入" class="headerlink" title="服务注入"></a>服务注入</h3><p>@inject 命令可以取出 Laravel 服务容器 中的服务。传递给 @inject 的第一个参数为置放该服务的变量名称，而第二个参数为你想要解析的服务的类或是接口的名称：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@inject('metrics', 'App\Services\MetricsService')</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    每月收入：&#123;&#123; $metrics-&gt;monthlyRevenue() &#125;&#125;。</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="扩充-Blade"><a href="#扩充-Blade" class="headerlink" title="扩充 Blade"></a>扩充 Blade</h3><p>Blade 甚至允许你自定义命令，你可以使用 directive 方法注册命令。当 Blade 编译器遇到该命令时，它将会带参数调用提供的回调函数。</p>
+<p>以下例子会创建一个把指定的 $var 格式化的 @datetime($var) 命令：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line"></div><div class="line"><span class="keyword">namespace</span> <span class="title">App</span>\<span class="title">Providers</span>;</div><div class="line"></div><div class="line"><span class="keyword">use</span> <span class="title">Blade</span>;</div><div class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">ServiceProvider</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppServiceProvider</span> <span class="keyword">extends</span> <span class="title">ServiceProvider</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 运行服务注册后的启动进程。</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        Blade::directive(<span class="string">'datetime'</span>, <span class="function"><span class="keyword">function</span><span class="params">($expression)</span> </span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="string">"&lt;?php echo with&#123;$expression&#125;-&gt;format('m/d/Y H:i'); ?&gt;"</span>;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 在容器注册绑定。</div><div class="line">     *</div><div class="line">     * <span class="doctag">@return</span> void</div><div class="line">     */</div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">register</span><span class="params">()</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">//</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如你所见，Laravel 的 with 辅助函数被用在这个命令中。with 辅助函数会简单地返回指定的对象或值，并允许使用便利的链式调用。最后此命令生成的 PHP 会是：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">echo</span> with($var)-&gt;format(<span class="string">'m/d/Y H:i'</span>); <span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+
+  	</div>
+	  
+	</section>
+	
+</article>
+<script>
+	window.subData = {
+		title: 'laravel中用到的ServiceProvide',
+		tools: true
+	}
+</script>
+
+      </div>
+      <aside class='l_side'>
+        
+  <section class='m_widget about'>
+
+<div class='header'>entimm</div>
+<div class='content'>
+<div class='desc'>Tempora mutantur, nos et mutamur in illis ...</div>
+</div>
+</section>
+
+  <section class='m_widget links'>
+<div class='header'>Links</div>
+<div class='content'>
+    <ul class="entry">
+    
+        <li><a class="flat-box" target="_blank" href="https://github.com/entimm">
+            <div class='name'>GiHub</div>
+        </a></li>
+    
+    </ul>
+</div>
+</section>
+
+  <section class='m_widget categories'>
+<div class='header'>Categories</div>
+<div class='content'>
+    
+</div>
+</section>
+
+  
+
+
+  <section class='m_widget archives'>
+<div class='header'>Archives</div>
+<div class='content'>
+    
+    <ul class="entry">
+    
+        <li>
+            <a href="/2016/08/29/vagrant/">
+              <span class="title"><span>vagrant 常用操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/PHP cURL 应用/">
+              <span class="title"><span>利用 CURL 进行数据抓取总结</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/05/docker技巧/">
+              <span class="title"><span>docker 技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/28/PHP代码重构/">
+              <span class="title"><span>PHP代码重构</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/10/25/iTerm2奇淫技巧/">
+              <span class="title"><span>iTerm2奇淫技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/11/22/git 命令/">
+              <span class="title"><span>git 命令</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/js 中对 checkbox 的操作/">
+              <span class="title"><span>js 中对 checkbox 的操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/15/linux/">
+              <span class="title"><span>linux相关操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/05/21/laravel 技巧/">
+              <span class="title"><span>laravel 技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/04/laravel中用到的ServiceProvide/">
+              <span class="title"><span>laravel中用到的ServiceProvide</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/08/mysql知识/">
+              <span class="title"><span>mysql知识</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/29/macos查看网络端口情况/">
+              <span class="title"><span>macos查看网络端口情况</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/mac os系统问题解决/">
+              <span class="title"><span>mac os系统问题解决</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/05/php-function/">
+              <span class="title"><span>php function</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/23/ssh保持链接/">
+              <span class="title"><span>ssh保持链接</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/24/shell/">
+              <span class="title"><span>shell</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/18/php中的坑/">
+              <span class="title"><span>php中的坑</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/19/php-tip/">
+              <span class="title"><span>php tips</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/29/web相关/">
+              <span class="title"><span>web相关</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/08/FastCgi 与 PHP-FPM 之间的区别/">
+              <span class="title"><span>Cgi、FastCgi 与 PHP-FPM</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/05/关于高并发的处理/">
+              <span class="title"><span>关于高并发的处理</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/19/tmux/">
+              <span class="title"><span>tmux使用</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/18/图片资源优化/">
+              <span class="title"><span>图片资源优化</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/常用代码片段/">
+              <span class="title"><span>常用代码片段</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/常用正则技巧总结/">
+              <span class="title"><span>常用正则技巧总结</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/12/很有用的一些技巧/">
+              <span class="title"><span>很有用的一些技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/04/快捷键/">
+              <span class="title"><span>快捷键</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/快速搭建vpn/">
+              <span class="title"><span>快速搭建vpn</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/快速搭建服务器/">
+              <span class="title"><span>快速搭建服务器</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/17/设计模式/">
+              <span class="title"><span>设计模式</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/欢快的使用谷歌搜索/">
+              <span class="title"><span>欢快的使用谷歌搜索</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/15/通过网址自动部署web/">
+              <span class="title"><span>通过网址自动部署web</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/接替app端的请求/">
+              <span class="title"><span>接替app端的请求</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/08/面试可能会问到的问题/">
+              <span class="title"><span>面试可能会被问到的问题</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/那些配置/">
+              <span class="title"><span>那些配置</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/28/配置linux服务器常用命令/">
+              <span class="title"><span>配置linux服务器常用命令</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/05/18/那些概念/">
+              <span class="title"><span>那些概念</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/08/面试问题总结/">
+              <span class="title"><span>面试问题总结</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/16/高级PHP/">
+              <span class="title"><span>高级 PHP</span></span>
+            </a>
+        </li>
+    
+    </ul>
+    
+</div>
+</section>
+
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+  </div>
+  <footer id="footer" class="clearfix">
+
+	<div class="social-wrapper">
+  	
+      
+        <a href="https://github.com/entimm" class="social github"
+          target="_blank" rel="external">
+          <span class="icon icon-github"></span>
+        </a>
+      
+        <a href="https://twitter.com/entimm" class="social twitter"
+          target="_blank" rel="external">
+          <span class="icon icon-twitter"></span>
+        </a>
+      
+        <a href="/atom.xml" class="social rss"
+          target="_blank" rel="external">
+          <span class="icon icon-rss"></span>
+        </a>
+      
+    
+  </div>
+  
+  <div>Theme <a href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
+  
+</footer>
+
+
+  <script>setLoadingBarProgress(80);</script>
+  
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<script src="/js/jquery.fitvids.js"></script>
+<script>
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+	var ALGOLIA_API_KEY = "";
+	var ALGOLIA_APP_ID = "";
+	var ALGOLIA_INDEX_NAME = "";
+  var AZURE_SERVICE_NAME = "";
+  var AZURE_INDEX_NAME = "";
+  var AZURE_QUERY_KEY = "";
+  var BAIDU_API_ID = "";
+  var SEARCH_SERVICE = "hexo";
+  var ROOT = "/"||"/";
+  if(!ROOT.endsWith('/'))ROOT += '/';
+</script>
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

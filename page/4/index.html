@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Entimm&#39;s Blog</title>
+  <meta name="description" content="null" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="Entimm's Blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Entimm&#39;s Blog">
+<meta property="og:url" content="https://entimm.com/page/4/index.html">
+<meta property="og:site_name" content="Entimm&#39;s Blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Entimm&#39;s Blog">
+    
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+
+<body>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				Entimm's Blog
+			</a>
+			<div class='menu'>
+				<ul class='h-list'>
+					
+						<li>
+							<a class='flat-box nav-home' href='/'>
+								Home
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-archives' href='/archives'>
+								Archives
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-about me' href='/aboutme'>
+								About Me
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-github stars' href='/github-stars'>
+								GitHub Stars
+							</a>
+						</li>
+					
+				</ul>
+				<div class='underline'></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon icon-search"></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search flat-box"></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu flat-box"></span></a></li>
+			</ul>
+		</div>
+		
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				Word of Forks
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a href='javascript:void(0)'><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
+				<li class='s-top'><a href='javascript:void(0)'><span class="icon icon-arrow_upward flat-box"></span></a></li>
+				<li class='s-toc'><a href='javascript:void(0)'><span class="icon icon-format_list_numbered flat-box"></span></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<aside class="menu-phone">
+	<nav>
+		
+			<a href="/" class="nav-home nav">
+				Home
+			</a>
+		
+			<a href="/archives" class="nav-archives nav">
+				Archives
+			</a>
+		
+			<a href="/aboutme" class="nav-about me nav">
+				About Me
+			</a>
+		
+			<a href="/github-stars" class="nav-github stars nav">
+				GitHub Stars
+			</a>
+		
+	</nav>
+</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        
+<section class="post-list">
+	
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/08/30/常用正则技巧总结/">
+        常用正则技巧总结
+      </a>
+    </h2>
+    
+    <time>
+      Aug 30, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="正则字符"><a href="#正则字符" class="headerlink" title="正则字符"></a>正则字符</h2><ol>
+<li><code>.</code>匹配不包括换行的任意字符,在php的s修饰符下面可以匹配换行</li>
+<li><code>\s</code>空格、tab</li>
+<li><code>[]</code>单字符取一个，比如[abc]会匹配a或b或c</li>
+<li><code>|</code>多个数据选一（常用于多字符）<code>|</code>的作用域是一直往后直到遇到括号</li>
+<li><code>(?:)</code>非捕获组 </li>
+</ol>
+<h2 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h2><ol>
+<li>如果源字符串有换行，使用[\s\S]替换</li>
+</ol>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><h3 id="内符号"><a href="#内符号" class="headerlink" title="[]内符号"></a><code>[]</code>内符号</h3><ul>
+<li><code>^</code>在首位时候才有特殊意义</li>
+<li><code>-</code>在不是首尾的时候有特殊意义</li>
+<li><code>\</code>本身是转义符，有特殊意义</li>
+</ul>
+<h1 id="高级技巧"><a href="#高级技巧" class="headerlink" title="高级技巧"></a>高级技巧</h1><ol>
+<li><p>从大到小，一块块分解</p>
+<ol>
+<li>65530-65535  ==&gt;  6553[0-5]          末位区间0-5</li>
+<li>65500-65529  ==&gt;  655[0-2][0-9]      第四位区间0-2，末位区间0-9</li>
+<li>65000-65499  ==&gt;  65[0-4][0-9]{2}    第三位区间0-4，后两位0-9</li>
+<li>60000-64999  ==&gt;  6[0-4][0-9]{3}     第二位区间0-4，后三位0-9</li>
+<li>10000-59999  ==&gt;  [1-5][0-9]{4}      第一位区间1-5，后四位0-9</li>
+<li><p>1-9999       ==&gt;  [1-9][0-9]{0,3}    第一位只能是1-9，后三位可有可无   </p>
+<p>最后组合起来：<br>(6553[0-5]|655[0-2][0-9]|65[0-4][0-9]{2}|6[0-4][0-9]{3}|[1-5][0-9]{4}|[1-9][0-9]{0,3}) </p>
+<p>根据数据处理需求，可以在正则前后加上^和$，以匹配整个数据串，或者前后加入\b，把它当做单词边界处理。没有限定字符的边界往往是js正则判断中常见的错误之一。</p>
+</li>
+</ol>
+</li>
+<li><p>贪婪模式与非贪婪模式</p>
+<p> 什么时候使用贪婪模式，什么时候使用非贪婪模式，哪个性能好，哪个性能不好，不能一概而论，要根据情况分析。 </p>
+<p> 不过，在平时的时候用，一般使用非贪婪模式较多，因为贪婪模式经常会由于元字符范围限制不严谨而导致匹配越界，得到非预期结果。</p>
+<p> 在确定的数据结构里，可以尝试使用[^&gt;]*&gt;这样的排除字符贪婪模式替换非贪婪模式，提升匹配的效率</p>
+<p> 无论使用贪婪模式还是非贪婪模式，在不同语言需要注意回溯次数和嵌套次数的限制，比如在PHP中，pcre.backtrack_limit=100000，pcre.recursion_limit=100000。</p>
+</li>
+<li><p>环视（断言/零宽断言）</p>
+<p> 环视，在不同的地方又称之为零宽断言，简称断言。 </p>
+<p> 环视主要有以下4个用法：<br> <code>(?&lt;=exp)</code> 匹配前面是exp的数据<br> <code>(?=exp)</code> 匹配后面是exp的数据<br> <code>(?!exp)</code> 匹配后面不是exp的数据<br> <code>(?&lt;!exp)</code> 匹配前面不是exp的数据 </p>
+<p> 另外，还会看到(?!B)[A-Z]这种写法，其实它是[A-Z]范围里，排除B的意思，前置的(?!B)只是对后面数据的一个限定，从而达到过滤匹配的效果。</p>
+<p> 环视部分是不占宽度的，所以有零宽断言的叫法。<br> 所谓不占宽度，可以分成两部分理解：<br> 1、环视的匹配结果不纳入数据结果<br> 2、环视它匹配过的地方，下次还能用它继续匹配。</p>
+</li>
+<li><p>模式修饰符</p>
+<p> <code>i</code>不区分大小写<br> <code>s</code>的作用主要是让<code>·</code>能够匹配换行</p>
+</li>
+</ol>
+
+
+    
+	  <div class="readmore">
+      <a href="/2016/08/30/常用正则技巧总结/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/08/30/欢快的使用谷歌搜索/">
+        欢快的使用谷歌搜索
+      </a>
+    </h2>
+    
+    <time>
+      Aug 30, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="无障碍使用"><a href="#无障碍使用" class="headerlink" title="无障碍使用"></a>无障碍使用</h2><p>使用谷歌搜索的时候，要么无法访问，要么谷歌会将你的 google.com 重定向到具有特定国家或地区后缀的谷歌搜索地址，如 google.com.hk 等<br>当然，我们可以直接输入这类带地区后缀的地址, 这样有时也能实现访问, 当是很多时候却并不好用，也常有无法访问的时候</p>
+<p>避免谷歌重定向的方法是使用 google.com/<code>ncr</code> , 这种方法屡试不爽非常可靠，但是停止搜索一会后却又不行了，然后又得继续手动的输入这个地址</p>
+<p>那么有没有办法自动在 google.com 后面加入 ncr 呢，万能的谷歌插件没让人失望<br>这个插件便是 <code>NoCountryRedirect (NCR)</code></p>
+<p>谷歌使用是 <code>https</code> 协议，我们还需要让我们的输入 google.com 自动使用 https, 这样我们还需要1款插件 <code>HTTPS Everywhere</code></p>
+<p>好了，这样我们就能用谷歌愉快的进行各种搜索了</p>
+<h2 id="hosts来一计"><a href="#hosts来一计" class="headerlink" title="hosts来一计"></a>hosts来一计</h2><p><a href="https://github.com/racaljk/hosts" target="_blank" rel="external">https://github.com/racaljk/hosts</a></p>
+<h2 id="更好的使用"><a href="#更好的使用" class="headerlink" title="更好的使用"></a>更好的使用</h2><p>编辑 <code>hosts</code> 文件，在末尾加入 2 行</p>
+
+    
+	  <div class="readmore">
+      <a href="/2016/08/30/欢快的使用谷歌搜索/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/08/30/mac os系统问题解决/">
+        mac os系统问题解决
+      </a>
+    </h2>
+    
+    <time>
+      Aug 30, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h3 id="在-OS-X-El-Capitan-安装-git-svn"><a href="#在-OS-X-El-Capitan-安装-git-svn" class="headerlink" title="在 OS X El Capitan 安装 git-svn"></a>在 OS X El Capitan 安装 git-svn</h3><p>在 Mountain Lion 和 Mavericks 系统中，安装 git-svn 中断的解决办法如下<br>不幸的是，由于 El Capitan 系统保护机制，上述操作无效了<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> sudo ln -s /Applications/Xcode.app/Contents/Developer/Library/Perl/5.18/darwin-thread-multi-2level/SVN /System/Library/Perl/Extras/5.18/SVN</div><div class="line">ln: /System/Library/Perl/Extras/5.18/SVN: Operation not permitted</div></pre></td></tr></table></figure></p>
+<p>下面操作是新的有效的解决办法<br>因为虽然不能写入 /System, 但是可以写入 /Library<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo mkdir /Library/Perl/5.18/auto</div><div class="line">sudo ln -s /Applications/Xcode.app/Contents/Developer/Library/Perl/5.18/darwin-thread-multi-2level/SVN /Library/Perl/5.18/darwin-thread-multi-2level</div><div class="line">sudo ln -s /Applications/Xcode.app/Contents/Developer/Library/Perl/5.18/darwin-thread-multi-2level/auto/SVN /Library/Perl/5.18/auto/</div></pre></td></tr></table></figure></p>
+
+
+    
+	  <div class="readmore">
+      <a href="/2016/08/30/mac os系统问题解决/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/08/29/web相关/">
+        web相关
+      </a>
+    </h2>
+    
+    <time>
+      Aug 29, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h3 id="js对象的定义"><a href="#js对象的定义" class="headerlink" title="js对象的定义"></a>js对象的定义</h3><p>无序属性的集合，其属性可以包含基本值、对象或者函数<br>一个Javascript函数也是一个对象，并且，所有的对象从技术上讲也只不过是函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Person=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name=<span class="string">"phodal"</span>;</div><div class="line">    <span class="keyword">this</span>.weight=<span class="number">50</span>;</div><div class="line">    <span class="keyword">this</span>.height=<span class="number">166</span>;</div><div class="line">    <span class="keyword">this</span>.future=<span class="function"><span class="keyword">function</span> <span class="title">dream</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"future"</span>;</div><div class="line">    &#125;;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> person=<span class="keyword">new</span> Person();</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> calc=&#123;</div><div class="line">    <span class="attr">add</span>: <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> a+b;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">sub</span>: <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> a-b;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">dif</span>: <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(a&gt;b)&#123;</div><div class="line">            <span class="keyword">return</span> a;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> b;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Calc</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">Calc.prototype.add=<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a+b;</div><div class="line">&#125;;</div><div class="line">Calc.prototype.sub=<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a-b;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Chinese=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.country=<span class="string">"China"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> Person=<span class="function"><span class="keyword">function</span>(<span class="params">name,weight,height</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name=name;</div><div class="line">    <span class="keyword">this</span>.weight=weight;</div><div class="line">    <span class="keyword">this</span>.height=height; </div><div class="line">    <span class="keyword">this</span>.futrue=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"future"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">Chinese.prototype=<span class="keyword">new</span> Person();</div><div class="line"></div><div class="line"><span class="keyword">var</span> phodal=<span class="keyword">new</span> Chinese(<span class="string">"phodal"</span>,<span class="number">50</span>,<span class="number">166</span>);</div></pre></td></tr></table></figure>
+<h3 id="浏览器渲染过程"><a href="#浏览器渲染过程" class="headerlink" title="浏览器渲染过程"></a>浏览器渲染过程</h3><ul>
+<li>解析HTML去构建DOM树</li>
+<li>渲染树形结构</li>
+<li>生成渲染的树形图布局</li>
+<li>绘制树形图</li>
+</ul>
+<p>第一步 Parse HTML，而 Parse HTML 实质上就是将其将解析为 DOM Tree。与此同时，CSS 解析器会解析 CSS 会产生 CSS 规则树。<br>随后会根据生成的 DOM 树和 CSS 规则树来构建 Render Tree，接着生成 Render Tree的布局，最后就是绘制出 Render Tree。</p>
+
+    
+	  <div class="readmore">
+      <a href="/2016/08/29/web相关/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/08/29/macos查看网络端口情况/">
+        macos查看网络端口情况
+      </a>
+    </h2>
+    
+    <time>
+      Aug 29, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="使用-netstat-命令"><a href="#使用-netstat-命令" class="headerlink" title="使用 netstat 命令"></a>使用 <code>netstat</code> 命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -nat | grep &lt;port&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -nat |grep LISTEN</div></pre></td></tr></table></figure>
+<h2 id="使用-lsof-命令"><a href="#使用-lsof-命令" class="headerlink" title="使用 lsof 命令"></a>使用 <code>lsof</code> 命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">lsof -n -P -i TCP -s TCP:LISTEN</div><div class="line"></div><div class="line">-n 表示主机以ip地址显示</div><div class="line">-P 表示端口以数字形式显示，默认为端口名称</div><div class="line">-i 意义较多，具体 man lsof, 主要是用来过滤lsof的输出结果</div><div class="line">-s 和 -i 配合使用，用于过滤输出</div></pre></td></tr></table></figure>
+<h2 id="使用-telnet-命令"><a href="#使用-telnet-命令" class="headerlink" title="使用 telnet 命令"></a>使用 <code>telnet</code> 命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">telnet 127.0.0.1 &lt;port&gt;</div></pre></td></tr></table></figure>
+<h2 id="使用-nc-命令"><a href="#使用-nc-命令" class="headerlink" title="使用 nc 命令"></a>使用 <code>nc</code> 命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">nc  -w &lt;time&gt; -n -z &lt;ip&gt; &lt;port_start-port_end&gt;</div><div class="line"></div><div class="line">-w 表示等待连接时间</div><div class="line">-n 尽量将端口号名称转换为端口号数字</div><div class="line">-z 对需要检查的端口没有输入输出，用于端口扫描模式</div><div class="line">ip 需要检查的ip地址</div><div class="line">port_start-port_end 可以是一个端口，也可以是一段端口,返回结果为开放的端口</div></pre></td></tr></table></figure>
+
+
+    
+	  <div class="readmore">
+      <a href="/2016/08/29/macos查看网络端口情况/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/08/29/vagrant/">
+        vagrant 常用操作
+      </a>
+    </h2>
+    
+    <time>
+      Aug 29, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="查看全局状态"><a href="#查看全局状态" class="headerlink" title="查看全局状态"></a>查看全局状态</h2><p>vagrant global-status</p>
+<h2 id="基本安装流程，以centos为例"><a href="#基本安装流程，以centos为例" class="headerlink" title="基本安装流程，以centos为例"></a>基本安装流程，以centos为例</h2><p>vagrant add centos cent.box</p>
+<p>vagrant init centos</p>
+<p>vagrant up</p>
+<p>vagrant ssh</p>
+<h2 id="销毁"><a href="#销毁" class="headerlink" title="销毁"></a>销毁</h2><p>vagrant destroy</p>
+<p>vagrant box remove centos</p>
+
+    
+	  <div class="readmore">
+      <a href="/2016/08/29/vagrant/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/08/28/PHP代码重构/">
+        PHP代码重构
+      </a>
+    </h2>
+    
+    <time>
+      Aug 28, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h3 id="删除-else"><a href="#删除-else" class="headerlink" title="删除 else"></a>删除 else</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">($arg)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>($arg == <span class="string">'foobar'</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>更好的写法</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">($arg)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>($arg == <span class="string">'foobar'</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="拆分为多个函数"><a href="#拆分为多个函数" class="headerlink" title="拆分为多个函数"></a>拆分为多个函数</h3><p>这种方式需要将函数名取的尽量清晰易懂，不要嫌长。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>($age &gt; <span class="number">18</span>)&#123;</div><div class="line">    doSomeThingA();</div><div class="line">    doSomeThingB();</div><div class="line">    doSomeThingC();</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">    doSomeThingD();</div><div class="line">    doSomeThingE();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="多层-if-嵌套的语法，把他写成线性的，就像写规则一样将其一条条罗列出来"><a href="#多层-if-嵌套的语法，把他写成线性的，就像写规则一样将其一条条罗列出来" class="headerlink" title="多层 if 嵌套的语法，把他写成线性的，就像写规则一样将其一条条罗列出来"></a>多层 if 嵌套的语法，把他写成线性的，就像写规则一样将其一条条罗列出来</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">match</span><span class="params">($age, $salary, $pretty)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>($age &gt; <span class="number">18</span>)&#123;</div><div class="line">         <span class="comment">// do some thing A;</span></div><div class="line">        <span class="keyword">if</span>($salary &gt; <span class="number">5000</span>)&#123;</div><div class="line">            <span class="comment">// do some thing B;</span></div><div class="line">            <span class="keyword">if</span>($pretty == <span class="keyword">true</span>)&#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>改写成这样</p>
+
+    
+	  <div class="readmore">
+      <a href="/2016/08/28/PHP代码重构/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/08/04/laravel中用到的ServiceProvide/">
+        laravel中用到的ServiceProvide
+      </a>
+    </h2>
+    
+    <time>
+      Aug 4, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><h3 id="全局限制"><a href="#全局限制" class="headerlink" title="全局限制"></a>全局限制</h3><p>如果你希望路由参数可以总是遵循正则表达式，则可以使用 pattern 方法。你应该在 RouteServiceProvider 的 boot 方法里定义这些模式：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 定义你的路由模型绑定，模式过滤器等。</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span>  \Illuminate\Routing\Router  $router</div><div class="line"> * <span class="doctag">@return</span> void</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">(Router $router)</span></span></div><div class="line">&#123;</div><div class="line">    $router-&gt;pattern(<span class="string">'id'</span>, <span class="string">'[0-9]+'</span>);</div><div class="line"></div><div class="line">    <span class="keyword">parent</span>::boot($router);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>模式一旦被定义，便会自动应用到所有使用该参数名称的路由上：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Route::get(<span class="string">'user/&#123;id&#125;'</span>, <span class="function"><span class="keyword">function</span> <span class="params">($id)</span> </span>&#123;</div><div class="line">    <span class="comment">// Only called if &#123;id&#125; is numeric.</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="路由模型绑定"><a href="#路由模型绑定" class="headerlink" title="路由模型绑定"></a>路由模型绑定</h3><p>Laravel 路由模型绑定提供了一个方便的方式来注入类实例到你的路由中。例如，除了注入一个用户的 ID，你也可以注入与指定 ID 相符的完整 User 类实例。</p>
+<p>首先，使用路由的 model 方法为指定参数指定类。必须在 RouteServiceProvider::boot 方法中定义你的模型绑定：</p>
+<p>绑定参数至模型</p>
+
+    
+	  <div class="readmore">
+      <a href="/2016/08/04/laravel中用到的ServiceProvide/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/05/21/laravel 技巧/">
+        laravel 技巧
+      </a>
+    </h2>
+    
+    <time>
+      May 21, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="快速找到-facade-中对应的类"><a href="#快速找到-facade-中对应的类" class="headerlink" title="快速找到 facade 中对应的类"></a>快速找到 facade 中对应的类</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Route::get(<span class="string">'test'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">    dd(get_class(HTML::getFacadeRoot()));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>或者使用 <a href="https://github.com/barryvdh/laravel-ide-helper" target="_blank" rel="external">idehelper</a></p>
+<h2 id="将数据表里的数据导出成-Seeder-文件"><a href="#将数据表里的数据导出成-Seeder-文件" class="headerlink" title="将数据表里的数据导出成 Seeder 文件"></a>将数据表里的数据导出成 Seeder 文件</h2><ol>
+<li>composer require orangehill/iseed</li>
+<li>在 config/app.php 文件中添加 Service Provider</li>
+<li>php artisan iseed 后面带上本地数据表的名称, 可直接将数据库表的内容转换为 seeder 文件</li>
+<li>强制覆盖导出文件 – force</li>
+</ol>
+<h2 id="建议-使用模型工厂来填充数据"><a href="#建议-使用模型工厂来填充数据" class="headerlink" title="建议 使用模型工厂来填充数据"></a>建议 使用模型工厂来填充数据</h2><h3 id="模型工厂"><a href="#模型工厂" class="headerlink" title="模型工厂"></a>模型工厂</h3><p>避免<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">factory(\App\Models\User::class)-&gt;times(<span class="number">300</span>)-&gt;create();</div></pre></td></tr></table></figure></p>
+<p>正确的做法：使用 make 方法<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$users = factory(\App\Models\User::class)-&gt;times(<span class="number">1000</span>)-&gt;make();</div><div class="line">\App\Models\User::insert($users-&gt;toArray());</div></pre></td></tr></table></figure></p>
+<h3 id="传统方式"><a href="#传统方式" class="headerlink" title="传统方式"></a>传统方式</h3>
+
+    
+	  <div class="readmore">
+      <a href="/2016/05/21/laravel 技巧/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+</section>
+
+
+  <nav id="page-nav">
+    
+    <a class="prev" rel="prev" href="/page/3/">
+      <span class="icon icon-chevron-left"></span>
+      <span class="text">Previous</span>
+    </a>
+    
+    
+  </nav>
+  
+
+      </div>
+      <aside class='l_side'>
+        
+  <section class='m_widget about'>
+
+<div class='header'>entimm</div>
+<div class='content'>
+<div class='desc'>Tempora mutantur, nos et mutamur in illis ...</div>
+</div>
+</section>
+
+  <section class='m_widget links'>
+<div class='header'>Links</div>
+<div class='content'>
+    <ul class="entry">
+    
+        <li><a class="flat-box" target="_blank" href="https://github.com/entimm">
+            <div class='name'>GiHub</div>
+        </a></li>
+    
+    </ul>
+</div>
+</section>
+
+  <section class='m_widget categories'>
+<div class='header'>Categories</div>
+<div class='content'>
+    
+</div>
+</section>
+
+  
+
+
+  <section class='m_widget archives'>
+<div class='header'>Archives</div>
+<div class='content'>
+    
+    <ul class="entry">
+    
+        <li>
+            <a href="/2016/08/29/vagrant/">
+              <span class="title"><span>vagrant 常用操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/PHP cURL 应用/">
+              <span class="title"><span>利用 CURL 进行数据抓取总结</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/05/docker技巧/">
+              <span class="title"><span>docker 技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/28/PHP代码重构/">
+              <span class="title"><span>PHP代码重构</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/10/25/iTerm2奇淫技巧/">
+              <span class="title"><span>iTerm2奇淫技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/11/22/git 命令/">
+              <span class="title"><span>git 命令</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/js 中对 checkbox 的操作/">
+              <span class="title"><span>js 中对 checkbox 的操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/15/linux/">
+              <span class="title"><span>linux相关操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/05/21/laravel 技巧/">
+              <span class="title"><span>laravel 技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/04/laravel中用到的ServiceProvide/">
+              <span class="title"><span>laravel中用到的ServiceProvide</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/08/mysql知识/">
+              <span class="title"><span>mysql知识</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/29/macos查看网络端口情况/">
+              <span class="title"><span>macos查看网络端口情况</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/mac os系统问题解决/">
+              <span class="title"><span>mac os系统问题解决</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/05/php-function/">
+              <span class="title"><span>php function</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/23/ssh保持链接/">
+              <span class="title"><span>ssh保持链接</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/24/shell/">
+              <span class="title"><span>shell</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/18/php中的坑/">
+              <span class="title"><span>php中的坑</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/19/php-tip/">
+              <span class="title"><span>php tips</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/29/web相关/">
+              <span class="title"><span>web相关</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/08/FastCgi 与 PHP-FPM 之间的区别/">
+              <span class="title"><span>Cgi、FastCgi 与 PHP-FPM</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/05/关于高并发的处理/">
+              <span class="title"><span>关于高并发的处理</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/19/tmux/">
+              <span class="title"><span>tmux使用</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/18/图片资源优化/">
+              <span class="title"><span>图片资源优化</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/常用代码片段/">
+              <span class="title"><span>常用代码片段</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/常用正则技巧总结/">
+              <span class="title"><span>常用正则技巧总结</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/12/很有用的一些技巧/">
+              <span class="title"><span>很有用的一些技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/04/快捷键/">
+              <span class="title"><span>快捷键</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/快速搭建vpn/">
+              <span class="title"><span>快速搭建vpn</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/快速搭建服务器/">
+              <span class="title"><span>快速搭建服务器</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/17/设计模式/">
+              <span class="title"><span>设计模式</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/欢快的使用谷歌搜索/">
+              <span class="title"><span>欢快的使用谷歌搜索</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/15/通过网址自动部署web/">
+              <span class="title"><span>通过网址自动部署web</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/接替app端的请求/">
+              <span class="title"><span>接替app端的请求</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/08/面试可能会问到的问题/">
+              <span class="title"><span>面试可能会被问到的问题</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/那些配置/">
+              <span class="title"><span>那些配置</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/28/配置linux服务器常用命令/">
+              <span class="title"><span>配置linux服务器常用命令</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/05/18/那些概念/">
+              <span class="title"><span>那些概念</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/08/面试问题总结/">
+              <span class="title"><span>面试问题总结</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/16/高级PHP/">
+              <span class="title"><span>高级 PHP</span></span>
+            </a>
+        </li>
+    
+    </ul>
+    
+</div>
+</section>
+
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+  </div>
+  <footer id="footer" class="clearfix">
+
+	<div class="social-wrapper">
+  	
+      
+        <a href="https://github.com/entimm" class="social github"
+          target="_blank" rel="external">
+          <span class="icon icon-github"></span>
+        </a>
+      
+        <a href="https://twitter.com/entimm" class="social twitter"
+          target="_blank" rel="external">
+          <span class="icon icon-twitter"></span>
+        </a>
+      
+        <a href="/atom.xml" class="social rss"
+          target="_blank" rel="external">
+          <span class="icon icon-rss"></span>
+        </a>
+      
+    
+  </div>
+  
+  <div>Theme <a href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
+  
+</footer>
+
+
+  <script>setLoadingBarProgress(80);</script>
+  
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<script src="/js/jquery.fitvids.js"></script>
+<script>
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+	var ALGOLIA_API_KEY = "";
+	var ALGOLIA_APP_ID = "";
+	var ALGOLIA_INDEX_NAME = "";
+  var AZURE_SERVICE_NAME = "";
+  var AZURE_INDEX_NAME = "";
+  var AZURE_QUERY_KEY = "";
+  var BAIDU_API_ID = "";
+  var SEARCH_SERVICE = "hexo";
+  var ROOT = "/"||"/";
+  if(!ROOT.endsWith('/'))ROOT += '/';
+</script>
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

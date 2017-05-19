@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Archives: 2016/9 | Entimm&#39;s Blog</title>
+  <meta name="description" content="null" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="Entimm's Blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Entimm&#39;s Blog">
+<meta property="og:url" content="https://entimm.com/archives/2016/09/page/3/index.html">
+<meta property="og:site_name" content="Entimm&#39;s Blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Entimm&#39;s Blog">
+    
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+</head>
+
+<body>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+
+
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				Entimm's Blog
+			</a>
+			<div class='menu'>
+				<ul class='h-list'>
+					
+						<li>
+							<a class='flat-box nav-home' href='/'>
+								Home
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-archives' href='/archives'>
+								Archives
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-about me' href='/aboutme'>
+								About Me
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-github stars' href='/github-stars'>
+								GitHub Stars
+							</a>
+						</li>
+					
+				</ul>
+				<div class='underline'></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon icon-search"></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search flat-box"></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu flat-box"></span></a></li>
+			</ul>
+		</div>
+		
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				Word of Forks
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a href='javascript:void(0)'><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
+				<li class='s-top'><a href='javascript:void(0)'><span class="icon icon-arrow_upward flat-box"></span></a></li>
+				<li class='s-toc'><a href='javascript:void(0)'><span class="icon icon-format_list_numbered flat-box"></span></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<aside class="menu-phone">
+	<nav>
+		
+			<a href="/" class="nav-home nav">
+				Home
+			</a>
+		
+			<a href="/archives" class="nav-archives nav">
+				Archives
+			</a>
+		
+			<a href="/aboutme" class="nav-about me nav">
+				About Me
+			</a>
+		
+			<a href="/github-stars" class="nav-github stars nav">
+				GitHub Stars
+			</a>
+		
+	</nav>
+</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        
+	
+  <script>
+    window.subData= { title:'Year : 2016.9'}
+  </script>
+
+<section class="post-list">
+	
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/05/关于高并发的处理/">
+        关于高并发的处理
+      </a>
+    </h2>
+    
+    <time>
+      Sep 5, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <p>用同步队列，就可以实现。库存比如是1000，那就存1000个随机数到队列中，拿到随机数的人去换取真实的商品。这样数据库的压力都小。最多更新1000次。队列可以系统加载时创建，也可以做为持久化保存在文件中。</p>
+<h2 id="关于库存和秒杀的解决方案"><a href="#关于库存和秒杀的解决方案" class="headerlink" title="关于库存和秒杀的解决方案"></a>关于库存和秒杀的解决方案</h2><ol>
+<li>用额外的单进程处理一个队列，下单请求放到队列里，一个个处理，就不会有并发的问题了，但是要额外的后台进程以及延迟问题，不予考虑。</li>
+<li>根据update结果来判断，我们可以加一个判断条件update … where 库存&gt;0，如果返回false，则说明库存不足，并回滚事务。</li>
+<li>借助文件排他锁，在处理下单请求的时候，用flock锁定一个文件，如果锁定失败说明有其他订单正在处理，此时要么等待要么直接提示用户”服务器繁忙”</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//阻塞(等待)模式</span></div><div class="line">$fp = fopen(<span class="string">"lock.txt"</span>, <span class="string">"w+"</span>);</div><div class="line"><span class="keyword">if</span>(flock($fp,LOCK_EX))</div><div class="line">&#123;</div><div class="line">    <span class="comment">//..处理订单</span></div><div class="line">    flock($fp,LOCK_UN);</div><div class="line">&#125;</div><div class="line"></div><div class="line">fclose($fp);</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//非阻塞模式</span></div><div class="line">$fp = fopen(<span class="string">"lock.txt"</span>, <span class="string">"w+"</span>);</div><div class="line"><span class="keyword">if</span>(flock($fp,LOCK_EX | LOCK_NB))</div><div class="line">&#123;</div><div class="line">    <span class="comment">//..处理订单</span></div><div class="line">    flock($fp,LOCK_UN);</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">echo</span> <span class="string">"系统繁忙，请稍后再试"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">fclose($fp);</div><div class="line"></div><div class="line"><span class="comment">//采用哪种方式，看并发数量吧。</span></div></pre></td></tr></table></figure>
+
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/05/关于高并发的处理/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/05/docker技巧/">
+        docker 技巧
+      </a>
+    </h2>
+    
+    <time>
+      Sep 5, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="删除-none-tag-镜像"><a href="#删除-none-tag-镜像" class="headerlink" title="删除 none tag 镜像"></a>删除 none tag 镜像</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rmi $(docker images | grep "^&lt;none&gt;" | awk '&#123;print $3&#125;')</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rmi $(docker images -q --filter "dangling=true")</div></pre></td></tr></table></figure>
+<h2 id="删除所有镜像"><a href="#删除所有镜像" class="headerlink" title="删除所有镜像"></a>删除所有镜像</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker images -q | xargs docker rmi</div></pre></td></tr></table></figure>
+<h2 id="删除所有容器"><a href="#删除所有容器" class="headerlink" title="删除所有容器"></a>删除所有容器</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker ps -q -a | xargs docker rm</div></pre></td></tr></table></figure>
+<h2 id="删除所有停止运行的容器"><a href="#删除所有停止运行的容器" class="headerlink" title="删除所有停止运行的容器"></a>删除所有停止运行的容器</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rm $( docker ps -q -f status=exited)</div></pre></td></tr></table></figure>
+<h2 id="删除所有-dangling-unused-的镜像"><a href="#删除所有-dangling-unused-的镜像" class="headerlink" title="删除所有 dangling (unused) 的镜像"></a>删除所有 dangling (unused) 的镜像</h2>
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/05/docker技巧/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/05/php-function/">
+        php function
+      </a>
+    </h2>
+    
+    <time>
+      Sep 5, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="url、路径"><a href="#url、路径" class="headerlink" title="url、路径"></a>url、路径</h2><h3 id="parse-url"><a href="#parse-url" class="headerlink" title="parse_url"></a>parse_url</h3><p>mixed parse_url ( string $url [, int $component = -1 ] )</p>
+<p>解析 URL，返回其组成部分</p>
+<p>本函数不是用来验证给定 URL 的合法性的<br>本函数不能用于相对 URL<br>对严重不合格的 URL，parse_url() 可能会返回 FALSE</p>
+<h3 id="parse-str"><a href="#parse-str" class="headerlink" title="parse_str"></a>parse_str</h3><p>void parse_str ( string $str [, array &amp;$arr ] )</p>
+<p>将字符串解析成多个变量</p>
+<p>获取当前的 QUERY_STRING，你可以使用 $_SERVER[‘QUERY_STRING’] 变量<br>magic_quotes_gpc 影响到了 parse_str() 这个函数的输出，和 PHP 用于填充 $_GET、 $_POST 及其他变量的机制一致</p>
+<h3 id="pathinfo"><a href="#pathinfo" class="headerlink" title="pathinfo"></a>pathinfo</h3>
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/05/php-function/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/04/快捷键/">
+        快捷键
+      </a>
+    </h2>
+    
+    <time>
+      Sep 4, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h2><p>CMD-Shift-3<br>    全屏截图</p>
+<p>CMD-Shift-4<br>    区域截图：选区<br>    ⇧Shift － 重新定义截图区域的纵向高度或横向长度，不能同时实现。<br>    ⌥Option － 重新定义截图区域的尺寸，可以同时实现纵向和横向的改变，但只能围绕中心区域展开。<br>    ⌴空格键 － 按住并拖动鼠标，可以移动截图选框位置。<br>    Escape(Esc)键 － 退出截图模式。</p>
+<p>CMD-Shift-4 + 空格键<br>    区域截图：窗口</p>
+<p>screencapture -T ＋等待时间（秒）＋保存的截图名称及格式<br>    抓图</p>
+<h2 id="phpStorm"><a href="#phpStorm" class="headerlink" title="phpStorm"></a>phpStorm</h2><ul>
+<li>command + r 查找替换</li>
+<li>command + e 打开最近的文件</li>
+<li>command + shift + o 快速查询文件</li>
+<li>command + shift + f 关键字查找,更强大的查询器(机器不好的，最好还是先确定一下目录)</li>
+<li>command + shift + r 高级替换</li>
+<li>command + alt + b 找到当前类的所有子类</li>
+<li>alt + shift + c 查找最近修改的文件</li>
+<li>alt + f7 直接查询选中的字符</li>
+<li>ctrl + f7 文件中查询选中字符</li>
+<li>command + shift + +,- 展开或缩起</li>
+<li><p>command + . 折叠或展开选中的代码</p>
+</li>
+<li><p>alt + 回车 导入包，自动修正</p>
+</li>
+<li>command + n 快事为每个成员属性生成 getter 及 setter 方法</li>
+<li>ctrl + i 快速生成插入魔术方法</li>
+<li>ctrol + o 复写父类方法</li>
+<li>command + alt + l 对当前文件进行格式化排版</li>
+<li>command + d 复制当剪行</li>
+<li>command + / // 注释</li>
+<li>command + shift + / // 注释</li>
+<li>command + k 提交代码</li>
+<li>command + shif + k 提交远程分支</li>
+</ul>
+
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/04/快捷键/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+</section>
+
+
+  <nav id="page-nav">
+    
+    <a class="prev" rel="prev" href="/archives/2016/09/page/2/">
+      <span class="icon icon-chevron-left"></span>
+      <span class="text">Previous</span>
+    </a>
+    
+    
+  </nav>
+  
+
+
+      </div>
+      <aside class='l_side'>
+        
+  <section class='m_widget about'>
+
+<div class='header'>entimm</div>
+<div class='content'>
+<div class='desc'>Tempora mutantur, nos et mutamur in illis ...</div>
+</div>
+</section>
+
+  <section class='m_widget links'>
+<div class='header'>Links</div>
+<div class='content'>
+    <ul class="entry">
+    
+        <li><a class="flat-box" target="_blank" href="https://github.com/entimm">
+            <div class='name'>GiHub</div>
+        </a></li>
+    
+    </ul>
+</div>
+</section>
+
+  <section class='m_widget categories'>
+<div class='header'>Categories</div>
+<div class='content'>
+    
+</div>
+</section>
+
+  
+
+
+  <section class='m_widget archives'>
+<div class='header'>Archives</div>
+<div class='content'>
+    
+    <ul class="entry">
+    
+        <li>
+            <a href="/2016/08/29/vagrant/">
+              <span class="title"><span>vagrant 常用操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/PHP cURL 应用/">
+              <span class="title"><span>利用 CURL 进行数据抓取总结</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/05/docker技巧/">
+              <span class="title"><span>docker 技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/28/PHP代码重构/">
+              <span class="title"><span>PHP代码重构</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/10/25/iTerm2奇淫技巧/">
+              <span class="title"><span>iTerm2奇淫技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/11/22/git 命令/">
+              <span class="title"><span>git 命令</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/js 中对 checkbox 的操作/">
+              <span class="title"><span>js 中对 checkbox 的操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/15/linux/">
+              <span class="title"><span>linux相关操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/05/21/laravel 技巧/">
+              <span class="title"><span>laravel 技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/04/laravel中用到的ServiceProvide/">
+              <span class="title"><span>laravel中用到的ServiceProvide</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/08/mysql知识/">
+              <span class="title"><span>mysql知识</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/29/macos查看网络端口情况/">
+              <span class="title"><span>macos查看网络端口情况</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/mac os系统问题解决/">
+              <span class="title"><span>mac os系统问题解决</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/05/php-function/">
+              <span class="title"><span>php function</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/23/ssh保持链接/">
+              <span class="title"><span>ssh保持链接</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/24/shell/">
+              <span class="title"><span>shell</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/18/php中的坑/">
+              <span class="title"><span>php中的坑</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/19/php-tip/">
+              <span class="title"><span>php tips</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/29/web相关/">
+              <span class="title"><span>web相关</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/08/FastCgi 与 PHP-FPM 之间的区别/">
+              <span class="title"><span>Cgi、FastCgi 与 PHP-FPM</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/05/关于高并发的处理/">
+              <span class="title"><span>关于高并发的处理</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/19/tmux/">
+              <span class="title"><span>tmux使用</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/18/图片资源优化/">
+              <span class="title"><span>图片资源优化</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/常用代码片段/">
+              <span class="title"><span>常用代码片段</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/常用正则技巧总结/">
+              <span class="title"><span>常用正则技巧总结</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/12/很有用的一些技巧/">
+              <span class="title"><span>很有用的一些技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/04/快捷键/">
+              <span class="title"><span>快捷键</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/快速搭建vpn/">
+              <span class="title"><span>快速搭建vpn</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/快速搭建服务器/">
+              <span class="title"><span>快速搭建服务器</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/17/设计模式/">
+              <span class="title"><span>设计模式</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/欢快的使用谷歌搜索/">
+              <span class="title"><span>欢快的使用谷歌搜索</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/15/通过网址自动部署web/">
+              <span class="title"><span>通过网址自动部署web</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/接替app端的请求/">
+              <span class="title"><span>接替app端的请求</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/08/面试可能会问到的问题/">
+              <span class="title"><span>面试可能会被问到的问题</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/那些配置/">
+              <span class="title"><span>那些配置</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/28/配置linux服务器常用命令/">
+              <span class="title"><span>配置linux服务器常用命令</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/05/18/那些概念/">
+              <span class="title"><span>那些概念</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/08/面试问题总结/">
+              <span class="title"><span>面试问题总结</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/16/高级PHP/">
+              <span class="title"><span>高级 PHP</span></span>
+            </a>
+        </li>
+    
+    </ul>
+    
+</div>
+</section>
+
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+  </div>
+  <footer id="footer" class="clearfix">
+
+	<div class="social-wrapper">
+  	
+      
+        <a href="https://github.com/entimm" class="social github"
+          target="_blank" rel="external">
+          <span class="icon icon-github"></span>
+        </a>
+      
+        <a href="https://twitter.com/entimm" class="social twitter"
+          target="_blank" rel="external">
+          <span class="icon icon-twitter"></span>
+        </a>
+      
+        <a href="/atom.xml" class="social rss"
+          target="_blank" rel="external">
+          <span class="icon icon-rss"></span>
+        </a>
+      
+    
+  </div>
+  
+  <div>Theme <a href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
+  
+</footer>
+
+
+  <script>setLoadingBarProgress(80);</script>
+  
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<script src="/js/jquery.fitvids.js"></script>
+<script>
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+	var ALGOLIA_API_KEY = "";
+	var ALGOLIA_APP_ID = "";
+	var ALGOLIA_INDEX_NAME = "";
+  var AZURE_SERVICE_NAME = "";
+  var AZURE_INDEX_NAME = "";
+  var AZURE_QUERY_KEY = "";
+  var BAIDU_API_ID = "";
+  var SEARCH_SERVICE = "hexo";
+  var ROOT = "/"||"/";
+  if(!ROOT.endsWith('/'))ROOT += '/';
+</script>
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

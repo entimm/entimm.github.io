@@ -1,317 +1,885 @@
-
-
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <title>Archives: 2016 | Entimm&#39;s Blog</title>
+  <meta name="description" content="null" />
+  <meta name="keywords" content="" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="Entimm's Blog">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Entimm&#39;s Blog">
+<meta property="og:url" content="https://entimm.com/archives/2016/index.html">
+<meta property="og:site_name" content="Entimm&#39;s Blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Entimm&#39;s Blog">
     
-    <meta name="author" content="entimm">
-    
-    
-
-    
-    <link rel="alternative" href="atom.xml" title="Entimm&#39;s Blog" type="application/atom+xml">
-    
-    
-    
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#282c31">
-    <title>Archives: 2016 | Entimm&#39;s Blog</title>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Javascript -->
-    <script src="/js/jquery-2.1.0.min.js"></script>
-    <script src="/js/jquery.backstretch.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/js/headroom.min.js"></script>
-    <script src="/js/jquery.headroom.min.js"></script> 
-    <script src="/js/common.js"></script>
-    <script src="/js/js.cookie.js"></script>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href='//cdn.bootcss.com/node-waves/0.7.5/waves.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
 </head>
+
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="https://entimm.com" title="Entimm's Blog">Entimm&#39;s Blog</a>
-            </div>
-
-            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
-                
-
-                <ul class="nav navbar-nav">
-                    
-                    <li id="nav-index"><a href="/">首页</a></li>
-                    
-                    <li id="nav-archives"><a href="/archives">归档</a></li>
-                    
-                    <li id="nav-tags"><a href="/tags">标签</a></li>
-                    
-                    <li id="nav-categories"><a href="/categories">分类</a></li>
-                    
-                    <li id="nav-curriculumvitae"><a href="/curriculumvitae">关于</a></li>
-                    
-                    <li id="nav-contact"><a href="mailto:entimm@gmail.com">联系</a></li>
-                    
-                    
-                    <li><a href="https://github.com/entimm" target="_blank">GitHub</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
-    <script>
-    var backRoot = "/images/background/";
-    var backArray = [ "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg",  ];
-        
-    $(function() {
-        // page-id...
-        var pageId = "archives/2016/index.html";
-        pageId = pageId.substr(0, pageId.indexOf("/"));
-        if(pageId === "") pageId = "index";
-        
-        $("#nav-" + pageId).addClass("active");
-    });
-    </script>
-
-    
-
-<div class="container archive-body">
-    <div class="row">
-        <div class="col-xs-2 well">
-            <h2 class="archive-icon">2016</h2>
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">13</span></li></ul>
-        </div>
-        
-        <div class="col-xs-10">
-            
-            <article class="post">
-                <div class="jumbotron">
-                    <h1><a href="/2016/09/19/php-tip/" title="php tips">php tips</a></h1>
-
-                    
-                        <p>explode 分割字符可以不是单字符
-
-强制类型转换的值不论是否有定义，转换后都会有值
-
-E_ALL ^ E_NOTICE 和 E_ALL &amp;amp; ~E_NOTICE 是等效的
-
-无论是函数调用还是文件包含，像 FILE 这种变量，他写在哪个文件，那么他的值就在哪个文件，而</p>
-                    
-
-                    <p class="say-title">
-                        <img src="/images/avatar.png" class="img-circle index-post-avatar" />
-                        <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
-                        2016-09-19 
-                    </p>
-                </div>
-            </article>
-            
-            <article class="post">
-                <div class="jumbotron">
-                    <h1><a href="/2016/09/19/tmux/" title="tmux使用">tmux使用</a></h1>
-
-                    
-                        <p>基本使用&amp;lt;prefix&amp;gt;$可以重命名当前Session&amp;lt;prefix&amp;gt;c可以创建新的窗口（Window）&amp;lt;prefix&amp;gt;%水平分割窗口（形成两个Pane）&amp;lt;prefix&amp;gt;&amp;quot;垂直分割窗口。退出当前Session的快捷键是&amp;l</p>
-                    
-
-                    <p class="say-title">
-                        <img src="/images/avatar.png" class="img-circle index-post-avatar" />
-                        <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
-                        2016-09-19 
-                    </p>
-                </div>
-            </article>
-            
-            <article class="post">
-                <div class="jumbotron">
-                    <h1><a href="/2016/09/18/php中的坑/" title="php中的坑">php中的坑</a></h1>
-
-                    
-                        <p>路径的坑$path = ‘/a/m/../b’;假如 /a 存在不管 /a/m 目录存不存在, mkdir 都能成功但是如果不存在，那么 is_dir, realpath 等函数都会失败
-计算的坑1234567$a = 5.1;$b = 5.1;$size = 100;$t1 =</p>
-                    
-
-                    <p class="say-title">
-                        <img src="/images/avatar.png" class="img-circle index-post-avatar" />
-                        <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
-                        2016-09-18 
-                    </p>
-                </div>
-            </article>
-            
-            <article class="post">
-                <div class="jumbotron">
-                    <h1><a href="/2016/09/18/图片资源优化/" title="图片资源优化">图片资源优化</a></h1>
-
-                    
-                        <p>选择合适的图片格式
- 原理：对图片格式转换，在画质可以接受的情况下达到更好的压缩比效果 优势：减少图片加载流量，效果比较明显 劣势：服务器和浏览器压力增大，而且服务器需要额外的服务支持，格式转换要考虑浏览器的兼容性
-
-图片大小小于2KB时可使用base64编码代替图片
-
-不同终端</p>
-                    
-
-                    <p class="say-title">
-                        <img src="/images/avatar.png" class="img-circle index-post-avatar" />
-                        <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
-                        2016-09-18 
-                    </p>
-                </div>
-            </article>
-            
-            <article class="post">
-                <div class="jumbotron">
-                    <h1><a href="/2016/09/17/设计模式/" title="设计模式">设计模式</a></h1>
-
-                    
-                        <p>3种基本设计模式
-工厂模式，工厂方法或者类生成对象，而不是在代码中直接new
-单例模式，使某个类的对象仅允许创建一个
-注册模式，全局共享和交换对象
-
-代理模式
-在客户端与实体之间建立一个代理对象(proxy),客户端对实体进行操作全部委派给代理对象,隐藏实体的具体实现细节
-pro</p>
-                    
-
-                    <p class="say-title">
-                        <img src="/images/avatar.png" class="img-circle index-post-avatar" />
-                        <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
-                        2016-09-17 
-                    </p>
-                </div>
-            </article>
-            
-            <article class="post">
-                <div class="jumbotron">
-                    <h1><a href="/2016/09/16/高级PHP/" title="高级 PHP">高级 PHP</a></h1>
-
-                    
-                        <p>面向对象5原则单一职责原则（single-resposibility principle）其核心思想为：一个类，最好只做一件事，只有一个引起它的变化的原因
-开放-封闭原则（The Open-Close principle）其核心思想为：对扩展开放，对修改封闭软件实体（类、模块、函</p>
-                    
-
-                    <p class="say-title">
-                        <img src="/images/avatar.png" class="img-circle index-post-avatar" />
-                        <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
-                        2016-09-16 
-                    </p>
-                </div>
-            </article>
-            
-            <article class="post">
-                <div class="jumbotron">
-                    <h1><a href="/2016/09/15/linux/" title="linux相关操作">linux相关操作</a></h1>
-
-                    
-                        <p>防火墙关闭防火墙/etc/init.d/iptables stopservice iptables stop # 停止服务
-查看防火墙信息/etc/init.d/iptables status
-开放端口:8080/sbin/iptables -I INPUT -p tcp –dp</p>
-                    
-
-                    <p class="say-title">
-                        <img src="/images/avatar.png" class="img-circle index-post-avatar" />
-                        <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
-                        2016-09-15 
-                    </p>
-                </div>
-            </article>
-            
-            <article class="post">
-                <div class="jumbotron">
-                    <h1><a href="/2016/09/15/通过网址自动部署web/" title="通过网址自动部署web">通过网址自动部署web</a></h1>
-
-                    
-                        <p>部署代码至单独的web站点 https://github.com/markomarkovic/simple-php-git-deploy.git
-配置www-data用户 改/usr/sbin/nologin=&amp;gt;/bin/bash,且可找到www-data用户的目录:/va</p>
-                    
-
-                    <p class="say-title">
-                        <img src="/images/avatar.png" class="img-circle index-post-avatar" />
-                        <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
-                        2016-09-15 
-                    </p>
-                </div>
-            </article>
-            
-            <article class="post">
-                <div class="jumbotron">
-                    <h1><a href="/2016/09/12/很有用的一些技巧/" title="很有用的一些技巧">很有用的一些技巧</a></h1>
-
-                    
-                        <p>在利用 xdebug 和 phpstorm 调试通过终端执行的 PHP 脚本时，在终端执行先语句，即可对该脚本进行调试1export XDEBUG_CONFIG = &amp;quot;idekey=PHPSTORM&amp;quot;
-通过SSH方式登录远程服务器时，通过下面方式免除每次都要输</p>
-                    
-
-                    <p class="say-title">
-                        <img src="/images/avatar.png" class="img-circle index-post-avatar" />
-                        <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
-                        2016-09-12 
-                    </p>
-                </div>
-            </article>
-            
-            <article class="post">
-                <div class="jumbotron">
-                    <h1><a href="/2016/09/08/面试问题总结/" title="面试问题总结">面试问题总结</a></h1>
-
-                    
-                        <p>php魔术方法(14项)1234567891011121314__construct() 实例化类时自动调用.__destruct() 类对象使用结束时自动调用.__set() 在给未定义的属性赋值的时候调用.__get() 调用未定义的属性时候调用.__isset() 使用is</p>
-                    
-
-                    <p class="say-title">
-                        <img src="/images/avatar.png" class="img-circle index-post-avatar" />
-                        <a href="https://entimm.com" target="_blank" title="entimm">entimm</a>
-                        2016-09-08 
-                    </p>
-                </div>
-            </article>
-            
-            
-            
-            <div class="pagination-div">
-                <div class="well">
-                <span class="page-number current">1</span><a class="page-number" href="/archives/2016/page/2/">2</a><a class="page-number" href="/archives/2016/page/3/">3</a><a class="extend next" rel="next" href="/archives/2016/page/2/">Next &raquo;</a>
-                </div>
-            </div>
-            
-        </div>
-    </div>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
 </div>
 
-<script>
-$(function() {
-    $(".archive-list-count").addClass("badge");
-});
-</script>
 
-    <footer id="footer">
-        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/XadillaX/hexadillax" target="_blank">Hexadillax</a> 主题</small>
-        <small>&copy; 2016 entimm</small>
-    </footer>
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				Entimm's Blog
+			</a>
+			<div class='menu'>
+				<ul class='h-list'>
+					
+						<li>
+							<a class='flat-box nav-home' href='/'>
+								Home
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-archives' href='/archives'>
+								Archives
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-about me' href='/aboutme'>
+								About Me
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-github stars' href='/github-stars'>
+								GitHub Stars
+							</a>
+						</li>
+					
+				</ul>
+				<div class='underline'></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon icon-search"></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search flat-box"></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu flat-box"></span></a></li>
+			</ul>
+		</div>
+		
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				Word of Forks
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a href='javascript:void(0)'><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
+				<li class='s-top'><a href='javascript:void(0)'><span class="icon icon-arrow_upward flat-box"></span></a></li>
+				<li class='s-toc'><a href='javascript:void(0)'><span class="icon icon-format_list_numbered flat-box"></span></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<aside class="menu-phone">
+	<nav>
+		
+			<a href="/" class="nav-home nav">
+				Home
+			</a>
+		
+			<a href="/archives" class="nav-archives nav">
+				Archives
+			</a>
+		
+			<a href="/aboutme" class="nav-about me nav">
+				About Me
+			</a>
+		
+			<a href="/github-stars" class="nav-github stars nav">
+				GitHub Stars
+			</a>
+		
+	</nav>
+</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        
+	
+  <script>
+    window.subData= { title:'Year : 2016'}
+  </script>
+
+<section class="post-list">
+	
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/11/22/git 命令/">
+        git 命令
+      </a>
+    </h2>
+    
+    <time>
+      Nov 22, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">git push origin test:master  # 提交本地test分支作为远程的master分支</div><div class="line">git push origin test:test    # 提交本地test分支作为远程的test分支</div><div class="line">git push origin :test        # 刚提交到远程的test将被删除，但是本地还会保存的，不用担心</div><div class="line"></div><div class="line">git push --tags # 上传所有标签</div><div class="line"></div><div class="line">git remote set-url --push [name] [newUrl] # 修改远程仓库</div><div class="line">git pull [remoteName] [localBranchName]</div><div class="line">git push [remoteName] [localBranchName]</div><div class="line"></div><div class="line">git merge [name]   # 将名称为[name]的分支与当前分支合并</div><div class="line">git rebase [name]  #会将[name]分支的代码合并过来，并按照提交的顺序排序(衍合指定分支到分支到当前分支)</div><div class="line"></div><div class="line">如果要对某些代码的commit重新整理</div><div class="line">1. 可以记住某个commit号</div><div class="line">2. git rebase -i commit号</div><div class="line"></div><div class="line">git merge-base branchA branchB #查看2分支的公告节点</div><div class="line"></div><div class="line">git diff $(git-merge-base A B) B</div><div class="line"><span class="meta"></span></div><div class="line"># 按时间逆序列出提交对象，常用于查找涉及到某些文件的提交的hash。例如，查找所有关系到文件readme的提交</div><div class="line">git rev-list</div><div class="line"><span class="meta"></span></div><div class="line"># As of Git v1.7.0, you can delete a remote branch using</div><div class="line">git push origin --delete &lt;branch_name&gt;</div><div class="line"><span class="meta">#</span> which is easier to remember than</div><div class="line">git push origin :&lt;branch_name&gt;</div><div class="line"></div><div class="line">git shortlog</div><div class="line"></div><div class="line">git log branch --not master # 查看在branch上的，但不在master上的记录</div></pre></td></tr></table></figure>
+<h3 id="View-a-file-in-a-different-Git-branch-without-changing-branches"><a href="#View-a-file-in-a-different-Git-branch-without-changing-branches" class="headerlink" title="View a file in a different Git branch without changing branches"></a>View a file in a different Git branch without changing branches</h3><p>git checkout $REVISION – $FILE<br>git checkout $REVISION – “*” switch all files without changing brnaches<br>git show $REVISION:$FILE<br>git checkout –orphan $BRANCH</p>
+<h3 id="Make-an-existing-Git-branch-track-a-remote-branch"><a href="#Make-an-existing-Git-branch-track-a-remote-branch" class="headerlink" title="Make an existing Git branch track a remote branch"></a>Make an existing Git branch track a remote branch</h3><p>git branch -u $UPSTREAM/$REMOTE_BRANCH $LOCAL_BRANCH<br>git branch –set-upstream-to=$UPSTREAM/$REMOTE_BRANCH</p>
+<p>git push -u $UPSTREAM $REMOTE_BRANCH</p>
+<p>git remote add $UPSTREAM <remote-url><br>git fetch $UPSTREAM<br>git branch -f –track $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH</remote-url></p>
+<h1 id="OR"><a href="#OR" class="headerlink" title="OR:"></a>OR:</h1><p>git branch –set-upstream $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH</p>
+<h3 id="diff-changes-only-among-certain-file-s"><a href="#diff-changes-only-among-certain-file-s" class="headerlink" title="diff changes only among certain file(s)"></a>diff changes only among certain file(s)</h3>
 
     
+	  <div class="readmore">
+      <a href="/2016/11/22/git 命令/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/10/25/iTerm2奇淫技巧/">
+        iTerm2奇淫技巧
+      </a>
+    </h2>
+    
+    <time>
+      Oct 25, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <p>control + a<br>回到行首。这个对于用过unix系统的童鞋来说再熟悉不过。</p>
+<p>control + e<br>有了回到行首，当然不能错过光标回到行尾，写文章，打命令，这两个快捷键都是用的很频繁的。</p>
+<p>control + w<br>删除之前一个单词。这个快捷键是我意外发现的，既然有删除之前一个单词，我觉得应该会有删除后面一个单词，但我至今没发现，如果你会请告诉我，重金打赏。</p>
+<p>control + u<br>清除当前行。</p>
+<p>control + p<br>上一条命令。</p>
+<p>control + k<br>删除命令行文本到末尾。</p>
+<p>control + l<br>清屏。</p>
+<p>control + r<br>搜索命令历史。这个也是我经常用的快捷键，有时候你忘了正行命令，用这个命令很不错的，当然history | grep ** 会更有用些。</p>
+<p>前一标签页<br><code>⌘</code> + <code>shift</code> + <code>Left</code></p>
+<p>后一标签页<br><code>⌘</code> + <code>shift</code> + <code>Right</code></p>
+
+    
+	  <div class="readmore">
+      <a href="/2016/10/25/iTerm2奇淫技巧/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/28/配置linux服务器常用命令/">
+        配置linux服务器常用命令
+      </a>
+    </h2>
+    
+    <time>
+      Sep 28, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h3 id="安装lnmp"><a href="#安装lnmp" class="headerlink" title="安装lnmp"></a>安装lnmp</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">sudo LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php</div><div class="line">sudo apt install -y language-pack-en-base</div><div class="line">locale-gen en_US.UTF-8</div><div class="line"></div><div class="line">sudo apt -y install php7.1</div><div class="line">sudo apt install -y php7.1-fpm php7.1-mysql php7.1-curl php7.1-xml php7.1-mcrypt php7.1-json php7.1-gd php7.1-mbstring</div><div class="line">sudo apt install mysql-server-5.7</div><div class="line">sudo apt install nginx</div><div class="line">sudo apt install redis-server php-redis</div></pre></td></tr></table></figure>
+<h3 id="安装composer"><a href="#安装composer" class="headerlink" title="安装composer"></a>安装composer</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"</div><div class="line">php -r "if (hash_file('SHA384', 'composer-setup.php') === 'e115a8dc7871f15d853148a7fbac7da27d6c0030b848d9b3dc09e2a0388afed865e6a3d6b3c0fad45c48e2b5fc1196ae') &#123; echo 'Installer verified'; &#125; else &#123; echo 'Installer corrupt'; unlink('composer-setup.php'); &#125; echo PHP_EOL;"\nphp composer-setup.php</div><div class="line">php -r "unlink('composer-setup.php');"</div></pre></td></tr></table></figure>
+<h3 id="配置-www-www-data-用户权限"><a href="#配置-www-www-data-用户权限" class="headerlink" title="配置 www \ www-data 用户权限"></a>配置 www \ www-data 用户权限</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo -Hu www-data ssh-keygen -t rsa -C "entimm@gmail.com"</div><div class="line">sudo chown -R www-data:www-data /var/www/</div><div class="line">sudo visudo</div><div class="line">sudo passwd www-data</div><div class="line">vim /etc/passwd</div></pre></td></tr></table></figure>
+<h3 id="安装ohmyzsh"><a href="#安装ohmyzsh" class="headerlink" title="安装ohmyzsh"></a>安装ohmyzsh</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt install zsh</div><div class="line">sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"</div></pre></td></tr></table></figure>
+<h3 id="安装配置node环境"><a href="#安装配置node环境" class="headerlink" title="安装配置node环境"></a>安装配置node环境</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">curl --silent --location https://deb.nodesource.com/setup_4.x | bash -</div><div class="line">apt install -y nodejs</div><div class="line">npm install -g gulp</div><div class="line">npm install -g bower</div><div class="line">echo '\n#alias for cnpm\nalias cnpm="npm --registry=https://registry.npm.taobao.org \\n  --cache=$HOME/.npm/.cache/cnpm \\n  --disturl=https://npm.taobao.org/dist \\n  --userconfig=$HOME/.cnpmrc"' &gt;&gt; ~/.zshrc &amp;&amp; source ~/.zshrc</div></pre></td></tr></table></figure>
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/28/配置linux服务器常用命令/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/24/shell/">
+        shell
+      </a>
+    </h2>
+    
+    <time>
+      Sep 24, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="shell-中的判断"><a href="#shell-中的判断" class="headerlink" title="shell 中的判断"></a>shell 中的判断</h2><ol>
+<li>字符串判断</li>
+</ol>
+<p>str1 = str2　　　　 当两个串有相同内容、长度时为真<br>str1 != str2　　　　当串str1和str2不等时为真<br>-n str1　　　　　　　当串的长度大于0时为真(串非空)<br>-z str1　　　　　　  当串的长度为0时为真(空串)<br>str1　　　　　　　　  当串str1为非空时为真</p>
+<ol>
+<li>数字的判断</li>
+</ol>
+<p>int1 -eq int2　　　　两数相等为真<br>int1 -ne int2　　　　两数不等为真<br>int1 -gt int2　　　　int1大于int2为真<br>int1 -ge int2　　　　int1大于等于int2为真<br>int1 -lt int2　　　　int1小于int2为真<br>int1 -le int2　　　　int1小于等于int2为真</p>
+<p>-n “$var” 判断一个变量是否有值</p>
+<p>3 文件的判断</p>
+<p>-r file　　　　　用户可读为真<br>-w file　　　　　用户可写为真<br>-x file　　　　　用户可执行为真<br>-f file　　　　　文件为正规文件为真<br>-d file　　　　　文件为目录为真<br>-c file　　　　　文件为字符特殊文件为真<br>-b file　　　　　文件为块特殊文件为真<br>-s file　　　　　文件大小非0时为真<br>-t file　　　　　当文件描述符(默认为1)指定的设备为终端时为真</p>
+<p>3、复杂逻辑判断</p>
+<p>-a 　 　　　　　  与<br>-o　　　　　　　   或<br> !　　　　　　　　 非</p>
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/24/shell/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/23/ssh保持链接/">
+        ssh保持链接
+      </a>
+    </h2>
+    
+    <time>
+      Sep 23, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="Client-configuration"><a href="#Client-configuration" class="headerlink" title="Client configuration"></a>Client configuration</h2><p>Try creating the file: ~/.ssh/config<br>Add the contents:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Host *</div><div class="line">  ServerAliveInterval 30</div><div class="line">  ServerAliveCountMax 5</div></pre></td></tr></table></figure></p>
+<h2 id="Server-configuration"><a href="#Server-configuration" class="headerlink" title="Server configuration"></a>Server configuration</h2><p>Edit configuration file: /etc/ssh/sshd_config<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ClientAliveInterval 20</div><div class="line">ClientAliveCountMax 5</div></pre></td></tr></table></figure></p>
 
 
+    
+	  <div class="readmore">
+      <a href="/2016/09/23/ssh保持链接/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/22/快速搭建vpn/">
+        快速搭建vpn
+      </a>
+    </h2>
+    
+    <time>
+      Sep 22, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <p>VPS端一键安装Shadowsocks (SS Python版一键安装脚本支持CentOS 6，7，Debian所有版本，Ubuntu所有版本)，<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</div><div class="line">chmod +x shadowsocks.sh</div><div class="line">./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log</div></pre></td></tr></table></figure></p>
+<p>中间会提示输入SS SERVER使用的端口和连接密码。不输入则是系统默认.</p>
+<p>安装完成后，脚本提示如下(记得记录下来)：<br>Congratulations, shadowsocks install completed!<br>Your Server IP:your_server_ip<br>Your Server Port:your_server_port<br>Your Password:your_password<br>Your Local IP:127.0.0.1<br>Your Local Port:1080<br>Your Encryption Method:aes-256-cfb</p>
+<p>看到以上提示后就表明VPS上SS已经安装成功，并且已经设置了开机启动，VPS重启后不用手工启动SS。<br>到此就安装成功可以科学上网了</p>
+<p>卸载方法：<br>使用root用户登录，运行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./shadowsocks.sh uninstall</div></pre></td></tr></table></figure></p>
+<p>单用户配置文件 Sample：<br>配置文件路径：/etc/shadowsocks.json<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;server&quot;:&quot;0.0.0.0&quot;,</div><div class="line">    &quot;server_port&quot;:8989,</div><div class="line">    &quot;local_address&quot;:&quot;127.0.0.1&quot;,</div><div class="line">    &quot;local_port&quot;:1080,</div><div class="line">    &quot;password&quot;:&quot;yourpassword&quot;,</div><div class="line">    &quot;timeout&quot;:300,</div><div class="line">    &quot;method&quot;:&quot;aes-256-cfb&quot;,</div><div class="line">    &quot;fast_open&quot;: false</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>多用户多端口配置文件 Sample：<br>配置文件路径：/etc/shadowsocks.json<br>```<br>{<br>    “server”:”0.0.0.0”,<br>    “local_address”:”127.0.0.1”,<br>    “local_port”:1080,<br>    “port_password”:{<br>         “8989”:”password0”,<br>         “9001”:”password1”,<br>         “9002”:”password2”,<br>         “9003”:”password3”,<br>         “9004”:”password4”<br>    },<br>    “timeout”:300,<br>    “method”:”aes-256-cfb”,<br>    “fast_open”: false<br>}</p>
+<p>使用命令：<br>启动：/etc/init.d/shadowsocks start<br>停止：/etc/init.d/shadowsocks stop<br>重启：/etc/init.d/shadowsocks restart<br>状态：/etc/init.d/shadowsocks status</p>
+
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/22/快速搭建vpn/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/22/那些配置/">
+        那些配置
+      </a>
+    </h2>
+    
+    <time>
+      Sep 22, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h3 id="phpstorm-外部工具"><a href="#phpstorm-外部工具" class="headerlink" title="phpstorm 外部工具"></a>phpstorm 外部工具</h3><p>Open Project With Subline<br>subl<br>$ProjectFileDir$<br>$ProjectFileDir$</p>
+<p>Open File With Sublime<br>subl<br>$FilePath$:$LineNumber$<br>$ProjectFileDir$</p>
+<p>PHP CS Fixer<br>/usr/local/bin/php-cs-fixer<br>–level=psr2 –verbose fix $FileDir$/$FileName$<br>$ProjectFileDir$</p>
+<h3 id="从连接中使用subl打开所连接文件"><a href="#从连接中使用subl打开所连接文件" class="headerlink" title="从连接中使用subl打开所连接文件"></a>从连接中使用subl打开所连接文件</h3><p><a href="https://github.com/dhoulb/subl.git" target="_blank" rel="external">https://github.com/dhoulb/subl.git</a></p>
+
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/22/那些配置/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/22/接替app端的请求/">
+        接替app端的请求
+      </a>
+    </h2>
+    
+    <time>
+      Sep 22, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h3 id="电脑安装抓包工具-使用charles-fiddler"><a href="#电脑安装抓包工具-使用charles-fiddler" class="headerlink" title="电脑安装抓包工具(使用charles/fiddler)"></a>电脑安装抓包工具(使用charles/fiddler)</h3><h3 id="同个局域网内，配手机代理，让手机的请求统统都要经过你的电脑"><a href="#同个局域网内，配手机代理，让手机的请求统统都要经过你的电脑" class="headerlink" title="同个局域网内，配手机代理，让手机的请求统统都要经过你的电脑"></a>同个局域网内，配手机代理，让手机的请求统统都要经过你的电脑</h3><h3 id="改电脑的hosts"><a href="#改电脑的hosts" class="headerlink" title="改电脑的hosts"></a>改电脑的hosts</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">192.168.0.100 test.api.entimm.com</div><div class="line"># 反向代理用的</div><div class="line">127.0.0.1 api.entimm.com</div></pre></td></tr></table></figure>
+<h3 id="最后上nginx的反向代理"><a href="#最后上nginx的反向代理" class="headerlink" title="最后上nginx的反向代理"></a>最后上nginx的反向代理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line"></div><div class="line">    listen 80;</div><div class="line">    listen [::]:80;</div><div class="line"></div><div class="line">    server_name api.entimm.com;</div><div class="line"></div><div class="line">    location / &#123;</div><div class="line">        proxy_pass http://test.api.entimm.com;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="搞定！"><a href="#搞定！" class="headerlink" title="搞定！"></a>搞定！</h3>
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/22/接替app端的请求/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/22/快速搭建服务器/">
+        快速搭建服务器
+      </a>
+    </h2>
+    
+    <time>
+      Sep 22, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h3 id="下载-deploy-sh-脚本"><a href="#下载-deploy-sh-脚本" class="headerlink" title="下载 deploy.sh 脚本"></a>下载 deploy.sh 脚本</h3><p>14.04安装脚本<br>wget <a href="https://raw.githubusercontent.com/summerblue/laravel-ubuntu-init/master/deploy.sh" target="_blank" rel="external">https://raw.githubusercontent.com/summerblue/laravel-ubuntu-init/master/deploy.sh</a></p>
+<p>16.04安装脚本<br>wget <a href="https://raw.githubusercontent.com/summerblue/laravel-ubuntu-init/master/deploy-16.sh" target="_blank" rel="external">https://raw.githubusercontent.com/summerblue/laravel-ubuntu-init/master/deploy-16.sh</a></p>
+<h3 id="设置-MYSQL-密码"><a href="#设置-MYSQL-密码" class="headerlink" title="设置 MYSQL 密码"></a>设置 MYSQL 密码</h3><p>vi deploy.sh:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># Configure</div><div class="line">MYSQL_ROOT_PASSWORD=&quot;&quot;</div><div class="line">MYSQL_NORMAL_USER=&quot;estuser&quot;</div><div class="line">MYSQL_NORMAL_USER_PASSWORD=&quot;&quot;</div></pre></td></tr></table></figure></p>
+<h3 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h3><p>有需要的话可以使用网易镜像加速：<br>wget <a href="http://mirrors.163.com/.help/sources.list.trusty" target="_blank" rel="external">http://mirrors.163.com/.help/sources.list.trusty</a> -O /etc/apt/sources.list</p>
+<p>运行脚本:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">chmod +x deploy.sh</div><div class="line">./deploy.sh</div></pre></td></tr></table></figure></p>
+<p>注：请使用 root 运行。</p>
+<h3 id="安装完以后的配置和注意事项"><a href="#安装完以后的配置和注意事项" class="headerlink" title="安装完以后的配置和注意事项"></a>安装完以后的配置和注意事项</h3>
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/22/快速搭建服务器/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/19/php-tip/">
+        php tips
+      </a>
+    </h2>
+    
+    <time>
+      Sep 19, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <ul>
+<li><p>explode 分割字符可以不是单字符</p>
+</li>
+<li><p>强制类型转换的值不论是否有定义，转换后都会有值</p>
+</li>
+<li><p>E_ALL ^ E_NOTICE 和 E_ALL &amp; ~E_NOTICE 是等效的</p>
+</li>
+<li><p>无论是函数调用还是文件包含，像 <strong>FILE</strong> 这种变量，他写在哪个文件，那么他的值就在哪个文件，而不受调用者影响</p>
+</li>
+<li><p>静态变量是在编译时解析的，不能跟表达式，比如：static $int = sqrt(121)</p>
+</li>
+<li><p>子类重载父类的属性和方法时，可见性不能比父类小</p>
+</li>
+<li><p>自 PHP 5.4 起可用 callable 类型指定回调类型 callback</p>
+<ol>
+<li><p>一个 PHP 的函数以 string 类型传递其名称。可以使用任何内置或用户自定义函数，但除了语言结构例如：array()，echo，empty()，eval()，exit()，isset()，list()，print 或 unset()</p>
+</li>
+<li><p>一个已实例化的对象的方法被作为数组传递，下标 0 包含该对象，下标 1 包含方法名</p>
+</li>
+<li><p>静态类方法也可不经实例化该类的对象而传递，只要在下标 0 中包含类名而不是对象。自 PHP 5.2.3 起，也可以传递 ‘ClassName::methodName’</p>
+</li>
+<li><p>也可传递 closure 给回调参数</p>
+</li>
+</ol>
+</li>
+<li><p>对浮点数，数字字符串，纯字母都能进行自增/减运算，对其他类型的值进行自增/减运算不会产生什么效果</p>
+</li>
+<li><p>call_user_func_array 如果回调函数默认设置需要接受的参数是引用传递的时候，按值传递，结果将会输出一个警告, 这时数组参数中的参数需要按引用传递</p>
+</li>
+<li><p>call_user_func 如果回调函数默认设置需要接受的参数是引用传递的时候,无论怎样传参都无法满足</p>
+</li>
+<li><p>常量<strong>NAMESPACE</strong>的值是包含当前命名空间名称的字符串。在全局的，不包括在任何命名空间中的代码，它包含一个空的字符串</p>
+</li>
+<li>关键字 namespace 可用来显式访问当前命名空间或子命名空间中的元素。它等价于类中的 self 操作符</li>
+<li><p>命名空间不会因为被包含而影响其在包含文件中的使用方式</p>
+</li>
+<li><p>mysqli::real_escape_string 相比 addslashes 会针对真实数据库环境的字符集做出更好的处理，但是必须在建立数据库链接的基础上</p>
+</li>
+<li><p>字符串类型变量可以直接当做一个数组，通过数字下面来访问字符串中的字符或者是通过 str_split 函数把字符串分割成单字符数组</p>
+</li>
+</ul>
+<h3 id="那些有趣的代码片段"><a href="#那些有趣的代码片段" class="headerlink" title="那些有趣的代码片段"></a>那些有趣的代码片段</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">multi</span> <span class="params">($a, $b)</span> </span>&#123;</div><div class="line">    $b = is_array($b) ? $b : array_slice(func_get_args(), <span class="number">1</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">incr</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">static</span> $count = <span class="number">0</span>;</div><div class="line"></div><div class="line">    $count++;</div><div class="line">    <span class="keyword">echo</span> $count;</div><div class="line">    <span class="keyword">if</span> ($count &lt; <span class="number">10</span>) &#123;</div><div class="line">        incr();</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">echo</span> $count;</div><div class="line">    $count--;</div><div class="line">&#125;</div><div class="line">incr();</div><div class="line"><span class="comment">// 结果输出：1234567891010987654321</span></div></pre></td></tr></table></figure>
+<p>不使用临时变量，交换2数的数值<br>下面三种方法不能对自身进行交换<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 不仅对数字有效，对字符串也是有效的</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">swap1</span><span class="params">(&amp;$x, &amp;$y)</span></span></div><div class="line">&#123;</div><div class="line">    $x = $x ^ $y;</div><div class="line">    $y = $x ^ $y;</div><div class="line">    $x = $x ^ $y;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 当心越界</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">swap2</span><span class="params">(&amp;$x, &amp;$y)</span></span></div><div class="line">&#123;</div><div class="line">    $x = $x + $y;</div><div class="line">    $y = $x - $y;</div><div class="line">    $x = $x - $y;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 当心越界、第二个数不能为0</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">swap3</span><span class="params">(&amp;$x, &amp;$y)</span></span></div><div class="line">&#123;</div><div class="line">    $x = $x * $y;</div><div class="line">    $y = $x / $y;</div><div class="line">    $x = $x / $y;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>命名空间<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">namespace</span> <span class="title">Myns</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></div><div class="line">&#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// ok</span></div><div class="line"><span class="keyword">new</span> <span class="keyword">namespace</span>\<span class="title">Test</span>;</div><div class="line"></div><div class="line"><span class="comment">// ok</span></div><div class="line"><span class="keyword">new</span> Test;</div><div class="line"></div><div class="line"><span class="comment">// ok</span></div><div class="line">$a =  <span class="keyword">__NAMESPACE__</span> . <span class="string">'\Test'</span>;</div><div class="line"><span class="keyword">new</span> $a;</div><div class="line"></div><div class="line"><span class="comment">// ok</span></div><div class="line">$a =  <span class="string">'Myns\Test'</span>;</div><div class="line"><span class="keyword">new</span> $a;</div><div class="line"></div><div class="line"><span class="comment">// failed,  Class 'Myns\Myns\Test' not found</span></div><div class="line"><span class="keyword">new</span> Myns\Test;</div></pre></td></tr></table></figure></p>
+<p>这样的自增运算<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span></div><div class="line">$i1 = <span class="number">0</span>;</div><div class="line">$i2 = <span class="number">0</span>;</div><div class="line">$a= ++$i1 + ++$i1 + ++$i1;</div><div class="line">$b= $i2++ + $i2++ + $i2++;</div><div class="line"><span class="keyword">echo</span> $a;</div><div class="line"><span class="keyword">echo</span> PHP_EOL;</div><div class="line"><span class="keyword">echo</span> $b;</div><div class="line"><span class="comment">// result:</span></div><div class="line"><span class="comment">// 6</span></div><div class="line"><span class="comment">// 3</span></div></pre></td></tr></table></figure></p>
+<h3 id="安全两个原则"><a href="#安全两个原则" class="headerlink" title="安全两个原则"></a>安全两个原则</h3><ol>
+<li>永远不要相信用户输入的东西。</li>
+<li>将自己需要输出的数据进行转义。</li>
+</ol>
+<h3 id="对象的另一种理解"><a href="#对象的另一种理解" class="headerlink" title="对象的另一种理解"></a>对象的另一种理解</h3>
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/19/php-tip/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+</section>
+
+
+  <nav id="page-nav">
+    
+    
+    <a class="next" rel="next" href="/archives/2016/page/2/">
+      <span class="text">Next</span>
+      <span class="icon icon-chevron-right"></span>
+    </a>
+    
+  </nav>
+  
+
+
+      </div>
+      <aside class='l_side'>
+        
+  <section class='m_widget about'>
+
+<div class='header'>entimm</div>
+<div class='content'>
+<div class='desc'>Tempora mutantur, nos et mutamur in illis ...</div>
+</div>
+</section>
+
+  <section class='m_widget links'>
+<div class='header'>Links</div>
+<div class='content'>
+    <ul class="entry">
+    
+        <li><a class="flat-box" target="_blank" href="https://github.com/entimm">
+            <div class='name'>GiHub</div>
+        </a></li>
+    
+    </ul>
+</div>
+</section>
+
+  <section class='m_widget categories'>
+<div class='header'>Categories</div>
+<div class='content'>
+    
+</div>
+</section>
+
+  
+
+
+  <section class='m_widget archives'>
+<div class='header'>Archives</div>
+<div class='content'>
+    
+    <ul class="entry">
+    
+        <li>
+            <a href="/2016/08/29/vagrant/">
+              <span class="title"><span>vagrant 常用操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/PHP cURL 应用/">
+              <span class="title"><span>利用 CURL 进行数据抓取总结</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/05/docker技巧/">
+              <span class="title"><span>docker 技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/28/PHP代码重构/">
+              <span class="title"><span>PHP代码重构</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/10/25/iTerm2奇淫技巧/">
+              <span class="title"><span>iTerm2奇淫技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/11/22/git 命令/">
+              <span class="title"><span>git 命令</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/js 中对 checkbox 的操作/">
+              <span class="title"><span>js 中对 checkbox 的操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/15/linux/">
+              <span class="title"><span>linux相关操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/05/21/laravel 技巧/">
+              <span class="title"><span>laravel 技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/04/laravel中用到的ServiceProvide/">
+              <span class="title"><span>laravel中用到的ServiceProvide</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/08/mysql知识/">
+              <span class="title"><span>mysql知识</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/29/macos查看网络端口情况/">
+              <span class="title"><span>macos查看网络端口情况</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/mac os系统问题解决/">
+              <span class="title"><span>mac os系统问题解决</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/05/php-function/">
+              <span class="title"><span>php function</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/23/ssh保持链接/">
+              <span class="title"><span>ssh保持链接</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/24/shell/">
+              <span class="title"><span>shell</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/18/php中的坑/">
+              <span class="title"><span>php中的坑</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/19/php-tip/">
+              <span class="title"><span>php tips</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/29/web相关/">
+              <span class="title"><span>web相关</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/08/FastCgi 与 PHP-FPM 之间的区别/">
+              <span class="title"><span>Cgi、FastCgi 与 PHP-FPM</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/05/关于高并发的处理/">
+              <span class="title"><span>关于高并发的处理</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/19/tmux/">
+              <span class="title"><span>tmux使用</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/18/图片资源优化/">
+              <span class="title"><span>图片资源优化</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/常用代码片段/">
+              <span class="title"><span>常用代码片段</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/常用正则技巧总结/">
+              <span class="title"><span>常用正则技巧总结</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/12/很有用的一些技巧/">
+              <span class="title"><span>很有用的一些技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/04/快捷键/">
+              <span class="title"><span>快捷键</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/快速搭建vpn/">
+              <span class="title"><span>快速搭建vpn</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/快速搭建服务器/">
+              <span class="title"><span>快速搭建服务器</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/17/设计模式/">
+              <span class="title"><span>设计模式</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/欢快的使用谷歌搜索/">
+              <span class="title"><span>欢快的使用谷歌搜索</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/15/通过网址自动部署web/">
+              <span class="title"><span>通过网址自动部署web</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/接替app端的请求/">
+              <span class="title"><span>接替app端的请求</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/08/面试可能会问到的问题/">
+              <span class="title"><span>面试可能会被问到的问题</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/那些配置/">
+              <span class="title"><span>那些配置</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/28/配置linux服务器常用命令/">
+              <span class="title"><span>配置linux服务器常用命令</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/05/18/那些概念/">
+              <span class="title"><span>那些概念</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/08/面试问题总结/">
+              <span class="title"><span>面试问题总结</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/16/高级PHP/">
+              <span class="title"><span>高级 PHP</span></span>
+            </a>
+        </li>
+    
+    </ul>
+    
+</div>
+</section>
+
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+  </div>
+  <footer id="footer" class="clearfix">
+
+	<div class="social-wrapper">
+  	
+      
+        <a href="https://github.com/entimm" class="social github"
+          target="_blank" rel="external">
+          <span class="icon icon-github"></span>
+        </a>
+      
+        <a href="https://twitter.com/entimm" class="social twitter"
+          target="_blank" rel="external">
+          <span class="icon icon-twitter"></span>
+        </a>
+      
+        <a href="/atom.xml" class="social rss"
+          target="_blank" rel="external">
+          <span class="icon icon-rss"></span>
+        </a>
+      
+    
+  </div>
+  
+  <div>Theme <a href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
+  
+</footer>
+
+
+  <script>setLoadingBarProgress(80);</script>
+  
+
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<script src="/js/jquery.fitvids.js"></script>
+<script>
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+	var ALGOLIA_API_KEY = "";
+	var ALGOLIA_APP_ID = "";
+	var ALGOLIA_INDEX_NAME = "";
+  var AZURE_SERVICE_NAME = "";
+  var AZURE_INDEX_NAME = "";
+  var AZURE_QUERY_KEY = "";
+  var BAIDU_API_ID = "";
+  var SEARCH_SERVICE = "hexo";
+  var ROOT = "/"||"/";
+  if(!ROOT.endsWith('/'))ROOT += '/';
+</script>
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>
-
