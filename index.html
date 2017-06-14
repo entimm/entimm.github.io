@@ -71,7 +71,7 @@
 						</li>
 					
 						<li>
-							<a class='flat-box nav-GitHub Respositries' href='http://github.entimm.com'>
+							<a class='flat-box nav-github respositries' href='http://github.entimm.com'>
 								GitHub Respositries
 							</a>
 						</li>
@@ -127,7 +127,7 @@
 				GitHub Stars
 			</a>
 		
-			<a href="http://github.entimm.com" class="nav-GitHub Respositries nav">
+			<a href="http://github.entimm.com" class="nav-github respositries nav">
 				GitHub Respositries
 			</a>
 		
@@ -141,6 +141,111 @@
         
 <section class="post-list">
 	
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2017/06/14/关于文件大小写/">
+        关于文件大小写
+      </a>
+    </h2>
+    
+    <time>
+      Jun 14, 2017
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <p>突然发现自己的电脑中，git对文件大小写是不敏感的，执行下面的命令吧</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 全局</div><div class="line">git config --global core.ignorecase false</div><div class="line"><span class="meta">#</span> 项目</div><div class="line">git config core.ignorecase false</div></pre></td></tr></table></figure>
+<h2 id="修正文件大小写"><a href="#修正文件大小写" class="headerlink" title="修正文件大小写"></a>修正文件大小写</h2><p>受文件系统的影响，直接修改可能会行不通<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git mv filename FileName</div><div class="line"><span class="meta">#</span> fatal: destination exists</div></pre></td></tr></table></figure></p>
+<p>方案1</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git mv filename filename_tmp</div><div class="line">git mv filename_tmp FileName</div></pre></td></tr></table></figure>
+<p>方案2(awesome)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git mv -f filename FileName</div></pre></td></tr></table></figure>
+
+    
+	  <div class="readmore">
+      <a href="/2017/06/14/关于文件大小写/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2017/06/13/git本地化操作/">
+        git本地化操作
+      </a>
+    </h2>
+    
+    <time>
+      Jun 13, 2017
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <p>很多时候我们会有一些本地化的代码修改操作，却并不想污染到代码仓库，有如下技巧</p>
+<p>.git/info/exclude文件中进行文件的跟踪忽略，效果同.gitignore</p>
+<p>假定开发人员不会更改文件,此标志用于提高 not-changing 文件夹(如SDK)的性能。<br>git update-index –skip-worktree</p>
+<p>用于命 GIT 不再染指特定文件,即便开发人员可能更改它<br>git update-index –assume-unchanged</p>
+
+
+    
+	  <div class="readmore">
+      <a href="/2017/06/13/git本地化操作/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2017/06/13/mysql配置远程访问/">
+        mysql配置远程访问
+      </a>
+    </h2>
+    
+    <time>
+      Jun 13, 2017
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <p>建立远程访问用户<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">GRANT ALL PRIVILEGES ON *.* TO 'YOURUSER'@'%' IDENTIFIED BY 'YOURPASSWORD' WITH GRANT OPTION;</div><div class="line">FLUSH PRIVILEGES;</div><div class="line"></div><div class="line">#查看结果:</div><div class="line">SELECT * from information_schema.user_privileges where grantee like "'YOURUSER'%";</div></pre></td></tr></table></figure></p>
+<p>配置my.cnf,通常是/etc/mysql/my.cnf，找到并注释掉下面语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">bind-address = 127.0.0.1 # 或者改成 bind-address = 0.0.0.0</div><div class="line"></div><div class="line">skip-networking</div></pre></td></tr></table></figure>
+<p>重启服务器</p>
+<h3 id="Bonus-Tip-Revoke-Access"><a href="#Bonus-Tip-Revoke-Access" class="headerlink" title="Bonus-Tip: Revoke Access"></a>Bonus-Tip: Revoke Access</h3><p>If you accidentally grant access to a user, then better have revoking option handy.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#Following will revoke all options for THEUSER from all machines:</div><div class="line">REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'THEUSER'@'%';</div><div class="line"></div><div class="line">#Following will revoke all options for THEUSER from particular IP:</div><div class="line">mysql&gt; REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'THEUSER'@'1.2.3.4';</div></pre></td></tr></table></figure>
+<p>Its better to check information_schema.user_privileges table after running REVOKE command.</p>
+<p>If you see USAGE privilege after running REVOKE command, its fine. It is as good as no privilege at all. I am not sure if it can be revoked.</p>
+
+
+    
+	  <div class="readmore">
+      <a href="/2017/06/13/mysql配置远程访问/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
     <div class='post-wrapper'>
       <article class="post reveal">
   <section class="meta">
@@ -205,13 +310,17 @@
 		
   </section>
   <section class="article typo">
-	  <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">git push origin test:master  # 提交本地test分支作为远程的master分支</div><div class="line">git push origin test:test    # 提交本地test分支作为远程的test分支</div><div class="line">git push origin :test        # 刚提交到远程的test将被删除，但是本地还会保存的，不用担心</div><div class="line"></div><div class="line">git push --tags # 上传所有标签</div><div class="line"></div><div class="line">git remote set-url --push [name] [newUrl] # 修改远程仓库</div><div class="line">git pull [remoteName] [localBranchName]</div><div class="line">git push [remoteName] [localBranchName]</div><div class="line"></div><div class="line">git merge [name]   # 将名称为[name]的分支与当前分支合并</div><div class="line">git rebase [name]  #会将[name]分支的代码合并过来，并按照提交的顺序排序(衍合指定分支到分支到当前分支)</div><div class="line"></div><div class="line">如果要对某些代码的commit重新整理</div><div class="line">1. 可以记住某个commit号</div><div class="line">2. git rebase -i commit号</div><div class="line"></div><div class="line">git merge-base branchA branchB #查看2分支的公告节点</div><div class="line"></div><div class="line">git diff $(git-merge-base A B) B</div><div class="line"><span class="meta"></span></div><div class="line"># 按时间逆序列出提交对象，常用于查找涉及到某些文件的提交的hash。例如，查找所有关系到文件readme的提交</div><div class="line">git rev-list</div><div class="line"><span class="meta"></span></div><div class="line"># As of Git v1.7.0, you can delete a remote branch using</div><div class="line">git push origin --delete &lt;branch_name&gt;</div><div class="line"><span class="meta">#</span> which is easier to remember than</div><div class="line">git push origin :&lt;branch_name&gt;</div><div class="line"></div><div class="line">git shortlog</div><div class="line"></div><div class="line">git log branch --not master # 查看在branch上的，但不在master上的记录</div></pre></td></tr></table></figure>
+	  <p>如果要对某些代码的commit重新整理</p>
+<ol>
+<li>可以记住某个commit号</li>
+<li>git rebase -i commit号</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta">#</span> 删除远程分支</div><div class="line"><span class="meta">#</span> As of Git v1.7.0, you can delete a remote branch using</div><div class="line">git push origin --delete &lt;branch_name&gt;</div><div class="line"><span class="meta">#</span> which is easier to remember than</div><div class="line">git push origin :&lt;branch_name&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">git push origin test:test    # 提交本地test分支作为远程的test分支</div><div class="line">git push origin :test        # 刚提交到远程的test将被删除，但是本地还会保存的，不用担心</div><div class="line"></div><div class="line">git push --tags # 上传所有标签</div><div class="line"></div><div class="line">git remote set-url --push [name] [newUrl] # 修改远程仓库</div><div class="line">git pull [remoteName] [localBranchName]</div><div class="line">git push [remoteName] [localBranchName]</div><div class="line"></div><div class="line">git merge [name]   # 将名称为[name]的分支与当前分支合并</div><div class="line">git rebase [name]  #会将[name]分支的代码合并过来，并按照提交的顺序排序(衍合指定分支到分支到当前分支)</div><div class="line"></div><div class="line">git merge-base branchA branchB #查看2分支的公共节点</div><div class="line"></div><div class="line">git diff $(git-merge-base A B) B</div><div class="line"><span class="meta"></span></div><div class="line"># 按时间逆序列出提交对象，常用于查找涉及到某些文件的提交的hash。例如，查找所有关系到文件readme的提交</div><div class="line">git rev-list</div><div class="line"></div><div class="line">git shortlog</div><div class="line"><span class="meta"></span></div><div class="line"># 查看在branch上的，但不在master上的记录</div><div class="line">git log branch --not master</div></pre></td></tr></table></figure>
 <h3 id="View-a-file-in-a-different-Git-branch-without-changing-branches"><a href="#View-a-file-in-a-different-Git-branch-without-changing-branches" class="headerlink" title="View a file in a different Git branch without changing branches"></a>View a file in a different Git branch without changing branches</h3><p>git checkout $REVISION – $FILE<br>git checkout $REVISION – “*” switch all files without changing brnaches<br>git show $REVISION:$FILE<br>git checkout –orphan $BRANCH</p>
 <h3 id="Make-an-existing-Git-branch-track-a-remote-branch"><a href="#Make-an-existing-Git-branch-track-a-remote-branch" class="headerlink" title="Make an existing Git branch track a remote branch"></a>Make an existing Git branch track a remote branch</h3><p>git branch -u $UPSTREAM/$REMOTE_BRANCH $LOCAL_BRANCH<br>git branch –set-upstream-to=$UPSTREAM/$REMOTE_BRANCH</p>
 <p>git push -u $UPSTREAM $REMOTE_BRANCH</p>
 <p>git remote add $UPSTREAM <remote-url><br>git fetch $UPSTREAM<br>git branch -f –track $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH</remote-url></p>
-<h1 id="OR"><a href="#OR" class="headerlink" title="OR:"></a>OR:</h1><p>git branch –set-upstream $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH</p>
-<h3 id="diff-changes-only-among-certain-file-s"><a href="#diff-changes-only-among-certain-file-s" class="headerlink" title="diff changes only among certain file(s)"></a>diff changes only among certain file(s)</h3>
 
     
 	  <div class="readmore">
@@ -404,105 +513,6 @@
 </article>
     </div>
   
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/09/22/那些配置/">
-        那些配置
-      </a>
-    </h2>
-    
-    <time>
-      Sep 22, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h3 id="phpstorm-外部工具"><a href="#phpstorm-外部工具" class="headerlink" title="phpstorm 外部工具"></a>phpstorm 外部工具</h3><p>Open Project With Subline<br>subl<br>$ProjectFileDir$<br>$ProjectFileDir$</p>
-<p>Open File With Sublime<br>subl<br>$FilePath$:$LineNumber$<br>$ProjectFileDir$</p>
-<p>PHP CS Fixer<br>/usr/local/bin/php-cs-fixer<br>–level=psr2 –verbose fix $FileDir$/$FileName$<br>$ProjectFileDir$</p>
-<h3 id="从连接中使用subl打开所连接文件"><a href="#从连接中使用subl打开所连接文件" class="headerlink" title="从连接中使用subl打开所连接文件"></a>从连接中使用subl打开所连接文件</h3><p><a href="https://github.com/dhoulb/subl.git" target="_blank" rel="external">https://github.com/dhoulb/subl.git</a></p>
-
-
-    
-	  <div class="readmore">
-      <a href="/2016/09/22/那些配置/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/09/22/接替app端的请求/">
-        接替app端的请求
-      </a>
-    </h2>
-    
-    <time>
-      Sep 22, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h3 id="电脑安装抓包工具-使用charles-fiddler"><a href="#电脑安装抓包工具-使用charles-fiddler" class="headerlink" title="电脑安装抓包工具(使用charles/fiddler)"></a>电脑安装抓包工具(使用charles/fiddler)</h3><h3 id="同个局域网内，配手机代理，让手机的请求统统都要经过你的电脑"><a href="#同个局域网内，配手机代理，让手机的请求统统都要经过你的电脑" class="headerlink" title="同个局域网内，配手机代理，让手机的请求统统都要经过你的电脑"></a>同个局域网内，配手机代理，让手机的请求统统都要经过你的电脑</h3><h3 id="改电脑的hosts"><a href="#改电脑的hosts" class="headerlink" title="改电脑的hosts"></a>改电脑的hosts</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">192.168.0.100 test.api.entimm.com</div><div class="line"># 反向代理用的</div><div class="line">127.0.0.1 api.entimm.com</div></pre></td></tr></table></figure>
-<h3 id="最后上nginx的反向代理"><a href="#最后上nginx的反向代理" class="headerlink" title="最后上nginx的反向代理"></a>最后上nginx的反向代理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line"></div><div class="line">    listen 80;</div><div class="line">    listen [::]:80;</div><div class="line"></div><div class="line">    server_name api.entimm.com;</div><div class="line"></div><div class="line">    location / &#123;</div><div class="line">        proxy_pass http://test.api.entimm.com;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="搞定！"><a href="#搞定！" class="headerlink" title="搞定！"></a>搞定！</h3>
-
-    
-	  <div class="readmore">
-      <a href="/2016/09/22/接替app端的请求/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/09/22/快速搭建服务器/">
-        快速搭建服务器
-      </a>
-    </h2>
-    
-    <time>
-      Sep 22, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h3 id="下载-deploy-sh-脚本"><a href="#下载-deploy-sh-脚本" class="headerlink" title="下载 deploy.sh 脚本"></a>下载 deploy.sh 脚本</h3><p>14.04安装脚本<br>wget <a href="https://raw.githubusercontent.com/summerblue/laravel-ubuntu-init/master/deploy.sh" target="_blank" rel="external">https://raw.githubusercontent.com/summerblue/laravel-ubuntu-init/master/deploy.sh</a></p>
-<p>16.04安装脚本<br>wget <a href="https://raw.githubusercontent.com/summerblue/laravel-ubuntu-init/master/deploy-16.sh" target="_blank" rel="external">https://raw.githubusercontent.com/summerblue/laravel-ubuntu-init/master/deploy-16.sh</a></p>
-<h3 id="设置-MYSQL-密码"><a href="#设置-MYSQL-密码" class="headerlink" title="设置 MYSQL 密码"></a>设置 MYSQL 密码</h3><p>vi deploy.sh:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># Configure</div><div class="line">MYSQL_ROOT_PASSWORD=&quot;&quot;</div><div class="line">MYSQL_NORMAL_USER=&quot;estuser&quot;</div><div class="line">MYSQL_NORMAL_USER_PASSWORD=&quot;&quot;</div></pre></td></tr></table></figure></p>
-<h3 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h3><p>有需要的话可以使用网易镜像加速：<br>wget <a href="http://mirrors.163.com/.help/sources.list.trusty" target="_blank" rel="external">http://mirrors.163.com/.help/sources.list.trusty</a> -O /etc/apt/sources.list</p>
-<p>运行脚本:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">chmod +x deploy.sh</div><div class="line">./deploy.sh</div></pre></td></tr></table></figure></p>
-<p>注：请使用 root 运行。</p>
-<h3 id="安装完以后的配置和注意事项"><a href="#安装完以后的配置和注意事项" class="headerlink" title="安装完以后的配置和注意事项"></a>安装完以后的配置和注意事项</h3>
-
-    
-	  <div class="readmore">
-      <a href="/2016/09/22/快速搭建服务器/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
-</article>
-    </div>
-  
 </section>
 
 
@@ -545,6 +555,12 @@
 <div class='header'>Categories</div>
 <div class='content'>
     
+    <ul class="entry">
+    
+        <li><a class="flat-box" href="/categories/note/"><div class='name'>note</div><div class='badget'>0</div></a></li>
+    
+    </ul>
+    
 </div>
 </section>
 
@@ -558,8 +574,8 @@
     <ul class="entry">
     
         <li>
-            <a href="/2016/09/18/图片资源优化/">
-              <span class="title"><span>图片资源优化</span></span>
+            <a href="/2016/09/05/关于高并发的处理/">
+              <span class="title"><span>关于高并发的处理</span></span>
             </a>
         </li>
     
@@ -606,6 +622,12 @@
         </li>
     
         <li>
+            <a href="/2016/09/15/linux/">
+              <span class="title"><span>linux相关操作</span></span>
+            </a>
+        </li>
+    
+        <li>
             <a href="/2016/08/04/laravel中用到的ServiceProvide/">
               <span class="title"><span>laravel中用到的ServiceProvide</span></span>
             </a>
@@ -642,6 +664,18 @@
         </li>
     
         <li>
+            <a href="/2016/09/18/php中的坑/">
+              <span class="title"><span>php中的坑</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/24/shell/">
+              <span class="title"><span>shell</span></span>
+            </a>
+        </li>
+    
+        <li>
             <a href="/2016/09/23/ssh保持链接/">
               <span class="title"><span>ssh保持链接</span></span>
             </a>
@@ -654,20 +688,14 @@
         </li>
     
         <li>
-            <a href="/2016/08/29/vagrant/">
-              <span class="title"><span>vagrant 常用操作</span></span>
-            </a>
-        </li>
-    
-        <li>
             <a href="/2016/08/29/web相关/">
               <span class="title"><span>web相关</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/05/关于高并发的处理/">
-              <span class="title"><span>关于高并发的处理</span></span>
+            <a href="/2016/08/29/vagrant/">
+              <span class="title"><span>vagrant 常用操作</span></span>
             </a>
         </li>
     
@@ -678,14 +706,8 @@
         </li>
     
         <li>
-            <a href="/2016/09/15/linux/">
-              <span class="title"><span>linux相关操作</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/09/18/php中的坑/">
-              <span class="title"><span>php中的坑</span></span>
+            <a href="/2016/09/18/图片资源优化/">
+              <span class="title"><span>图片资源优化</span></span>
             </a>
         </li>
     
@@ -696,8 +718,8 @@
         </li>
     
         <li>
-            <a href="/2016/09/24/shell/">
-              <span class="title"><span>shell</span></span>
+            <a href="/2016/08/30/常用正则技巧总结/">
+              <span class="title"><span>常用正则技巧总结</span></span>
             </a>
         </li>
     
@@ -714,14 +736,14 @@
         </li>
     
         <li>
-            <a href="/2016/08/30/常用正则技巧总结/">
-              <span class="title"><span>常用正则技巧总结</span></span>
+            <a href="/2016/09/22/快速搭建vpn/">
+              <span class="title"><span>快速搭建vpn</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/22/快速搭建vpn/">
-              <span class="title"><span>快速搭建vpn</span></span>
+            <a href="/2016/09/22/快速搭建服务器/">
+              <span class="title"><span>快速搭建服务器</span></span>
             </a>
         </li>
     
@@ -738,14 +760,14 @@
         </li>
     
         <li>
-            <a href="/2016/09/15/通过网址自动部署web/">
-              <span class="title"><span>通过网址自动部署web</span></span>
+            <a href="/2016/09/17/设计模式/">
+              <span class="title"><span>设计模式</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/22/快速搭建服务器/">
-              <span class="title"><span>快速搭建服务器</span></span>
+            <a href="/2016/09/15/通过网址自动部署web/">
+              <span class="title"><span>通过网址自动部署web</span></span>
             </a>
         </li>
     
@@ -756,8 +778,8 @@
         </li>
     
         <li>
-            <a href="/2016/09/17/设计模式/">
-              <span class="title"><span>设计模式</span></span>
+            <a href="/2017/05/18/那些概念/">
+              <span class="title"><span>那些概念</span></span>
             </a>
         </li>
     
@@ -768,14 +790,14 @@
         </li>
     
         <li>
-            <a href="/2017/05/18/那些概念/">
-              <span class="title"><span>那些概念</span></span>
+            <a href="/2016/09/08/面试可能会问到的问题/">
+              <span class="title"><span>面试可能会被问到的问题</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/08/面试可能会问到的问题/">
-              <span class="title"><span>面试可能会被问到的问题</span></span>
+            <a href="/2016/09/08/面试问题总结/">
+              <span class="title"><span>面试问题总结</span></span>
             </a>
         </li>
     
@@ -786,8 +808,20 @@
         </li>
     
         <li>
-            <a href="/2016/09/08/面试问题总结/">
-              <span class="title"><span>面试问题总结</span></span>
+            <a href="/2017/06/13/mysql配置远程访问/">
+              <span class="title"><span>mysql配置远程访问</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/06/13/git本地化操作/">
+              <span class="title"><span>git本地化操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/06/14/关于文件大小写/">
+              <span class="title"><span>关于文件大小写</span></span>
             </a>
         </li>
     

@@ -71,7 +71,7 @@
 						</li>
 					
 						<li>
-							<a class='flat-box nav-GitHub Respositries' href='http://github.entimm.com'>
+							<a class='flat-box nav-github respositries' href='http://github.entimm.com'>
 								GitHub Respositries
 							</a>
 						</li>
@@ -127,7 +127,7 @@
 				GitHub Stars
 			</a>
 		
-			<a href="http://github.entimm.com" class="nav-GitHub Respositries nav">
+			<a href="http://github.entimm.com" class="nav-github respositries nav">
 				GitHub Respositries
 			</a>
 		
@@ -141,6 +141,105 @@
         
 <section class="post-list">
 	
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/08/30/PHP cURL 应用/">
+        利用 CURL 进行数据抓取总结
+      </a>
+    </h2>
+    
+    <time>
+      Aug 30, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h2><p>CURLOPT_POST 的设置可以指定当前提交是否为POST方式</p>
+<p>CURLOPT_POSTFIELDS则用于设定提交的参数，可以是参数串，也可以是参数数组</p>
+<h2 id="Referer"><a href="#Referer" class="headerlink" title="Referer"></a>Referer</h2><p>对于一些程序，它可能判断来源网址，如果发现referer不是自己的网站，则拒绝访问，这时候，我们就需要添加<code>CURLOPT_REFERER</code>参数</p>
+<h2 id="cookie支持"><a href="#cookie支持" class="headerlink" title="cookie支持"></a>cookie支持</h2><p>对于模拟登录的应用，单单提交参数和模拟来路并不能解决问题，这时候我们就需要保存或者提交相应的Cookie参数</p>
+<p>CURLOPT_COOKIE： 直接使用字符串方式提交cookie参数 </p>
+<p>CURLOPT_COOKIEFILE： 使用文件方式提交cookie参数 </p>
+<p>CURLOPT_COOKIEJAR： 保存提交后反馈的cookie数据</p>
+
+    
+	  <div class="readmore">
+      <a href="/2016/08/30/PHP cURL 应用/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/08/30/js 中对 checkbox 的操作/">
+        js 中对 checkbox 的操作
+      </a>
+    </h2>
+    
+    <time>
+      Aug 30, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="设置值"><a href="#设置值" class="headerlink" title="设置值"></a>设置值</h2><p>原生js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Check</span></div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"checkbox"</span>).checked = <span class="literal">true</span>;</div><div class="line"><span class="comment">//  Uncheck</span></div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"checkbox"</span>).checked = <span class="literal">false</span>;</div></pre></td></tr></table></figure></p>
+<p>jQuery (1.6+):<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Check</span></div><div class="line">$(<span class="string">"#checkbox"</span>).prop(<span class="string">"checked"</span>, <span class="literal">true</span>);</div><div class="line"><span class="comment">//  Uncheck</span></div><div class="line">$(<span class="string">"#checkbox"</span>).prop(<span class="string">"checked"</span>, <span class="literal">false</span>);</div></pre></td></tr></table></figure></p>
+<p>jQuery (1.5-):<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Check</span></div><div class="line">$(<span class="string">"#checkbox"</span>).attr(<span class="string">"checked"</span>, <span class="literal">true</span>);</div><div class="line"><span class="comment">//  Uncheck</span></div><div class="line">$(<span class="string">"#checkbox"</span>).attr(<span class="string">"checked"</span>, <span class="literal">false</span>);</div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Check</span></div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'checkbox'</span>).setAttribute(<span class="string">'checked'</span>, <span class="string">'checked'</span>);</div><div class="line"><span class="comment">//UnCheck</span></div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'checkbox'</span>).removeAttribute(<span class="string">'checked'</span>);</div></pre></td></tr></table></figure>
+<h3 id="get-checked"><a href="#get-checked" class="headerlink" title="get checked"></a>get checked</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// traditional attr</span></div><div class="line">$(<span class="string">'#checkMeOut'</span>).attr(<span class="string">'checked'</span>); <span class="comment">// "checked"</span></div><div class="line"><span class="comment">// new property method</span></div><div class="line">$(<span class="string">'#checkMeOut'</span>).prop(<span class="string">'checked'</span>); <span class="comment">// true</span></div><div class="line"></div><div class="line">$(<span class="string">"#txtAge"</span>).get(<span class="number">0</span>).checked</div><div class="line">$(<span class="string">"#txtAge"</span>).is(<span class="string">":checked"</span>)</div></pre></td></tr></table></figure>
+
+
+    
+	  <div class="readmore">
+      <a href="/2016/08/30/js 中对 checkbox 的操作/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/08/30/常用代码片段/">
+        常用代码片段
+      </a>
+    </h2>
+    
+    <time>
+      Aug 30, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h3 id="html-utf-8"><a href="#html-utf-8" class="headerlink" title="html utf-8"></a>html utf-8</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">'Content-Type'</span> <span class="attr">content</span>=<span class="string">'text/html; charset=utf-8'</span> /&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="header"><a href="#header" class="headerlink" title="header"></a>header</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">header(<span class="string">'Content-Type: application/json; charset=utf-8'</span>);</div><div class="line"></div><div class="line">header(<span class="string">'Content-Type: text/html; charset=utf-8'</span>);</div></pre></td></tr></table></figure>
+
+    
+	  <div class="readmore">
+      <a href="/2016/08/30/常用代码片段/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
     <div class='post-wrapper'>
       <article class="post reveal">
   <section class="meta">
@@ -425,80 +524,6 @@
 </article>
     </div>
   
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/08/04/laravel中用到的ServiceProvide/">
-        laravel中用到的ServiceProvide
-      </a>
-    </h2>
-    
-    <time>
-      Aug 4, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><h3 id="全局限制"><a href="#全局限制" class="headerlink" title="全局限制"></a>全局限制</h3><p>如果你希望路由参数可以总是遵循正则表达式，则可以使用 pattern 方法。你应该在 RouteServiceProvider 的 boot 方法里定义这些模式：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 定义你的路由模型绑定，模式过滤器等。</div><div class="line"> *</div><div class="line"> * <span class="doctag">@param</span>  \Illuminate\Routing\Router  $router</div><div class="line"> * <span class="doctag">@return</span> void</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">(Router $router)</span></span></div><div class="line">&#123;</div><div class="line">    $router-&gt;pattern(<span class="string">'id'</span>, <span class="string">'[0-9]+'</span>);</div><div class="line"></div><div class="line">    <span class="keyword">parent</span>::boot($router);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>模式一旦被定义，便会自动应用到所有使用该参数名称的路由上：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Route::get(<span class="string">'user/&#123;id&#125;'</span>, <span class="function"><span class="keyword">function</span> <span class="params">($id)</span> </span>&#123;</div><div class="line">    <span class="comment">// Only called if &#123;id&#125; is numeric.</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h3 id="路由模型绑定"><a href="#路由模型绑定" class="headerlink" title="路由模型绑定"></a>路由模型绑定</h3><p>Laravel 路由模型绑定提供了一个方便的方式来注入类实例到你的路由中。例如，除了注入一个用户的 ID，你也可以注入与指定 ID 相符的完整 User 类实例。</p>
-<p>首先，使用路由的 model 方法为指定参数指定类。必须在 RouteServiceProvider::boot 方法中定义你的模型绑定：</p>
-<p>绑定参数至模型</p>
-
-    
-	  <div class="readmore">
-      <a href="/2016/08/04/laravel中用到的ServiceProvide/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/05/21/laravel 技巧/">
-        laravel 技巧
-      </a>
-    </h2>
-    
-    <time>
-      May 21, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h2 id="快速找到-facade-中对应的类"><a href="#快速找到-facade-中对应的类" class="headerlink" title="快速找到 facade 中对应的类"></a>快速找到 facade 中对应的类</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Route::get(<span class="string">'test'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">    dd(get_class(HTML::getFacadeRoot()));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>或者使用 <a href="https://github.com/barryvdh/laravel-ide-helper" target="_blank" rel="external">idehelper</a></p>
-<h2 id="将数据表里的数据导出成-Seeder-文件"><a href="#将数据表里的数据导出成-Seeder-文件" class="headerlink" title="将数据表里的数据导出成 Seeder 文件"></a>将数据表里的数据导出成 Seeder 文件</h2><ol>
-<li>composer require orangehill/iseed</li>
-<li>在 config/app.php 文件中添加 Service Provider</li>
-<li>php artisan iseed 后面带上本地数据表的名称, 可直接将数据库表的内容转换为 seeder 文件</li>
-<li>强制覆盖导出文件 – force</li>
-</ol>
-<h2 id="建议-使用模型工厂来填充数据"><a href="#建议-使用模型工厂来填充数据" class="headerlink" title="建议 使用模型工厂来填充数据"></a>建议 使用模型工厂来填充数据</h2><h3 id="模型工厂"><a href="#模型工厂" class="headerlink" title="模型工厂"></a>模型工厂</h3><p>避免<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">factory(\App\Models\User::class)-&gt;times(<span class="number">300</span>)-&gt;create();</div></pre></td></tr></table></figure></p>
-<p>正确的做法：使用 make 方法<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$users = factory(\App\Models\User::class)-&gt;times(<span class="number">1000</span>)-&gt;make();</div><div class="line">\App\Models\User::insert($users-&gt;toArray());</div></pre></td></tr></table></figure></p>
-<h3 id="传统方式"><a href="#传统方式" class="headerlink" title="传统方式"></a>传统方式</h3>
-
-    
-	  <div class="readmore">
-      <a href="/2016/05/21/laravel 技巧/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
-</article>
-    </div>
-  
 </section>
 
 
@@ -509,6 +534,11 @@
       <span class="text">Previous</span>
     </a>
     
+    
+    <a class="next" rel="next" href="/page/5/">
+      <span class="text">Next</span>
+      <span class="icon icon-chevron-right"></span>
+    </a>
     
   </nav>
   
@@ -541,6 +571,12 @@
 <div class='header'>Categories</div>
 <div class='content'>
     
+    <ul class="entry">
+    
+        <li><a class="flat-box" href="/categories/note/"><div class='name'>note</div><div class='badget'>0</div></a></li>
+    
+    </ul>
+    
 </div>
 </section>
 
@@ -554,8 +590,8 @@
     <ul class="entry">
     
         <li>
-            <a href="/2016/09/18/图片资源优化/">
-              <span class="title"><span>图片资源优化</span></span>
+            <a href="/2016/09/05/关于高并发的处理/">
+              <span class="title"><span>关于高并发的处理</span></span>
             </a>
         </li>
     
@@ -602,6 +638,12 @@
         </li>
     
         <li>
+            <a href="/2016/09/15/linux/">
+              <span class="title"><span>linux相关操作</span></span>
+            </a>
+        </li>
+    
+        <li>
             <a href="/2016/08/04/laravel中用到的ServiceProvide/">
               <span class="title"><span>laravel中用到的ServiceProvide</span></span>
             </a>
@@ -638,6 +680,18 @@
         </li>
     
         <li>
+            <a href="/2016/09/18/php中的坑/">
+              <span class="title"><span>php中的坑</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/24/shell/">
+              <span class="title"><span>shell</span></span>
+            </a>
+        </li>
+    
+        <li>
             <a href="/2016/09/23/ssh保持链接/">
               <span class="title"><span>ssh保持链接</span></span>
             </a>
@@ -650,20 +704,14 @@
         </li>
     
         <li>
-            <a href="/2016/08/29/vagrant/">
-              <span class="title"><span>vagrant 常用操作</span></span>
-            </a>
-        </li>
-    
-        <li>
             <a href="/2016/08/29/web相关/">
               <span class="title"><span>web相关</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/05/关于高并发的处理/">
-              <span class="title"><span>关于高并发的处理</span></span>
+            <a href="/2016/08/29/vagrant/">
+              <span class="title"><span>vagrant 常用操作</span></span>
             </a>
         </li>
     
@@ -674,14 +722,8 @@
         </li>
     
         <li>
-            <a href="/2016/09/15/linux/">
-              <span class="title"><span>linux相关操作</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/09/18/php中的坑/">
-              <span class="title"><span>php中的坑</span></span>
+            <a href="/2016/09/18/图片资源优化/">
+              <span class="title"><span>图片资源优化</span></span>
             </a>
         </li>
     
@@ -692,8 +734,8 @@
         </li>
     
         <li>
-            <a href="/2016/09/24/shell/">
-              <span class="title"><span>shell</span></span>
+            <a href="/2016/08/30/常用正则技巧总结/">
+              <span class="title"><span>常用正则技巧总结</span></span>
             </a>
         </li>
     
@@ -710,14 +752,14 @@
         </li>
     
         <li>
-            <a href="/2016/08/30/常用正则技巧总结/">
-              <span class="title"><span>常用正则技巧总结</span></span>
+            <a href="/2016/09/22/快速搭建vpn/">
+              <span class="title"><span>快速搭建vpn</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/22/快速搭建vpn/">
-              <span class="title"><span>快速搭建vpn</span></span>
+            <a href="/2016/09/22/快速搭建服务器/">
+              <span class="title"><span>快速搭建服务器</span></span>
             </a>
         </li>
     
@@ -734,14 +776,14 @@
         </li>
     
         <li>
-            <a href="/2016/09/15/通过网址自动部署web/">
-              <span class="title"><span>通过网址自动部署web</span></span>
+            <a href="/2016/09/17/设计模式/">
+              <span class="title"><span>设计模式</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/22/快速搭建服务器/">
-              <span class="title"><span>快速搭建服务器</span></span>
+            <a href="/2016/09/15/通过网址自动部署web/">
+              <span class="title"><span>通过网址自动部署web</span></span>
             </a>
         </li>
     
@@ -752,8 +794,8 @@
         </li>
     
         <li>
-            <a href="/2016/09/17/设计模式/">
-              <span class="title"><span>设计模式</span></span>
+            <a href="/2017/05/18/那些概念/">
+              <span class="title"><span>那些概念</span></span>
             </a>
         </li>
     
@@ -764,14 +806,14 @@
         </li>
     
         <li>
-            <a href="/2017/05/18/那些概念/">
-              <span class="title"><span>那些概念</span></span>
+            <a href="/2016/09/08/面试可能会问到的问题/">
+              <span class="title"><span>面试可能会被问到的问题</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/08/面试可能会问到的问题/">
-              <span class="title"><span>面试可能会被问到的问题</span></span>
+            <a href="/2016/09/08/面试问题总结/">
+              <span class="title"><span>面试问题总结</span></span>
             </a>
         </li>
     
@@ -782,8 +824,20 @@
         </li>
     
         <li>
-            <a href="/2016/09/08/面试问题总结/">
-              <span class="title"><span>面试问题总结</span></span>
+            <a href="/2017/06/13/mysql配置远程访问/">
+              <span class="title"><span>mysql配置远程访问</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/06/13/git本地化操作/">
+              <span class="title"><span>git本地化操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/06/14/关于文件大小写/">
+              <span class="title"><span>关于文件大小写</span></span>
             </a>
         </li>
     

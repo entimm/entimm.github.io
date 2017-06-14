@@ -7,6 +7,38 @@
     </url>
 
     <url>
+        <loc>https://entimm.com/2016/11/22/git%20%E5%91%BD%E4%BB%A4/</loc>
+        <lastmod>2017-06-14T08:06:33.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://entimm.com/2017/06/14/%E5%85%B3%E4%BA%8E%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E5%86%99/</loc>
+        <lastmod>2017-06-14T08:01:04.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://entimm.com/2017/06/13/git%E6%9C%AC%E5%9C%B0%E5%8C%96%E6%93%8D%E4%BD%9C/</loc>
+        <lastmod>2017-06-13T03:12:20.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://entimm.com/2017/06/13/mysql%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE/</loc>
+        <lastmod>2017-06-13T02:41:48.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://entimm.com/2016/09/22/%E9%82%A3%E4%BA%9B%E9%85%8D%E7%BD%AE/</loc>
         <lastmod>2017-05-18T16:37:08.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -49,14 +81,6 @@
     <url>
         <loc>https://entimm.com/2016/05/21/laravel%20%E6%8A%80%E5%B7%A7/</loc>
         <lastmod>2017-05-18T16:31:05.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://entimm.com/2016/11/22/git%20%E5%91%BD%E4%BB%A4/</loc>
-        <lastmod>2017-05-18T16:30:37.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

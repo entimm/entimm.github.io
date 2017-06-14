@@ -71,7 +71,7 @@
 						</li>
 					
 						<li>
-							<a class='flat-box nav-GitHub Respositries' href='http://github.entimm.com'>
+							<a class='flat-box nav-github respositries' href='http://github.entimm.com'>
 								GitHub Respositries
 							</a>
 						</li>
@@ -127,7 +127,7 @@
 				GitHub Stars
 			</a>
 		
-			<a href="http://github.entimm.com" class="nav-GitHub Respositries nav">
+			<a href="http://github.entimm.com" class="nav-github respositries nav">
 				GitHub Respositries
 			</a>
 		
@@ -146,6 +146,111 @@
 
 <section class="post-list">
 	
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2017/06/14/关于文件大小写/">
+        关于文件大小写
+      </a>
+    </h2>
+    
+    <time>
+      Jun 14, 2017
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <p>突然发现自己的电脑中，git对文件大小写是不敏感的，执行下面的命令吧</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 全局</div><div class="line">git config --global core.ignorecase false</div><div class="line"><span class="meta">#</span> 项目</div><div class="line">git config core.ignorecase false</div></pre></td></tr></table></figure>
+<h2 id="修正文件大小写"><a href="#修正文件大小写" class="headerlink" title="修正文件大小写"></a>修正文件大小写</h2><p>受文件系统的影响，直接修改可能会行不通<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git mv filename FileName</div><div class="line"><span class="meta">#</span> fatal: destination exists</div></pre></td></tr></table></figure></p>
+<p>方案1</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git mv filename filename_tmp</div><div class="line">git mv filename_tmp FileName</div></pre></td></tr></table></figure>
+<p>方案2(awesome)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git mv -f filename FileName</div></pre></td></tr></table></figure>
+
+    
+	  <div class="readmore">
+      <a href="/2017/06/14/关于文件大小写/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2017/06/13/git本地化操作/">
+        git本地化操作
+      </a>
+    </h2>
+    
+    <time>
+      Jun 13, 2017
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <p>很多时候我们会有一些本地化的代码修改操作，却并不想污染到代码仓库，有如下技巧</p>
+<p>.git/info/exclude文件中进行文件的跟踪忽略，效果同.gitignore</p>
+<p>假定开发人员不会更改文件,此标志用于提高 not-changing 文件夹(如SDK)的性能。<br>git update-index –skip-worktree</p>
+<p>用于命 GIT 不再染指特定文件,即便开发人员可能更改它<br>git update-index –assume-unchanged</p>
+
+
+    
+	  <div class="readmore">
+      <a href="/2017/06/13/git本地化操作/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2017/06/13/mysql配置远程访问/">
+        mysql配置远程访问
+      </a>
+    </h2>
+    
+    <time>
+      Jun 13, 2017
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <p>建立远程访问用户<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">GRANT ALL PRIVILEGES ON *.* TO 'YOURUSER'@'%' IDENTIFIED BY 'YOURPASSWORD' WITH GRANT OPTION;</div><div class="line">FLUSH PRIVILEGES;</div><div class="line"></div><div class="line">#查看结果:</div><div class="line">SELECT * from information_schema.user_privileges where grantee like "'YOURUSER'%";</div></pre></td></tr></table></figure></p>
+<p>配置my.cnf,通常是/etc/mysql/my.cnf，找到并注释掉下面语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">bind-address = 127.0.0.1 # 或者改成 bind-address = 0.0.0.0</div><div class="line"></div><div class="line">skip-networking</div></pre></td></tr></table></figure>
+<p>重启服务器</p>
+<h3 id="Bonus-Tip-Revoke-Access"><a href="#Bonus-Tip-Revoke-Access" class="headerlink" title="Bonus-Tip: Revoke Access"></a>Bonus-Tip: Revoke Access</h3><p>If you accidentally grant access to a user, then better have revoking option handy.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#Following will revoke all options for THEUSER from all machines:</div><div class="line">REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'THEUSER'@'%';</div><div class="line"></div><div class="line">#Following will revoke all options for THEUSER from particular IP:</div><div class="line">mysql&gt; REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'THEUSER'@'1.2.3.4';</div></pre></td></tr></table></figure>
+<p>Its better to check information_schema.user_privileges table after running REVOKE command.</p>
+<p>If you see USAGE privilege after running REVOKE command, its fine. It is as good as no privilege at all. I am not sure if it can be revoked.</p>
+
+
+    
+	  <div class="readmore">
+      <a href="/2017/06/13/mysql配置远程访问/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
     <div class='post-wrapper'>
       <article class="post reveal">
   <section class="meta">
@@ -226,6 +331,12 @@
 <div class='header'>Categories</div>
 <div class='content'>
     
+    <ul class="entry">
+    
+        <li><a class="flat-box" href="/categories/note/"><div class='name'>note</div><div class='badget'>0</div></a></li>
+    
+    </ul>
+    
 </div>
 </section>
 
@@ -239,8 +350,8 @@
     <ul class="entry">
     
         <li>
-            <a href="/2016/09/18/图片资源优化/">
-              <span class="title"><span>图片资源优化</span></span>
+            <a href="/2016/09/05/关于高并发的处理/">
+              <span class="title"><span>关于高并发的处理</span></span>
             </a>
         </li>
     
@@ -287,6 +398,12 @@
         </li>
     
         <li>
+            <a href="/2016/09/15/linux/">
+              <span class="title"><span>linux相关操作</span></span>
+            </a>
+        </li>
+    
+        <li>
             <a href="/2016/08/04/laravel中用到的ServiceProvide/">
               <span class="title"><span>laravel中用到的ServiceProvide</span></span>
             </a>
@@ -323,6 +440,18 @@
         </li>
     
         <li>
+            <a href="/2016/09/18/php中的坑/">
+              <span class="title"><span>php中的坑</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/24/shell/">
+              <span class="title"><span>shell</span></span>
+            </a>
+        </li>
+    
+        <li>
             <a href="/2016/09/23/ssh保持链接/">
               <span class="title"><span>ssh保持链接</span></span>
             </a>
@@ -335,20 +464,14 @@
         </li>
     
         <li>
-            <a href="/2016/08/29/vagrant/">
-              <span class="title"><span>vagrant 常用操作</span></span>
-            </a>
-        </li>
-    
-        <li>
             <a href="/2016/08/29/web相关/">
               <span class="title"><span>web相关</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/05/关于高并发的处理/">
-              <span class="title"><span>关于高并发的处理</span></span>
+            <a href="/2016/08/29/vagrant/">
+              <span class="title"><span>vagrant 常用操作</span></span>
             </a>
         </li>
     
@@ -359,14 +482,8 @@
         </li>
     
         <li>
-            <a href="/2016/09/15/linux/">
-              <span class="title"><span>linux相关操作</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/09/18/php中的坑/">
-              <span class="title"><span>php中的坑</span></span>
+            <a href="/2016/09/18/图片资源优化/">
+              <span class="title"><span>图片资源优化</span></span>
             </a>
         </li>
     
@@ -377,8 +494,8 @@
         </li>
     
         <li>
-            <a href="/2016/09/24/shell/">
-              <span class="title"><span>shell</span></span>
+            <a href="/2016/08/30/常用正则技巧总结/">
+              <span class="title"><span>常用正则技巧总结</span></span>
             </a>
         </li>
     
@@ -395,14 +512,14 @@
         </li>
     
         <li>
-            <a href="/2016/08/30/常用正则技巧总结/">
-              <span class="title"><span>常用正则技巧总结</span></span>
+            <a href="/2016/09/22/快速搭建vpn/">
+              <span class="title"><span>快速搭建vpn</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/22/快速搭建vpn/">
-              <span class="title"><span>快速搭建vpn</span></span>
+            <a href="/2016/09/22/快速搭建服务器/">
+              <span class="title"><span>快速搭建服务器</span></span>
             </a>
         </li>
     
@@ -419,14 +536,14 @@
         </li>
     
         <li>
-            <a href="/2016/09/15/通过网址自动部署web/">
-              <span class="title"><span>通过网址自动部署web</span></span>
+            <a href="/2016/09/17/设计模式/">
+              <span class="title"><span>设计模式</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/22/快速搭建服务器/">
-              <span class="title"><span>快速搭建服务器</span></span>
+            <a href="/2016/09/15/通过网址自动部署web/">
+              <span class="title"><span>通过网址自动部署web</span></span>
             </a>
         </li>
     
@@ -437,8 +554,8 @@
         </li>
     
         <li>
-            <a href="/2016/09/17/设计模式/">
-              <span class="title"><span>设计模式</span></span>
+            <a href="/2017/05/18/那些概念/">
+              <span class="title"><span>那些概念</span></span>
             </a>
         </li>
     
@@ -449,14 +566,14 @@
         </li>
     
         <li>
-            <a href="/2017/05/18/那些概念/">
-              <span class="title"><span>那些概念</span></span>
+            <a href="/2016/09/08/面试可能会问到的问题/">
+              <span class="title"><span>面试可能会被问到的问题</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/08/面试可能会问到的问题/">
-              <span class="title"><span>面试可能会被问到的问题</span></span>
+            <a href="/2016/09/08/面试问题总结/">
+              <span class="title"><span>面试问题总结</span></span>
             </a>
         </li>
     
@@ -467,8 +584,20 @@
         </li>
     
         <li>
-            <a href="/2016/09/08/面试问题总结/">
-              <span class="title"><span>面试问题总结</span></span>
+            <a href="/2017/06/13/mysql配置远程访问/">
+              <span class="title"><span>mysql配置远程访问</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/06/13/git本地化操作/">
+              <span class="title"><span>git本地化操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/06/14/关于文件大小写/">
+              <span class="title"><span>关于文件大小写</span></span>
             </a>
         </li>
     

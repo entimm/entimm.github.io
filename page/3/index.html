@@ -71,7 +71,7 @@
 						</li>
 					
 						<li>
-							<a class='flat-box nav-GitHub Respositries' href='http://github.entimm.com'>
+							<a class='flat-box nav-github respositries' href='http://github.entimm.com'>
 								GitHub Respositries
 							</a>
 						</li>
@@ -127,7 +127,7 @@
 				GitHub Stars
 			</a>
 		
-			<a href="http://github.entimm.com" class="nav-GitHub Respositries nav">
+			<a href="http://github.entimm.com" class="nav-github respositries nav">
 				GitHub Respositries
 			</a>
 		
@@ -141,6 +141,113 @@
         
 <section class="post-list">
 	
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/15/通过网址自动部署web/">
+        通过网址自动部署web
+      </a>
+    </h2>
+    
+    <time>
+      Sep 15, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <ol>
+<li>部署代码至单独的web站点<br> <a href="https://github.com/markomarkovic/simple-php-git-deploy.git" target="_blank" rel="external">https://github.com/markomarkovic/simple-php-git-deploy.git</a></li>
+<li>配置<code>www-data</code>用户<br> 改<code>/usr/sbin/nologin</code>=&gt;<code>/bin/bash</code>,且可找到<code>www-data</code>用户的目录:<code>/var/www</code></li>
+<li>设置www-data登录密码<br> sudo passwd www-data</li>
+<li>设置<code>/var/www</code>归属<br>sudo chown -R www-data:www-data /var/www/</li>
+<li>切换到<code>www-data</code>用户<br> su /var/www</li>
+<li>在<code>/var/www/.ssh</code>目录中生成ssh key<br> sudo -Hu www-data ssh-keygen -t rsa -C “entimm@gmail.com”</li>
+<li>登录git托管网址，把<code>id_rsa.pub</code>公约贴上去</li>
+<li>设置webhook</li>
+</ol>
+
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/15/通过网址自动部署web/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/12/很有用的一些技巧/">
+        很有用的一些技巧
+      </a>
+    </h2>
+    
+    <time>
+      Sep 12, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h3 id="在利用-xdebug-和-phpstorm-调试通过终端执行的-PHP-脚本时，在终端执行先语句，即可对该脚本进行调试"><a href="#在利用-xdebug-和-phpstorm-调试通过终端执行的-PHP-脚本时，在终端执行先语句，即可对该脚本进行调试" class="headerlink" title="在利用 xdebug 和 phpstorm 调试通过终端执行的 PHP 脚本时，在终端执行先语句，即可对该脚本进行调试"></a>在利用 xdebug 和 phpstorm 调试通过终端执行的 PHP 脚本时，在终端执行先语句，即可对该脚本进行调试</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export XDEBUG_CONFIG = "idekey=PHPSTORM"</div></pre></td></tr></table></figure>
+<h3 id="通过SSH方式登录远程服务器时，通过下面方式免除每次都要输入密码"><a href="#通过SSH方式登录远程服务器时，通过下面方式免除每次都要输入密码" class="headerlink" title="通过SSH方式登录远程服务器时，通过下面方式免除每次都要输入密码"></a>通过SSH方式登录远程服务器时，通过下面方式免除每次都要输入密码</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 先在本机生成 authentication keys，注意不能输入 passphrase</div><div class="line"><span class="meta">#</span> 这里假设 A 是本机，B是远端</div><div class="line">a@A:~&gt; ssh-keygen -t rsa</div><div class="line"><span class="meta"></span></div><div class="line"># 然后登录 B，并建立一个目录 ~/.ssh</div><div class="line">a@A:~&gt; ssh b@B mkdir -p .ssh</div><div class="line"><span class="meta"></span></div><div class="line"># 最后把 A 的 id_rsa.pub 追加到 B 的 ~/.ssh/authorized_keys 中去</div><div class="line">a@A:~&gt; cat ~/.ssh/id_rsa.pub | ssh b@B 'cat &gt;&gt; ~/.ssh/authorized_keys'</div><div class="line"><span class="meta"></span></div><div class="line"># 然后就成功了</div><div class="line">a@A:~&gt; ssh b@B</div></pre></td></tr></table></figure>
+<h3 id="使用的-PHP-的内建服务器"><a href="#使用的-PHP-的内建服务器" class="headerlink" title="使用的 PHP 的内建服务器"></a>使用的 PHP 的内建服务器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">php -S 主机名或地址@端口号 -t 目录</div></pre></td></tr></table></figure>
+<h3 id="svn-检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用"><a href="#svn-检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用" class="headerlink" title="svn 检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用"></a>svn 检出当前目前下的文件或文件名，这在开发过程中不想检出全部数据时很有用</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn update --set-depth immediates</div></pre></td></tr></table></figure>
+<h3 id="git-新建一个全新的空白分支"><a href="#git-新建一个全新的空白分支" class="headerlink" title="git 新建一个全新的空白分支"></a>git 新建一个全新的空白分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git checkout --orphan 分支名</div><div class="line">git clean -f</div></pre></td></tr></table></figure>
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/12/很有用的一些技巧/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/08/面试问题总结/">
+        面试问题总结
+      </a>
+    </h2>
+    
+    <time>
+      Sep 8, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="php魔术方法-14项"><a href="#php魔术方法-14项" class="headerlink" title="php魔术方法(14项)"></a>php魔术方法(14项)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">__construct() 实例化类时自动调用.</div><div class="line">__destruct() 类对象使用结束时自动调用.</div><div class="line">__set() 在给未定义的属性赋值的时候调用.</div><div class="line">__get() 调用未定义的属性时候调用.</div><div class="line">__isset() 使用isset()或empty()函数时候会调用.</div><div class="line">__unset() 使用unset()时候会调用.</div><div class="line">__sleep() 使用serialize序列化时候调用.</div><div class="line">__wakeup() 使用unserialize反序列化的时候调用.</div><div class="line">__call() 调用一个不存在的方法的时候调用.</div><div class="line">__callStatic()调用一个不存在的静态方法是调用.</div><div class="line">__toString() 把对象转换成字符串的时候会调用.比如 echo.</div><div class="line">__invoke() 当尝试把对象当方法调用时调用.</div><div class="line">__set_state() 当使用var_export()函数时候调用.接受一个数组参数.</div><div class="line">__clone() 当使用clone复制一个对象时候调用.</div></pre></td></tr></table></figure>
+<h2 id="HTTP协议中几个状态码的含义"><a href="#HTTP协议中几个状态码的含义" class="headerlink" title="HTTP协议中几个状态码的含义."></a>HTTP协议中几个状态码的含义.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">100 Continue  继续,一般在发送post请求时,已发送了http header之后服务端将返回此信息,表示确认,之后发送具体参数信息</div><div class="line">200 OK   正常返回信息</div><div class="line">201 Created  请求成功并且服务器创建了新的资源</div><div class="line">202 Accepted  服务器已接受请求,但尚未处理</div><div class="line">301 Moved Permanently  请求的网页已永久移动到新位置.</div><div class="line">302 Found  临时性重定向.</div><div class="line">303 See Other  临时性重定向,且总是使用 GET 请求新的 URI.</div><div class="line">304 Not Modified  自从上次请求后,请求的网页未修改过.</div><div class="line">400 Bad Request  服务器无法理解请求的格式,客户端不应当尝试再次使用相同的内容发起请求.</div><div class="line">401 Unauthorized  请求未授权.</div><div class="line">403 Forbidden  禁止访问.</div><div class="line">404 Not Found  找不到如何与 URI 相匹配的资源.</div><div class="line">500 Internal Server Error  最常见的服务器端错误.</div><div class="line">503 Service Unavailable 服务器端暂时无法处理请求（可能是过载或维护）.</div><div class="line"></div><div class="line">100 Continue</div><div class="line">101 Switching Protocols</div><div class="line">200 OK</div><div class="line">201 Created</div><div class="line">202 Accepted</div><div class="line">203 Non-Authoritative Information</div><div class="line">204 No Content</div><div class="line">205 Reset Content</div><div class="line">206 Partial Content</div><div class="line">300 Multiple Choices</div><div class="line">301 Moved Permanently</div><div class="line">302 Found</div><div class="line">303 See Other</div><div class="line">304 Not Modified</div><div class="line">305 Use Proxy</div><div class="line">307 Temporary Redirect</div><div class="line">400 Bad Request</div><div class="line">401 Unauthorized</div><div class="line">402 Payment Required</div><div class="line">403 Forbidden</div><div class="line">404 Not Found</div><div class="line">405 Method Not Allowed</div><div class="line">406 Not Acceptable</div><div class="line">407 Proxy Authentication Required</div><div class="line">408 Request Time-out</div><div class="line">409 Conflict</div><div class="line">410 Gone</div><div class="line">411 Length Required</div><div class="line">412 Precondition Failed</div><div class="line">413 Request Entity Too Large</div><div class="line">414 Request-URI Too Large</div><div class="line">415 Unsupported Media Type</div><div class="line">416 Requested range not satisfiable</div><div class="line">417 Expectation Failed</div><div class="line">500 Internal Server Error</div><div class="line">501 Not Implemented</div><div class="line">502 Bad Gateway</div><div class="line">503 Service Unavailable</div><div class="line">504 Gateway Time-out</div><div class="line">505 HTTP Version not supported</div></pre></td></tr></table></figure>
+<h2 id="语句include和require的区别"><a href="#语句include和require的区别" class="headerlink" title="语句include和require的区别"></a>语句include和require的区别</h2><p>在失败的时候：<br><code>include</code> 产生一个 <code>warning</code> ,而 <code>require</code> 直接产生错误中断;</p>
+<p><code>require</code> 在运行前载入;<br><code>include</code> 在运行时载入;</p>
+<p><code>require_once</code> 和 <code>include_once</code> 可以避免重复包含同一文件.</p>
+<p>如果网站框架的设计能避免重复引用的话,推荐用include/require,<br>因为他们比_once速度稍快. </p>
+<h2 id="事务的特征-ACID"><a href="#事务的特征-ACID" class="headerlink" title="事务的特征(ACID)"></a>事务的特征(ACID)</h2>
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/08/面试问题总结/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
     <div class='post-wrapper'>
       <article class="post reveal">
   <section class="meta">
@@ -438,105 +545,6 @@
 </article>
     </div>
   
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/08/30/PHP cURL 应用/">
-        利用 CURL 进行数据抓取总结
-      </a>
-    </h2>
-    
-    <time>
-      Aug 30, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h2 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h2><p>CURLOPT_POST 的设置可以指定当前提交是否为POST方式</p>
-<p>CURLOPT_POSTFIELDS则用于设定提交的参数，可以是参数串，也可以是参数数组</p>
-<h2 id="Referer"><a href="#Referer" class="headerlink" title="Referer"></a>Referer</h2><p>对于一些程序，它可能判断来源网址，如果发现referer不是自己的网站，则拒绝访问，这时候，我们就需要添加<code>CURLOPT_REFERER</code>参数</p>
-<h2 id="cookie支持"><a href="#cookie支持" class="headerlink" title="cookie支持"></a>cookie支持</h2><p>对于模拟登录的应用，单单提交参数和模拟来路并不能解决问题，这时候我们就需要保存或者提交相应的Cookie参数</p>
-<p>CURLOPT_COOKIE： 直接使用字符串方式提交cookie参数 </p>
-<p>CURLOPT_COOKIEFILE： 使用文件方式提交cookie参数 </p>
-<p>CURLOPT_COOKIEJAR： 保存提交后反馈的cookie数据</p>
-
-    
-	  <div class="readmore">
-      <a href="/2016/08/30/PHP cURL 应用/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/08/30/js 中对 checkbox 的操作/">
-        js 中对 checkbox 的操作
-      </a>
-    </h2>
-    
-    <time>
-      Aug 30, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h2 id="设置值"><a href="#设置值" class="headerlink" title="设置值"></a>设置值</h2><p>原生js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Check</span></div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"checkbox"</span>).checked = <span class="literal">true</span>;</div><div class="line"><span class="comment">//  Uncheck</span></div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"checkbox"</span>).checked = <span class="literal">false</span>;</div></pre></td></tr></table></figure></p>
-<p>jQuery (1.6+):<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Check</span></div><div class="line">$(<span class="string">"#checkbox"</span>).prop(<span class="string">"checked"</span>, <span class="literal">true</span>);</div><div class="line"><span class="comment">//  Uncheck</span></div><div class="line">$(<span class="string">"#checkbox"</span>).prop(<span class="string">"checked"</span>, <span class="literal">false</span>);</div></pre></td></tr></table></figure></p>
-<p>jQuery (1.5-):<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Check</span></div><div class="line">$(<span class="string">"#checkbox"</span>).attr(<span class="string">"checked"</span>, <span class="literal">true</span>);</div><div class="line"><span class="comment">//  Uncheck</span></div><div class="line">$(<span class="string">"#checkbox"</span>).attr(<span class="string">"checked"</span>, <span class="literal">false</span>);</div></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Check</span></div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'checkbox'</span>).setAttribute(<span class="string">'checked'</span>, <span class="string">'checked'</span>);</div><div class="line"><span class="comment">//UnCheck</span></div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'checkbox'</span>).removeAttribute(<span class="string">'checked'</span>);</div></pre></td></tr></table></figure>
-<h3 id="get-checked"><a href="#get-checked" class="headerlink" title="get checked"></a>get checked</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// traditional attr</span></div><div class="line">$(<span class="string">'#checkMeOut'</span>).attr(<span class="string">'checked'</span>); <span class="comment">// "checked"</span></div><div class="line"><span class="comment">// new property method</span></div><div class="line">$(<span class="string">'#checkMeOut'</span>).prop(<span class="string">'checked'</span>); <span class="comment">// true</span></div><div class="line"></div><div class="line">$(<span class="string">"#txtAge"</span>).get(<span class="number">0</span>).checked</div><div class="line">$(<span class="string">"#txtAge"</span>).is(<span class="string">":checked"</span>)</div></pre></td></tr></table></figure>
-
-
-    
-	  <div class="readmore">
-      <a href="/2016/08/30/js 中对 checkbox 的操作/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/08/30/常用代码片段/">
-        常用代码片段
-      </a>
-    </h2>
-    
-    <time>
-      Aug 30, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h3 id="html-utf-8"><a href="#html-utf-8" class="headerlink" title="html utf-8"></a>html utf-8</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">'Content-Type'</span> <span class="attr">content</span>=<span class="string">'text/html; charset=utf-8'</span> /&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="header"><a href="#header" class="headerlink" title="header"></a>header</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">header(<span class="string">'Content-Type: application/json; charset=utf-8'</span>);</div><div class="line"></div><div class="line">header(<span class="string">'Content-Type: text/html; charset=utf-8'</span>);</div></pre></td></tr></table></figure>
-
-    
-	  <div class="readmore">
-      <a href="/2016/08/30/常用代码片段/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
-</article>
-    </div>
-  
 </section>
 
 
@@ -584,6 +592,12 @@
 <div class='header'>Categories</div>
 <div class='content'>
     
+    <ul class="entry">
+    
+        <li><a class="flat-box" href="/categories/note/"><div class='name'>note</div><div class='badget'>0</div></a></li>
+    
+    </ul>
+    
 </div>
 </section>
 
@@ -597,8 +611,8 @@
     <ul class="entry">
     
         <li>
-            <a href="/2016/09/18/图片资源优化/">
-              <span class="title"><span>图片资源优化</span></span>
+            <a href="/2016/09/05/关于高并发的处理/">
+              <span class="title"><span>关于高并发的处理</span></span>
             </a>
         </li>
     
@@ -645,6 +659,12 @@
         </li>
     
         <li>
+            <a href="/2016/09/15/linux/">
+              <span class="title"><span>linux相关操作</span></span>
+            </a>
+        </li>
+    
+        <li>
             <a href="/2016/08/04/laravel中用到的ServiceProvide/">
               <span class="title"><span>laravel中用到的ServiceProvide</span></span>
             </a>
@@ -681,6 +701,18 @@
         </li>
     
         <li>
+            <a href="/2016/09/18/php中的坑/">
+              <span class="title"><span>php中的坑</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/24/shell/">
+              <span class="title"><span>shell</span></span>
+            </a>
+        </li>
+    
+        <li>
             <a href="/2016/09/23/ssh保持链接/">
               <span class="title"><span>ssh保持链接</span></span>
             </a>
@@ -693,20 +725,14 @@
         </li>
     
         <li>
-            <a href="/2016/08/29/vagrant/">
-              <span class="title"><span>vagrant 常用操作</span></span>
-            </a>
-        </li>
-    
-        <li>
             <a href="/2016/08/29/web相关/">
               <span class="title"><span>web相关</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/05/关于高并发的处理/">
-              <span class="title"><span>关于高并发的处理</span></span>
+            <a href="/2016/08/29/vagrant/">
+              <span class="title"><span>vagrant 常用操作</span></span>
             </a>
         </li>
     
@@ -717,14 +743,8 @@
         </li>
     
         <li>
-            <a href="/2016/09/15/linux/">
-              <span class="title"><span>linux相关操作</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/09/18/php中的坑/">
-              <span class="title"><span>php中的坑</span></span>
+            <a href="/2016/09/18/图片资源优化/">
+              <span class="title"><span>图片资源优化</span></span>
             </a>
         </li>
     
@@ -735,8 +755,8 @@
         </li>
     
         <li>
-            <a href="/2016/09/24/shell/">
-              <span class="title"><span>shell</span></span>
+            <a href="/2016/08/30/常用正则技巧总结/">
+              <span class="title"><span>常用正则技巧总结</span></span>
             </a>
         </li>
     
@@ -753,14 +773,14 @@
         </li>
     
         <li>
-            <a href="/2016/08/30/常用正则技巧总结/">
-              <span class="title"><span>常用正则技巧总结</span></span>
+            <a href="/2016/09/22/快速搭建vpn/">
+              <span class="title"><span>快速搭建vpn</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/22/快速搭建vpn/">
-              <span class="title"><span>快速搭建vpn</span></span>
+            <a href="/2016/09/22/快速搭建服务器/">
+              <span class="title"><span>快速搭建服务器</span></span>
             </a>
         </li>
     
@@ -777,14 +797,14 @@
         </li>
     
         <li>
-            <a href="/2016/09/15/通过网址自动部署web/">
-              <span class="title"><span>通过网址自动部署web</span></span>
+            <a href="/2016/09/17/设计模式/">
+              <span class="title"><span>设计模式</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/22/快速搭建服务器/">
-              <span class="title"><span>快速搭建服务器</span></span>
+            <a href="/2016/09/15/通过网址自动部署web/">
+              <span class="title"><span>通过网址自动部署web</span></span>
             </a>
         </li>
     
@@ -795,8 +815,8 @@
         </li>
     
         <li>
-            <a href="/2016/09/17/设计模式/">
-              <span class="title"><span>设计模式</span></span>
+            <a href="/2017/05/18/那些概念/">
+              <span class="title"><span>那些概念</span></span>
             </a>
         </li>
     
@@ -807,14 +827,14 @@
         </li>
     
         <li>
-            <a href="/2017/05/18/那些概念/">
-              <span class="title"><span>那些概念</span></span>
+            <a href="/2016/09/08/面试可能会问到的问题/">
+              <span class="title"><span>面试可能会被问到的问题</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/08/面试可能会问到的问题/">
-              <span class="title"><span>面试可能会被问到的问题</span></span>
+            <a href="/2016/09/08/面试问题总结/">
+              <span class="title"><span>面试问题总结</span></span>
             </a>
         </li>
     
@@ -825,8 +845,20 @@
         </li>
     
         <li>
-            <a href="/2016/09/08/面试问题总结/">
-              <span class="title"><span>面试问题总结</span></span>
+            <a href="/2017/06/13/mysql配置远程访问/">
+              <span class="title"><span>mysql配置远程访问</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/06/13/git本地化操作/">
+              <span class="title"><span>git本地化操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/06/14/关于文件大小写/">
+              <span class="title"><span>关于文件大小写</span></span>
             </a>
         </li>
     

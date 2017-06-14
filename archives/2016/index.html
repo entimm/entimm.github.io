@@ -71,7 +71,7 @@
 						</li>
 					
 						<li>
-							<a class='flat-box nav-GitHub Respositries' href='http://github.entimm.com'>
+							<a class='flat-box nav-github respositries' href='http://github.entimm.com'>
 								GitHub Respositries
 							</a>
 						</li>
@@ -127,7 +127,7 @@
 				GitHub Stars
 			</a>
 		
-			<a href="http://github.entimm.com" class="nav-GitHub Respositries nav">
+			<a href="http://github.entimm.com" class="nav-github respositries nav">
 				GitHub Respositries
 			</a>
 		
@@ -162,13 +162,17 @@
 		
   </section>
   <section class="article typo">
-	  <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">git push origin test:master  # 提交本地test分支作为远程的master分支</div><div class="line">git push origin test:test    # 提交本地test分支作为远程的test分支</div><div class="line">git push origin :test        # 刚提交到远程的test将被删除，但是本地还会保存的，不用担心</div><div class="line"></div><div class="line">git push --tags # 上传所有标签</div><div class="line"></div><div class="line">git remote set-url --push [name] [newUrl] # 修改远程仓库</div><div class="line">git pull [remoteName] [localBranchName]</div><div class="line">git push [remoteName] [localBranchName]</div><div class="line"></div><div class="line">git merge [name]   # 将名称为[name]的分支与当前分支合并</div><div class="line">git rebase [name]  #会将[name]分支的代码合并过来，并按照提交的顺序排序(衍合指定分支到分支到当前分支)</div><div class="line"></div><div class="line">如果要对某些代码的commit重新整理</div><div class="line">1. 可以记住某个commit号</div><div class="line">2. git rebase -i commit号</div><div class="line"></div><div class="line">git merge-base branchA branchB #查看2分支的公告节点</div><div class="line"></div><div class="line">git diff $(git-merge-base A B) B</div><div class="line"><span class="meta"></span></div><div class="line"># 按时间逆序列出提交对象，常用于查找涉及到某些文件的提交的hash。例如，查找所有关系到文件readme的提交</div><div class="line">git rev-list</div><div class="line"><span class="meta"></span></div><div class="line"># As of Git v1.7.0, you can delete a remote branch using</div><div class="line">git push origin --delete &lt;branch_name&gt;</div><div class="line"><span class="meta">#</span> which is easier to remember than</div><div class="line">git push origin :&lt;branch_name&gt;</div><div class="line"></div><div class="line">git shortlog</div><div class="line"></div><div class="line">git log branch --not master # 查看在branch上的，但不在master上的记录</div></pre></td></tr></table></figure>
+	  <p>如果要对某些代码的commit重新整理</p>
+<ol>
+<li>可以记住某个commit号</li>
+<li>git rebase -i commit号</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta">#</span> 删除远程分支</div><div class="line"><span class="meta">#</span> As of Git v1.7.0, you can delete a remote branch using</div><div class="line">git push origin --delete &lt;branch_name&gt;</div><div class="line"><span class="meta">#</span> which is easier to remember than</div><div class="line">git push origin :&lt;branch_name&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">git push origin test:test    # 提交本地test分支作为远程的test分支</div><div class="line">git push origin :test        # 刚提交到远程的test将被删除，但是本地还会保存的，不用担心</div><div class="line"></div><div class="line">git push --tags # 上传所有标签</div><div class="line"></div><div class="line">git remote set-url --push [name] [newUrl] # 修改远程仓库</div><div class="line">git pull [remoteName] [localBranchName]</div><div class="line">git push [remoteName] [localBranchName]</div><div class="line"></div><div class="line">git merge [name]   # 将名称为[name]的分支与当前分支合并</div><div class="line">git rebase [name]  #会将[name]分支的代码合并过来，并按照提交的顺序排序(衍合指定分支到分支到当前分支)</div><div class="line"></div><div class="line">git merge-base branchA branchB #查看2分支的公共节点</div><div class="line"></div><div class="line">git diff $(git-merge-base A B) B</div><div class="line"><span class="meta"></span></div><div class="line"># 按时间逆序列出提交对象，常用于查找涉及到某些文件的提交的hash。例如，查找所有关系到文件readme的提交</div><div class="line">git rev-list</div><div class="line"></div><div class="line">git shortlog</div><div class="line"><span class="meta"></span></div><div class="line"># 查看在branch上的，但不在master上的记录</div><div class="line">git log branch --not master</div></pre></td></tr></table></figure>
 <h3 id="View-a-file-in-a-different-Git-branch-without-changing-branches"><a href="#View-a-file-in-a-different-Git-branch-without-changing-branches" class="headerlink" title="View a file in a different Git branch without changing branches"></a>View a file in a different Git branch without changing branches</h3><p>git checkout $REVISION – $FILE<br>git checkout $REVISION – “*” switch all files without changing brnaches<br>git show $REVISION:$FILE<br>git checkout –orphan $BRANCH</p>
 <h3 id="Make-an-existing-Git-branch-track-a-remote-branch"><a href="#Make-an-existing-Git-branch-track-a-remote-branch" class="headerlink" title="Make an existing Git branch track a remote branch"></a>Make an existing Git branch track a remote branch</h3><p>git branch -u $UPSTREAM/$REMOTE_BRANCH $LOCAL_BRANCH<br>git branch –set-upstream-to=$UPSTREAM/$REMOTE_BRANCH</p>
 <p>git push -u $UPSTREAM $REMOTE_BRANCH</p>
 <p>git remote add $UPSTREAM <remote-url><br>git fetch $UPSTREAM<br>git branch -f –track $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH</remote-url></p>
-<h1 id="OR"><a href="#OR" class="headerlink" title="OR:"></a>OR:</h1><p>git branch –set-upstream $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH</p>
-<h3 id="diff-changes-only-among-certain-file-s"><a href="#diff-changes-only-among-certain-file-s" class="headerlink" title="diff changes only among certain file(s)"></a>diff changes only among certain file(s)</h3>
 
     
 	  <div class="readmore">
@@ -582,6 +586,12 @@
 <div class='header'>Categories</div>
 <div class='content'>
     
+    <ul class="entry">
+    
+        <li><a class="flat-box" href="/categories/note/"><div class='name'>note</div><div class='badget'>0</div></a></li>
+    
+    </ul>
+    
 </div>
 </section>
 
@@ -595,8 +605,8 @@
     <ul class="entry">
     
         <li>
-            <a href="/2016/09/18/图片资源优化/">
-              <span class="title"><span>图片资源优化</span></span>
+            <a href="/2016/09/05/关于高并发的处理/">
+              <span class="title"><span>关于高并发的处理</span></span>
             </a>
         </li>
     
@@ -643,6 +653,12 @@
         </li>
     
         <li>
+            <a href="/2016/09/15/linux/">
+              <span class="title"><span>linux相关操作</span></span>
+            </a>
+        </li>
+    
+        <li>
             <a href="/2016/08/04/laravel中用到的ServiceProvide/">
               <span class="title"><span>laravel中用到的ServiceProvide</span></span>
             </a>
@@ -679,6 +695,18 @@
         </li>
     
         <li>
+            <a href="/2016/09/18/php中的坑/">
+              <span class="title"><span>php中的坑</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/24/shell/">
+              <span class="title"><span>shell</span></span>
+            </a>
+        </li>
+    
+        <li>
             <a href="/2016/09/23/ssh保持链接/">
               <span class="title"><span>ssh保持链接</span></span>
             </a>
@@ -691,20 +719,14 @@
         </li>
     
         <li>
-            <a href="/2016/08/29/vagrant/">
-              <span class="title"><span>vagrant 常用操作</span></span>
-            </a>
-        </li>
-    
-        <li>
             <a href="/2016/08/29/web相关/">
               <span class="title"><span>web相关</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/05/关于高并发的处理/">
-              <span class="title"><span>关于高并发的处理</span></span>
+            <a href="/2016/08/29/vagrant/">
+              <span class="title"><span>vagrant 常用操作</span></span>
             </a>
         </li>
     
@@ -715,14 +737,8 @@
         </li>
     
         <li>
-            <a href="/2016/09/15/linux/">
-              <span class="title"><span>linux相关操作</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/09/18/php中的坑/">
-              <span class="title"><span>php中的坑</span></span>
+            <a href="/2016/09/18/图片资源优化/">
+              <span class="title"><span>图片资源优化</span></span>
             </a>
         </li>
     
@@ -733,8 +749,8 @@
         </li>
     
         <li>
-            <a href="/2016/09/24/shell/">
-              <span class="title"><span>shell</span></span>
+            <a href="/2016/08/30/常用正则技巧总结/">
+              <span class="title"><span>常用正则技巧总结</span></span>
             </a>
         </li>
     
@@ -751,14 +767,14 @@
         </li>
     
         <li>
-            <a href="/2016/08/30/常用正则技巧总结/">
-              <span class="title"><span>常用正则技巧总结</span></span>
+            <a href="/2016/09/22/快速搭建vpn/">
+              <span class="title"><span>快速搭建vpn</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/22/快速搭建vpn/">
-              <span class="title"><span>快速搭建vpn</span></span>
+            <a href="/2016/09/22/快速搭建服务器/">
+              <span class="title"><span>快速搭建服务器</span></span>
             </a>
         </li>
     
@@ -775,14 +791,14 @@
         </li>
     
         <li>
-            <a href="/2016/09/15/通过网址自动部署web/">
-              <span class="title"><span>通过网址自动部署web</span></span>
+            <a href="/2016/09/17/设计模式/">
+              <span class="title"><span>设计模式</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/22/快速搭建服务器/">
-              <span class="title"><span>快速搭建服务器</span></span>
+            <a href="/2016/09/15/通过网址自动部署web/">
+              <span class="title"><span>通过网址自动部署web</span></span>
             </a>
         </li>
     
@@ -793,8 +809,8 @@
         </li>
     
         <li>
-            <a href="/2016/09/17/设计模式/">
-              <span class="title"><span>设计模式</span></span>
+            <a href="/2017/05/18/那些概念/">
+              <span class="title"><span>那些概念</span></span>
             </a>
         </li>
     
@@ -805,14 +821,14 @@
         </li>
     
         <li>
-            <a href="/2017/05/18/那些概念/">
-              <span class="title"><span>那些概念</span></span>
+            <a href="/2016/09/08/面试可能会问到的问题/">
+              <span class="title"><span>面试可能会被问到的问题</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/08/面试可能会问到的问题/">
-              <span class="title"><span>面试可能会被问到的问题</span></span>
+            <a href="/2016/09/08/面试问题总结/">
+              <span class="title"><span>面试问题总结</span></span>
             </a>
         </li>
     
@@ -823,8 +839,20 @@
         </li>
     
         <li>
-            <a href="/2016/09/08/面试问题总结/">
-              <span class="title"><span>面试问题总结</span></span>
+            <a href="/2017/06/13/mysql配置远程访问/">
+              <span class="title"><span>mysql配置远程访问</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/06/13/git本地化操作/">
+              <span class="title"><span>git本地化操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/06/14/关于文件大小写/">
+              <span class="title"><span>关于文件大小写</span></span>
             </a>
         </li>
     
