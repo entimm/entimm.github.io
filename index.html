@@ -423,8 +423,8 @@
   </section>
   <section class="article typo">
 	  <p>删除远程分支<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> As of Git v1.7.0, you can delete a remote branch using</div><div class="line">git push origin --delete &lt;branch_name&gt;</div><div class="line"><span class="meta">#</span> which is easier to remember than</div><div class="line">git push origin :&lt;branch_name&gt;</div></pre></td></tr></table></figure></p>
-<p>git用得时间多了，会变慢。 那么可以用下面的命令优化一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git gc   - Cleanup unnecessary files and optimize the local repository</div><div class="line">git-repack - Pack unpacked objects in a repository</div></pre></td></tr></table></figure></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">git push origin test:test    # 提交本地test分支作为远程的test分支</div><div class="line"></div><div class="line">git push --tags # 上传所有标签</div><div class="line"></div><div class="line">git remote set-url --push [name] [newUrl] # 修改远程仓库</div><div class="line">git pull [remoteName] [localBranchName]</div><div class="line">git push [remoteName] [localBranchName]</div><div class="line"></div><div class="line">git merge [name]   # 将名称为[name]的分支与当前分支合并</div><div class="line">git rebase [name]  #会将[name]分支的代码合并过来，并按照提交的顺序排序(衍合指定分支到分支到当前分支)</div><div class="line"></div><div class="line">git merge-base branchA branchB #查看2分支的公共节点</div><div class="line"></div><div class="line">git diff $(git-merge-base A B) B</div><div class="line"><span class="meta"></span></div><div class="line"># 按时间逆序列出提交对象，常用于查找涉及到某些文件的提交的hash。例如，查找所有关系到文件readme的提交</div><div class="line">git rev-list</div><div class="line"></div><div class="line">git shortlog</div><div class="line"><span class="meta"></span></div><div class="line"># 查看在branch上的，但不在master上的记录</div><div class="line">git log branch --not master</div><div class="line"></div><div class="line">git fsck --lost-found //检查丢失的提交</div><div class="line">git ls-files --stage //可以显示出索引的内容</div><div class="line">git checkout . //撤销所有修改</div><div class="line">git clean -xfd //连 gitignore 的untrack 文件/目录也一起删掉</div><div class="line">git branch --merged | xargs git branch -d //删除已经合并的分支</div><div class="line"></div><div class="line">git ls-files --other --ignored --exclude-stanard # list all ignored files in this project</div><div class="line">git reset --keep $COMMIT # reset and preserve uncommitted local changes</div><div class="line">git checkout --track $UPSTREAM/$REMOTE_BRANCH # create a new tracking branch based on a remote branch</div></pre></td></tr></table></figure>
+<p>git用得时间多了，会变慢。 那么可以用下面的命令优化一下<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git gc   - Cleanup unnecessary files and optimize the local repository</div><div class="line">git-repack - Pack unpacked objects in a repository</div></pre></td></tr></table></figure></p>
+<p>那些git命令<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">git push origin test:test    # 提交本地test分支作为远程的test分支</div><div class="line">git push --tags # 上传所有标签</div><div class="line">git remote set-url --push [name] [newUrl] # 修改远程仓库</div><div class="line">git pull [remoteName] [localBranchName]</div><div class="line">git push [remoteName] [localBranchName]</div><div class="line">git merge [name]   # 将名称为[name]的分支与当前分支合并</div><div class="line">git rebase [name]  #会将[name]分支的代码合并过来，并按照提交的顺序排序(衍合指定分支到分支到当前分支)</div><div class="line">git merge-base branchA branchB #查看2分支的公共节点</div><div class="line">git diff $(git-merge-base A B) B</div><div class="line"><span class="meta">#</span> 按时间逆序列出提交对象，常用于查找涉及到某些文件的提交的hash</div><div class="line">git rev-list</div><div class="line">git shortlog</div><div class="line"><span class="meta">#</span> 查看在branch上的，但不在master上的记录</div><div class="line">git log branch --not master</div><div class="line"></div><div class="line">git fsck --lost-found //检查丢失的提交</div><div class="line">git ls-files --stage //可以显示出索引的内容</div><div class="line">git checkout . //撤销所有修改</div><div class="line">git clean -xfd //连 gitignore 的untrack 文件/目录也一起删掉</div><div class="line">git branch --merged | xargs git branch -d //删除已经合并的分支</div><div class="line"><span class="meta">#</span> list all ignored files in this project</div><div class="line">git ls-files --other --ignored --exclude-stanard</div><div class="line"><span class="meta">#</span> reset and preserve uncommitted local changes</div><div class="line">git reset --keep $COMMIT</div><div class="line"><span class="meta">#</span> create a new tracking branch based on a remote branch</div><div class="line">git checkout --track $UPSTREAM/$REMOTE_BRANCH</div></pre></td></tr></table></figure></p>
 <p>View a file in a different Git branch without changing branches<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git checkout $REVISION -- $FILE</div><div class="line">git checkout $REVISION -- "*" switch all files without changing brnaches</div><div class="line">git show $REVISION:$FILE</div><div class="line">git checkout --orphan $BRANCH</div></pre></td></tr></table></figure></p>
 <p>Make an existing Git branch track a remote branch<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">git branch -u $UPSTREAM/$REMOTE_BRANCH $LOCAL_BRANCH</div><div class="line">git branch --set-upstream-to=$UPSTREAM/$REMOTE_BRANCH</div><div class="line"></div><div class="line">git push -u $UPSTREAM $REMOTE_BRANCH</div><div class="line"></div><div class="line">git remote add $UPSTREAM &lt;remote-url&gt;</div><div class="line">git fetch $UPSTREAM</div><div class="line">git branch -f --track $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH</div><div class="line"><span class="meta">#</span> OR:</div><div class="line">git branch --set-upstream $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH</div></pre></td></tr></table></figure></p>
 <p>diff changes only among certain file(s)<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git diff $BRANCH1 $BRANCH2 -- $FILE1 $FILE2</div><div class="line">(branch1 is optional and your current branch (the branch you are on) will be considered by default if branch1 is not provided)</div><div class="line"></div><div class="line">git diff $REVISION $FILE</div></pre></td></tr></table></figure></p>
@@ -570,8 +570,8 @@
     <ul class="entry">
     
         <li>
-            <a href="/2016/09/23/ssh保持链接/">
-              <span class="title"><span>ssh保持链接</span></span>
+            <a href="/2016/09/19/tmux/">
+              <span class="title"><span>tmux使用</span></span>
             </a>
         </li>
     
@@ -582,14 +582,8 @@
         </li>
     
         <li>
-            <a href="/2016/08/30/PHP cURL 应用/">
-              <span class="title"><span>利用 CURL 进行数据抓取总结</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/08/28/PHP代码重构/">
-              <span class="title"><span>PHP代码重构</span></span>
+            <a href="/2016/11/22/git 命令/">
+              <span class="title"><span>git 命令</span></span>
             </a>
         </li>
     
@@ -600,20 +594,8 @@
         </li>
     
         <li>
-            <a href="/2017/06/14/git-format-patch和git-diff/">
-              <span class="title"><span>git format-patch and git diff</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2017/06/14/git-merge和git-rebase/">
-              <span class="title"><span>git merge 和 git rebase</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/08/30/js 中对 checkbox 的操作/">
-              <span class="title"><span>js 中对 checkbox 的操作</span></span>
+            <a href="/2016/08/28/PHP代码重构/">
+              <span class="title"><span>PHP代码重构</span></span>
             </a>
         </li>
     
@@ -624,8 +606,20 @@
         </li>
     
         <li>
+            <a href="/2017/06/14/git-format-patch和git-diff/">
+              <span class="title"><span>git format-patch and git diff</span></span>
+            </a>
+        </li>
+    
+        <li>
             <a href="/2016/10/25/iTerm2奇淫技巧/">
               <span class="title"><span>iTerm2奇淫技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/06/14/git-merge和git-rebase/">
+              <span class="title"><span>git merge 和 git rebase</span></span>
             </a>
         </li>
     
@@ -636,14 +630,14 @@
         </li>
     
         <li>
-            <a href="/2016/08/04/laravel中用到的ServiceProvide/">
-              <span class="title"><span>laravel中用到的ServiceProvide</span></span>
+            <a href="/2016/08/30/js 中对 checkbox 的操作/">
+              <span class="title"><span>js 中对 checkbox 的操作</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/08/30/mac os系统问题解决/">
-              <span class="title"><span>mac os系统问题解决</span></span>
+            <a href="/2016/08/04/laravel中用到的ServiceProvide/">
+              <span class="title"><span>laravel中用到的ServiceProvide</span></span>
             </a>
         </li>
     
@@ -654,14 +648,20 @@
         </li>
     
         <li>
-            <a href="/2017/06/13/mysql配置远程访问/">
-              <span class="title"><span>mysql配置远程访问</span></span>
+            <a href="/2016/08/29/macos查看网络端口情况/">
+              <span class="title"><span>macos查看网络端口情况</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/08/29/macos查看网络端口情况/">
-              <span class="title"><span>macos查看网络端口情况</span></span>
+            <a href="/2016/08/30/mac os系统问题解决/">
+              <span class="title"><span>mac os系统问题解决</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/06/13/mysql配置远程访问/">
+              <span class="title"><span>mysql配置远程访问</span></span>
             </a>
         </li>
     
@@ -702,14 +702,14 @@
         </li>
     
         <li>
-            <a href="/2016/11/22/git 命令/">
-              <span class="title"><span>git 命令</span></span>
+            <a href="/2016/08/30/PHP cURL 应用/">
+              <span class="title"><span>利用 CURL 进行数据抓取总结</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/19/tmux/">
-              <span class="title"><span>tmux使用</span></span>
+            <a href="/2016/09/23/ssh保持链接/">
+              <span class="title"><span>ssh保持链接</span></span>
             </a>
         </li>
     
@@ -720,14 +720,14 @@
         </li>
     
         <li>
-            <a href="/2017/06/14/关于文件大小写/">
-              <span class="title"><span>关于文件大小写</span></span>
+            <a href="/2016/09/05/关于高并发的处理/">
+              <span class="title"><span>关于高并发的处理</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/05/关于高并发的处理/">
-              <span class="title"><span>关于高并发的处理</span></span>
+            <a href="/2017/06/14/关于文件大小写/">
+              <span class="title"><span>关于文件大小写</span></span>
             </a>
         </li>
     
@@ -774,20 +774,14 @@
         </li>
     
         <li>
-            <a href="/2016/09/22/接替app端的请求/">
-              <span class="title"><span>接替app端的请求</span></span>
-            </a>
-        </li>
-    
-        <li>
             <a href="/2016/09/22/快速搭建服务器/">
               <span class="title"><span>快速搭建服务器</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2017/05/18/那些概念/">
-              <span class="title"><span>那些概念</span></span>
+            <a href="/2016/09/22/接替app端的请求/">
+              <span class="title"><span>接替app端的请求</span></span>
             </a>
         </li>
     
@@ -798,14 +792,20 @@
         </li>
     
         <li>
+            <a href="/2016/09/17/设计模式/">
+              <span class="title"><span>设计模式</span></span>
+            </a>
+        </li>
+    
+        <li>
             <a href="/2016/09/15/通过网址自动部署web/">
               <span class="title"><span>通过网址自动部署web</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/17/设计模式/">
-              <span class="title"><span>设计模式</span></span>
+            <a href="/2017/05/18/那些概念/">
+              <span class="title"><span>那些概念</span></span>
             </a>
         </li>
     
@@ -816,14 +816,14 @@
         </li>
     
         <li>
-            <a href="/2016/09/08/面试可能会问到的问题/">
-              <span class="title"><span>面试可能会被问到的问题</span></span>
+            <a href="/2016/09/28/配置linux服务器常用命令/">
+              <span class="title"><span>配置linux服务器常用命令</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/28/配置linux服务器常用命令/">
-              <span class="title"><span>配置linux服务器常用命令</span></span>
+            <a href="/2016/09/08/面试可能会问到的问题/">
+              <span class="title"><span>面试可能会被问到的问题</span></span>
             </a>
         </li>
     
