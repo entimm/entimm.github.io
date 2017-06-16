@@ -146,6 +146,82 @@
   <section class="meta">
     
     <h2 class="title">
+      <a href="/2017/06/14/git-format-patch和git-diff/">
+        git format-patch and git diff
+      </a>
+    </h2>
+    
+    <time>
+      Jun 14, 2017
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <p>git中则提供了两种patch方案：</p>
+<p>用git diff生成的标准patch，可以提供上述的patch命令使用。<br>用git format-patch生成的git专用patch。<br>两种patch的比较：</p>
+<p>兼容性：很明显，git diff生成的patch兼容性强。如果你在修改的代码的官方版本库不是git管理的版本库，那么你必须使用git diff生成的patch才能让你的代码被项目的维护人接受。<br>除错功能：对于git diff生成的patch，你可以用git apply –check查看补丁是否能够干净顺利地应用到当前分支中；如果git format-patch生成的补丁不能打到当前分支，git am会给出提示，并协助你完成打补丁工作，你也可以使用git am -3进行三方合并，详细的做法可以参考git手册或者《Progit》。从这一点上看，两者除错功能都很强。<br>提交信息：由于git format-patch生成的补丁中含有这个补丁开发者的名字，因此在应用补丁时，这个名字会被记录进版本库，显然，这样做是恰当的。因此，目前使用git的开源社区往往建议大家使用git format-patch生成补丁。</p>
+
+
+    
+	  <div class="readmore">
+      <a href="/2017/06/14/git-format-patch和git-diff/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2017/06/14/git-merge和git-rebase/">
+        git merge 和 git rebase
+      </a>
+    </h2>
+    
+    <time>
+      Jun 14, 2017
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <p>git merge简要说明</p>
+<ol>
+<li>git merge会产生一次新的commit版本，并且此版本会有2个或者更多个父提交，可以通过HEAD^1，HEAD^2，HEAD^n方法来引用此提交的父提交。</li>
+<li>git merge是非破坏性的(non-destructive)操作，没有负作用，并且被合并的这些分支都可以git push发布到remote公共仓库中。</li>
+<li>由于每次合并会产生一次新的提交历史，如果主分支非常活跃，就会产生很多这种合并分支的提交历史，会对项目本身的提交历史产生污染。<br>git-rebase-test.sh测试脚本</li>
+</ol>
+<p>git rebase简要说明</p>
+<ol>
+<li>git rebase 会产生一个修改过的很干净的项目提交历史，例如在feature分支上git rebase master，会将feature分支上的提交添加到master分支的最顶端。</li>
+<li>git rebase操作有负面效果，影响项目提交历史的安全性(safety)和可追溯性(traceability)。</li>
+<li>git rebase -i master可以交互式压缩提交(squash)或者忽略指定提交。</li>
+<li>git rebase使用黄金守则: NEVER USE IT ON PUBLIC BRANCHES.</li>
+<li>不要将主分支rebase到特性分支上(don’t rebased master onto your feature branch: git rebase feature)。</li>
+<li>其他开发者提交的新特性和修改(如patch)应该创建一个临时分支apply这些修改，再使用git merge合并修改到主分支上，而不是使用git rebase方式操作，因为rebase操作修改了提交历史，很难追溯哪些提交新增了这些特性和修改。</li>
+</ol>
+
+
+    
+	  <div class="readmore">
+      <a href="/2017/06/14/git-merge和git-rebase/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
       <a href="/2017/06/14/关于文件大小写/">
         关于文件大小写
       </a>
@@ -299,6 +375,42 @@
   <section class="meta">
     
     <h2 class="title">
+      <a href="/2017/03/02/php中的异常与错误/">
+        php中的异常与错误
+      </a>
+    </h2>
+    
+    <time>
+      Mar 2, 2017
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <p>异常是指程序运行中不符合预期情况以及与正常流程不同的状况。错误则属于自身问题，是一种非法语法或者环境问题导致的、让编译器无法通过检查设置无法运行的情况。</p>
+<p>php只有在你throw 一个异常后，才能用try…catch来捕获异常(一般情况下如此，也有部分异常可以自动捕获)。</p>
+<p>历史原因导致php的异常处理是不足的，绝大多数情况下，无法自动抛出异常，必须使用if…else先进行判断，再手动抛出异常。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">customError</span><span class="params">($errno, $errstr, $errfile, $errline)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//自定义错误处理是，手动抛出异常</span></div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="keyword">Exception</span>($errstr);</div><div class="line">&#125;</div><div class="line"></div><div class="line">set_error_handler(<span class="string">'customError'</span>, E_ALL | E_STRICT);</div><div class="line"></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">    $a = <span class="number">5</span>/<span class="number">0</span>;</div><div class="line">&#125; <span class="keyword">catch</span> (<span class="keyword">Exception</span> $e) &#123;</div><div class="line">    <span class="keyword">echo</span> <span class="string">'错误信息:'</span>, $e-&gt;getMessage();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>fetal error这样的错误无法捕获，也无法在发生后恢复流程处理，但是可以使用register_shutdown_function()函数在程序终止或die时触发一个函数，给程序带来一个短暂的回光返照。在php4时，不支持析构函数，也常用于模拟实现析构函数。</p>
+<p>Parse error级别的错误，除了修改ini文件，将错误信息写到日志中，什么也做不了。</p>
+<p>无论是错误还是异常，都可以使用handler接管系统已有的处理机制。</p>
+
+
+    
+	  <div class="readmore">
+      <a href="/2017/03/02/php中的异常与错误/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
       <a href="/2016/11/22/git 命令/">
         git 命令
       </a>
@@ -310,17 +422,16 @@
 		
   </section>
   <section class="article typo">
-	  <p>如果要对某些代码的commit重新整理</p>
-<ol>
-<li>可以记住某个commit号</li>
-<li>git rebase -i commit号</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta">#</span> 删除远程分支</div><div class="line"><span class="meta">#</span> As of Git v1.7.0, you can delete a remote branch using</div><div class="line">git push origin --delete &lt;branch_name&gt;</div><div class="line"><span class="meta">#</span> which is easier to remember than</div><div class="line">git push origin :&lt;branch_name&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">git push origin test:test    # 提交本地test分支作为远程的test分支</div><div class="line">git push origin :test        # 刚提交到远程的test将被删除，但是本地还会保存的，不用担心</div><div class="line"></div><div class="line">git push --tags # 上传所有标签</div><div class="line"></div><div class="line">git remote set-url --push [name] [newUrl] # 修改远程仓库</div><div class="line">git pull [remoteName] [localBranchName]</div><div class="line">git push [remoteName] [localBranchName]</div><div class="line"></div><div class="line">git merge [name]   # 将名称为[name]的分支与当前分支合并</div><div class="line">git rebase [name]  #会将[name]分支的代码合并过来，并按照提交的顺序排序(衍合指定分支到分支到当前分支)</div><div class="line"></div><div class="line">git merge-base branchA branchB #查看2分支的公共节点</div><div class="line"></div><div class="line">git diff $(git-merge-base A B) B</div><div class="line"><span class="meta"></span></div><div class="line"># 按时间逆序列出提交对象，常用于查找涉及到某些文件的提交的hash。例如，查找所有关系到文件readme的提交</div><div class="line">git rev-list</div><div class="line"></div><div class="line">git shortlog</div><div class="line"><span class="meta"></span></div><div class="line"># 查看在branch上的，但不在master上的记录</div><div class="line">git log branch --not master</div></pre></td></tr></table></figure>
-<h3 id="View-a-file-in-a-different-Git-branch-without-changing-branches"><a href="#View-a-file-in-a-different-Git-branch-without-changing-branches" class="headerlink" title="View a file in a different Git branch without changing branches"></a>View a file in a different Git branch without changing branches</h3><p>git checkout $REVISION – $FILE<br>git checkout $REVISION – “*” switch all files without changing brnaches<br>git show $REVISION:$FILE<br>git checkout –orphan $BRANCH</p>
-<h3 id="Make-an-existing-Git-branch-track-a-remote-branch"><a href="#Make-an-existing-Git-branch-track-a-remote-branch" class="headerlink" title="Make an existing Git branch track a remote branch"></a>Make an existing Git branch track a remote branch</h3><p>git branch -u $UPSTREAM/$REMOTE_BRANCH $LOCAL_BRANCH<br>git branch –set-upstream-to=$UPSTREAM/$REMOTE_BRANCH</p>
-<p>git push -u $UPSTREAM $REMOTE_BRANCH</p>
-<p>git remote add $UPSTREAM <remote-url><br>git fetch $UPSTREAM<br>git branch -f –track $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH</remote-url></p>
+	  <p>删除远程分支<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> As of Git v1.7.0, you can delete a remote branch using</div><div class="line">git push origin --delete &lt;branch_name&gt;</div><div class="line"><span class="meta">#</span> which is easier to remember than</div><div class="line">git push origin :&lt;branch_name&gt;</div></pre></td></tr></table></figure></p>
+<p>git用得时间多了，会变慢。 那么可以用下面的命令优化一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git gc   - Cleanup unnecessary files and optimize the local repository</div><div class="line">git-repack - Pack unpacked objects in a repository</div></pre></td></tr></table></figure></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">git push origin test:test    # 提交本地test分支作为远程的test分支</div><div class="line"></div><div class="line">git push --tags # 上传所有标签</div><div class="line"></div><div class="line">git remote set-url --push [name] [newUrl] # 修改远程仓库</div><div class="line">git pull [remoteName] [localBranchName]</div><div class="line">git push [remoteName] [localBranchName]</div><div class="line"></div><div class="line">git merge [name]   # 将名称为[name]的分支与当前分支合并</div><div class="line">git rebase [name]  #会将[name]分支的代码合并过来，并按照提交的顺序排序(衍合指定分支到分支到当前分支)</div><div class="line"></div><div class="line">git merge-base branchA branchB #查看2分支的公共节点</div><div class="line"></div><div class="line">git diff $(git-merge-base A B) B</div><div class="line"><span class="meta"></span></div><div class="line"># 按时间逆序列出提交对象，常用于查找涉及到某些文件的提交的hash。例如，查找所有关系到文件readme的提交</div><div class="line">git rev-list</div><div class="line"></div><div class="line">git shortlog</div><div class="line"><span class="meta"></span></div><div class="line"># 查看在branch上的，但不在master上的记录</div><div class="line">git log branch --not master</div><div class="line"></div><div class="line">git fsck --lost-found //检查丢失的提交</div><div class="line">git ls-files --stage //可以显示出索引的内容</div><div class="line">git checkout . //撤销所有修改</div><div class="line">git clean -xfd //连 gitignore 的untrack 文件/目录也一起删掉</div><div class="line">git branch --merged | xargs git branch -d //删除已经合并的分支</div><div class="line"></div><div class="line">git ls-files --other --ignored --exclude-stanard # list all ignored files in this project</div><div class="line">git reset --keep $COMMIT # reset and preserve uncommitted local changes</div><div class="line">git checkout --track $UPSTREAM/$REMOTE_BRANCH # create a new tracking branch based on a remote branch</div></pre></td></tr></table></figure>
+<p>View a file in a different Git branch without changing branches<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git checkout $REVISION -- $FILE</div><div class="line">git checkout $REVISION -- "*" switch all files without changing brnaches</div><div class="line">git show $REVISION:$FILE</div><div class="line">git checkout --orphan $BRANCH</div></pre></td></tr></table></figure></p>
+<p>Make an existing Git branch track a remote branch<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">git branch -u $UPSTREAM/$REMOTE_BRANCH $LOCAL_BRANCH</div><div class="line">git branch --set-upstream-to=$UPSTREAM/$REMOTE_BRANCH</div><div class="line"></div><div class="line">git push -u $UPSTREAM $REMOTE_BRANCH</div><div class="line"></div><div class="line">git remote add $UPSTREAM &lt;remote-url&gt;</div><div class="line">git fetch $UPSTREAM</div><div class="line">git branch -f --track $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH</div><div class="line"><span class="meta">#</span> OR:</div><div class="line">git branch --set-upstream $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH</div></pre></td></tr></table></figure></p>
+<p>diff changes only among certain file(s)<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git diff $BRANCH1 $BRANCH2 -- $FILE1 $FILE2</div><div class="line">(branch1 is optional and your current branch (the branch you are on) will be considered by default if branch1 is not provided)</div><div class="line"></div><div class="line">git diff $REVISION $FILE</div></pre></td></tr></table></figure></p>
+<p>other command<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">bisect     #Find by binary search the change that introduced a bug</div><div class="line">grep       #Print lines matching a pattern</div><div class="line">git log --since="two weeks ago" --until="two days ago"</div><div class="line">git log --since=four.days --until=two.days</div><div class="line">git instaweb</div><div class="line">git ls-tree #view git tree view</div><div class="line">git rm -rf . # Delete everything in the orphan branch</div><div class="line">git stash save --keep-index    # stash only unstaged files</div><div class="line">git merge --squash $BRANCH</div><div class="line">git rev-parse --abbrev-ref HEAD #判断当前分支</div></pre></td></tr></table></figure></p>
+<p>列出当天某人的所有提交记录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git log --author=AUTHOR --oneline --since=&quot;6am&quot; --graph --all --decorate</div></pre></td></tr></table></figure></p>
+<p>Find the nearest parent branch of the current git branch<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>!/usr/bin/env zsh</div><div class="line">branch=`git rev-parse --abbrev-ref HEAD`</div><div class="line"></div><div class="line">git show-branch | ack '\*' | ack -v "$branch" | head -n1 | sed 's/.*\[\(.*\)\].*/\1/' | sed 's/[\^~].*//'`</div><div class="line"><span class="meta">#</span> How it works:</div><div class="line"><span class="meta">#</span> 1| Display a textual history of all commits.</div><div class="line"><span class="meta">#</span> 2| Ancestors of the current commit are indicated</div><div class="line"><span class="meta">#</span>    by a star. Filter out everything else.</div><div class="line"><span class="meta">#</span> 3| Ignore all the commits in the current branch.</div><div class="line"><span class="meta">#</span> 4| The first result will be the nearest ancestor branch.</div><div class="line"><span class="meta">#</span>    Ignore the other results.</div><div class="line"><span class="meta">#</span> 5| Branch names are displayed [in brackets]. Ignore </div><div class="line"><span class="meta">#</span>    everything outside the brackets, and the brackets.</div><div class="line"><span class="meta">#</span> 6| Sometimes the branch name will include a ~2 or ^1 to</div><div class="line"><span class="meta">#</span>    indicate how many commits are between the referenced</div><div class="line"><span class="meta">#</span>    commit and the branch tip. We don't care. Ignore them.</div></pre></td></tr></table></figure></p>
+<p>or<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">branch=`git rev-parse --abbrev-ref HEAD`</div><div class="line">git show-branch -a 2&gt;/dev/null | grep '\*' | grep -v "$branch" | head -n1 | sed 's/.*\[\(.*\)\].*/\1/' | sed 's/[\^~].*//'</div></pre></td></tr></table></figure></p>
 
     
 	  <div class="readmore">
@@ -404,115 +515,6 @@
 </article>
     </div>
   
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/09/24/shell/">
-        shell
-      </a>
-    </h2>
-    
-    <time>
-      Sep 24, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h2 id="shell-中的判断"><a href="#shell-中的判断" class="headerlink" title="shell 中的判断"></a>shell 中的判断</h2><ol>
-<li>字符串判断</li>
-</ol>
-<p>str1 = str2　　　　 当两个串有相同内容、长度时为真<br>str1 != str2　　　　当串str1和str2不等时为真<br>-n str1　　　　　　　当串的长度大于0时为真(串非空)<br>-z str1　　　　　　  当串的长度为0时为真(空串)<br>str1　　　　　　　　  当串str1为非空时为真</p>
-<ol>
-<li>数字的判断</li>
-</ol>
-<p>int1 -eq int2　　　　两数相等为真<br>int1 -ne int2　　　　两数不等为真<br>int1 -gt int2　　　　int1大于int2为真<br>int1 -ge int2　　　　int1大于等于int2为真<br>int1 -lt int2　　　　int1小于int2为真<br>int1 -le int2　　　　int1小于等于int2为真</p>
-<p>-n “$var” 判断一个变量是否有值</p>
-<p>3 文件的判断</p>
-<p>-r file　　　　　用户可读为真<br>-w file　　　　　用户可写为真<br>-x file　　　　　用户可执行为真<br>-f file　　　　　文件为正规文件为真<br>-d file　　　　　文件为目录为真<br>-c file　　　　　文件为字符特殊文件为真<br>-b file　　　　　文件为块特殊文件为真<br>-s file　　　　　文件大小非0时为真<br>-t file　　　　　当文件描述符(默认为1)指定的设备为终端时为真</p>
-<p>3、复杂逻辑判断</p>
-<p>-a 　 　　　　　  与<br>-o　　　　　　　   或<br> !　　　　　　　　 非</p>
-
-    
-	  <div class="readmore">
-      <a href="/2016/09/24/shell/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/09/23/ssh保持链接/">
-        ssh保持链接
-      </a>
-    </h2>
-    
-    <time>
-      Sep 23, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h2 id="Client-configuration"><a href="#Client-configuration" class="headerlink" title="Client configuration"></a>Client configuration</h2><p>Try creating the file: ~/.ssh/config<br>Add the contents:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Host *</div><div class="line">  ServerAliveInterval 30</div><div class="line">  ServerAliveCountMax 5</div></pre></td></tr></table></figure></p>
-<h2 id="Server-configuration"><a href="#Server-configuration" class="headerlink" title="Server configuration"></a>Server configuration</h2><p>Edit configuration file: /etc/ssh/sshd_config<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ClientAliveInterval 20</div><div class="line">ClientAliveCountMax 5</div></pre></td></tr></table></figure></p>
-
-
-    
-	  <div class="readmore">
-      <a href="/2016/09/23/ssh保持链接/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/09/22/快速搭建vpn/">
-        快速搭建vpn
-      </a>
-    </h2>
-    
-    <time>
-      Sep 22, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <p>VPS端一键安装Shadowsocks (SS Python版一键安装脚本支持CentOS 6，7，Debian所有版本，Ubuntu所有版本)，<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</div><div class="line">chmod +x shadowsocks.sh</div><div class="line">./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log</div></pre></td></tr></table></figure></p>
-<p>中间会提示输入SS SERVER使用的端口和连接密码。不输入则是系统默认.</p>
-<p>安装完成后，脚本提示如下(记得记录下来)：<br>Congratulations, shadowsocks install completed!<br>Your Server IP:your_server_ip<br>Your Server Port:your_server_port<br>Your Password:your_password<br>Your Local IP:127.0.0.1<br>Your Local Port:1080<br>Your Encryption Method:aes-256-cfb</p>
-<p>看到以上提示后就表明VPS上SS已经安装成功，并且已经设置了开机启动，VPS重启后不用手工启动SS。<br>到此就安装成功可以科学上网了</p>
-<p>卸载方法：<br>使用root用户登录，运行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./shadowsocks.sh uninstall</div></pre></td></tr></table></figure></p>
-<p>单用户配置文件 Sample：<br>配置文件路径：/etc/shadowsocks.json<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;server&quot;:&quot;0.0.0.0&quot;,</div><div class="line">    &quot;server_port&quot;:8989,</div><div class="line">    &quot;local_address&quot;:&quot;127.0.0.1&quot;,</div><div class="line">    &quot;local_port&quot;:1080,</div><div class="line">    &quot;password&quot;:&quot;yourpassword&quot;,</div><div class="line">    &quot;timeout&quot;:300,</div><div class="line">    &quot;method&quot;:&quot;aes-256-cfb&quot;,</div><div class="line">    &quot;fast_open&quot;: false</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>多用户多端口配置文件 Sample：<br>配置文件路径：/etc/shadowsocks.json<br>```<br>{<br>    “server”:”0.0.0.0”,<br>    “local_address”:”127.0.0.1”,<br>    “local_port”:1080,<br>    “port_password”:{<br>         “8989”:”password0”,<br>         “9001”:”password1”,<br>         “9002”:”password2”,<br>         “9003”:”password3”,<br>         “9004”:”password4”<br>    },<br>    “timeout”:300,<br>    “method”:”aes-256-cfb”,<br>    “fast_open”: false<br>}</p>
-<p>使用命令：<br>启动：/etc/init.d/shadowsocks start<br>停止：/etc/init.d/shadowsocks stop<br>重启：/etc/init.d/shadowsocks restart<br>状态：/etc/init.d/shadowsocks status</p>
-
-
-    
-	  <div class="readmore">
-      <a href="/2016/09/22/快速搭建vpn/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
-</article>
-    </div>
-  
 </section>
 
 
@@ -555,12 +557,6 @@
 <div class='header'>Categories</div>
 <div class='content'>
     
-    <ul class="entry">
-    
-        <li><a class="flat-box" href="/categories/note/"><div class='name'>note</div><div class='badget'>0</div></a></li>
-    
-    </ul>
-    
 </div>
 </section>
 
@@ -574,14 +570,20 @@
     <ul class="entry">
     
         <li>
-            <a href="/2016/09/05/关于高并发的处理/">
-              <span class="title"><span>关于高并发的处理</span></span>
+            <a href="/2016/09/23/ssh保持链接/">
+              <span class="title"><span>ssh保持链接</span></span>
             </a>
         </li>
     
         <li>
             <a href="/2016/09/08/FastCgi 与 PHP-FPM 之间的区别/">
               <span class="title"><span>Cgi、FastCgi 与 PHP-FPM</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/PHP cURL 应用/">
+              <span class="title"><span>利用 CURL 进行数据抓取总结</span></span>
             </a>
         </li>
     
@@ -598,14 +600,14 @@
         </li>
     
         <li>
-            <a href="/2016/11/22/git 命令/">
-              <span class="title"><span>git 命令</span></span>
+            <a href="/2017/06/14/git-format-patch和git-diff/">
+              <span class="title"><span>git format-patch and git diff</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/10/25/iTerm2奇淫技巧/">
-              <span class="title"><span>iTerm2奇淫技巧</span></span>
+            <a href="/2017/06/14/git-merge和git-rebase/">
+              <span class="title"><span>git merge 和 git rebase</span></span>
             </a>
         </li>
     
@@ -616,14 +618,20 @@
         </li>
     
         <li>
-            <a href="/2016/05/21/laravel 技巧/">
-              <span class="title"><span>laravel 技巧</span></span>
+            <a href="/2017/06/13/git本地化操作/">
+              <span class="title"><span>git本地化操作</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/15/linux/">
-              <span class="title"><span>linux相关操作</span></span>
+            <a href="/2016/10/25/iTerm2奇淫技巧/">
+              <span class="title"><span>iTerm2奇淫技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/05/21/laravel 技巧/">
+              <span class="title"><span>laravel 技巧</span></span>
             </a>
         </li>
     
@@ -640,6 +648,18 @@
         </li>
     
         <li>
+            <a href="/2016/09/15/linux/">
+              <span class="title"><span>linux相关操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/06/13/mysql配置远程访问/">
+              <span class="title"><span>mysql配置远程访问</span></span>
+            </a>
+        </li>
+    
+        <li>
             <a href="/2016/08/29/macos查看网络端口情况/">
               <span class="title"><span>macos查看网络端口情况</span></span>
             </a>
@@ -648,6 +668,12 @@
         <li>
             <a href="/2016/09/08/mysql知识/">
               <span class="title"><span>mysql知识</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/03/02/php中的异常与错误/">
+              <span class="title"><span>php中的异常与错误</span></span>
             </a>
         </li>
     
@@ -676,8 +702,8 @@
         </li>
     
         <li>
-            <a href="/2016/09/23/ssh保持链接/">
-              <span class="title"><span>ssh保持链接</span></span>
+            <a href="/2016/11/22/git 命令/">
+              <span class="title"><span>git 命令</span></span>
             </a>
         </li>
     
@@ -688,20 +714,26 @@
         </li>
     
         <li>
-            <a href="/2016/08/29/web相关/">
-              <span class="title"><span>web相关</span></span>
-            </a>
-        </li>
-    
-        <li>
             <a href="/2016/08/29/vagrant/">
               <span class="title"><span>vagrant 常用操作</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/08/30/PHP cURL 应用/">
-              <span class="title"><span>利用 CURL 进行数据抓取总结</span></span>
+            <a href="/2017/06/14/关于文件大小写/">
+              <span class="title"><span>关于文件大小写</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/05/关于高并发的处理/">
+              <span class="title"><span>关于高并发的处理</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/29/web相关/">
+              <span class="title"><span>web相关</span></span>
             </a>
         </li>
     
@@ -742,38 +774,14 @@
         </li>
     
         <li>
-            <a href="/2016/09/22/快速搭建服务器/">
-              <span class="title"><span>快速搭建服务器</span></span>
-            </a>
-        </li>
-    
-        <li>
             <a href="/2016/09/22/接替app端的请求/">
               <span class="title"><span>接替app端的请求</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/08/30/欢快的使用谷歌搜索/">
-              <span class="title"><span>欢快的使用谷歌搜索</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/09/17/设计模式/">
-              <span class="title"><span>设计模式</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/09/15/通过网址自动部署web/">
-              <span class="title"><span>通过网址自动部署web</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/09/22/那些配置/">
-              <span class="title"><span>那些配置</span></span>
+            <a href="/2016/09/22/快速搭建服务器/">
+              <span class="title"><span>快速搭建服务器</span></span>
             </a>
         </li>
     
@@ -784,14 +792,38 @@
         </li>
     
         <li>
-            <a href="/2016/09/28/配置linux服务器常用命令/">
-              <span class="title"><span>配置linux服务器常用命令</span></span>
+            <a href="/2016/08/30/欢快的使用谷歌搜索/">
+              <span class="title"><span>欢快的使用谷歌搜索</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/15/通过网址自动部署web/">
+              <span class="title"><span>通过网址自动部署web</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/17/设计模式/">
+              <span class="title"><span>设计模式</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/那些配置/">
+              <span class="title"><span>那些配置</span></span>
             </a>
         </li>
     
         <li>
             <a href="/2016/09/08/面试可能会问到的问题/">
               <span class="title"><span>面试可能会被问到的问题</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/28/配置linux服务器常用命令/">
+              <span class="title"><span>配置linux服务器常用命令</span></span>
             </a>
         </li>
     
@@ -804,24 +836,6 @@
         <li>
             <a href="/2016/09/16/高级PHP/">
               <span class="title"><span>高级 PHP</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2017/06/13/mysql配置远程访问/">
-              <span class="title"><span>mysql配置远程访问</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2017/06/13/git本地化操作/">
-              <span class="title"><span>git本地化操作</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2017/06/14/关于文件大小写/">
-              <span class="title"><span>关于文件大小写</span></span>
             </a>
         </li>
     

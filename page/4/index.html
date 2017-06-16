@@ -146,6 +146,133 @@
   <section class="meta">
     
     <h2 class="title">
+      <a href="/2016/09/05/docker技巧/">
+        docker 技巧
+      </a>
+    </h2>
+    
+    <time>
+      Sep 5, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="删除-none-tag-镜像"><a href="#删除-none-tag-镜像" class="headerlink" title="删除 none tag 镜像"></a>删除 none tag 镜像</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rmi $(docker images | grep "^&lt;none&gt;" | awk '&#123;print $3&#125;')</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rmi $(docker images -q --filter "dangling=true")</div></pre></td></tr></table></figure>
+<h2 id="删除所有镜像"><a href="#删除所有镜像" class="headerlink" title="删除所有镜像"></a>删除所有镜像</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker images -q | xargs docker rmi</div></pre></td></tr></table></figure>
+<h2 id="删除所有容器"><a href="#删除所有容器" class="headerlink" title="删除所有容器"></a>删除所有容器</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker ps -q -a | xargs docker rm</div></pre></td></tr></table></figure>
+<h2 id="删除所有停止运行的容器"><a href="#删除所有停止运行的容器" class="headerlink" title="删除所有停止运行的容器"></a>删除所有停止运行的容器</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rm $( docker ps -q -f status=exited)</div></pre></td></tr></table></figure>
+<h2 id="删除所有-dangling-unused-的镜像"><a href="#删除所有-dangling-unused-的镜像" class="headerlink" title="删除所有 dangling (unused) 的镜像"></a>删除所有 dangling (unused) 的镜像</h2>
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/05/docker技巧/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/05/php-function/">
+        php function
+      </a>
+    </h2>
+    
+    <time>
+      Sep 5, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="url、路径"><a href="#url、路径" class="headerlink" title="url、路径"></a>url、路径</h2><h3 id="parse-url"><a href="#parse-url" class="headerlink" title="parse_url"></a>parse_url</h3><p>mixed parse_url ( string $url [, int $component = -1 ] )</p>
+<p>解析 URL，返回其组成部分</p>
+<p>本函数不是用来验证给定 URL 的合法性的<br>本函数不能用于相对 URL<br>对严重不合格的 URL，parse_url() 可能会返回 FALSE</p>
+<h3 id="parse-str"><a href="#parse-str" class="headerlink" title="parse_str"></a>parse_str</h3><p>void parse_str ( string $str [, array &amp;$arr ] )</p>
+<p>将字符串解析成多个变量</p>
+<p>获取当前的 QUERY_STRING，你可以使用 $_SERVER[‘QUERY_STRING’] 变量<br>magic_quotes_gpc 影响到了 parse_str() 这个函数的输出，和 PHP 用于填充 $_GET、 $_POST 及其他变量的机制一致</p>
+<h3 id="pathinfo"><a href="#pathinfo" class="headerlink" title="pathinfo"></a>pathinfo</h3>
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/05/php-function/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/04/快捷键/">
+        快捷键
+      </a>
+    </h2>
+    
+    <time>
+      Sep 4, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h2><p>CMD-Shift-3<br>    全屏截图</p>
+<p>CMD-Shift-4<br>    区域截图：选区<br>    ⇧Shift － 重新定义截图区域的纵向高度或横向长度，不能同时实现。<br>    ⌥Option － 重新定义截图区域的尺寸，可以同时实现纵向和横向的改变，但只能围绕中心区域展开。<br>    ⌴空格键 － 按住并拖动鼠标，可以移动截图选框位置。<br>    Escape(Esc)键 － 退出截图模式。</p>
+<p>CMD-Shift-4 + 空格键<br>    区域截图：窗口</p>
+<p>screencapture -T ＋等待时间（秒）＋保存的截图名称及格式<br>    抓图</p>
+<h2 id="phpStorm"><a href="#phpStorm" class="headerlink" title="phpStorm"></a>phpStorm</h2><ul>
+<li>command + r 查找替换</li>
+<li>command + e 打开最近的文件</li>
+<li>command + shift + o 快速查询文件</li>
+<li>command + shift + f 关键字查找,更强大的查询器(机器不好的，最好还是先确定一下目录)</li>
+<li>command + shift + r 高级替换</li>
+<li>command + alt + b 找到当前类的所有子类</li>
+<li>alt + shift + c 查找最近修改的文件</li>
+<li>alt + f7 直接查询选中的字符</li>
+<li>ctrl + f7 文件中查询选中字符</li>
+<li>command + shift + +,- 展开或缩起</li>
+<li><p>command + . 折叠或展开选中的代码</p>
+</li>
+<li><p>alt + 回车 导入包，自动修正</p>
+</li>
+<li>command + n 快事为每个成员属性生成 getter 及 setter 方法</li>
+<li>ctrl + i 快速生成插入魔术方法</li>
+<li>ctrol + o 复写父类方法</li>
+<li>command + alt + l 对当前文件进行格式化排版</li>
+<li>command + d 复制当剪行</li>
+<li>command + / // 注释</li>
+<li>command + shift + / // 注释</li>
+<li>command + k 提交代码</li>
+<li>command + shif + k 提交远程分支</li>
+</ul>
+
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/04/快捷键/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
       <a href="/2016/08/30/PHP cURL 应用/">
         利用 CURL 进行数据抓取总结
       </a>
@@ -420,110 +547,6 @@
 </article>
     </div>
   
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/08/29/macos查看网络端口情况/">
-        macos查看网络端口情况
-      </a>
-    </h2>
-    
-    <time>
-      Aug 29, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h2 id="使用-netstat-命令"><a href="#使用-netstat-命令" class="headerlink" title="使用 netstat 命令"></a>使用 <code>netstat</code> 命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -nat | grep &lt;port&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -nat |grep LISTEN</div></pre></td></tr></table></figure>
-<h2 id="使用-lsof-命令"><a href="#使用-lsof-命令" class="headerlink" title="使用 lsof 命令"></a>使用 <code>lsof</code> 命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">lsof -n -P -i TCP -s TCP:LISTEN</div><div class="line"></div><div class="line">-n 表示主机以ip地址显示</div><div class="line">-P 表示端口以数字形式显示，默认为端口名称</div><div class="line">-i 意义较多，具体 man lsof, 主要是用来过滤lsof的输出结果</div><div class="line">-s 和 -i 配合使用，用于过滤输出</div></pre></td></tr></table></figure>
-<h2 id="使用-telnet-命令"><a href="#使用-telnet-命令" class="headerlink" title="使用 telnet 命令"></a>使用 <code>telnet</code> 命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">telnet 127.0.0.1 &lt;port&gt;</div></pre></td></tr></table></figure>
-<h2 id="使用-nc-命令"><a href="#使用-nc-命令" class="headerlink" title="使用 nc 命令"></a>使用 <code>nc</code> 命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">nc  -w &lt;time&gt; -n -z &lt;ip&gt; &lt;port_start-port_end&gt;</div><div class="line"></div><div class="line">-w 表示等待连接时间</div><div class="line">-n 尽量将端口号名称转换为端口号数字</div><div class="line">-z 对需要检查的端口没有输入输出，用于端口扫描模式</div><div class="line">ip 需要检查的ip地址</div><div class="line">port_start-port_end 可以是一个端口，也可以是一段端口,返回结果为开放的端口</div></pre></td></tr></table></figure>
-
-
-    
-	  <div class="readmore">
-      <a href="/2016/08/29/macos查看网络端口情况/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/08/29/vagrant/">
-        vagrant 常用操作
-      </a>
-    </h2>
-    
-    <time>
-      Aug 29, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h2 id="查看全局状态"><a href="#查看全局状态" class="headerlink" title="查看全局状态"></a>查看全局状态</h2><p>vagrant global-status</p>
-<h2 id="基本安装流程，以centos为例"><a href="#基本安装流程，以centos为例" class="headerlink" title="基本安装流程，以centos为例"></a>基本安装流程，以centos为例</h2><p>vagrant add centos cent.box</p>
-<p>vagrant init centos</p>
-<p>vagrant up</p>
-<p>vagrant ssh</p>
-<h2 id="销毁"><a href="#销毁" class="headerlink" title="销毁"></a>销毁</h2><p>vagrant destroy</p>
-<p>vagrant box remove centos</p>
-
-    
-	  <div class="readmore">
-      <a href="/2016/08/29/vagrant/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/08/28/PHP代码重构/">
-        PHP代码重构
-      </a>
-    </h2>
-    
-    <time>
-      Aug 28, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h3 id="删除-else"><a href="#删除-else" class="headerlink" title="删除 else"></a>删除 else</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">($arg)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>($arg == <span class="string">'foobar'</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>更好的写法</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">($arg)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>($arg == <span class="string">'foobar'</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="拆分为多个函数"><a href="#拆分为多个函数" class="headerlink" title="拆分为多个函数"></a>拆分为多个函数</h3><p>这种方式需要将函数名取的尽量清晰易懂，不要嫌长。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>($age &gt; <span class="number">18</span>)&#123;</div><div class="line">    doSomeThingA();</div><div class="line">    doSomeThingB();</div><div class="line">    doSomeThingC();</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">    doSomeThingD();</div><div class="line">    doSomeThingE();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="多层-if-嵌套的语法，把他写成线性的，就像写规则一样将其一条条罗列出来"><a href="#多层-if-嵌套的语法，把他写成线性的，就像写规则一样将其一条条罗列出来" class="headerlink" title="多层 if 嵌套的语法，把他写成线性的，就像写规则一样将其一条条罗列出来"></a>多层 if 嵌套的语法，把他写成线性的，就像写规则一样将其一条条罗列出来</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">match</span><span class="params">($age, $salary, $pretty)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>($age &gt; <span class="number">18</span>)&#123;</div><div class="line">         <span class="comment">// do some thing A;</span></div><div class="line">        <span class="keyword">if</span>($salary &gt; <span class="number">5000</span>)&#123;</div><div class="line">            <span class="comment">// do some thing B;</span></div><div class="line">            <span class="keyword">if</span>($pretty == <span class="keyword">true</span>)&#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>改写成这样</p>
-
-    
-	  <div class="readmore">
-      <a href="/2016/08/28/PHP代码重构/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
-</article>
-    </div>
-  
 </section>
 
 
@@ -571,12 +594,6 @@
 <div class='header'>Categories</div>
 <div class='content'>
     
-    <ul class="entry">
-    
-        <li><a class="flat-box" href="/categories/note/"><div class='name'>note</div><div class='badget'>0</div></a></li>
-    
-    </ul>
-    
 </div>
 </section>
 
@@ -590,14 +607,20 @@
     <ul class="entry">
     
         <li>
-            <a href="/2016/09/05/关于高并发的处理/">
-              <span class="title"><span>关于高并发的处理</span></span>
+            <a href="/2016/09/23/ssh保持链接/">
+              <span class="title"><span>ssh保持链接</span></span>
             </a>
         </li>
     
         <li>
             <a href="/2016/09/08/FastCgi 与 PHP-FPM 之间的区别/">
               <span class="title"><span>Cgi、FastCgi 与 PHP-FPM</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/PHP cURL 应用/">
+              <span class="title"><span>利用 CURL 进行数据抓取总结</span></span>
             </a>
         </li>
     
@@ -614,14 +637,14 @@
         </li>
     
         <li>
-            <a href="/2016/11/22/git 命令/">
-              <span class="title"><span>git 命令</span></span>
+            <a href="/2017/06/14/git-format-patch和git-diff/">
+              <span class="title"><span>git format-patch and git diff</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/10/25/iTerm2奇淫技巧/">
-              <span class="title"><span>iTerm2奇淫技巧</span></span>
+            <a href="/2017/06/14/git-merge和git-rebase/">
+              <span class="title"><span>git merge 和 git rebase</span></span>
             </a>
         </li>
     
@@ -632,14 +655,20 @@
         </li>
     
         <li>
-            <a href="/2016/05/21/laravel 技巧/">
-              <span class="title"><span>laravel 技巧</span></span>
+            <a href="/2017/06/13/git本地化操作/">
+              <span class="title"><span>git本地化操作</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/15/linux/">
-              <span class="title"><span>linux相关操作</span></span>
+            <a href="/2016/10/25/iTerm2奇淫技巧/">
+              <span class="title"><span>iTerm2奇淫技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/05/21/laravel 技巧/">
+              <span class="title"><span>laravel 技巧</span></span>
             </a>
         </li>
     
@@ -656,6 +685,18 @@
         </li>
     
         <li>
+            <a href="/2016/09/15/linux/">
+              <span class="title"><span>linux相关操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/06/13/mysql配置远程访问/">
+              <span class="title"><span>mysql配置远程访问</span></span>
+            </a>
+        </li>
+    
+        <li>
             <a href="/2016/08/29/macos查看网络端口情况/">
               <span class="title"><span>macos查看网络端口情况</span></span>
             </a>
@@ -664,6 +705,12 @@
         <li>
             <a href="/2016/09/08/mysql知识/">
               <span class="title"><span>mysql知识</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/03/02/php中的异常与错误/">
+              <span class="title"><span>php中的异常与错误</span></span>
             </a>
         </li>
     
@@ -692,8 +739,8 @@
         </li>
     
         <li>
-            <a href="/2016/09/23/ssh保持链接/">
-              <span class="title"><span>ssh保持链接</span></span>
+            <a href="/2016/11/22/git 命令/">
+              <span class="title"><span>git 命令</span></span>
             </a>
         </li>
     
@@ -704,20 +751,26 @@
         </li>
     
         <li>
-            <a href="/2016/08/29/web相关/">
-              <span class="title"><span>web相关</span></span>
-            </a>
-        </li>
-    
-        <li>
             <a href="/2016/08/29/vagrant/">
               <span class="title"><span>vagrant 常用操作</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/08/30/PHP cURL 应用/">
-              <span class="title"><span>利用 CURL 进行数据抓取总结</span></span>
+            <a href="/2017/06/14/关于文件大小写/">
+              <span class="title"><span>关于文件大小写</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/05/关于高并发的处理/">
+              <span class="title"><span>关于高并发的处理</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/29/web相关/">
+              <span class="title"><span>web相关</span></span>
             </a>
         </li>
     
@@ -758,38 +811,14 @@
         </li>
     
         <li>
-            <a href="/2016/09/22/快速搭建服务器/">
-              <span class="title"><span>快速搭建服务器</span></span>
-            </a>
-        </li>
-    
-        <li>
             <a href="/2016/09/22/接替app端的请求/">
               <span class="title"><span>接替app端的请求</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/08/30/欢快的使用谷歌搜索/">
-              <span class="title"><span>欢快的使用谷歌搜索</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/09/17/设计模式/">
-              <span class="title"><span>设计模式</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/09/15/通过网址自动部署web/">
-              <span class="title"><span>通过网址自动部署web</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/09/22/那些配置/">
-              <span class="title"><span>那些配置</span></span>
+            <a href="/2016/09/22/快速搭建服务器/">
+              <span class="title"><span>快速搭建服务器</span></span>
             </a>
         </li>
     
@@ -800,14 +829,38 @@
         </li>
     
         <li>
-            <a href="/2016/09/28/配置linux服务器常用命令/">
-              <span class="title"><span>配置linux服务器常用命令</span></span>
+            <a href="/2016/08/30/欢快的使用谷歌搜索/">
+              <span class="title"><span>欢快的使用谷歌搜索</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/15/通过网址自动部署web/">
+              <span class="title"><span>通过网址自动部署web</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/17/设计模式/">
+              <span class="title"><span>设计模式</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/那些配置/">
+              <span class="title"><span>那些配置</span></span>
             </a>
         </li>
     
         <li>
             <a href="/2016/09/08/面试可能会问到的问题/">
               <span class="title"><span>面试可能会被问到的问题</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/28/配置linux服务器常用命令/">
+              <span class="title"><span>配置linux服务器常用命令</span></span>
             </a>
         </li>
     
@@ -820,24 +873,6 @@
         <li>
             <a href="/2016/09/16/高级PHP/">
               <span class="title"><span>高级 PHP</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2017/06/13/mysql配置远程访问/">
-              <span class="title"><span>mysql配置远程访问</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2017/06/13/git本地化操作/">
-              <span class="title"><span>git本地化操作</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2017/06/14/关于文件大小写/">
-              <span class="title"><span>关于文件大小写</span></span>
             </a>
         </li>
     

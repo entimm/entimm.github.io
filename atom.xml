@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://entimm.com/"/>
-  <updated>2017-06-14T08:01:04.000Z</updated>
+  <updated>2017-06-14T13:48:52.000Z</updated>
   <id>https://entimm.com/</id>
   
   <author>
@@ -14,6 +14,78 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git format-patch and git diff</title>
+    <link href="https://entimm.com/2017/06/14/git-format-patch%E5%92%8Cgit-diff/"/>
+    <id>https://entimm.com/2017/06/14/git-format-patch和git-diff/</id>
+    <published>2017-06-14T13:48:27.000Z</published>
+    <updated>2017-06-14T13:48:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>git中则提供了两种patch方案：</p>
+<p>用git diff生成的标准patch，可以提供上述的patch命令使用。<br>用git format-patch生成的git专用patch。<br>两种patch的比较：</p>
+<p>兼容性：很明显，git diff生成的patch兼容性强。如果你在修改的代码的官方版本库不是git管理的版本库，那么你必须使用git diff生成的patch才能让你的代码被项目的维护人接受。<br>除错功能：对于git diff生成的patch，你可以用git apply –check查看补丁是否能够干净顺利地应用到当前分支中；如果git format-patch生成的补丁不能打到当前分支，git am会给出提示，并协助你完成打补丁工作，你也可以使用git am -3进行三方合并，详细的做法可以参考git手册或者《Progit》。从这一点上看，两者除错功能都很强。<br>提交信息：由于git format-patch生成的补丁中含有这个补丁开发者的名字，因此在应用补丁时，这个名字会被记录进版本库，显然，这样做是恰当的。因此，目前使用git的开源社区往往建议大家使用git format-patch生成补丁。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;git中则提供了两种patch方案：&lt;/p&gt;
+&lt;p&gt;用git diff生成的标准patch，可以提供上述的patch命令使用。&lt;br&gt;用git format-patch生成的git专用patch。&lt;br&gt;两种patch的比较：&lt;/p&gt;
+&lt;p&gt;兼容性：很明显，git diff生成的patch兼容性强。如果你在修改的代码的官方版本库不是git管理的版本库，那么你必须使用git diff生成的patch才能让你的代码被项目的维护人接受。&lt;br&gt;除错功能：对于git diff生成的patch，你可以用git apply –check查看补丁是否能够干净顺利地应用到当前分支中；如果git format-patch生成的补丁不能打到当前分支，git am会给出提示，并协助你完成打补丁工作，你也可以使用git am -3进行三方合并，详细的做法可以参考git手册或者《Progit》。从这一点上看，两者除错功能都很强。&lt;br&gt;提交信息：由于git format-patch生成的补丁中含有这个补丁开发者的名字，因此在应用补丁时，这个名字会被记录进版本库，显然，这样做是恰当的。因此，目前使用git的开源社区往往建议大家使用git format-patch生成补丁。&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>git merge 和 git rebase</title>
+    <link href="https://entimm.com/2017/06/14/git-merge%E5%92%8Cgit-rebase/"/>
+    <id>https://entimm.com/2017/06/14/git-merge和git-rebase/</id>
+    <published>2017-06-14T13:45:38.000Z</published>
+    <updated>2017-06-14T13:46:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>git merge简要说明</p>
+<ol>
+<li>git merge会产生一次新的commit版本，并且此版本会有2个或者更多个父提交，可以通过HEAD^1，HEAD^2，HEAD^n方法来引用此提交的父提交。</li>
+<li>git merge是非破坏性的(non-destructive)操作，没有负作用，并且被合并的这些分支都可以git push发布到remote公共仓库中。</li>
+<li>由于每次合并会产生一次新的提交历史，如果主分支非常活跃，就会产生很多这种合并分支的提交历史，会对项目本身的提交历史产生污染。<br>git-rebase-test.sh测试脚本</li>
+</ol>
+<p>git rebase简要说明</p>
+<ol>
+<li>git rebase 会产生一个修改过的很干净的项目提交历史，例如在feature分支上git rebase master，会将feature分支上的提交添加到master分支的最顶端。</li>
+<li>git rebase操作有负面效果，影响项目提交历史的安全性(safety)和可追溯性(traceability)。</li>
+<li>git rebase -i master可以交互式压缩提交(squash)或者忽略指定提交。</li>
+<li>git rebase使用黄金守则: NEVER USE IT ON PUBLIC BRANCHES.</li>
+<li>不要将主分支rebase到特性分支上(don’t rebased master onto your feature branch: git rebase feature)。</li>
+<li>其他开发者提交的新特性和修改(如patch)应该创建一个临时分支apply这些修改，再使用git merge合并修改到主分支上，而不是使用git rebase方式操作，因为rebase操作修改了提交历史，很难追溯哪些提交新增了这些特性和修改。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;git merge简要说明&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;git merge会产生一次新的commit版本，并且此版本会有2个或者更多个父提交，可以通过HEAD^1，HEAD^2，HEAD^n方法来引用此提交的父提交。&lt;/li&gt;
+&lt;li&gt;git merge是非破坏性的(non-destructive)操作，没有负作用，并且被合并的这些分支都可以git push发布到remote公共仓库中。&lt;/li&gt;
+&lt;li&gt;由于每次合并会产生一次新的提交历史，如果主分支非常活跃，就会产生很多这种合并分支的提交历史，会对项目本身的提交历史产生污染。&lt;br&gt;git-rebase-test.sh测试脚本&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;git rebase简要说明&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;git rebase 会产生一个修改过的很干净的项目提交历史，例如在feature分支上git rebase master，会将feature分支上的提交添加到master分支的最顶端。&lt;/li&gt;
+&lt;li&gt;git rebase操作有负面效果，影响项目提交历史的安全性(safety)和可追溯性(traceability)。&lt;/li&gt;
+&lt;li&gt;git rebase -i master可以交互式压缩提交(squash)或者忽略指定提交。&lt;/li&gt;
+&lt;li&gt;git rebase使用黄金守则: NEVER USE IT ON PUBLIC BRANCHES.&lt;/li&gt;
+&lt;li&gt;不要将主分支rebase到特性分支上(don’t rebased master onto your feature branch: git rebase feature)。&lt;/li&gt;
+&lt;li&gt;其他开发者提交的新特性和修改(如patch)应该创建一个临时分支apply这些修改，再使用git merge合并修改到主分支上，而不是使用git rebase方式操作，因为rebase操作修改了提交历史，很难追溯哪些提交新增了这些特性和修改。&lt;/li&gt;
+&lt;/ol&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>关于文件大小写</title>
@@ -169,65 +241,70 @@
   </entry>
   
   <entry>
-    <title>git 命令</title>
-    <link href="https://entimm.com/2016/11/22/git%20%E5%91%BD%E4%BB%A4/"/>
-    <id>https://entimm.com/2016/11/22/git 命令/</id>
-    <published>2016-11-22T03:11:13.000Z</published>
-    <updated>2017-06-14T08:06:33.000Z</updated>
+    <title>php中的异常与错误</title>
+    <link href="https://entimm.com/2017/03/02/php%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8%E4%B8%8E%E9%94%99%E8%AF%AF/"/>
+    <id>https://entimm.com/2017/03/02/php中的异常与错误/</id>
+    <published>2017-03-02T01:35:03.000Z</published>
+    <updated>2017-06-14T08:46:21.000Z</updated>
     
-    <content type="html"><![CDATA[<p>如果要对某些代码的commit重新整理</p>
-<ol>
-<li>可以记住某个commit号</li>
-<li>git rebase -i commit号</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta">#</span> 删除远程分支</div><div class="line"><span class="meta">#</span> As of Git v1.7.0, you can delete a remote branch using</div><div class="line">git push origin --delete &lt;branch_name&gt;</div><div class="line"><span class="meta">#</span> which is easier to remember than</div><div class="line">git push origin :&lt;branch_name&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">git push origin test:test    # 提交本地test分支作为远程的test分支</div><div class="line">git push origin :test        # 刚提交到远程的test将被删除，但是本地还会保存的，不用担心</div><div class="line"></div><div class="line">git push --tags # 上传所有标签</div><div class="line"></div><div class="line">git remote set-url --push [name] [newUrl] # 修改远程仓库</div><div class="line">git pull [remoteName] [localBranchName]</div><div class="line">git push [remoteName] [localBranchName]</div><div class="line"></div><div class="line">git merge [name]   # 将名称为[name]的分支与当前分支合并</div><div class="line">git rebase [name]  #会将[name]分支的代码合并过来，并按照提交的顺序排序(衍合指定分支到分支到当前分支)</div><div class="line"></div><div class="line">git merge-base branchA branchB #查看2分支的公共节点</div><div class="line"></div><div class="line">git diff $(git-merge-base A B) B</div><div class="line"><span class="meta"></span></div><div class="line"># 按时间逆序列出提交对象，常用于查找涉及到某些文件的提交的hash。例如，查找所有关系到文件readme的提交</div><div class="line">git rev-list</div><div class="line"></div><div class="line">git shortlog</div><div class="line"><span class="meta"></span></div><div class="line"># 查看在branch上的，但不在master上的记录</div><div class="line">git log branch --not master</div></pre></td></tr></table></figure>
-<h3 id="View-a-file-in-a-different-Git-branch-without-changing-branches"><a href="#View-a-file-in-a-different-Git-branch-without-changing-branches" class="headerlink" title="View a file in a different Git branch without changing branches"></a>View a file in a different Git branch without changing branches</h3><p>git checkout $REVISION – $FILE<br>git checkout $REVISION – “*” switch all files without changing brnaches<br>git show $REVISION:$FILE<br>git checkout –orphan $BRANCH</p>
-<h3 id="Make-an-existing-Git-branch-track-a-remote-branch"><a href="#Make-an-existing-Git-branch-track-a-remote-branch" class="headerlink" title="Make an existing Git branch track a remote branch"></a>Make an existing Git branch track a remote branch</h3><p>git branch -u $UPSTREAM/$REMOTE_BRANCH $LOCAL_BRANCH<br>git branch –set-upstream-to=$UPSTREAM/$REMOTE_BRANCH</p>
-<p>git push -u $UPSTREAM $REMOTE_BRANCH</p>
-<p>git remote add $UPSTREAM <remote-url><br>git fetch $UPSTREAM<br>git branch -f –track $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH</remote-url></p>
-<h1 id="OR"><a href="#OR" class="headerlink" title="OR:"></a>OR:</h1><p>git branch –set-upstream $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH</p>
-<h3 id="diff-changes-only-among-certain-file-s"><a href="#diff-changes-only-among-certain-file-s" class="headerlink" title="diff changes only among certain file(s)"></a>diff changes only among certain file(s)</h3><p>git diff $BRANCH1 $BRANCH2 – $FILE1 $FILE2<br>(branch1 is optional and your current branch (the branch you are on) will be considered by default if branch1 is not provided)</p>
-<p>git diff $REVISION $FILE</p>
-<h3 id="view-git-tree-view"><a href="#view-git-tree-view" class="headerlink" title="view git tree view"></a>view git tree view</h3><p>git ls-tree</p>
-<h3 id="other-command"><a href="#other-command" class="headerlink" title="other command"></a>other command</h3><p>bisect     //Find by binary search the change that introduced a bug<br>grep       //Print lines matching a pattern<br>git log –since=”two weeks ago” –until=”two days ago”<br>git log –since=four.days –until=two.days<br>git instaweb</p>
-<h3 id="checkout-remote-branch"><a href="#checkout-remote-branch" class="headerlink" title="checkout remote branch"></a>checkout remote branch</h3><p>git checkout –track $UPSTREAM/$REMOTE_BRANCH</p>
-<h3 id="Delete-everything-in-the-orphan-branch"><a href="#Delete-everything-in-the-orphan-branch" class="headerlink" title="Delete everything in the orphan branch"></a>Delete everything in the orphan branch</h3><p>git rm -rf .</p>
-<h3 id="列出当天某人的所有提交记录"><a href="#列出当天某人的所有提交记录" class="headerlink" title="列出当天某人的所有提交记录"></a>列出当天某人的所有提交记录</h3><p>git log –author=AUTHOR –oneline –since=”6am” –graph –all –decorate</p>
-<h3 id="判断当前分支"><a href="#判断当前分支" class="headerlink" title="判断当前分支"></a>判断当前分支</h3><p>git rev-parse –abbrev-ref HEAD</p>
-<h3 id="Find-the-nearest-parent-branch-of-the-current-git-branch"><a href="#Find-the-nearest-parent-branch-of-the-current-git-branch" class="headerlink" title="Find the nearest parent branch of the current git branch"></a>Find the nearest parent branch of the current git branch</h3><p>#!/usr/bin/env zsh<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">branch=`git rev-parse --abbrev-ref HEAD`</div><div class="line"></div><div class="line">git show-branch | ack &apos;\*&apos; | ack -v &quot;$branch&quot; | head -n1 | sed &apos;s/.*\[\(.*\)\].*/\1/&apos; | sed &apos;s/[\^~].*//&apos;`</div><div class="line"># How it works:</div><div class="line"># 1| Display a textual history of all commits.</div><div class="line"># 2| Ancestors of the current commit are indicated</div><div class="line">#    by a star. Filter out everything else.</div><div class="line"># 3| Ignore all the commits in the current branch.</div><div class="line"># 4| The first result will be the nearest ancestor branch.</div><div class="line">#    Ignore the other results.</div><div class="line"># 5| Branch names are displayed [in brackets]. Ignore </div><div class="line">#    everything outside the brackets, and the brackets.</div><div class="line"># 6| Sometimes the branch name will include a ~2 or ^1 to</div><div class="line">#    indicate how many commits are between the referenced</div><div class="line">#    commit and the branch tip. We don&apos;t care. Ignore them.</div></pre></td></tr></table></figure></p>
-<p>or<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">branch=`git rev-parse --abbrev-ref HEAD`</div><div class="line">git show-branch -a 2&gt;/dev/null | grep &apos;\*&apos; | grep -v &quot;$branch&quot; | head -n1 | sed &apos;s/.*\[\(.*\)\].*/\1/&apos; | sed &apos;s/[\^~].*//&apos;</div></pre></td></tr></table></figure></p>
-<p>git stash save –keep-index    # stash only unstaged files</p>
-<h3 id="忽略追踪文件中的变更"><a href="#忽略追踪文件中的变更" class="headerlink" title="忽略追踪文件中的变更"></a>忽略追踪文件中的变更</h3><p>git update-index –assume-unchanged $FILE</p>
-<p>git merge –squash $BRANCH</p>
-<p>“^”代表父提交,当一个提交有多个父提交时，可以通过在”^”后面跟上一个数字，表示第几个父提交，”^”相当于”^1”</p>
-<p>checkout只会移动HEAD指针，reset会改变HEAD的引用值</p>
-<p>git用得时间多了，会变慢。 那么可以用下面的命令优化一下。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git gc   - Cleanup unnecessary files and optimize the local repository</div><div class="line">git-repack - Pack unpacked objects in a repository</div></pre></td></tr></table></figure></p>
-<p>git add负责将文件内容存入blob对象，并更新index，git commit负责根据index生成tree对象，然后生成commit对象指向这个tree对象</p>
-<p>git fsck –lost-found //检查丢失的提交<br>git ls-files –stage //可以显示出索引的内容<br>git checkout . //撤销所有修改<br>git clean -xfd //连 gitignore 的untrack 文件/目录也一起删掉<br>git branch –merged | xargs git branch -d //删除已经合并的分支</p>
-<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><p>两条主要分支：Master和Develop。前者用于正式发布，后者用于日常开发。其实，常设分支只需要这两条就够了，不需要其他了。<br>但是，除了常设分支以外，还有一些临时性分支，用于应对一些特定目的的版本开发。临时性分支主要有三种：<br>　　<em> 功能（feature）分支
-　　</em> 预发布（release）分支<br>　　* 修补bug（fixbug）分支<br>这三种分支都属于临时性需要，使用完以后，应该删除，使得代码库的常设分支始终只有Master和Develop。</p>
-<h3 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h3><p>git log –graph –abbrev-commit –decorate –format=format:’%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)’</p>
-<p>git log –graph –abbrev-commit –decorate –format=format:’%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n’’          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)’</p>
-<p>git log –graph –abbrev-commit –decorate –format=format:’%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n’’          %C(white)%s%C(reset)%n’’          %C(dim white)- %an &lt;%ae&gt; %C(reset) %C(dim white)(committer: %cn &lt;%ce&gt;)%C(reset)’</p>
-<p>如果想按照提交时间顺序查看分支历史，可以使用以下命令：<br>–follow可以跟踪文件的重命名。<br>-p可以跟踪文件内容变化。</p>
-<p><a href="https://api.github.com/users/entimm/starred" target="_blank" rel="external">https://api.github.com/users/entimm/starred</a><br>page=2&amp;per_page=100<br>sort    string  One of created (when the repository was starred) or updated (when it was last pushed to). Default: created<br>direction   string  One of asc (ascending) or desc (descending). Default: desc</p>
-<p>git ls-files –other –ignored –exclude-stanard # list all ignored files in this project<br>git reset –keep $COMMIT # reset and preserve uncommitted local changes<br>git checkout –track $REMOTE_BRANCH # create a new tracking branch based on a remote branch</p>
+    <content type="html"><![CDATA[<p>异常是指程序运行中不符合预期情况以及与正常流程不同的状况。错误则属于自身问题，是一种非法语法或者环境问题导致的、让编译器无法通过检查设置无法运行的情况。</p>
+<p>php只有在你throw 一个异常后，才能用try…catch来捕获异常(一般情况下如此，也有部分异常可以自动捕获)。</p>
+<p>历史原因导致php的异常处理是不足的，绝大多数情况下，无法自动抛出异常，必须使用if…else先进行判断，再手动抛出异常。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">customError</span><span class="params">($errno, $errstr, $errfile, $errline)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//自定义错误处理是，手动抛出异常</span></div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="keyword">Exception</span>($errstr);</div><div class="line">&#125;</div><div class="line"></div><div class="line">set_error_handler(<span class="string">'customError'</span>, E_ALL | E_STRICT);</div><div class="line"></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">    $a = <span class="number">5</span>/<span class="number">0</span>;</div><div class="line">&#125; <span class="keyword">catch</span> (<span class="keyword">Exception</span> $e) &#123;</div><div class="line">    <span class="keyword">echo</span> <span class="string">'错误信息:'</span>, $e-&gt;getMessage();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>fetal error这样的错误无法捕获，也无法在发生后恢复流程处理，但是可以使用register_shutdown_function()函数在程序终止或die时触发一个函数，给程序带来一个短暂的回光返照。在php4时，不支持析构函数，也常用于模拟实现析构函数。</p>
+<p>Parse error级别的错误，除了修改ini文件，将错误信息写到日志中，什么也做不了。</p>
+<p>无论是错误还是异常，都可以使用handler接管系统已有的处理机制。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;如果要对某些代码的commit重新整理&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;可以记住某个commit号&lt;/li&gt;
-&lt;li&gt;git rebase -i commit号&lt;/li&gt;
-&lt;/ol&gt;
-&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt; 删除远程分支&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt; As of Git v1.7.0, you can delete a remote branch using&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push origin --delete &amp;lt;branch_name&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt; which is easier to remember than&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push origin :&amp;lt;branch_name&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git push origin test:test    # 提交本地test分支作为远程的test分支&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push origin :test        # 刚提交到远程的test将被删除，但是本地还会保存的，不用担心&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push --tags # 上传所有标签&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git remote set-url --push [name] [newUrl] # 修改远程仓库&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git pull [remoteName] [localBranchName]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push [remoteName] [localBranchName]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git merge [name]   # 将名称为[name]的分支与当前分支合并&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git rebase [name]  #会将[name]分支的代码合并过来，并按照提交的顺序排序(衍合指定分支到分支到当前分支)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git merge-base branchA branchB #查看2分支的公共节点&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git diff $(git-merge-base A B) B&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# 按时间逆序列出提交对象，常用于查找涉及到某些文件的提交的hash。例如，查找所有关系到文件readme的提交&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git rev-list&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git shortlog&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# 查看在branch上的，但不在master上的记录&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git log branch --not master&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;View-a-file-in-a-different-Git-branch-without-changing-branches&quot;&gt;&lt;a href=&quot;#View-a-file-in-a-different-Git-branch-without-changing-branches&quot; class=&quot;headerlink&quot; title=&quot;View a file in a different Git branch without changing branches&quot;&gt;&lt;/a&gt;View a file in a different Git branch without changing branches&lt;/h3&gt;&lt;p&gt;git checkout $REVISION – $FILE&lt;br&gt;git checkout $REVISION – “*” switch all files without changing brnaches&lt;br&gt;git show $REVISION:$FILE&lt;br&gt;git checkout –orphan $BRANCH&lt;/p&gt;
-&lt;h3 id=&quot;Make-an-existing-Git-branch-track-a-remote-branch&quot;&gt;&lt;a href=&quot;#Make-an-existing-Git-branch-track-a-remote-branch&quot; class=&quot;headerlink&quot; title=&quot;Make an existing Git branch track a remote branch&quot;&gt;&lt;/a&gt;Make an existing Git branch track a remote branch&lt;/h3&gt;&lt;p&gt;git branch -u $UPSTREAM/$REMOTE_BRANCH $LOCAL_BRANCH&lt;br&gt;git branch –set-upstream-to=$UPSTREAM/$REMOTE_BRANCH&lt;/p&gt;
-&lt;p&gt;git push -u $UPSTREAM $REMOTE_BRANCH&lt;/p&gt;
-&lt;p&gt;git remote add $UPSTREAM &lt;remote-url&gt;&lt;br&gt;git fetch $UPSTREAM&lt;br&gt;git branch -f –track $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH&lt;/remote-url&gt;&lt;/p&gt;
+      &lt;p&gt;异常是指程序运行中不符合预期情况以及与正常流程不同的状况。错误则属于自身问题，是一种非法语法或者环境问题导致的、让编译器无法通过检查设置无法运行的情况。&lt;/p&gt;
+&lt;p&gt;php只有在你throw 一个异常后，才能用try…catch来捕获异常(一般情况下如此，也有部分异常可以自动捕获)。&lt;/p&gt;
+&lt;p&gt;历史原因导致php的异常处理是不足的，绝大多数情况下，无法自动抛出异常，必须使用if…else先进行判断，再手动抛出异常。&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;customError&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;($errno, $errstr, $errfile, $errline)&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//自定义错误处理是，手动抛出异常&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;Exception&lt;/span&gt;($errstr);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;set_error_handler(&lt;span class=&quot;string&quot;&gt;&#39;customError&#39;&lt;/span&gt;, E_ALL | E_STRICT);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;try&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    $a = &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;catch&lt;/span&gt; (&lt;span class=&quot;keyword&quot;&gt;Exception&lt;/span&gt; $e) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;错误信息:&#39;&lt;/span&gt;, $e-&amp;gt;getMessage();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;fetal error这样的错误无法捕获，也无法在发生后恢复流程处理，但是可以使用register_shutdown_function()函数在程序终止或die时触发一个函数，给程序带来一个短暂的回光返照。在php4时，不支持析构函数，也常用于模拟实现析构函数。&lt;/p&gt;
+&lt;p&gt;Parse error级别的错误，除了修改ini文件，将错误信息写到日志中，什么也做不了。&lt;/p&gt;
+&lt;p&gt;无论是错误还是异常，都可以使用handler接管系统已有的处理机制。&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>git 命令</title>
+    <link href="https://entimm.com/2016/11/22/git%20%E5%91%BD%E4%BB%A4/"/>
+    <id>https://entimm.com/2016/11/22/git 命令/</id>
+    <published>2016-11-22T03:11:13.000Z</published>
+    <updated>2017-06-16T03:26:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>删除远程分支<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> As of Git v1.7.0, you can delete a remote branch using</div><div class="line">git push origin --delete &lt;branch_name&gt;</div><div class="line"><span class="meta">#</span> which is easier to remember than</div><div class="line">git push origin :&lt;branch_name&gt;</div></pre></td></tr></table></figure></p>
+<p>git用得时间多了，会变慢。 那么可以用下面的命令优化一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git gc   - Cleanup unnecessary files and optimize the local repository</div><div class="line">git-repack - Pack unpacked objects in a repository</div></pre></td></tr></table></figure></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">git push origin test:test    # 提交本地test分支作为远程的test分支</div><div class="line"></div><div class="line">git push --tags # 上传所有标签</div><div class="line"></div><div class="line">git remote set-url --push [name] [newUrl] # 修改远程仓库</div><div class="line">git pull [remoteName] [localBranchName]</div><div class="line">git push [remoteName] [localBranchName]</div><div class="line"></div><div class="line">git merge [name]   # 将名称为[name]的分支与当前分支合并</div><div class="line">git rebase [name]  #会将[name]分支的代码合并过来，并按照提交的顺序排序(衍合指定分支到分支到当前分支)</div><div class="line"></div><div class="line">git merge-base branchA branchB #查看2分支的公共节点</div><div class="line"></div><div class="line">git diff $(git-merge-base A B) B</div><div class="line"><span class="meta"></span></div><div class="line"># 按时间逆序列出提交对象，常用于查找涉及到某些文件的提交的hash。例如，查找所有关系到文件readme的提交</div><div class="line">git rev-list</div><div class="line"></div><div class="line">git shortlog</div><div class="line"><span class="meta"></span></div><div class="line"># 查看在branch上的，但不在master上的记录</div><div class="line">git log branch --not master</div><div class="line"></div><div class="line">git fsck --lost-found //检查丢失的提交</div><div class="line">git ls-files --stage //可以显示出索引的内容</div><div class="line">git checkout . //撤销所有修改</div><div class="line">git clean -xfd //连 gitignore 的untrack 文件/目录也一起删掉</div><div class="line">git branch --merged | xargs git branch -d //删除已经合并的分支</div><div class="line"></div><div class="line">git ls-files --other --ignored --exclude-stanard # list all ignored files in this project</div><div class="line">git reset --keep $COMMIT # reset and preserve uncommitted local changes</div><div class="line">git checkout --track $UPSTREAM/$REMOTE_BRANCH # create a new tracking branch based on a remote branch</div></pre></td></tr></table></figure>
+<p>View a file in a different Git branch without changing branches<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git checkout $REVISION -- $FILE</div><div class="line">git checkout $REVISION -- "*" switch all files without changing brnaches</div><div class="line">git show $REVISION:$FILE</div><div class="line">git checkout --orphan $BRANCH</div></pre></td></tr></table></figure></p>
+<p>Make an existing Git branch track a remote branch<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">git branch -u $UPSTREAM/$REMOTE_BRANCH $LOCAL_BRANCH</div><div class="line">git branch --set-upstream-to=$UPSTREAM/$REMOTE_BRANCH</div><div class="line"></div><div class="line">git push -u $UPSTREAM $REMOTE_BRANCH</div><div class="line"></div><div class="line">git remote add $UPSTREAM &lt;remote-url&gt;</div><div class="line">git fetch $UPSTREAM</div><div class="line">git branch -f --track $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH</div><div class="line"><span class="meta">#</span> OR:</div><div class="line">git branch --set-upstream $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH</div></pre></td></tr></table></figure></p>
+<p>diff changes only among certain file(s)<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git diff $BRANCH1 $BRANCH2 -- $FILE1 $FILE2</div><div class="line">(branch1 is optional and your current branch (the branch you are on) will be considered by default if branch1 is not provided)</div><div class="line"></div><div class="line">git diff $REVISION $FILE</div></pre></td></tr></table></figure></p>
+<p>other command<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">bisect     #Find by binary search the change that introduced a bug</div><div class="line">grep       #Print lines matching a pattern</div><div class="line">git log --since="two weeks ago" --until="two days ago"</div><div class="line">git log --since=four.days --until=two.days</div><div class="line">git instaweb</div><div class="line">git ls-tree #view git tree view</div><div class="line">git rm -rf . # Delete everything in the orphan branch</div><div class="line">git stash save --keep-index    # stash only unstaged files</div><div class="line">git merge --squash $BRANCH</div><div class="line">git rev-parse --abbrev-ref HEAD #判断当前分支</div></pre></td></tr></table></figure></p>
+<p>列出当天某人的所有提交记录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git log --author=AUTHOR --oneline --since=&quot;6am&quot; --graph --all --decorate</div></pre></td></tr></table></figure></p>
+<p>Find the nearest parent branch of the current git branch<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>!/usr/bin/env zsh</div><div class="line">branch=`git rev-parse --abbrev-ref HEAD`</div><div class="line"></div><div class="line">git show-branch | ack '\*' | ack -v "$branch" | head -n1 | sed 's/.*\[\(.*\)\].*/\1/' | sed 's/[\^~].*//'`</div><div class="line"><span class="meta">#</span> How it works:</div><div class="line"><span class="meta">#</span> 1| Display a textual history of all commits.</div><div class="line"><span class="meta">#</span> 2| Ancestors of the current commit are indicated</div><div class="line"><span class="meta">#</span>    by a star. Filter out everything else.</div><div class="line"><span class="meta">#</span> 3| Ignore all the commits in the current branch.</div><div class="line"><span class="meta">#</span> 4| The first result will be the nearest ancestor branch.</div><div class="line"><span class="meta">#</span>    Ignore the other results.</div><div class="line"><span class="meta">#</span> 5| Branch names are displayed [in brackets]. Ignore </div><div class="line"><span class="meta">#</span>    everything outside the brackets, and the brackets.</div><div class="line"><span class="meta">#</span> 6| Sometimes the branch name will include a ~2 or ^1 to</div><div class="line"><span class="meta">#</span>    indicate how many commits are between the referenced</div><div class="line"><span class="meta">#</span>    commit and the branch tip. We don't care. Ignore them.</div></pre></td></tr></table></figure></p>
+<p>or<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">branch=`git rev-parse --abbrev-ref HEAD`</div><div class="line">git show-branch -a 2&gt;/dev/null | grep '\*' | grep -v "$branch" | head -n1 | sed 's/.*\[\(.*\)\].*/\1/' | sed 's/[\^~].*//'</div></pre></td></tr></table></figure></p>
+<p>“^”代表父提交,当一个提交有多个父提交时，可以通过在”^”后面跟上一个数字，表示第几个父提交，”^”相当于”^1”</p>
+<p>checkout只会移动HEAD指针，reset会改变HEAD的引用值</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;删除远程分支&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt; As of Git v1.7.0, you can delete a remote branch using&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push origin --delete &amp;lt;branch_name&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt; which is easier to remember than&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push origin :&amp;lt;branch_name&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;git用得时间多了，会变慢。 那么可以用下面的命令优化一下&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git gc   - Cleanup unnecessary files and optimize the local repository&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git-repack - Pack unpacked objects in a repository&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;31&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;32&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git push origin test:test    # 提交本地test分支作为远程的test分支&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push --tags # 上传所有标签&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git remote set-url --push [name] [newUrl] # 修改远程仓库&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git pull [remoteName] [localBranchName]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push [remoteName] [localBranchName]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git merge [name]   # 将名称为[name]的分支与当前分支合并&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git rebase [name]  #会将[name]分支的代码合并过来，并按照提交的顺序排序(衍合指定分支到分支到当前分支)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git merge-base branchA branchB #查看2分支的公共节点&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git diff $(git-merge-base A B) B&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# 按时间逆序列出提交对象，常用于查找涉及到某些文件的提交的hash。例如，查找所有关系到文件readme的提交&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git rev-list&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git shortlog&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# 查看在branch上的，但不在master上的记录&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git log branch --not master&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git fsck --lost-found //检查丢失的提交&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git ls-files --stage //可以显示出索引的内容&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git checkout . //撤销所有修改&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git clean -xfd //连 gitignore 的untrack 文件/目录也一起删掉&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git branch --merged | xargs git branch -d //删除已经合并的分支&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git ls-files --other --ignored --exclude-stanard # list all ignored files in this project&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git reset --keep $COMMIT # reset and preserve uncommitted local changes&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git checkout --track $UPSTREAM/$REMOTE_BRANCH # create a new tracking branch based on a remote branch&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;View a file in a different Git branch without changing branches&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git checkout $REVISION -- $FILE&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git checkout $REVISION -- &quot;*&quot; switch all files without changing brnaches&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git show $REVISION:$FILE&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git checkout --orphan $BRANCH&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Make an existing Git branch track a remote branch&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git branch -u $UPSTREAM/$REMOTE_BRANCH $LOCAL_BRANCH&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git branch --set-upstream-to=$UPSTREAM/$REMOTE_BRANCH&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git push -u $UPSTREAM $REMOTE_BRANCH&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git remote add $UPSTREAM &amp;lt;remote-url&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git fetch $UPSTREAM&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git branch -f --track $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt; OR:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git branch --set-upstream $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;diff changes only among certain file(s)&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git diff $BRANCH1 $BRANCH2 -- $FILE1 $FILE2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;(branch1 is optional and your current branch (the branch you are on) will be considered by default if branch1 is not provided)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git diff $REVISION $FILE&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;other command&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;bisect     #Find by binary search the change that introduced a bug&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;grep       #Print lines matching a pattern&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git log --since=&quot;two weeks ago&quot; --until=&quot;two days ago&quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git log --since=four.days --until=two.days&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git instaweb&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git ls-tree #view git tree view&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git rm -rf . # Delete everything in the orphan branch&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git stash save --keep-index    # stash only unstaged files&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git merge --squash $BRANCH&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git rev-parse --abbrev-ref HEAD #判断当前分支&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;列出当天某人的所有提交记录&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git log --author=AUTHOR --oneline --since=&amp;quot;6am&amp;quot; --graph --all --decorate&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Find the nearest parent branch of the current git branch&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;!/usr/bin/env zsh&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;branch=`git rev-parse --abbrev-ref HEAD`&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git show-branch | ack &#39;\*&#39; | ack -v &quot;$branch&quot; | head -n1 | sed &#39;s/.*\[\(.*\)\].*/\1/&#39; | sed &#39;s/[\^~].*//&#39;`&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt; How it works:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt; 1| Display a textual history of all commits.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt; 2| Ancestors of the current commit are indicated&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;    by a star. Filter out everything else.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt; 3| Ignore all the commits in the current branch.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt; 4| The first result will be the nearest ancestor branch.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;    Ignore the other results.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt; 5| Branch names are displayed [in brackets]. Ignore &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;    everything outside the brackets, and the brackets.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt; 6| Sometimes the branch name will include a ~2 or ^1 to&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;    indicate how many commits are between the referenced&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;    commit and the branch tip. We don&#39;t care. Ignore them.&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;or&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;branch=`git rev-parse --abbrev-ref HEAD`&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git show-branch -a 2&amp;gt;/dev/null | grep &#39;\*&#39; | grep -v &quot;$branch&quot; | head -n1 | sed &#39;s/.*\[\(.*\)\].*/\1/&#39; | sed &#39;s/[\^~].*//&#39;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
     
@@ -751,197 +828,6 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式</title>
-    <link href="https://entimm.com/2016/09/17/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://entimm.com/2016/09/17/设计模式/</id>
-    <published>2016-09-17T08:13:07.000Z</published>
-    <updated>2017-05-18T16:29:05.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="3种基本设计模式"><a href="#3种基本设计模式" class="headerlink" title="3种基本设计模式"></a>3种基本设计模式</h3><ol>
-<li>工厂模式，工厂方法或者类生成对象，而不是在代码中直接new</li>
-<li>单例模式，使某个类的对象仅允许创建一个</li>
-<li>注册模式，全局共享和交换对象</li>
-</ol>
-<h3 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h3><ol>
-<li>在客户端与实体之间建立一个代理对象(proxy),客户端对实体进行操作全部委派给代理对象,隐藏实体的具体实现细节</li>
-<li>proxy还可以与业务代码分离,部署到另外的服务器。业务代码中通过RPC来委派任务</li>
-</ol>
-<h3 id="迭代器模式"><a href="#迭代器模式" class="headerlink" title="迭代器模式"></a>迭代器模式</h3><ol>
-<li>在不需要了解内部实现的前提下,遍历一个聚合对象的内部元素</li>
-<li>相比于传统的编程模式,迭代器模式可以隐藏遍历元素的所需的操作</li>
-</ol>
-<h3 id="装饰器模式"><a href="#装饰器模式" class="headerlink" title="装饰器模式"></a>装饰器模式</h3><ol>
-<li>可以动态的添加修改类的功能</li>
-<li>一个类提供了一项功能，如果要修改并添加额外的功能，传统的编程模式，需要写一个子类继承它，并重新实现类的方法</li>
-<li>使用装饰器模式，仅需在运行时添加一个装饰器对象即可实现，可以实现最大的灵活性</li>
-</ol>
-<h3 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h3><ol>
-<li>当一个对象状态发生改变时，依赖它的对象全部会受到通知，并自动更新</li>
-<li>场景: 一个事件发生后，要执行一连串更新操作。传统的编程方式就是在事件的代码之后直接加入处理逻辑。当更新的逻辑增多之后，代码会变得难以维护。这种方式是耦合的，侵入式的，增加新的逻辑需要修改事件主体的代码</li>
-<li>观察者模式实现了低耦合，非侵入的通知和更新机制</li>
-</ol>
-<h3 id="数据对象映射模式"><a href="#数据对象映射模式" class="headerlink" title="数据对象映射模式"></a>数据对象映射模式</h3><ol>
-<li>数据对象映射模式，是将对象和数据存储映射起来，对一个对象的操作会映射为对数据存储的操作</li>
-<li>在代码中实现数据对象映射操作模式，我们将实现一个ORM类，将复杂的SQL语句映射成对象属性的操作</li>
-<li>结合使用数据对象映射模式、工厂模式、注册模式</li>
-</ol>
-<h3 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h3><ol>
-<li>策略模式，将一组特定的行为和算法封装成类，以适应某些特定的上下文环境</li>
-<li>实际应用举例，假如一个电商网站系统，针对男性女性用户要各自<br>跳转到不同的商品类目，并且所有广告位展示不同的广告</li>
-<li>使用策略模式可以实现IOC，依赖倒置、控制反转</li>
-</ol>
-<h3 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h3><ol>
-<li>适配器模式，可以将截然不同的函数接口封装成统一的API</li>
-<li>实际应用举例，PHP的数据库操作有mysql,mysqli,pdo，可以用适配器模式统一成一致。类似的场景还有cache适配器，将memcache、redis、file、apc等不同的缓存函数，统一成一致</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;3种基本设计模式&quot;&gt;&lt;a href=&quot;#3种基本设计模式&quot; class=&quot;headerlink&quot; title=&quot;3种基本设计模式&quot;&gt;&lt;/a&gt;3种基本设计模式&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;工厂模式，工厂方法或者类生成对象，而不是在代码中直接new&lt;/li&gt;
-&lt;li&gt;单例模式，使某个类的对象仅允许创建一个&lt;/li&gt;
-&lt;li&gt;注册模式，全局共享和交换对象&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;代理模式&quot;&gt;&lt;a href=&quot;#代理模式&quot; class=&quot;headerlink&quot; title=&quot;代理模式&quot;&gt;&lt;/a&gt;代理模式&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;在客户端与实体之间建立一个代理对象(proxy),客户端对实体进行操作全部委派给代理对象,隐藏实体的具体实现细节&lt;/li&gt;
-&lt;li&gt;proxy还可以与业务代码分离,部署到另外的服务器。业务代码中通过RPC来委派任务&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;迭代器模式&quot;&gt;&lt;a href=&quot;#迭代器模式&quot; class=&quot;headerlink&quot; title=&quot;迭代器模式&quot;&gt;&lt;/a&gt;迭代器模式&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;在不需要了解内部实现的前提下,遍历一个聚合对象的内部元素&lt;/li&gt;
-&lt;li&gt;相比于传统的编程模式,迭代器模式可以隐藏遍历元素的所需的操作&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;装饰器模式&quot;&gt;&lt;a href=&quot;#装饰器模式&quot; class=&quot;headerlink&quot; title=&quot;装饰器模式&quot;&gt;&lt;/a&gt;装饰器模式&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;可以动态的添加修改类的功能&lt;/li&gt;
-&lt;li&gt;一个类提供了一项功能，如果要修改并添加额外的功能，传统的编程模式，需要写一个子类继承它，并重新实现类的方法&lt;/li&gt;
-&lt;li&gt;使用装饰器模式，仅需在运行时添加一个装饰器对象即可实现，可以实现最大的灵活性&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;观察者模式&quot;&gt;&lt;a href=&quot;#观察者模式&quot; class=&quot;headerlink&quot; title=&quot;观察者模式&quot;&gt;&lt;/a&gt;观察者模式&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;当一个对象状态发生改变时，依赖它的对象全部会受到通知，并自动更新&lt;/li&gt;
-&lt;li&gt;场景: 一个事件发生后，要执行一连串更新操作。传统的编程方式就是在事件的代码之后直接加入处理逻辑。当更新的逻辑增多之后，代码会变得难以维护。这种方式是耦合的，侵入式的，增加新的逻辑需要修改事件主体的代码&lt;/li&gt;
-&lt;li&gt;观察者模式实现了低耦合，非侵入的通知和更新机制&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>高级 PHP</title>
-    <link href="https://entimm.com/2016/09/16/%E9%AB%98%E7%BA%A7PHP/"/>
-    <id>https://entimm.com/2016/09/16/高级PHP/</id>
-    <published>2016-09-16T11:59:33.000Z</published>
-    <updated>2017-05-18T16:29:49.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="面向对象5原则"><a href="#面向对象5原则" class="headerlink" title="面向对象5原则"></a>面向对象5原则</h2><h3 id="单一职责原则（single-resposibility-principle）"><a href="#单一职责原则（single-resposibility-principle）" class="headerlink" title="单一职责原则（single-resposibility principle）"></a>单一职责原则（single-resposibility principle）</h3><p>其核心思想为：一个类，最好只做一件事，只有一个引起它的变化的原因</p>
-<h3 id="开放-封闭原则（The-Open-Close-principle）"><a href="#开放-封闭原则（The-Open-Close-principle）" class="headerlink" title="开放-封闭原则（The Open-Close principle）"></a>开放-封闭原则（The Open-Close principle）</h3><p>其核心思想为：对扩展开放，对修改封闭<br>软件实体（类、模块、函数）应该是可扩展的，但是不可修改的。也就是说，对于扩展是开放的，对于更改是封闭的。怎样可能在不改动模块源代码的情况下去更改它的行为呢？怎样才能在无需对模块进行改动的情况下改变它的功能呢？关键是抽象！因此在进行面向对象设计时要尽量考虑接口封装机制、抽象机制和多态技术。该原则同样适合于非面向对象的方法，是软件工程设计方法的重要原则之一</p>
-<h3 id="Liskov-替换原则（liskov-substitution-principle）"><a href="#Liskov-替换原则（liskov-substitution-principle）" class="headerlink" title="Liskov 替换原则（liskov-substitution principle）"></a>Liskov 替换原则（liskov-substitution principle）</h3><p>其核心思想：子类必须能够替换其基类<br>子类应当可以替换父类出现在父类能够出现的任何地方</p>
-<h3 id="依赖倒置原则（dependency-inversion-principle）"><a href="#依赖倒置原则（dependency-inversion-principle）" class="headerlink" title="依赖倒置原则（dependency-inversion principle）"></a>依赖倒置原则（dependency-inversion principle）</h3><p>其核心思想：依赖于抽象<br>一个类不应该强依赖另外一个类，每个类对于另外一个类都是可替换的<br>1、高层模块不应该依赖于低层模块，二者都应该依赖于抽象。<br>2、抽象不应该依赖于细节。细节应该依赖于抽象。在进行业务设计时，于特定业务有关的依赖关系应该尽量依赖接口和抽象类，而不是依赖于具体类。具体类只负责相关业务的实现，修改具体类不影响与特定业务有关的依赖关系。</p>
-<h3 id="接口分离原则（interface-segregation-principle）"><a href="#接口分离原则（interface-segregation-principle）" class="headerlink" title="接口分离原则（interface-segregation principle）"></a>接口分离原则（interface-segregation principle）</h3><p>其核心思想：使用多个小的专门的接口，而不要使用一个大的总接口<br>具体而言，接口隔离原则体现在：接口应该是内聚的，应该避免“胖”接口。一个类对另外一个类的依赖应该建立在最小的接口上，不要强迫依赖不用的方法，这是一种接口污染</p>
-<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>异常是运行中超出了你程序预期的一个东西。</p>
-<p>异常就是一个意外，影响了你的程序正常运行。但是如果你用好异常，会让你的程序便于解耦，结构更加清晰明了。</p>
-<p>异常对我们控制程序的流程来说非常重要。解耦了程序出现意想不到结果时信息传递的逻辑。每个业务模块发生异常最终通过 Laravel 的方便的异常处理，和友好的展示，并能根据情况来记录错误，这样让我们的程序更加健壮，方便开发和维护。</p>
-<h2 id="异常-vs-if-else"><a href="#异常-vs-if-else" class="headerlink" title="异常 vs if_else"></a>异常 vs if_else</h2><p>把这个大函数分成了若干小函数，在这个小函数里面抛异常，大函数里面扑获异常，不用再一个一个的判断小函数的返回值</p>
-<p>任何好的语言都应该提供完善的异常支持服务, 来使程序结构更优美可读行更好可维护,而不是靠一大堆的if else来控制程序的流程.</p>
-<p>要有上下层的概念，在上下层逻辑处理中,throw 是 Current Role 反馈给 Upper Role，try/catch 是 Current Role 处理 Lower Role 反馈</p>
-<h2 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h2><p>把业务逻辑处理部分抽象出来作为一层，这一层在M之上，C之下，名为 Logic</p>
-<p>把可以作为公共的服务抽象出来作为一层，这一层不与任何一层耦合，仅提供自身的服务，名为Service<br>小到文件上传，下载，图片处理，储存<br>大到日志，错误处理，邮件，授权，队列，计划任务，支付，验证，加密，短信都可以做出单独的服务</p>
-<p>业务变了，C层和M层都不需要改动，只需要改动中间的 Logic 就好了</p>
-<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p>在Controller里面，做外部来的请求数据包的合法性校验和部分用户接口权限校验<br>用户相关逻辑放在logic层,做严格的数据合法性校验、业务逻辑约束校验、用户数据权限校验<br>在Model里面做数据的物理合法性校验</p>
-<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p>多态性是面向对象设计的重要特性，它展现了动态绑定的功能,多态的功能可以让软件在开发和维护时，达到充分的延伸性<br>通俗理解:让具有继承关系的不同类对象，可以对相同名称的成员函数调用，产生不同的反应结果</p>
-<h2 id="权限控制"><a href="#权限控制" class="headerlink" title="权限控制"></a>权限控制</h2><h3 id="RBAC（Role-Based-Access-Control）"><a href="#RBAC（Role-Based-Access-Control）" class="headerlink" title="RBAC（Role-Based Access Control）"></a>RBAC（Role-Based Access Control）</h3><p>基于角色的访问控制系统</p>
-<ul>
-<li>用户表</li>
-<li>权限表</li>
-<li>角色表</li>
-<li>角色权限表</li>
-<li>用户角色表</li>
-</ul>
-<h3 id="ACL（Access-Control-List）"><a href="#ACL（Access-Control-List）" class="headerlink" title="ACL（Access Control List）"></a>ACL（Access Control List）</h3><p>访问控制列表，是前几年盛行的一种权限设计，它的核心在于用户直接和权限挂钩</p>
-<p>RBAC的核心是用户只和角色关联，而角色代表对了权限，这样设计的优势在于使得对用户而言，只需角色即可以，而某角色可以拥有各种各样的权限并可继承<br>ACL和RBAC相比缺点在于由于用户和权限直接挂钩，导致在授予时的复杂性，虽然可以利用组来简化这个复杂性，但仍然会导致系统不好理解，而且在取出判断用户是否有该权限时比较的困难，一定程度上影响了效率</p>
-<p>ACL实质上是每一个权限接口维持一个权限列表，然后通过判断是否在列表中这个扁平快的方法，进行基础的权限控制，也有其不足：对于多人控制的某些系统，权限需要分为select，update，insert，delete等，人员需要分为管理员，用户，访客，超级管理员，这种情况下再使用ACL反而是增加工作量，增加后期维护难度，同时增加管理难度</p>
-<p>在这种情况下，RBAC应运而生RBAC，基于组的权限控制，ACL的升级版</p>
-<p>相比于ACL，RBAC的优势是将角色和角色绑定，将用户与权限之间的关联变为权限与角色之间的关联，从而简化了权限管理。当然普通的RBAC也有自身的缺点，就是权限是以角色为载体，单独用户的特殊的权限需要定制</p>
-<h2 id="使用-OpCache-提升-PHP-5-5-程序性能"><a href="#使用-OpCache-提升-PHP-5-5-程序性能" class="headerlink" title="使用 OpCache 提升 PHP 5.5+ 程序性能"></a>使用 OpCache 提升 PHP 5.5+ 程序性能</h2><h3 id="what"><a href="#what" class="headerlink" title="what"></a>what</h3><p>PHP 5.5 以后内建了 OpCache , OpCache 的加速原理是把编译后的 bytecode 存储在内存里面, 避免重复编译 PHP 所造成的资源浪费.</p>
-<h3 id="how"><a href="#how" class="headerlink" title="how"></a>how</h3><p>修改 php.ini 文件,在文件最后面加入:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">; 开关打开</div><div class="line">opcache.enable=1</div><div class="line"></div><div class="line">; 可用内存, 酌情而定, 单位 megabytes</div><div class="line">opcache.memory_consumption=256</div><div class="line"></div><div class="line">; 对多缓存文件限制, 命中率不到 100% 的话, 可以试着提高这个值</div><div class="line">opcache.max_accelerated_files=5000</div><div class="line"></div><div class="line">; Opcache 会在一定时间内去检查文件的修改时间, 这里设置检查的时间周期, 默认为 2, 定位为秒</div><div class="line">opcache.revalidate_freq=240</div></pre></td></tr></table></figure></p>
-<h3 id="APC-VS-OpCache"><a href="#APC-VS-OpCache" class="headerlink" title="APC VS OpCache"></a>APC VS OpCache</h3><p>APC 是将要被遗弃的项目, PHP 5.5 都不支持, 而在 PHP 5.5 和 5.6 版本, OpCache 是默认内建的, 并且支持 5.2 到 5.4 的安装.</p>
-<h3 id="关于composer-lock"><a href="#关于composer-lock" class="headerlink" title="关于composer.lock"></a>关于composer.lock</h3><h2 id="composer-lock"><a href="#composer-lock" class="headerlink" title="composer.lock"></a>composer.lock</h2><h3 id="什么是-composer-lock-文件"><a href="#什么是-composer-lock-文件" class="headerlink" title="什么是 composer.lock 文件?"></a>什么是 composer.lock 文件?</h3><p>composer.lock 文件是当你第一次使用 composer install 或者 执行 composer update 后生成的文件, 此文件里定义了当前项目的代码依赖, 还有最重要的, 这些代码依赖的对应的版本.</p>
-<h3 id="composer-lock-文件作用是什么"><a href="#composer-lock-文件作用是什么" class="headerlink" title="composer.lock 文件作用是什么?"></a>composer.lock 文件作用是什么?</h3><p>默认情况下, 当执行 composer install 的时候, Composer 会检查当前项目是否有 composer.lock 文件, 如果有的话, 就会按照此文件去下载代码依赖和其指定的版本.</p>
-<h3 id="把-composer-lock-文件加版本的好处有以下"><a href="#把-composer-lock-文件加版本的好处有以下" class="headerlink" title="把 composer.lock 文件加版本的好处有以下:"></a>把 composer.lock 文件加版本的好处有以下:</h3><p>团队开发的时, clone 下代码后, 使用 composer install 可以确保大家使用的依赖包都是同一个版本的, 避免没必要的混乱;<br>在一个现有的项目上开发的时候, 执行 composer update 后, 偶尔会发现刚刚更新了某个代码包把程序整挂了, 这个时候, 如果 composer.lock 是加入版本控制器的话, 直接一个 git diff 命令, 就可以查看到这次更新了那个包, 快速定位到问题的所在;<br>在线上部署的时候, 可以确保线上生成环境下使用所有代码是和开发时候使用的一致, 因为 composer.lock 会确保你在执行 composer install 命令后, 按照文件里面指定的版本去下载代码依赖包;</p>
-<h2 id="php自身的性能优化"><a href="#php自身的性能优化" class="headerlink" title="php自身的性能优化"></a>php自身的性能优化</h2><ul>
-<li>OPcache</li>
-<li>通过 PHP 扩展代替原 PHP 代码中高频逻辑</li>
-<li>Runtime优化:HHVM</li>
-</ul>
-<h3 id="php周边问题"><a href="#php周边问题" class="headerlink" title="php周边问题"></a>php周边问题</h3><ul>
-<li>linux 运行环境</li>
-<li>文件存储</li>
-<li>数据库</li>
-<li>缓存</li>
-<li>网络</li>
-</ul>
-<h3 id="Disk-IO优化"><a href="#Disk-IO优化" class="headerlink" title="Disk IO优化"></a>Disk IO优化</h3><p>RAID0: 也称为条带，就是把多个磁盘链接成一个硬盘使用，这个级别IO最好<br>RAID1: 也称为镜像，要求至少有两个磁盘，每组磁盘存储的数据相同<br>RAID5: 也是把多个（最少3个）硬盘合并成1个逻辑盘使用，数据读写时建立就效验信息，并且奇偶效验信息和相对应的数据分别存储于不同的磁盘上。当RAID5的一个磁盘数据发生损坏后，利用剩下的数据和响应的奇偶效验信息去恢复被损坏的数据<br>RAID1+0: 就是RAID1和RAID0的结合。同时具备两个级别的优缺点。一般建议数据库使用这个级别</p>
-<h3 id="PHP文件执行阶段"><a href="#PHP文件执行阶段" class="headerlink" title="PHP文件执行阶段"></a>PHP文件执行阶段</h3><p>语法分析-&gt;编译-&gt;运行</p>
-<h3 id="配置与设计模式"><a href="#配置与设计模式" class="headerlink" title="配置与设计模式"></a>配置与设计模式</h3><ol>
-<li>PHP中使用<code>ArrayAccess</code>实现配置文件的加载</li>
-<li>在工厂方法中读取配置，生成可配置化的对象</li>
-<li>使用装饰器模式实现权限验证，模板渲染，JSON串化</li>
-<li>使用观察者模式实现数据更新事件的一系列更新操作</li>
-<li>使用代理模式实现数据库的主从自动切换</li>
-</ol>
-<h3 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h3><ul>
-<li>模型: 数据和存储的封装</li>
-<li>视图: 展示层的封装，如Web系统中的模板文件</li>
-<li>控制器: 逻辑层的封装</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;面向对象5原则&quot;&gt;&lt;a href=&quot;#面向对象5原则&quot; class=&quot;headerlink&quot; title=&quot;面向对象5原则&quot;&gt;&lt;/a&gt;面向对象5原则&lt;/h2&gt;&lt;h3 id=&quot;单一职责原则（single-resposibility-principle）&quot;&gt;&lt;a href=&quot;#单一职责原则（single-resposibility-principle）&quot; class=&quot;headerlink&quot; title=&quot;单一职责原则（single-resposibility principle）&quot;&gt;&lt;/a&gt;单一职责原则（single-resposibility principle）&lt;/h3&gt;&lt;p&gt;其核心思想为：一个类，最好只做一件事，只有一个引起它的变化的原因&lt;/p&gt;
-&lt;h3 id=&quot;开放-封闭原则（The-Open-Close-principle）&quot;&gt;&lt;a href=&quot;#开放-封闭原则（The-Open-Close-principle）&quot; class=&quot;headerlink&quot; title=&quot;开放-封闭原则（The Open-Close principle）&quot;&gt;&lt;/a&gt;开放-封闭原则（The Open-Close principle）&lt;/h3&gt;&lt;p&gt;其核心思想为：对扩展开放，对修改封闭&lt;br&gt;软件实体（类、模块、函数）应该是可扩展的，但是不可修改的。也就是说，对于扩展是开放的，对于更改是封闭的。怎样可能在不改动模块源代码的情况下去更改它的行为呢？怎样才能在无需对模块进行改动的情况下改变它的功能呢？关键是抽象！因此在进行面向对象设计时要尽量考虑接口封装机制、抽象机制和多态技术。该原则同样适合于非面向对象的方法，是软件工程设计方法的重要原则之一&lt;/p&gt;
-&lt;h3 id=&quot;Liskov-替换原则（liskov-substitution-principle）&quot;&gt;&lt;a href=&quot;#Liskov-替换原则（liskov-substitution-principle）&quot; class=&quot;headerlink&quot; title=&quot;Liskov 替换原则（liskov-substitution principle）&quot;&gt;&lt;/a&gt;Liskov 替换原则（liskov-substitution principle）&lt;/h3&gt;&lt;p&gt;其核心思想：子类必须能够替换其基类&lt;br&gt;子类应当可以替换父类出现在父类能够出现的任何地方&lt;/p&gt;
-&lt;h3 id=&quot;依赖倒置原则（dependency-inversion-principle）&quot;&gt;&lt;a href=&quot;#依赖倒置原则（dependency-inversion-principle）&quot; class=&quot;headerlink&quot; title=&quot;依赖倒置原则（dependency-inversion principle）&quot;&gt;&lt;/a&gt;依赖倒置原则（dependency-inversion principle）&lt;/h3&gt;&lt;p&gt;其核心思想：依赖于抽象&lt;br&gt;一个类不应该强依赖另外一个类，每个类对于另外一个类都是可替换的&lt;br&gt;1、高层模块不应该依赖于低层模块，二者都应该依赖于抽象。&lt;br&gt;2、抽象不应该依赖于细节。细节应该依赖于抽象。在进行业务设计时，于特定业务有关的依赖关系应该尽量依赖接口和抽象类，而不是依赖于具体类。具体类只负责相关业务的实现，修改具体类不影响与特定业务有关的依赖关系。&lt;/p&gt;
-&lt;h3 id=&quot;接口分离原则（interface-segregation-principle）&quot;&gt;&lt;a href=&quot;#接口分离原则（interface-segregation-principle）&quot; class=&quot;headerlink&quot; title=&quot;接口分离原则（interface-segregation principle）&quot;&gt;&lt;/a&gt;接口分离原则（interface-segregation principle）&lt;/h3&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>linux相关操作</title>
-    <link href="https://entimm.com/2016/09/15/linux/"/>
-    <id>https://entimm.com/2016/09/15/linux/</id>
-    <published>2016-09-15T10:02:33.000Z</published>
-    <updated>2017-05-18T16:31:15.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><h3 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h3><p>/etc/init.d/iptables stop<br>service iptables stop # 停止服务</p>
-<h3 id="查看防火墙信息"><a href="#查看防火墙信息" class="headerlink" title="查看防火墙信息"></a>查看防火墙信息</h3><p>/etc/init.d/iptables status</p>
-<h3 id="开放端口-8080"><a href="#开放端口-8080" class="headerlink" title="开放端口:8080"></a>开放端口:8080</h3><p>/sbin/iptables -I INPUT -p tcp –dport 8080 -j ACCEPT</p>
-<h3 id="重启防火墙以便改动生效-或者直接重启系统"><a href="#重启防火墙以便改动生效-或者直接重启系统" class="headerlink" title="重启防火墙以便改动生效:(或者直接重启系统)"></a>重启防火墙以便改动生效:(或者直接重启系统)</h3><p>/etc/init.d/iptables restart</p>
-<h3 id="将更改进行保存"><a href="#将更改进行保存" class="headerlink" title="将更改进行保存"></a>将更改进行保存</h3><p>/etc/rc.d/init.d/iptables save</p>
-<p>另外直接在/etc/sysconfig/iptables中增加一行：<br>-A RH-Firewall-1-INPUT -m state –state NEW -m tcp -p tcp –dport 8080 -j ACCEPT</p>
-<h2 id="在当前文件夹中查找字串"><a href="#在当前文件夹中查找字串" class="headerlink" title="在当前文件夹中查找字串"></a>在当前文件夹中查找字串</h2><p>grep ‘search_str’ ./ -r</p>
-<h2 id="linux-查看系统版本"><a href="#linux-查看系统版本" class="headerlink" title="linux 查看系统版本"></a>linux 查看系统版本</h2><h3 id="RedHat-CentOS"><a href="#RedHat-CentOS" class="headerlink" title="RedHat,CentOS"></a>RedHat,CentOS</h3><p>cat /proc/version<br>cat /etc/redhat-release</p>
-<h3 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h3><p>cat /etc/issue</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;防火墙&quot;&gt;&lt;a href=&quot;#防火墙&quot; class=&quot;headerlink&quot; title=&quot;防火墙&quot;&gt;&lt;/a&gt;防火墙&lt;/h2&gt;&lt;h3 id=&quot;关闭防火墙&quot;&gt;&lt;a href=&quot;#关闭防火墙&quot; class=&quot;headerlink&quot; title=&quot;关闭防火墙&quot;&gt;&lt;/a&gt;关闭防火墙&lt;/h3&gt;&lt;p&gt;/etc/init.d/iptables stop&lt;br&gt;service iptables stop # 停止服务&lt;/p&gt;
-&lt;h3 id=&quot;查看防火墙信息&quot;&gt;&lt;a href=&quot;#查看防火墙信息&quot; class=&quot;headerlink&quot; title=&quot;查看防火墙信息&quot;&gt;&lt;/a&gt;查看防火墙信息&lt;/h3&gt;&lt;p&gt;/etc/init.d/iptables status&lt;/p&gt;
-&lt;h3 id=&quot;开放端口-8080&quot;&gt;&lt;a href=&quot;#开放端口-8080&quot; class=&quot;headerlink&quot; title=&quot;开放端口:8080&quot;&gt;&lt;/a&gt;开放端口:8080&lt;/h3&gt;&lt;p&gt;/sbin/iptables -I INPUT -p tcp –dport 8080 -j ACCEPT&lt;/p&gt;
-&lt;h3 id=&quot;重启防火墙以便改动生效-或者直接重启系统&quot;&gt;&lt;a href=&quot;#重启防火墙以便改动生效-或者直接重启系统&quot; class=&quot;headerlink&quot; title=&quot;重启防火墙以便改动生效:(或者直接重启系统)&quot;&gt;&lt;/a&gt;重启防火墙以便改动生效:(或者直接重启系统)&lt;/h3&gt;&lt;p&gt;/etc/init.d/iptables restart&lt;/p&gt;
-&lt;h3 id=&quot;将更改进行保存&quot;&gt;&lt;a href=&quot;#将更改进行保存&quot; class=&quot;headerlink&quot; title=&quot;将更改进行保存&quot;&gt;&lt;/a&gt;将更改进行保存&lt;/h3&gt;
     
     </summary>
     

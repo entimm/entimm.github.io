@@ -146,6 +146,115 @@
   <section class="meta">
     
     <h2 class="title">
+      <a href="/2016/09/24/shell/">
+        shell
+      </a>
+    </h2>
+    
+    <time>
+      Sep 24, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="shell-中的判断"><a href="#shell-中的判断" class="headerlink" title="shell 中的判断"></a>shell 中的判断</h2><ol>
+<li>字符串判断</li>
+</ol>
+<p>str1 = str2　　　　 当两个串有相同内容、长度时为真<br>str1 != str2　　　　当串str1和str2不等时为真<br>-n str1　　　　　　　当串的长度大于0时为真(串非空)<br>-z str1　　　　　　  当串的长度为0时为真(空串)<br>str1　　　　　　　　  当串str1为非空时为真</p>
+<ol>
+<li>数字的判断</li>
+</ol>
+<p>int1 -eq int2　　　　两数相等为真<br>int1 -ne int2　　　　两数不等为真<br>int1 -gt int2　　　　int1大于int2为真<br>int1 -ge int2　　　　int1大于等于int2为真<br>int1 -lt int2　　　　int1小于int2为真<br>int1 -le int2　　　　int1小于等于int2为真</p>
+<p>-n “$var” 判断一个变量是否有值</p>
+<p>3 文件的判断</p>
+<p>-r file　　　　　用户可读为真<br>-w file　　　　　用户可写为真<br>-x file　　　　　用户可执行为真<br>-f file　　　　　文件为正规文件为真<br>-d file　　　　　文件为目录为真<br>-c file　　　　　文件为字符特殊文件为真<br>-b file　　　　　文件为块特殊文件为真<br>-s file　　　　　文件大小非0时为真<br>-t file　　　　　当文件描述符(默认为1)指定的设备为终端时为真</p>
+<p>3、复杂逻辑判断</p>
+<p>-a 　 　　　　　  与<br>-o　　　　　　　   或<br> !　　　　　　　　 非</p>
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/24/shell/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/23/ssh保持链接/">
+        ssh保持链接
+      </a>
+    </h2>
+    
+    <time>
+      Sep 23, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="Client-configuration"><a href="#Client-configuration" class="headerlink" title="Client configuration"></a>Client configuration</h2><p>Try creating the file: ~/.ssh/config<br>Add the contents:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Host *</div><div class="line">  ServerAliveInterval 30</div><div class="line">  ServerAliveCountMax 5</div></pre></td></tr></table></figure></p>
+<h2 id="Server-configuration"><a href="#Server-configuration" class="headerlink" title="Server configuration"></a>Server configuration</h2><p>Edit configuration file: /etc/ssh/sshd_config<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ClientAliveInterval 20</div><div class="line">ClientAliveCountMax 5</div></pre></td></tr></table></figure></p>
+
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/23/ssh保持链接/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/22/快速搭建vpn/">
+        快速搭建vpn
+      </a>
+    </h2>
+    
+    <time>
+      Sep 22, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <p>VPS端一键安装Shadowsocks (SS Python版一键安装脚本支持CentOS 6，7，Debian所有版本，Ubuntu所有版本)，<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks.sh</div><div class="line">chmod +x shadowsocks.sh</div><div class="line">./shadowsocks.sh 2&gt;&amp;1 | tee shadowsocks.log</div></pre></td></tr></table></figure></p>
+<p>中间会提示输入SS SERVER使用的端口和连接密码。不输入则是系统默认.</p>
+<p>安装完成后，脚本提示如下(记得记录下来)：<br>Congratulations, shadowsocks install completed!<br>Your Server IP:your_server_ip<br>Your Server Port:your_server_port<br>Your Password:your_password<br>Your Local IP:127.0.0.1<br>Your Local Port:1080<br>Your Encryption Method:aes-256-cfb</p>
+<p>看到以上提示后就表明VPS上SS已经安装成功，并且已经设置了开机启动，VPS重启后不用手工启动SS。<br>到此就安装成功可以科学上网了</p>
+<p>卸载方法：<br>使用root用户登录，运行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./shadowsocks.sh uninstall</div></pre></td></tr></table></figure></p>
+<p>单用户配置文件 Sample：<br>配置文件路径：/etc/shadowsocks.json<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;server&quot;:&quot;0.0.0.0&quot;,</div><div class="line">    &quot;server_port&quot;:8989,</div><div class="line">    &quot;local_address&quot;:&quot;127.0.0.1&quot;,</div><div class="line">    &quot;local_port&quot;:1080,</div><div class="line">    &quot;password&quot;:&quot;yourpassword&quot;,</div><div class="line">    &quot;timeout&quot;:300,</div><div class="line">    &quot;method&quot;:&quot;aes-256-cfb&quot;,</div><div class="line">    &quot;fast_open&quot;: false</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>多用户多端口配置文件 Sample：<br>配置文件路径：/etc/shadowsocks.json<br>```<br>{<br>    “server”:”0.0.0.0”,<br>    “local_address”:”127.0.0.1”,<br>    “local_port”:1080,<br>    “port_password”:{<br>         “8989”:”password0”,<br>         “9001”:”password1”,<br>         “9002”:”password2”,<br>         “9003”:”password3”,<br>         “9004”:”password4”<br>    },<br>    “timeout”:300,<br>    “method”:”aes-256-cfb”,<br>    “fast_open”: false<br>}</p>
+<p>使用命令：<br>启动：/etc/init.d/shadowsocks start<br>停止：/etc/init.d/shadowsocks stop<br>重启：/etc/init.d/shadowsocks restart<br>状态：/etc/init.d/shadowsocks status</p>
+
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/22/快速搭建vpn/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
       <a href="/2016/09/22/那些配置/">
         那些配置
       </a>
@@ -436,123 +545,6 @@
 </article>
     </div>
   
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/09/17/设计模式/">
-        设计模式
-      </a>
-    </h2>
-    
-    <time>
-      Sep 17, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h3 id="3种基本设计模式"><a href="#3种基本设计模式" class="headerlink" title="3种基本设计模式"></a>3种基本设计模式</h3><ol>
-<li>工厂模式，工厂方法或者类生成对象，而不是在代码中直接new</li>
-<li>单例模式，使某个类的对象仅允许创建一个</li>
-<li>注册模式，全局共享和交换对象</li>
-</ol>
-<h3 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h3><ol>
-<li>在客户端与实体之间建立一个代理对象(proxy),客户端对实体进行操作全部委派给代理对象,隐藏实体的具体实现细节</li>
-<li>proxy还可以与业务代码分离,部署到另外的服务器。业务代码中通过RPC来委派任务</li>
-</ol>
-<h3 id="迭代器模式"><a href="#迭代器模式" class="headerlink" title="迭代器模式"></a>迭代器模式</h3><ol>
-<li>在不需要了解内部实现的前提下,遍历一个聚合对象的内部元素</li>
-<li>相比于传统的编程模式,迭代器模式可以隐藏遍历元素的所需的操作</li>
-</ol>
-<h3 id="装饰器模式"><a href="#装饰器模式" class="headerlink" title="装饰器模式"></a>装饰器模式</h3><ol>
-<li>可以动态的添加修改类的功能</li>
-<li>一个类提供了一项功能，如果要修改并添加额外的功能，传统的编程模式，需要写一个子类继承它，并重新实现类的方法</li>
-<li>使用装饰器模式，仅需在运行时添加一个装饰器对象即可实现，可以实现最大的灵活性</li>
-</ol>
-<h3 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h3><ol>
-<li>当一个对象状态发生改变时，依赖它的对象全部会受到通知，并自动更新</li>
-<li>场景: 一个事件发生后，要执行一连串更新操作。传统的编程方式就是在事件的代码之后直接加入处理逻辑。当更新的逻辑增多之后，代码会变得难以维护。这种方式是耦合的，侵入式的，增加新的逻辑需要修改事件主体的代码</li>
-<li>观察者模式实现了低耦合，非侵入的通知和更新机制</li>
-</ol>
-
-    
-	  <div class="readmore">
-      <a href="/2016/09/17/设计模式/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/09/16/高级PHP/">
-        高级 PHP
-      </a>
-    </h2>
-    
-    <time>
-      Sep 16, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h2 id="面向对象5原则"><a href="#面向对象5原则" class="headerlink" title="面向对象5原则"></a>面向对象5原则</h2><h3 id="单一职责原则（single-resposibility-principle）"><a href="#单一职责原则（single-resposibility-principle）" class="headerlink" title="单一职责原则（single-resposibility principle）"></a>单一职责原则（single-resposibility principle）</h3><p>其核心思想为：一个类，最好只做一件事，只有一个引起它的变化的原因</p>
-<h3 id="开放-封闭原则（The-Open-Close-principle）"><a href="#开放-封闭原则（The-Open-Close-principle）" class="headerlink" title="开放-封闭原则（The Open-Close principle）"></a>开放-封闭原则（The Open-Close principle）</h3><p>其核心思想为：对扩展开放，对修改封闭<br>软件实体（类、模块、函数）应该是可扩展的，但是不可修改的。也就是说，对于扩展是开放的，对于更改是封闭的。怎样可能在不改动模块源代码的情况下去更改它的行为呢？怎样才能在无需对模块进行改动的情况下改变它的功能呢？关键是抽象！因此在进行面向对象设计时要尽量考虑接口封装机制、抽象机制和多态技术。该原则同样适合于非面向对象的方法，是软件工程设计方法的重要原则之一</p>
-<h3 id="Liskov-替换原则（liskov-substitution-principle）"><a href="#Liskov-替换原则（liskov-substitution-principle）" class="headerlink" title="Liskov 替换原则（liskov-substitution principle）"></a>Liskov 替换原则（liskov-substitution principle）</h3><p>其核心思想：子类必须能够替换其基类<br>子类应当可以替换父类出现在父类能够出现的任何地方</p>
-<h3 id="依赖倒置原则（dependency-inversion-principle）"><a href="#依赖倒置原则（dependency-inversion-principle）" class="headerlink" title="依赖倒置原则（dependency-inversion principle）"></a>依赖倒置原则（dependency-inversion principle）</h3><p>其核心思想：依赖于抽象<br>一个类不应该强依赖另外一个类，每个类对于另外一个类都是可替换的<br>1、高层模块不应该依赖于低层模块，二者都应该依赖于抽象。<br>2、抽象不应该依赖于细节。细节应该依赖于抽象。在进行业务设计时，于特定业务有关的依赖关系应该尽量依赖接口和抽象类，而不是依赖于具体类。具体类只负责相关业务的实现，修改具体类不影响与特定业务有关的依赖关系。</p>
-<h3 id="接口分离原则（interface-segregation-principle）"><a href="#接口分离原则（interface-segregation-principle）" class="headerlink" title="接口分离原则（interface-segregation principle）"></a>接口分离原则（interface-segregation principle）</h3>
-
-    
-	  <div class="readmore">
-      <a href="/2016/09/16/高级PHP/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/09/15/linux/">
-        linux相关操作
-      </a>
-    </h2>
-    
-    <time>
-      Sep 15, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><h3 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h3><p>/etc/init.d/iptables stop<br>service iptables stop # 停止服务</p>
-<h3 id="查看防火墙信息"><a href="#查看防火墙信息" class="headerlink" title="查看防火墙信息"></a>查看防火墙信息</h3><p>/etc/init.d/iptables status</p>
-<h3 id="开放端口-8080"><a href="#开放端口-8080" class="headerlink" title="开放端口:8080"></a>开放端口:8080</h3><p>/sbin/iptables -I INPUT -p tcp –dport 8080 -j ACCEPT</p>
-<h3 id="重启防火墙以便改动生效-或者直接重启系统"><a href="#重启防火墙以便改动生效-或者直接重启系统" class="headerlink" title="重启防火墙以便改动生效:(或者直接重启系统)"></a>重启防火墙以便改动生效:(或者直接重启系统)</h3><p>/etc/init.d/iptables restart</p>
-<h3 id="将更改进行保存"><a href="#将更改进行保存" class="headerlink" title="将更改进行保存"></a>将更改进行保存</h3>
-
-    
-	  <div class="readmore">
-      <a href="/2016/09/15/linux/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
-</article>
-    </div>
-  
 </section>
 
 
@@ -600,12 +592,6 @@
 <div class='header'>Categories</div>
 <div class='content'>
     
-    <ul class="entry">
-    
-        <li><a class="flat-box" href="/categories/note/"><div class='name'>note</div><div class='badget'>0</div></a></li>
-    
-    </ul>
-    
 </div>
 </section>
 
@@ -619,14 +605,20 @@
     <ul class="entry">
     
         <li>
-            <a href="/2016/09/05/关于高并发的处理/">
-              <span class="title"><span>关于高并发的处理</span></span>
+            <a href="/2016/09/23/ssh保持链接/">
+              <span class="title"><span>ssh保持链接</span></span>
             </a>
         </li>
     
         <li>
             <a href="/2016/09/08/FastCgi 与 PHP-FPM 之间的区别/">
               <span class="title"><span>Cgi、FastCgi 与 PHP-FPM</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/PHP cURL 应用/">
+              <span class="title"><span>利用 CURL 进行数据抓取总结</span></span>
             </a>
         </li>
     
@@ -643,14 +635,14 @@
         </li>
     
         <li>
-            <a href="/2016/11/22/git 命令/">
-              <span class="title"><span>git 命令</span></span>
+            <a href="/2017/06/14/git-format-patch和git-diff/">
+              <span class="title"><span>git format-patch and git diff</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/10/25/iTerm2奇淫技巧/">
-              <span class="title"><span>iTerm2奇淫技巧</span></span>
+            <a href="/2017/06/14/git-merge和git-rebase/">
+              <span class="title"><span>git merge 和 git rebase</span></span>
             </a>
         </li>
     
@@ -661,14 +653,20 @@
         </li>
     
         <li>
-            <a href="/2016/05/21/laravel 技巧/">
-              <span class="title"><span>laravel 技巧</span></span>
+            <a href="/2017/06/13/git本地化操作/">
+              <span class="title"><span>git本地化操作</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/15/linux/">
-              <span class="title"><span>linux相关操作</span></span>
+            <a href="/2016/10/25/iTerm2奇淫技巧/">
+              <span class="title"><span>iTerm2奇淫技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/05/21/laravel 技巧/">
+              <span class="title"><span>laravel 技巧</span></span>
             </a>
         </li>
     
@@ -685,6 +683,18 @@
         </li>
     
         <li>
+            <a href="/2016/09/15/linux/">
+              <span class="title"><span>linux相关操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/06/13/mysql配置远程访问/">
+              <span class="title"><span>mysql配置远程访问</span></span>
+            </a>
+        </li>
+    
+        <li>
             <a href="/2016/08/29/macos查看网络端口情况/">
               <span class="title"><span>macos查看网络端口情况</span></span>
             </a>
@@ -693,6 +703,12 @@
         <li>
             <a href="/2016/09/08/mysql知识/">
               <span class="title"><span>mysql知识</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/03/02/php中的异常与错误/">
+              <span class="title"><span>php中的异常与错误</span></span>
             </a>
         </li>
     
@@ -721,8 +737,8 @@
         </li>
     
         <li>
-            <a href="/2016/09/23/ssh保持链接/">
-              <span class="title"><span>ssh保持链接</span></span>
+            <a href="/2016/11/22/git 命令/">
+              <span class="title"><span>git 命令</span></span>
             </a>
         </li>
     
@@ -733,20 +749,26 @@
         </li>
     
         <li>
-            <a href="/2016/08/29/web相关/">
-              <span class="title"><span>web相关</span></span>
-            </a>
-        </li>
-    
-        <li>
             <a href="/2016/08/29/vagrant/">
               <span class="title"><span>vagrant 常用操作</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/08/30/PHP cURL 应用/">
-              <span class="title"><span>利用 CURL 进行数据抓取总结</span></span>
+            <a href="/2017/06/14/关于文件大小写/">
+              <span class="title"><span>关于文件大小写</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/05/关于高并发的处理/">
+              <span class="title"><span>关于高并发的处理</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/29/web相关/">
+              <span class="title"><span>web相关</span></span>
             </a>
         </li>
     
@@ -787,38 +809,14 @@
         </li>
     
         <li>
-            <a href="/2016/09/22/快速搭建服务器/">
-              <span class="title"><span>快速搭建服务器</span></span>
-            </a>
-        </li>
-    
-        <li>
             <a href="/2016/09/22/接替app端的请求/">
               <span class="title"><span>接替app端的请求</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/08/30/欢快的使用谷歌搜索/">
-              <span class="title"><span>欢快的使用谷歌搜索</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/09/17/设计模式/">
-              <span class="title"><span>设计模式</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/09/15/通过网址自动部署web/">
-              <span class="title"><span>通过网址自动部署web</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/09/22/那些配置/">
-              <span class="title"><span>那些配置</span></span>
+            <a href="/2016/09/22/快速搭建服务器/">
+              <span class="title"><span>快速搭建服务器</span></span>
             </a>
         </li>
     
@@ -829,14 +827,38 @@
         </li>
     
         <li>
-            <a href="/2016/09/28/配置linux服务器常用命令/">
-              <span class="title"><span>配置linux服务器常用命令</span></span>
+            <a href="/2016/08/30/欢快的使用谷歌搜索/">
+              <span class="title"><span>欢快的使用谷歌搜索</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/15/通过网址自动部署web/">
+              <span class="title"><span>通过网址自动部署web</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/17/设计模式/">
+              <span class="title"><span>设计模式</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/那些配置/">
+              <span class="title"><span>那些配置</span></span>
             </a>
         </li>
     
         <li>
             <a href="/2016/09/08/面试可能会问到的问题/">
               <span class="title"><span>面试可能会被问到的问题</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/28/配置linux服务器常用命令/">
+              <span class="title"><span>配置linux服务器常用命令</span></span>
             </a>
         </li>
     
@@ -849,24 +871,6 @@
         <li>
             <a href="/2016/09/16/高级PHP/">
               <span class="title"><span>高级 PHP</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2017/06/13/mysql配置远程访问/">
-              <span class="title"><span>mysql配置远程访问</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2017/06/13/git本地化操作/">
-              <span class="title"><span>git本地化操作</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2017/06/14/关于文件大小写/">
-              <span class="title"><span>关于文件大小写</span></span>
             </a>
         </li>
     

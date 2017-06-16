@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>快捷键 | Entimm&#39;s Blog</title>
+  <title>php中的异常与错误 | Entimm&#39;s Blog</title>
   <meta name="description" content="null" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -12,16 +12,16 @@
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Entimm's Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="macCMD-Shift-3    全屏截图 CMD-Shift-4    区域截图：选区    ⇧Shift － 重新定义截图区域的纵向高度或横向长度，不能同时实现。    ⌥Option － 重新定义截图区域的尺寸，可以同时实现纵向和横向的改变，但只能围绕中心区域展开。    ⌴空格键 － 按住并拖动鼠标，可以移动截图选框位置。    Escape(Esc)键 － 退出截图模式。 CMD-Sh">
+  <meta name="description" content="异常是指程序运行中不符合预期情况以及与正常流程不同的状况。错误则属于自身问题，是一种非法语法或者环境问题导致的、让编译器无法通过检查设置无法运行的情况。 php只有在你throw 一个异常后，才能用try…catch来捕获异常(一般情况下如此，也有部分异常可以自动捕获)。 历史原因导致php的异常处理是不足的，绝大多数情况下，无法自动抛出异常，必须使用if…else先进行判断，再手动抛出异常。 1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="快捷键">
-<meta property="og:url" content="https://entimm.com/2016/09/04/快捷键/index.html">
+<meta property="og:title" content="php中的异常与错误">
+<meta property="og:url" content="https://entimm.com/2017/03/02/php中的异常与错误/index.html">
 <meta property="og:site_name" content="Entimm&#39;s Blog">
-<meta property="og:description" content="macCMD-Shift-3    全屏截图 CMD-Shift-4    区域截图：选区    ⇧Shift － 重新定义截图区域的纵向高度或横向长度，不能同时实现。    ⌥Option － 重新定义截图区域的尺寸，可以同时实现纵向和横向的改变，但只能围绕中心区域展开。    ⌴空格键 － 按住并拖动鼠标，可以移动截图选框位置。    Escape(Esc)键 － 退出截图模式。 CMD-Sh">
-<meta property="og:updated_time" content="2017-05-18T15:35:34.000Z">
+<meta property="og:description" content="异常是指程序运行中不符合预期情况以及与正常流程不同的状况。错误则属于自身问题，是一种非法语法或者环境问题导致的、让编译器无法通过检查设置无法运行的情况。 php只有在你throw 一个异常后，才能用try…catch来捕获异常(一般情况下如此，也有部分异常可以自动捕获)。 历史原因导致php的异常处理是不足的，绝大多数情况下，无法自动抛出异常，必须使用if…else先进行判断，再手动抛出异常。 1">
+<meta property="og:updated_time" content="2017-06-14T08:46:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="快捷键">
-<meta name="twitter:description" content="macCMD-Shift-3    全屏截图 CMD-Shift-4    区域截图：选区    ⇧Shift － 重新定义截图区域的纵向高度或横向长度，不能同时实现。    ⌥Option － 重新定义截图区域的尺寸，可以同时实现纵向和横向的改变，但只能围绕中心区域展开。    ⌴空格键 － 按住并拖动鼠标，可以移动截图选框位置。    Escape(Esc)键 － 退出截图模式。 CMD-Sh">
+<meta name="twitter:title" content="php中的异常与错误">
+<meta name="twitter:description" content="异常是指程序运行中不符合预期情况以及与正常流程不同的状况。错误则属于自身问题，是一种非法语法或者环境问题导致的、让编译器无法通过检查设置无法运行的情况。 php只有在你throw 一个异常后，才能用try…catch来捕获异常(一般情况下如此，也有部分异常可以自动捕获)。 历史原因导致php的异常处理是不足的，绝大多数情况下，无法自动抛出异常，必须使用if…else先进行判断，再手动抛出异常。 1">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -142,54 +142,32 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-快捷键"
+        <article id="post-php中的异常与错误"
   class="post white-box article-type-post"
   itemscope itemprop="blogPost">
 	<section class='meta'>
 	<h2 class="title">
-  	<a href="/2016/09/04/快捷键/">
-    	快捷键
+  	<a href="/2017/03/02/php中的异常与错误/">
+    	php中的异常与错误
     </a>
   </h2>
 	<time>
-	  Sep 4, 2016
+	  Mar 2, 2017
 	</time>
 	
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mac"><span class="toc-number">1.</span> <span class="toc-text">mac</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#phpStorm"><span class="toc-number">2.</span> <span class="toc-text">phpStorm</span></a></li></ol></section>
+		<section class="toc-wrapper"></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<h2 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h2><p>CMD-Shift-3<br>    全屏截图</p>
-<p>CMD-Shift-4<br>    区域截图：选区<br>    ⇧Shift － 重新定义截图区域的纵向高度或横向长度，不能同时实现。<br>    ⌥Option － 重新定义截图区域的尺寸，可以同时实现纵向和横向的改变，但只能围绕中心区域展开。<br>    ⌴空格键 － 按住并拖动鼠标，可以移动截图选框位置。<br>    Escape(Esc)键 － 退出截图模式。</p>
-<p>CMD-Shift-4 + 空格键<br>    区域截图：窗口</p>
-<p>screencapture -T ＋等待时间（秒）＋保存的截图名称及格式<br>    抓图</p>
-<h2 id="phpStorm"><a href="#phpStorm" class="headerlink" title="phpStorm"></a>phpStorm</h2><ul>
-<li>command + r 查找替换</li>
-<li>command + e 打开最近的文件</li>
-<li>command + shift + o 快速查询文件</li>
-<li>command + shift + f 关键字查找,更强大的查询器(机器不好的，最好还是先确定一下目录)</li>
-<li>command + shift + r 高级替换</li>
-<li>command + alt + b 找到当前类的所有子类</li>
-<li>alt + shift + c 查找最近修改的文件</li>
-<li>alt + f7 直接查询选中的字符</li>
-<li>ctrl + f7 文件中查询选中字符</li>
-<li>command + shift + +,- 展开或缩起</li>
-<li><p>command + . 折叠或展开选中的代码</p>
-</li>
-<li><p>alt + 回车 导入包，自动修正</p>
-</li>
-<li>command + n 快事为每个成员属性生成 getter 及 setter 方法</li>
-<li>ctrl + i 快速生成插入魔术方法</li>
-<li>ctrol + o 复写父类方法</li>
-<li>command + alt + l 对当前文件进行格式化排版</li>
-<li>command + d 复制当剪行</li>
-<li>command + / // 注释</li>
-<li>command + shift + / // 注释</li>
-<li>command + k 提交代码</li>
-<li>command + shif + k 提交远程分支</li>
-</ul>
+    	<p>异常是指程序运行中不符合预期情况以及与正常流程不同的状况。错误则属于自身问题，是一种非法语法或者环境问题导致的、让编译器无法通过检查设置无法运行的情况。</p>
+<p>php只有在你throw 一个异常后，才能用try…catch来捕获异常(一般情况下如此，也有部分异常可以自动捕获)。</p>
+<p>历史原因导致php的异常处理是不足的，绝大多数情况下，无法自动抛出异常，必须使用if…else先进行判断，再手动抛出异常。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">customError</span><span class="params">($errno, $errstr, $errfile, $errline)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//自定义错误处理是，手动抛出异常</span></div><div class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="keyword">Exception</span>($errstr);</div><div class="line">&#125;</div><div class="line"></div><div class="line">set_error_handler(<span class="string">'customError'</span>, E_ALL | E_STRICT);</div><div class="line"></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">    $a = <span class="number">5</span>/<span class="number">0</span>;</div><div class="line">&#125; <span class="keyword">catch</span> (<span class="keyword">Exception</span> $e) &#123;</div><div class="line">    <span class="keyword">echo</span> <span class="string">'错误信息:'</span>, $e-&gt;getMessage();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>fetal error这样的错误无法捕获，也无法在发生后恢复流程处理，但是可以使用register_shutdown_function()函数在程序终止或die时触发一个函数，给程序带来一个短暂的回光返照。在php4时，不支持析构函数，也常用于模拟实现析构函数。</p>
+<p>Parse error级别的错误，除了修改ini文件，将错误信息写到日志中，什么也做不了。</p>
+<p>无论是错误还是异常，都可以使用handler接管系统已有的处理机制。</p>
 
   	</div>
 	  
@@ -198,7 +176,7 @@
 </article>
 <script>
 	window.subData = {
-		title: '快捷键',
+		title: 'php中的异常与错误',
 		tools: true
 	}
 </script>

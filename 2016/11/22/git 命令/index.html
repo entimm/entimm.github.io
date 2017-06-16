@@ -12,16 +12,16 @@
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Entimm's Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="如果要对某些代码的commit重新整理  可以记住某个commit号 git rebase -i commit号  123456## 删除远程分支# As of Git v1.7.0, you can delete a remote branch usinggit push origin --delete &amp;lt;branch_name&amp;gt;# which is easier to rememb">
+  <meta name="description" content="删除远程分支1234# As of Git v1.7.0, you can delete a remote branch usinggit push origin --delete &amp;lt;branch_name&amp;gt;# which is easier to remember thangit push origin :&amp;lt;branch_name&amp;gt; git用得时间多了，会变慢。 那么可以">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git 命令">
 <meta property="og:url" content="https://entimm.com/2016/11/22/git 命令/index.html">
 <meta property="og:site_name" content="Entimm&#39;s Blog">
-<meta property="og:description" content="如果要对某些代码的commit重新整理  可以记住某个commit号 git rebase -i commit号  123456## 删除远程分支# As of Git v1.7.0, you can delete a remote branch usinggit push origin --delete &amp;lt;branch_name&amp;gt;# which is easier to rememb">
-<meta property="og:updated_time" content="2017-06-14T08:06:33.000Z">
+<meta property="og:description" content="删除远程分支1234# As of Git v1.7.0, you can delete a remote branch usinggit push origin --delete &amp;lt;branch_name&amp;gt;# which is easier to remember thangit push origin :&amp;lt;branch_name&amp;gt; git用得时间多了，会变慢。 那么可以">
+<meta property="og:updated_time" content="2017-06-16T03:26:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git 命令">
-<meta name="twitter:description" content="如果要对某些代码的commit重新整理  可以记住某个commit号 git rebase -i commit号  123456## 删除远程分支# As of Git v1.7.0, you can delete a remote branch usinggit push origin --delete &amp;lt;branch_name&amp;gt;# which is easier to rememb">
+<meta name="twitter:description" content="删除远程分支1234# As of Git v1.7.0, you can delete a remote branch usinggit push origin --delete &amp;lt;branch_name&amp;gt;# which is easier to remember thangit push origin :&amp;lt;branch_name&amp;gt; git用得时间多了，会变慢。 那么可以">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -157,48 +157,22 @@
 	
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#View-a-file-in-a-different-Git-branch-without-changing-branches"><span class="toc-number">1.</span> <span class="toc-text">View a file in a different Git branch without changing branches</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Make-an-existing-Git-branch-track-a-remote-branch"><span class="toc-number">2.</span> <span class="toc-text">Make an existing Git branch track a remote branch</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#OR"><span class="toc-number"></span> <span class="toc-text">OR:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#diff-changes-only-among-certain-file-s"><span class="toc-number">1.</span> <span class="toc-text">diff changes only among certain file(s)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#view-git-tree-view"><span class="toc-number">2.</span> <span class="toc-text">view git tree view</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#other-command"><span class="toc-number">3.</span> <span class="toc-text">other command</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#checkout-remote-branch"><span class="toc-number">4.</span> <span class="toc-text">checkout remote branch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Delete-everything-in-the-orphan-branch"><span class="toc-number">5.</span> <span class="toc-text">Delete everything in the orphan branch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列出当天某人的所有提交记录"><span class="toc-number">6.</span> <span class="toc-text">列出当天某人的所有提交记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断当前分支"><span class="toc-number">7.</span> <span class="toc-text">判断当前分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Find-the-nearest-parent-branch-of-the-current-git-branch"><span class="toc-number">8.</span> <span class="toc-text">Find the nearest parent branch of the current git branch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#忽略追踪文件中的变更"><span class="toc-number">9.</span> <span class="toc-text">忽略追踪文件中的变更</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分支管理"><span class="toc-number"></span> <span class="toc-text">分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git-log"><span class="toc-number">1.</span> <span class="toc-text">git log</span></a></li></ol></section>
+		<section class="toc-wrapper"></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<p>如果要对某些代码的commit重新整理</p>
-<ol>
-<li>可以记住某个commit号</li>
-<li>git rebase -i commit号</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta">#</span> 删除远程分支</div><div class="line"><span class="meta">#</span> As of Git v1.7.0, you can delete a remote branch using</div><div class="line">git push origin --delete &lt;branch_name&gt;</div><div class="line"><span class="meta">#</span> which is easier to remember than</div><div class="line">git push origin :&lt;branch_name&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">git push origin test:test    # 提交本地test分支作为远程的test分支</div><div class="line">git push origin :test        # 刚提交到远程的test将被删除，但是本地还会保存的，不用担心</div><div class="line"></div><div class="line">git push --tags # 上传所有标签</div><div class="line"></div><div class="line">git remote set-url --push [name] [newUrl] # 修改远程仓库</div><div class="line">git pull [remoteName] [localBranchName]</div><div class="line">git push [remoteName] [localBranchName]</div><div class="line"></div><div class="line">git merge [name]   # 将名称为[name]的分支与当前分支合并</div><div class="line">git rebase [name]  #会将[name]分支的代码合并过来，并按照提交的顺序排序(衍合指定分支到分支到当前分支)</div><div class="line"></div><div class="line">git merge-base branchA branchB #查看2分支的公共节点</div><div class="line"></div><div class="line">git diff $(git-merge-base A B) B</div><div class="line"><span class="meta"></span></div><div class="line"># 按时间逆序列出提交对象，常用于查找涉及到某些文件的提交的hash。例如，查找所有关系到文件readme的提交</div><div class="line">git rev-list</div><div class="line"></div><div class="line">git shortlog</div><div class="line"><span class="meta"></span></div><div class="line"># 查看在branch上的，但不在master上的记录</div><div class="line">git log branch --not master</div></pre></td></tr></table></figure>
-<h3 id="View-a-file-in-a-different-Git-branch-without-changing-branches"><a href="#View-a-file-in-a-different-Git-branch-without-changing-branches" class="headerlink" title="View a file in a different Git branch without changing branches"></a>View a file in a different Git branch without changing branches</h3><p>git checkout $REVISION – $FILE<br>git checkout $REVISION – “*” switch all files without changing brnaches<br>git show $REVISION:$FILE<br>git checkout –orphan $BRANCH</p>
-<h3 id="Make-an-existing-Git-branch-track-a-remote-branch"><a href="#Make-an-existing-Git-branch-track-a-remote-branch" class="headerlink" title="Make an existing Git branch track a remote branch"></a>Make an existing Git branch track a remote branch</h3><p>git branch -u $UPSTREAM/$REMOTE_BRANCH $LOCAL_BRANCH<br>git branch –set-upstream-to=$UPSTREAM/$REMOTE_BRANCH</p>
-<p>git push -u $UPSTREAM $REMOTE_BRANCH</p>
-<p>git remote add $UPSTREAM <remote-url><br>git fetch $UPSTREAM<br>git branch -f –track $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH</remote-url></p>
-<h1 id="OR"><a href="#OR" class="headerlink" title="OR:"></a>OR:</h1><p>git branch –set-upstream $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH</p>
-<h3 id="diff-changes-only-among-certain-file-s"><a href="#diff-changes-only-among-certain-file-s" class="headerlink" title="diff changes only among certain file(s)"></a>diff changes only among certain file(s)</h3><p>git diff $BRANCH1 $BRANCH2 – $FILE1 $FILE2<br>(branch1 is optional and your current branch (the branch you are on) will be considered by default if branch1 is not provided)</p>
-<p>git diff $REVISION $FILE</p>
-<h3 id="view-git-tree-view"><a href="#view-git-tree-view" class="headerlink" title="view git tree view"></a>view git tree view</h3><p>git ls-tree</p>
-<h3 id="other-command"><a href="#other-command" class="headerlink" title="other command"></a>other command</h3><p>bisect     //Find by binary search the change that introduced a bug<br>grep       //Print lines matching a pattern<br>git log –since=”two weeks ago” –until=”two days ago”<br>git log –since=four.days –until=two.days<br>git instaweb</p>
-<h3 id="checkout-remote-branch"><a href="#checkout-remote-branch" class="headerlink" title="checkout remote branch"></a>checkout remote branch</h3><p>git checkout –track $UPSTREAM/$REMOTE_BRANCH</p>
-<h3 id="Delete-everything-in-the-orphan-branch"><a href="#Delete-everything-in-the-orphan-branch" class="headerlink" title="Delete everything in the orphan branch"></a>Delete everything in the orphan branch</h3><p>git rm -rf .</p>
-<h3 id="列出当天某人的所有提交记录"><a href="#列出当天某人的所有提交记录" class="headerlink" title="列出当天某人的所有提交记录"></a>列出当天某人的所有提交记录</h3><p>git log –author=AUTHOR –oneline –since=”6am” –graph –all –decorate</p>
-<h3 id="判断当前分支"><a href="#判断当前分支" class="headerlink" title="判断当前分支"></a>判断当前分支</h3><p>git rev-parse –abbrev-ref HEAD</p>
-<h3 id="Find-the-nearest-parent-branch-of-the-current-git-branch"><a href="#Find-the-nearest-parent-branch-of-the-current-git-branch" class="headerlink" title="Find the nearest parent branch of the current git branch"></a>Find the nearest parent branch of the current git branch</h3><p>#!/usr/bin/env zsh<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">branch=`git rev-parse --abbrev-ref HEAD`</div><div class="line"></div><div class="line">git show-branch | ack &apos;\*&apos; | ack -v &quot;$branch&quot; | head -n1 | sed &apos;s/.*\[\(.*\)\].*/\1/&apos; | sed &apos;s/[\^~].*//&apos;`</div><div class="line"># How it works:</div><div class="line"># 1| Display a textual history of all commits.</div><div class="line"># 2| Ancestors of the current commit are indicated</div><div class="line">#    by a star. Filter out everything else.</div><div class="line"># 3| Ignore all the commits in the current branch.</div><div class="line"># 4| The first result will be the nearest ancestor branch.</div><div class="line">#    Ignore the other results.</div><div class="line"># 5| Branch names are displayed [in brackets]. Ignore </div><div class="line">#    everything outside the brackets, and the brackets.</div><div class="line"># 6| Sometimes the branch name will include a ~2 or ^1 to</div><div class="line">#    indicate how many commits are between the referenced</div><div class="line">#    commit and the branch tip. We don&apos;t care. Ignore them.</div></pre></td></tr></table></figure></p>
-<p>or<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">branch=`git rev-parse --abbrev-ref HEAD`</div><div class="line">git show-branch -a 2&gt;/dev/null | grep &apos;\*&apos; | grep -v &quot;$branch&quot; | head -n1 | sed &apos;s/.*\[\(.*\)\].*/\1/&apos; | sed &apos;s/[\^~].*//&apos;</div></pre></td></tr></table></figure></p>
-<p>git stash save –keep-index    # stash only unstaged files</p>
-<h3 id="忽略追踪文件中的变更"><a href="#忽略追踪文件中的变更" class="headerlink" title="忽略追踪文件中的变更"></a>忽略追踪文件中的变更</h3><p>git update-index –assume-unchanged $FILE</p>
-<p>git merge –squash $BRANCH</p>
+    	<p>删除远程分支<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> As of Git v1.7.0, you can delete a remote branch using</div><div class="line">git push origin --delete &lt;branch_name&gt;</div><div class="line"><span class="meta">#</span> which is easier to remember than</div><div class="line">git push origin :&lt;branch_name&gt;</div></pre></td></tr></table></figure></p>
+<p>git用得时间多了，会变慢。 那么可以用下面的命令优化一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git gc   - Cleanup unnecessary files and optimize the local repository</div><div class="line">git-repack - Pack unpacked objects in a repository</div></pre></td></tr></table></figure></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">git push origin test:test    # 提交本地test分支作为远程的test分支</div><div class="line"></div><div class="line">git push --tags # 上传所有标签</div><div class="line"></div><div class="line">git remote set-url --push [name] [newUrl] # 修改远程仓库</div><div class="line">git pull [remoteName] [localBranchName]</div><div class="line">git push [remoteName] [localBranchName]</div><div class="line"></div><div class="line">git merge [name]   # 将名称为[name]的分支与当前分支合并</div><div class="line">git rebase [name]  #会将[name]分支的代码合并过来，并按照提交的顺序排序(衍合指定分支到分支到当前分支)</div><div class="line"></div><div class="line">git merge-base branchA branchB #查看2分支的公共节点</div><div class="line"></div><div class="line">git diff $(git-merge-base A B) B</div><div class="line"><span class="meta"></span></div><div class="line"># 按时间逆序列出提交对象，常用于查找涉及到某些文件的提交的hash。例如，查找所有关系到文件readme的提交</div><div class="line">git rev-list</div><div class="line"></div><div class="line">git shortlog</div><div class="line"><span class="meta"></span></div><div class="line"># 查看在branch上的，但不在master上的记录</div><div class="line">git log branch --not master</div><div class="line"></div><div class="line">git fsck --lost-found //检查丢失的提交</div><div class="line">git ls-files --stage //可以显示出索引的内容</div><div class="line">git checkout . //撤销所有修改</div><div class="line">git clean -xfd //连 gitignore 的untrack 文件/目录也一起删掉</div><div class="line">git branch --merged | xargs git branch -d //删除已经合并的分支</div><div class="line"></div><div class="line">git ls-files --other --ignored --exclude-stanard # list all ignored files in this project</div><div class="line">git reset --keep $COMMIT # reset and preserve uncommitted local changes</div><div class="line">git checkout --track $UPSTREAM/$REMOTE_BRANCH # create a new tracking branch based on a remote branch</div></pre></td></tr></table></figure>
+<p>View a file in a different Git branch without changing branches<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git checkout $REVISION -- $FILE</div><div class="line">git checkout $REVISION -- "*" switch all files without changing brnaches</div><div class="line">git show $REVISION:$FILE</div><div class="line">git checkout --orphan $BRANCH</div></pre></td></tr></table></figure></p>
+<p>Make an existing Git branch track a remote branch<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">git branch -u $UPSTREAM/$REMOTE_BRANCH $LOCAL_BRANCH</div><div class="line">git branch --set-upstream-to=$UPSTREAM/$REMOTE_BRANCH</div><div class="line"></div><div class="line">git push -u $UPSTREAM $REMOTE_BRANCH</div><div class="line"></div><div class="line">git remote add $UPSTREAM &lt;remote-url&gt;</div><div class="line">git fetch $UPSTREAM</div><div class="line">git branch -f --track $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH</div><div class="line"><span class="meta">#</span> OR:</div><div class="line">git branch --set-upstream $LOCAL_BRANCH $UPSTREAM/$REMOTE_BRANCH</div></pre></td></tr></table></figure></p>
+<p>diff changes only among certain file(s)<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git diff $BRANCH1 $BRANCH2 -- $FILE1 $FILE2</div><div class="line">(branch1 is optional and your current branch (the branch you are on) will be considered by default if branch1 is not provided)</div><div class="line"></div><div class="line">git diff $REVISION $FILE</div></pre></td></tr></table></figure></p>
+<p>other command<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">bisect     #Find by binary search the change that introduced a bug</div><div class="line">grep       #Print lines matching a pattern</div><div class="line">git log --since="two weeks ago" --until="two days ago"</div><div class="line">git log --since=four.days --until=two.days</div><div class="line">git instaweb</div><div class="line">git ls-tree #view git tree view</div><div class="line">git rm -rf . # Delete everything in the orphan branch</div><div class="line">git stash save --keep-index    # stash only unstaged files</div><div class="line">git merge --squash $BRANCH</div><div class="line">git rev-parse --abbrev-ref HEAD #判断当前分支</div></pre></td></tr></table></figure></p>
+<p>列出当天某人的所有提交记录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git log --author=AUTHOR --oneline --since=&quot;6am&quot; --graph --all --decorate</div></pre></td></tr></table></figure></p>
+<p>Find the nearest parent branch of the current git branch<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span>!/usr/bin/env zsh</div><div class="line">branch=`git rev-parse --abbrev-ref HEAD`</div><div class="line"></div><div class="line">git show-branch | ack '\*' | ack -v "$branch" | head -n1 | sed 's/.*\[\(.*\)\].*/\1/' | sed 's/[\^~].*//'`</div><div class="line"><span class="meta">#</span> How it works:</div><div class="line"><span class="meta">#</span> 1| Display a textual history of all commits.</div><div class="line"><span class="meta">#</span> 2| Ancestors of the current commit are indicated</div><div class="line"><span class="meta">#</span>    by a star. Filter out everything else.</div><div class="line"><span class="meta">#</span> 3| Ignore all the commits in the current branch.</div><div class="line"><span class="meta">#</span> 4| The first result will be the nearest ancestor branch.</div><div class="line"><span class="meta">#</span>    Ignore the other results.</div><div class="line"><span class="meta">#</span> 5| Branch names are displayed [in brackets]. Ignore </div><div class="line"><span class="meta">#</span>    everything outside the brackets, and the brackets.</div><div class="line"><span class="meta">#</span> 6| Sometimes the branch name will include a ~2 or ^1 to</div><div class="line"><span class="meta">#</span>    indicate how many commits are between the referenced</div><div class="line"><span class="meta">#</span>    commit and the branch tip. We don't care. Ignore them.</div></pre></td></tr></table></figure></p>
+<p>or<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">branch=`git rev-parse --abbrev-ref HEAD`</div><div class="line">git show-branch -a 2&gt;/dev/null | grep '\*' | grep -v "$branch" | head -n1 | sed 's/.*\[\(.*\)\].*/\1/' | sed 's/[\^~].*//'</div></pre></td></tr></table></figure></p>
 <p>“^”代表父提交,当一个提交有多个父提交时，可以通过在”^”后面跟上一个数字，表示第几个父提交，”^”相当于”^1”</p>
 <p>checkout只会移动HEAD指针，reset会改变HEAD的引用值</p>
-<p>git用得时间多了，会变慢。 那么可以用下面的命令优化一下。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git gc   - Cleanup unnecessary files and optimize the local repository</div><div class="line">git-repack - Pack unpacked objects in a repository</div></pre></td></tr></table></figure></p>
-<p>git add负责将文件内容存入blob对象，并更新index，git commit负责根据index生成tree对象，然后生成commit对象指向这个tree对象</p>
-<p>git fsck –lost-found //检查丢失的提交<br>git ls-files –stage //可以显示出索引的内容<br>git checkout . //撤销所有修改<br>git clean -xfd //连 gitignore 的untrack 文件/目录也一起删掉<br>git branch –merged | xargs git branch -d //删除已经合并的分支</p>
-<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><p>两条主要分支：Master和Develop。前者用于正式发布，后者用于日常开发。其实，常设分支只需要这两条就够了，不需要其他了。<br>但是，除了常设分支以外，还有一些临时性分支，用于应对一些特定目的的版本开发。临时性分支主要有三种：<br>　　<em> 功能（feature）分支
-　　</em> 预发布（release）分支<br>　　* 修补bug（fixbug）分支<br>这三种分支都属于临时性需要，使用完以后，应该删除，使得代码库的常设分支始终只有Master和Develop。</p>
-<h3 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h3><p>git log –graph –abbrev-commit –decorate –format=format:’%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)’</p>
-<p>git log –graph –abbrev-commit –decorate –format=format:’%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n’’          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)’</p>
-<p>git log –graph –abbrev-commit –decorate –format=format:’%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n’’          %C(white)%s%C(reset)%n’’          %C(dim white)- %an &lt;%ae&gt; %C(reset) %C(dim white)(committer: %cn &lt;%ce&gt;)%C(reset)’</p>
-<p>如果想按照提交时间顺序查看分支历史，可以使用以下命令：<br>–follow可以跟踪文件的重命名。<br>-p可以跟踪文件内容变化。</p>
-<p><a href="https://api.github.com/users/entimm/starred" target="_blank" rel="external">https://api.github.com/users/entimm/starred</a><br>page=2&amp;per_page=100<br>sort    string  One of created (when the repository was starred) or updated (when it was last pushed to). Default: created<br>direction   string  One of asc (ascending) or desc (descending). Default: desc</p>
-<p>git ls-files –other –ignored –exclude-stanard # list all ignored files in this project<br>git reset –keep $COMMIT # reset and preserve uncommitted local changes<br>git checkout –track $REMOTE_BRANCH # create a new tracking branch based on a remote branch</p>
 
   	</div>
 	  
@@ -240,12 +214,6 @@
 <div class='header'>Categories</div>
 <div class='content'>
     
-    <ul class="entry">
-    
-        <li><a class="flat-box" href="/categories/note/"><div class='name'>note</div><div class='badget'>0</div></a></li>
-    
-    </ul>
-    
 </div>
 </section>
 
@@ -259,14 +227,20 @@
     <ul class="entry">
     
         <li>
-            <a href="/2016/09/05/关于高并发的处理/">
-              <span class="title"><span>关于高并发的处理</span></span>
+            <a href="/2016/09/23/ssh保持链接/">
+              <span class="title"><span>ssh保持链接</span></span>
             </a>
         </li>
     
         <li>
             <a href="/2016/09/08/FastCgi 与 PHP-FPM 之间的区别/">
               <span class="title"><span>Cgi、FastCgi 与 PHP-FPM</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/PHP cURL 应用/">
+              <span class="title"><span>利用 CURL 进行数据抓取总结</span></span>
             </a>
         </li>
     
@@ -283,14 +257,14 @@
         </li>
     
         <li>
-            <a href="/2016/11/22/git 命令/">
-              <span class="title"><span>git 命令</span></span>
+            <a href="/2017/06/14/git-format-patch和git-diff/">
+              <span class="title"><span>git format-patch and git diff</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/10/25/iTerm2奇淫技巧/">
-              <span class="title"><span>iTerm2奇淫技巧</span></span>
+            <a href="/2017/06/14/git-merge和git-rebase/">
+              <span class="title"><span>git merge 和 git rebase</span></span>
             </a>
         </li>
     
@@ -301,14 +275,20 @@
         </li>
     
         <li>
-            <a href="/2016/05/21/laravel 技巧/">
-              <span class="title"><span>laravel 技巧</span></span>
+            <a href="/2017/06/13/git本地化操作/">
+              <span class="title"><span>git本地化操作</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/15/linux/">
-              <span class="title"><span>linux相关操作</span></span>
+            <a href="/2016/10/25/iTerm2奇淫技巧/">
+              <span class="title"><span>iTerm2奇淫技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/05/21/laravel 技巧/">
+              <span class="title"><span>laravel 技巧</span></span>
             </a>
         </li>
     
@@ -325,6 +305,18 @@
         </li>
     
         <li>
+            <a href="/2016/09/15/linux/">
+              <span class="title"><span>linux相关操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/06/13/mysql配置远程访问/">
+              <span class="title"><span>mysql配置远程访问</span></span>
+            </a>
+        </li>
+    
+        <li>
             <a href="/2016/08/29/macos查看网络端口情况/">
               <span class="title"><span>macos查看网络端口情况</span></span>
             </a>
@@ -333,6 +325,12 @@
         <li>
             <a href="/2016/09/08/mysql知识/">
               <span class="title"><span>mysql知识</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/03/02/php中的异常与错误/">
+              <span class="title"><span>php中的异常与错误</span></span>
             </a>
         </li>
     
@@ -361,8 +359,8 @@
         </li>
     
         <li>
-            <a href="/2016/09/23/ssh保持链接/">
-              <span class="title"><span>ssh保持链接</span></span>
+            <a href="/2016/11/22/git 命令/">
+              <span class="title"><span>git 命令</span></span>
             </a>
         </li>
     
@@ -373,20 +371,26 @@
         </li>
     
         <li>
-            <a href="/2016/08/29/web相关/">
-              <span class="title"><span>web相关</span></span>
-            </a>
-        </li>
-    
-        <li>
             <a href="/2016/08/29/vagrant/">
               <span class="title"><span>vagrant 常用操作</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/08/30/PHP cURL 应用/">
-              <span class="title"><span>利用 CURL 进行数据抓取总结</span></span>
+            <a href="/2017/06/14/关于文件大小写/">
+              <span class="title"><span>关于文件大小写</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/05/关于高并发的处理/">
+              <span class="title"><span>关于高并发的处理</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/29/web相关/">
+              <span class="title"><span>web相关</span></span>
             </a>
         </li>
     
@@ -427,38 +431,14 @@
         </li>
     
         <li>
-            <a href="/2016/09/22/快速搭建服务器/">
-              <span class="title"><span>快速搭建服务器</span></span>
-            </a>
-        </li>
-    
-        <li>
             <a href="/2016/09/22/接替app端的请求/">
               <span class="title"><span>接替app端的请求</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/08/30/欢快的使用谷歌搜索/">
-              <span class="title"><span>欢快的使用谷歌搜索</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/09/17/设计模式/">
-              <span class="title"><span>设计模式</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/09/15/通过网址自动部署web/">
-              <span class="title"><span>通过网址自动部署web</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/09/22/那些配置/">
-              <span class="title"><span>那些配置</span></span>
+            <a href="/2016/09/22/快速搭建服务器/">
+              <span class="title"><span>快速搭建服务器</span></span>
             </a>
         </li>
     
@@ -469,14 +449,38 @@
         </li>
     
         <li>
-            <a href="/2016/09/28/配置linux服务器常用命令/">
-              <span class="title"><span>配置linux服务器常用命令</span></span>
+            <a href="/2016/08/30/欢快的使用谷歌搜索/">
+              <span class="title"><span>欢快的使用谷歌搜索</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/15/通过网址自动部署web/">
+              <span class="title"><span>通过网址自动部署web</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/17/设计模式/">
+              <span class="title"><span>设计模式</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/那些配置/">
+              <span class="title"><span>那些配置</span></span>
             </a>
         </li>
     
         <li>
             <a href="/2016/09/08/面试可能会问到的问题/">
               <span class="title"><span>面试可能会被问到的问题</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/28/配置linux服务器常用命令/">
+              <span class="title"><span>配置linux服务器常用命令</span></span>
             </a>
         </li>
     
@@ -489,24 +493,6 @@
         <li>
             <a href="/2016/09/16/高级PHP/">
               <span class="title"><span>高级 PHP</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2017/06/13/mysql配置远程访问/">
-              <span class="title"><span>mysql配置远程访问</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2017/06/13/git本地化操作/">
-              <span class="title"><span>git本地化操作</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2017/06/14/关于文件大小写/">
-              <span class="title"><span>关于文件大小写</span></span>
             </a>
         </li>
     

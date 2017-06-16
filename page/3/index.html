@@ -146,6 +146,123 @@
   <section class="meta">
     
     <h2 class="title">
+      <a href="/2016/09/17/设计模式/">
+        设计模式
+      </a>
+    </h2>
+    
+    <time>
+      Sep 17, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h3 id="3种基本设计模式"><a href="#3种基本设计模式" class="headerlink" title="3种基本设计模式"></a>3种基本设计模式</h3><ol>
+<li>工厂模式，工厂方法或者类生成对象，而不是在代码中直接new</li>
+<li>单例模式，使某个类的对象仅允许创建一个</li>
+<li>注册模式，全局共享和交换对象</li>
+</ol>
+<h3 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h3><ol>
+<li>在客户端与实体之间建立一个代理对象(proxy),客户端对实体进行操作全部委派给代理对象,隐藏实体的具体实现细节</li>
+<li>proxy还可以与业务代码分离,部署到另外的服务器。业务代码中通过RPC来委派任务</li>
+</ol>
+<h3 id="迭代器模式"><a href="#迭代器模式" class="headerlink" title="迭代器模式"></a>迭代器模式</h3><ol>
+<li>在不需要了解内部实现的前提下,遍历一个聚合对象的内部元素</li>
+<li>相比于传统的编程模式,迭代器模式可以隐藏遍历元素的所需的操作</li>
+</ol>
+<h3 id="装饰器模式"><a href="#装饰器模式" class="headerlink" title="装饰器模式"></a>装饰器模式</h3><ol>
+<li>可以动态的添加修改类的功能</li>
+<li>一个类提供了一项功能，如果要修改并添加额外的功能，传统的编程模式，需要写一个子类继承它，并重新实现类的方法</li>
+<li>使用装饰器模式，仅需在运行时添加一个装饰器对象即可实现，可以实现最大的灵活性</li>
+</ol>
+<h3 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h3><ol>
+<li>当一个对象状态发生改变时，依赖它的对象全部会受到通知，并自动更新</li>
+<li>场景: 一个事件发生后，要执行一连串更新操作。传统的编程方式就是在事件的代码之后直接加入处理逻辑。当更新的逻辑增多之后，代码会变得难以维护。这种方式是耦合的，侵入式的，增加新的逻辑需要修改事件主体的代码</li>
+<li>观察者模式实现了低耦合，非侵入的通知和更新机制</li>
+</ol>
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/17/设计模式/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/16/高级PHP/">
+        高级 PHP
+      </a>
+    </h2>
+    
+    <time>
+      Sep 16, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="面向对象5原则"><a href="#面向对象5原则" class="headerlink" title="面向对象5原则"></a>面向对象5原则</h2><h3 id="单一职责原则（single-resposibility-principle）"><a href="#单一职责原则（single-resposibility-principle）" class="headerlink" title="单一职责原则（single-resposibility principle）"></a>单一职责原则（single-resposibility principle）</h3><p>其核心思想为：一个类，最好只做一件事，只有一个引起它的变化的原因</p>
+<h3 id="开放-封闭原则（The-Open-Close-principle）"><a href="#开放-封闭原则（The-Open-Close-principle）" class="headerlink" title="开放-封闭原则（The Open-Close principle）"></a>开放-封闭原则（The Open-Close principle）</h3><p>其核心思想为：对扩展开放，对修改封闭<br>软件实体（类、模块、函数）应该是可扩展的，但是不可修改的。也就是说，对于扩展是开放的，对于更改是封闭的。怎样可能在不改动模块源代码的情况下去更改它的行为呢？怎样才能在无需对模块进行改动的情况下改变它的功能呢？关键是抽象！因此在进行面向对象设计时要尽量考虑接口封装机制、抽象机制和多态技术。该原则同样适合于非面向对象的方法，是软件工程设计方法的重要原则之一</p>
+<h3 id="Liskov-替换原则（liskov-substitution-principle）"><a href="#Liskov-替换原则（liskov-substitution-principle）" class="headerlink" title="Liskov 替换原则（liskov-substitution principle）"></a>Liskov 替换原则（liskov-substitution principle）</h3><p>其核心思想：子类必须能够替换其基类<br>子类应当可以替换父类出现在父类能够出现的任何地方</p>
+<h3 id="依赖倒置原则（dependency-inversion-principle）"><a href="#依赖倒置原则（dependency-inversion-principle）" class="headerlink" title="依赖倒置原则（dependency-inversion principle）"></a>依赖倒置原则（dependency-inversion principle）</h3><p>其核心思想：依赖于抽象<br>一个类不应该强依赖另外一个类，每个类对于另外一个类都是可替换的<br>1、高层模块不应该依赖于低层模块，二者都应该依赖于抽象。<br>2、抽象不应该依赖于细节。细节应该依赖于抽象。在进行业务设计时，于特定业务有关的依赖关系应该尽量依赖接口和抽象类，而不是依赖于具体类。具体类只负责相关业务的实现，修改具体类不影响与特定业务有关的依赖关系。</p>
+<h3 id="接口分离原则（interface-segregation-principle）"><a href="#接口分离原则（interface-segregation-principle）" class="headerlink" title="接口分离原则（interface-segregation principle）"></a>接口分离原则（interface-segregation principle）</h3>
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/16/高级PHP/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
+      <a href="/2016/09/15/linux/">
+        linux相关操作
+      </a>
+    </h2>
+    
+    <time>
+      Sep 15, 2016
+    </time>
+		
+  </section>
+  <section class="article typo">
+	  <h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><h3 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h3><p>/etc/init.d/iptables stop<br>service iptables stop # 停止服务</p>
+<h3 id="查看防火墙信息"><a href="#查看防火墙信息" class="headerlink" title="查看防火墙信息"></a>查看防火墙信息</h3><p>/etc/init.d/iptables status</p>
+<h3 id="开放端口-8080"><a href="#开放端口-8080" class="headerlink" title="开放端口:8080"></a>开放端口:8080</h3><p>/sbin/iptables -I INPUT -p tcp –dport 8080 -j ACCEPT</p>
+<h3 id="重启防火墙以便改动生效-或者直接重启系统"><a href="#重启防火墙以便改动生效-或者直接重启系统" class="headerlink" title="重启防火墙以便改动生效:(或者直接重启系统)"></a>重启防火墙以便改动生效:(或者直接重启系统)</h3><p>/etc/init.d/iptables restart</p>
+<h3 id="将更改进行保存"><a href="#将更改进行保存" class="headerlink" title="将更改进行保存"></a>将更改进行保存</h3>
+
+    
+	  <div class="readmore">
+      <a href="/2016/09/15/linux/">Read More</a>
+    </div>
+    
+    
+    
+  </section>
+</article>
+    </div>
+  
+    <div class='post-wrapper'>
+      <article class="post reveal">
+  <section class="meta">
+    
+    <h2 class="title">
       <a href="/2016/09/15/通过网址自动部署web/">
         通过网址自动部署web
       </a>
@@ -418,133 +535,6 @@
 </article>
     </div>
   
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/09/05/docker技巧/">
-        docker 技巧
-      </a>
-    </h2>
-    
-    <time>
-      Sep 5, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h2 id="删除-none-tag-镜像"><a href="#删除-none-tag-镜像" class="headerlink" title="删除 none tag 镜像"></a>删除 none tag 镜像</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rmi $(docker images | grep "^&lt;none&gt;" | awk '&#123;print $3&#125;')</div></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rmi $(docker images -q --filter "dangling=true")</div></pre></td></tr></table></figure>
-<h2 id="删除所有镜像"><a href="#删除所有镜像" class="headerlink" title="删除所有镜像"></a>删除所有镜像</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker images -q | xargs docker rmi</div></pre></td></tr></table></figure>
-<h2 id="删除所有容器"><a href="#删除所有容器" class="headerlink" title="删除所有容器"></a>删除所有容器</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker ps -q -a | xargs docker rm</div></pre></td></tr></table></figure>
-<h2 id="删除所有停止运行的容器"><a href="#删除所有停止运行的容器" class="headerlink" title="删除所有停止运行的容器"></a>删除所有停止运行的容器</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker rm $( docker ps -q -f status=exited)</div></pre></td></tr></table></figure>
-<h2 id="删除所有-dangling-unused-的镜像"><a href="#删除所有-dangling-unused-的镜像" class="headerlink" title="删除所有 dangling (unused) 的镜像"></a>删除所有 dangling (unused) 的镜像</h2>
-
-    
-	  <div class="readmore">
-      <a href="/2016/09/05/docker技巧/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/09/05/php-function/">
-        php function
-      </a>
-    </h2>
-    
-    <time>
-      Sep 5, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h2 id="url、路径"><a href="#url、路径" class="headerlink" title="url、路径"></a>url、路径</h2><h3 id="parse-url"><a href="#parse-url" class="headerlink" title="parse_url"></a>parse_url</h3><p>mixed parse_url ( string $url [, int $component = -1 ] )</p>
-<p>解析 URL，返回其组成部分</p>
-<p>本函数不是用来验证给定 URL 的合法性的<br>本函数不能用于相对 URL<br>对严重不合格的 URL，parse_url() 可能会返回 FALSE</p>
-<h3 id="parse-str"><a href="#parse-str" class="headerlink" title="parse_str"></a>parse_str</h3><p>void parse_str ( string $str [, array &amp;$arr ] )</p>
-<p>将字符串解析成多个变量</p>
-<p>获取当前的 QUERY_STRING，你可以使用 $_SERVER[‘QUERY_STRING’] 变量<br>magic_quotes_gpc 影响到了 parse_str() 这个函数的输出，和 PHP 用于填充 $_GET、 $_POST 及其他变量的机制一致</p>
-<h3 id="pathinfo"><a href="#pathinfo" class="headerlink" title="pathinfo"></a>pathinfo</h3>
-
-    
-	  <div class="readmore">
-      <a href="/2016/09/05/php-function/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
-</article>
-    </div>
-  
-    <div class='post-wrapper'>
-      <article class="post reveal">
-  <section class="meta">
-    
-    <h2 class="title">
-      <a href="/2016/09/04/快捷键/">
-        快捷键
-      </a>
-    </h2>
-    
-    <time>
-      Sep 4, 2016
-    </time>
-		
-  </section>
-  <section class="article typo">
-	  <h2 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h2><p>CMD-Shift-3<br>    全屏截图</p>
-<p>CMD-Shift-4<br>    区域截图：选区<br>    ⇧Shift － 重新定义截图区域的纵向高度或横向长度，不能同时实现。<br>    ⌥Option － 重新定义截图区域的尺寸，可以同时实现纵向和横向的改变，但只能围绕中心区域展开。<br>    ⌴空格键 － 按住并拖动鼠标，可以移动截图选框位置。<br>    Escape(Esc)键 － 退出截图模式。</p>
-<p>CMD-Shift-4 + 空格键<br>    区域截图：窗口</p>
-<p>screencapture -T ＋等待时间（秒）＋保存的截图名称及格式<br>    抓图</p>
-<h2 id="phpStorm"><a href="#phpStorm" class="headerlink" title="phpStorm"></a>phpStorm</h2><ul>
-<li>command + r 查找替换</li>
-<li>command + e 打开最近的文件</li>
-<li>command + shift + o 快速查询文件</li>
-<li>command + shift + f 关键字查找,更强大的查询器(机器不好的，最好还是先确定一下目录)</li>
-<li>command + shift + r 高级替换</li>
-<li>command + alt + b 找到当前类的所有子类</li>
-<li>alt + shift + c 查找最近修改的文件</li>
-<li>alt + f7 直接查询选中的字符</li>
-<li>ctrl + f7 文件中查询选中字符</li>
-<li>command + shift + +,- 展开或缩起</li>
-<li><p>command + . 折叠或展开选中的代码</p>
-</li>
-<li><p>alt + 回车 导入包，自动修正</p>
-</li>
-<li>command + n 快事为每个成员属性生成 getter 及 setter 方法</li>
-<li>ctrl + i 快速生成插入魔术方法</li>
-<li>ctrol + o 复写父类方法</li>
-<li>command + alt + l 对当前文件进行格式化排版</li>
-<li>command + d 复制当剪行</li>
-<li>command + / // 注释</li>
-<li>command + shift + / // 注释</li>
-<li>command + k 提交代码</li>
-<li>command + shif + k 提交远程分支</li>
-</ul>
-
-
-    
-	  <div class="readmore">
-      <a href="/2016/09/04/快捷键/">Read More</a>
-    </div>
-    
-    
-    
-  </section>
-</article>
-    </div>
-  
 </section>
 
 
@@ -592,12 +582,6 @@
 <div class='header'>Categories</div>
 <div class='content'>
     
-    <ul class="entry">
-    
-        <li><a class="flat-box" href="/categories/note/"><div class='name'>note</div><div class='badget'>0</div></a></li>
-    
-    </ul>
-    
 </div>
 </section>
 
@@ -611,14 +595,20 @@
     <ul class="entry">
     
         <li>
-            <a href="/2016/09/05/关于高并发的处理/">
-              <span class="title"><span>关于高并发的处理</span></span>
+            <a href="/2016/09/23/ssh保持链接/">
+              <span class="title"><span>ssh保持链接</span></span>
             </a>
         </li>
     
         <li>
             <a href="/2016/09/08/FastCgi 与 PHP-FPM 之间的区别/">
               <span class="title"><span>Cgi、FastCgi 与 PHP-FPM</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/30/PHP cURL 应用/">
+              <span class="title"><span>利用 CURL 进行数据抓取总结</span></span>
             </a>
         </li>
     
@@ -635,14 +625,14 @@
         </li>
     
         <li>
-            <a href="/2016/11/22/git 命令/">
-              <span class="title"><span>git 命令</span></span>
+            <a href="/2017/06/14/git-format-patch和git-diff/">
+              <span class="title"><span>git format-patch and git diff</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/10/25/iTerm2奇淫技巧/">
-              <span class="title"><span>iTerm2奇淫技巧</span></span>
+            <a href="/2017/06/14/git-merge和git-rebase/">
+              <span class="title"><span>git merge 和 git rebase</span></span>
             </a>
         </li>
     
@@ -653,14 +643,20 @@
         </li>
     
         <li>
-            <a href="/2016/05/21/laravel 技巧/">
-              <span class="title"><span>laravel 技巧</span></span>
+            <a href="/2017/06/13/git本地化操作/">
+              <span class="title"><span>git本地化操作</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/09/15/linux/">
-              <span class="title"><span>linux相关操作</span></span>
+            <a href="/2016/10/25/iTerm2奇淫技巧/">
+              <span class="title"><span>iTerm2奇淫技巧</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/05/21/laravel 技巧/">
+              <span class="title"><span>laravel 技巧</span></span>
             </a>
         </li>
     
@@ -677,6 +673,18 @@
         </li>
     
         <li>
+            <a href="/2016/09/15/linux/">
+              <span class="title"><span>linux相关操作</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/06/13/mysql配置远程访问/">
+              <span class="title"><span>mysql配置远程访问</span></span>
+            </a>
+        </li>
+    
+        <li>
             <a href="/2016/08/29/macos查看网络端口情况/">
               <span class="title"><span>macos查看网络端口情况</span></span>
             </a>
@@ -685,6 +693,12 @@
         <li>
             <a href="/2016/09/08/mysql知识/">
               <span class="title"><span>mysql知识</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2017/03/02/php中的异常与错误/">
+              <span class="title"><span>php中的异常与错误</span></span>
             </a>
         </li>
     
@@ -713,8 +727,8 @@
         </li>
     
         <li>
-            <a href="/2016/09/23/ssh保持链接/">
-              <span class="title"><span>ssh保持链接</span></span>
+            <a href="/2016/11/22/git 命令/">
+              <span class="title"><span>git 命令</span></span>
             </a>
         </li>
     
@@ -725,20 +739,26 @@
         </li>
     
         <li>
-            <a href="/2016/08/29/web相关/">
-              <span class="title"><span>web相关</span></span>
-            </a>
-        </li>
-    
-        <li>
             <a href="/2016/08/29/vagrant/">
               <span class="title"><span>vagrant 常用操作</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/08/30/PHP cURL 应用/">
-              <span class="title"><span>利用 CURL 进行数据抓取总结</span></span>
+            <a href="/2017/06/14/关于文件大小写/">
+              <span class="title"><span>关于文件大小写</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/05/关于高并发的处理/">
+              <span class="title"><span>关于高并发的处理</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/08/29/web相关/">
+              <span class="title"><span>web相关</span></span>
             </a>
         </li>
     
@@ -779,38 +799,14 @@
         </li>
     
         <li>
-            <a href="/2016/09/22/快速搭建服务器/">
-              <span class="title"><span>快速搭建服务器</span></span>
-            </a>
-        </li>
-    
-        <li>
             <a href="/2016/09/22/接替app端的请求/">
               <span class="title"><span>接替app端的请求</span></span>
             </a>
         </li>
     
         <li>
-            <a href="/2016/08/30/欢快的使用谷歌搜索/">
-              <span class="title"><span>欢快的使用谷歌搜索</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/09/17/设计模式/">
-              <span class="title"><span>设计模式</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/09/15/通过网址自动部署web/">
-              <span class="title"><span>通过网址自动部署web</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2016/09/22/那些配置/">
-              <span class="title"><span>那些配置</span></span>
+            <a href="/2016/09/22/快速搭建服务器/">
+              <span class="title"><span>快速搭建服务器</span></span>
             </a>
         </li>
     
@@ -821,14 +817,38 @@
         </li>
     
         <li>
-            <a href="/2016/09/28/配置linux服务器常用命令/">
-              <span class="title"><span>配置linux服务器常用命令</span></span>
+            <a href="/2016/08/30/欢快的使用谷歌搜索/">
+              <span class="title"><span>欢快的使用谷歌搜索</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/15/通过网址自动部署web/">
+              <span class="title"><span>通过网址自动部署web</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/17/设计模式/">
+              <span class="title"><span>设计模式</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/22/那些配置/">
+              <span class="title"><span>那些配置</span></span>
             </a>
         </li>
     
         <li>
             <a href="/2016/09/08/面试可能会问到的问题/">
               <span class="title"><span>面试可能会被问到的问题</span></span>
+            </a>
+        </li>
+    
+        <li>
+            <a href="/2016/09/28/配置linux服务器常用命令/">
+              <span class="title"><span>配置linux服务器常用命令</span></span>
             </a>
         </li>
     
@@ -841,24 +861,6 @@
         <li>
             <a href="/2016/09/16/高级PHP/">
               <span class="title"><span>高级 PHP</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2017/06/13/mysql配置远程访问/">
-              <span class="title"><span>mysql配置远程访问</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2017/06/13/git本地化操作/">
-              <span class="title"><span>git本地化操作</span></span>
-            </a>
-        </li>
-    
-        <li>
-            <a href="/2017/06/14/关于文件大小写/">
-              <span class="title"><span>关于文件大小写</span></span>
             </a>
         </li>
     

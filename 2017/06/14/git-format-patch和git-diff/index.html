@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>快捷键 | Entimm&#39;s Blog</title>
+  <title>git format-patch and git diff | Entimm&#39;s Blog</title>
   <meta name="description" content="null" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -12,16 +12,16 @@
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Entimm's Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="macCMD-Shift-3    全屏截图 CMD-Shift-4    区域截图：选区    ⇧Shift － 重新定义截图区域的纵向高度或横向长度，不能同时实现。    ⌥Option － 重新定义截图区域的尺寸，可以同时实现纵向和横向的改变，但只能围绕中心区域展开。    ⌴空格键 － 按住并拖动鼠标，可以移动截图选框位置。    Escape(Esc)键 － 退出截图模式。 CMD-Sh">
+  <meta name="description" content="git中则提供了两种patch方案： 用git diff生成的标准patch，可以提供上述的patch命令使用。用git format-patch生成的git专用patch。两种patch的比较： 兼容性：很明显，git diff生成的patch兼容性强。如果你在修改的代码的官方版本库不是git管理的版本库，那么你必须使用git diff生成的patch才能让你的代码被项目的维护人接受。除错功能：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="快捷键">
-<meta property="og:url" content="https://entimm.com/2016/09/04/快捷键/index.html">
+<meta property="og:title" content="git format-patch and git diff">
+<meta property="og:url" content="https://entimm.com/2017/06/14/git-format-patch和git-diff/index.html">
 <meta property="og:site_name" content="Entimm&#39;s Blog">
-<meta property="og:description" content="macCMD-Shift-3    全屏截图 CMD-Shift-4    区域截图：选区    ⇧Shift － 重新定义截图区域的纵向高度或横向长度，不能同时实现。    ⌥Option － 重新定义截图区域的尺寸，可以同时实现纵向和横向的改变，但只能围绕中心区域展开。    ⌴空格键 － 按住并拖动鼠标，可以移动截图选框位置。    Escape(Esc)键 － 退出截图模式。 CMD-Sh">
-<meta property="og:updated_time" content="2017-05-18T15:35:34.000Z">
+<meta property="og:description" content="git中则提供了两种patch方案： 用git diff生成的标准patch，可以提供上述的patch命令使用。用git format-patch生成的git专用patch。两种patch的比较： 兼容性：很明显，git diff生成的patch兼容性强。如果你在修改的代码的官方版本库不是git管理的版本库，那么你必须使用git diff生成的patch才能让你的代码被项目的维护人接受。除错功能：">
+<meta property="og:updated_time" content="2017-06-14T13:48:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="快捷键">
-<meta name="twitter:description" content="macCMD-Shift-3    全屏截图 CMD-Shift-4    区域截图：选区    ⇧Shift － 重新定义截图区域的纵向高度或横向长度，不能同时实现。    ⌥Option － 重新定义截图区域的尺寸，可以同时实现纵向和横向的改变，但只能围绕中心区域展开。    ⌴空格键 － 按住并拖动鼠标，可以移动截图选框位置。    Escape(Esc)键 － 退出截图模式。 CMD-Sh">
+<meta name="twitter:title" content="git format-patch and git diff">
+<meta name="twitter:description" content="git中则提供了两种patch方案： 用git diff生成的标准patch，可以提供上述的patch命令使用。用git format-patch生成的git专用patch。两种patch的比较： 兼容性：很明显，git diff生成的patch兼容性强。如果你在修改的代码的官方版本库不是git管理的版本库，那么你必须使用git diff生成的patch才能让你的代码被项目的维护人接受。除错功能：">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -142,54 +142,28 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-快捷键"
+        <article id="post-git-format-patch和git-diff"
   class="post white-box article-type-post"
   itemscope itemprop="blogPost">
 	<section class='meta'>
 	<h2 class="title">
-  	<a href="/2016/09/04/快捷键/">
-    	快捷键
+  	<a href="/2017/06/14/git-format-patch和git-diff/">
+    	git format-patch and git diff
     </a>
   </h2>
 	<time>
-	  Sep 4, 2016
+	  Jun 14, 2017
 	</time>
 	
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mac"><span class="toc-number">1.</span> <span class="toc-text">mac</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#phpStorm"><span class="toc-number">2.</span> <span class="toc-text">phpStorm</span></a></li></ol></section>
+		<section class="toc-wrapper"></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<h2 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h2><p>CMD-Shift-3<br>    全屏截图</p>
-<p>CMD-Shift-4<br>    区域截图：选区<br>    ⇧Shift － 重新定义截图区域的纵向高度或横向长度，不能同时实现。<br>    ⌥Option － 重新定义截图区域的尺寸，可以同时实现纵向和横向的改变，但只能围绕中心区域展开。<br>    ⌴空格键 － 按住并拖动鼠标，可以移动截图选框位置。<br>    Escape(Esc)键 － 退出截图模式。</p>
-<p>CMD-Shift-4 + 空格键<br>    区域截图：窗口</p>
-<p>screencapture -T ＋等待时间（秒）＋保存的截图名称及格式<br>    抓图</p>
-<h2 id="phpStorm"><a href="#phpStorm" class="headerlink" title="phpStorm"></a>phpStorm</h2><ul>
-<li>command + r 查找替换</li>
-<li>command + e 打开最近的文件</li>
-<li>command + shift + o 快速查询文件</li>
-<li>command + shift + f 关键字查找,更强大的查询器(机器不好的，最好还是先确定一下目录)</li>
-<li>command + shift + r 高级替换</li>
-<li>command + alt + b 找到当前类的所有子类</li>
-<li>alt + shift + c 查找最近修改的文件</li>
-<li>alt + f7 直接查询选中的字符</li>
-<li>ctrl + f7 文件中查询选中字符</li>
-<li>command + shift + +,- 展开或缩起</li>
-<li><p>command + . 折叠或展开选中的代码</p>
-</li>
-<li><p>alt + 回车 导入包，自动修正</p>
-</li>
-<li>command + n 快事为每个成员属性生成 getter 及 setter 方法</li>
-<li>ctrl + i 快速生成插入魔术方法</li>
-<li>ctrol + o 复写父类方法</li>
-<li>command + alt + l 对当前文件进行格式化排版</li>
-<li>command + d 复制当剪行</li>
-<li>command + / // 注释</li>
-<li>command + shift + / // 注释</li>
-<li>command + k 提交代码</li>
-<li>command + shif + k 提交远程分支</li>
-</ul>
+    	<p>git中则提供了两种patch方案：</p>
+<p>用git diff生成的标准patch，可以提供上述的patch命令使用。<br>用git format-patch生成的git专用patch。<br>两种patch的比较：</p>
+<p>兼容性：很明显，git diff生成的patch兼容性强。如果你在修改的代码的官方版本库不是git管理的版本库，那么你必须使用git diff生成的patch才能让你的代码被项目的维护人接受。<br>除错功能：对于git diff生成的patch，你可以用git apply –check查看补丁是否能够干净顺利地应用到当前分支中；如果git format-patch生成的补丁不能打到当前分支，git am会给出提示，并协助你完成打补丁工作，你也可以使用git am -3进行三方合并，详细的做法可以参考git手册或者《Progit》。从这一点上看，两者除错功能都很强。<br>提交信息：由于git format-patch生成的补丁中含有这个补丁开发者的名字，因此在应用补丁时，这个名字会被记录进版本库，显然，这样做是恰当的。因此，目前使用git的开源社区往往建议大家使用git format-patch生成补丁。</p>
 
   	</div>
 	  
@@ -198,7 +172,7 @@
 </article>
 <script>
 	window.subData = {
-		title: '快捷键',
+		title: 'git format-patch and git diff',
 		tools: true
 	}
 </script>

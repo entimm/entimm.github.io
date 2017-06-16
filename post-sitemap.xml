@@ -8,7 +8,31 @@
 
     <url>
         <loc>https://entimm.com/2016/11/22/git%20%E5%91%BD%E4%BB%A4/</loc>
-        <lastmod>2017-06-14T08:06:33.000Z</lastmod>
+        <lastmod>2017-06-16T03:26:39.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://entimm.com/2017/06/14/git-format-patch%E5%92%8Cgit-diff/</loc>
+        <lastmod>2017-06-14T13:48:52.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://entimm.com/2017/06/14/git-merge%E5%92%8Cgit-rebase/</loc>
+        <lastmod>2017-06-14T13:46:14.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://entimm.com/2017/03/02/php%E4%B8%AD%E7%9A%84%E5%BC%82%E5%B8%B8%E4%B8%8E%E9%94%99%E8%AF%AF/</loc>
+        <lastmod>2017-06-14T08:46:21.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

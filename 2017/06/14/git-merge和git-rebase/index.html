@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>快捷键 | Entimm&#39;s Blog</title>
+  <title>git merge 和 git rebase | Entimm&#39;s Blog</title>
   <meta name="description" content="null" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -12,16 +12,16 @@
   <link rel="shortcut icon" href="/">
   <link rel="alternate" href="/atom.xml" title="Entimm's Blog">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="macCMD-Shift-3    全屏截图 CMD-Shift-4    区域截图：选区    ⇧Shift － 重新定义截图区域的纵向高度或横向长度，不能同时实现。    ⌥Option － 重新定义截图区域的尺寸，可以同时实现纵向和横向的改变，但只能围绕中心区域展开。    ⌴空格键 － 按住并拖动鼠标，可以移动截图选框位置。    Escape(Esc)键 － 退出截图模式。 CMD-Sh">
+  <meta name="description" content="git merge简要说明  git merge会产生一次新的commit版本，并且此版本会有2个或者更多个父提交，可以通过HEAD^1，HEAD^2，HEAD^n方法来引用此提交的父提交。 git merge是非破坏性的(non-destructive)操作，没有负作用，并且被合并的这些分支都可以git push发布到remote公共仓库中。 由于每次合并会产生一次新的提交历史，如果主分支非常活">
 <meta property="og:type" content="article">
-<meta property="og:title" content="快捷键">
-<meta property="og:url" content="https://entimm.com/2016/09/04/快捷键/index.html">
+<meta property="og:title" content="git merge 和 git rebase">
+<meta property="og:url" content="https://entimm.com/2017/06/14/git-merge和git-rebase/index.html">
 <meta property="og:site_name" content="Entimm&#39;s Blog">
-<meta property="og:description" content="macCMD-Shift-3    全屏截图 CMD-Shift-4    区域截图：选区    ⇧Shift － 重新定义截图区域的纵向高度或横向长度，不能同时实现。    ⌥Option － 重新定义截图区域的尺寸，可以同时实现纵向和横向的改变，但只能围绕中心区域展开。    ⌴空格键 － 按住并拖动鼠标，可以移动截图选框位置。    Escape(Esc)键 － 退出截图模式。 CMD-Sh">
-<meta property="og:updated_time" content="2017-05-18T15:35:34.000Z">
+<meta property="og:description" content="git merge简要说明  git merge会产生一次新的commit版本，并且此版本会有2个或者更多个父提交，可以通过HEAD^1，HEAD^2，HEAD^n方法来引用此提交的父提交。 git merge是非破坏性的(non-destructive)操作，没有负作用，并且被合并的这些分支都可以git push发布到remote公共仓库中。 由于每次合并会产生一次新的提交历史，如果主分支非常活">
+<meta property="og:updated_time" content="2017-06-14T13:46:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="快捷键">
-<meta name="twitter:description" content="macCMD-Shift-3    全屏截图 CMD-Shift-4    区域截图：选区    ⇧Shift － 重新定义截图区域的纵向高度或横向长度，不能同时实现。    ⌥Option － 重新定义截图区域的尺寸，可以同时实现纵向和横向的改变，但只能围绕中心区域展开。    ⌴空格键 － 按住并拖动鼠标，可以移动截图选框位置。    Escape(Esc)键 － 退出截图模式。 CMD-Sh">
+<meta name="twitter:title" content="git merge 和 git rebase">
+<meta name="twitter:description" content="git merge简要说明  git merge会产生一次新的commit版本，并且此版本会有2个或者更多个父提交，可以通过HEAD^1，HEAD^2，HEAD^n方法来引用此提交的父提交。 git merge是非破坏性的(non-destructive)操作，没有负作用，并且被合并的这些分支都可以git push发布到remote公共仓库中。 由于每次合并会产生一次新的提交历史，如果主分支非常活">
     
   <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -142,54 +142,40 @@
   <div class="l_body">
     <div class='container clearfix'>
       <div class='l_main'>
-        <article id="post-快捷键"
+        <article id="post-git-merge和git-rebase"
   class="post white-box article-type-post"
   itemscope itemprop="blogPost">
 	<section class='meta'>
 	<h2 class="title">
-  	<a href="/2016/09/04/快捷键/">
-    	快捷键
+  	<a href="/2017/06/14/git-merge和git-rebase/">
+    	git merge 和 git rebase
     </a>
   </h2>
 	<time>
-	  Sep 4, 2016
+	  Jun 14, 2017
 	</time>
 	
 	</section>
 	
-		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mac"><span class="toc-number">1.</span> <span class="toc-text">mac</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#phpStorm"><span class="toc-number">2.</span> <span class="toc-text">phpStorm</span></a></li></ol></section>
+		<section class="toc-wrapper"></section>
 	
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
-    	<h2 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h2><p>CMD-Shift-3<br>    全屏截图</p>
-<p>CMD-Shift-4<br>    区域截图：选区<br>    ⇧Shift － 重新定义截图区域的纵向高度或横向长度，不能同时实现。<br>    ⌥Option － 重新定义截图区域的尺寸，可以同时实现纵向和横向的改变，但只能围绕中心区域展开。<br>    ⌴空格键 － 按住并拖动鼠标，可以移动截图选框位置。<br>    Escape(Esc)键 － 退出截图模式。</p>
-<p>CMD-Shift-4 + 空格键<br>    区域截图：窗口</p>
-<p>screencapture -T ＋等待时间（秒）＋保存的截图名称及格式<br>    抓图</p>
-<h2 id="phpStorm"><a href="#phpStorm" class="headerlink" title="phpStorm"></a>phpStorm</h2><ul>
-<li>command + r 查找替换</li>
-<li>command + e 打开最近的文件</li>
-<li>command + shift + o 快速查询文件</li>
-<li>command + shift + f 关键字查找,更强大的查询器(机器不好的，最好还是先确定一下目录)</li>
-<li>command + shift + r 高级替换</li>
-<li>command + alt + b 找到当前类的所有子类</li>
-<li>alt + shift + c 查找最近修改的文件</li>
-<li>alt + f7 直接查询选中的字符</li>
-<li>ctrl + f7 文件中查询选中字符</li>
-<li>command + shift + +,- 展开或缩起</li>
-<li><p>command + . 折叠或展开选中的代码</p>
-</li>
-<li><p>alt + 回车 导入包，自动修正</p>
-</li>
-<li>command + n 快事为每个成员属性生成 getter 及 setter 方法</li>
-<li>ctrl + i 快速生成插入魔术方法</li>
-<li>ctrol + o 复写父类方法</li>
-<li>command + alt + l 对当前文件进行格式化排版</li>
-<li>command + d 复制当剪行</li>
-<li>command + / // 注释</li>
-<li>command + shift + / // 注释</li>
-<li>command + k 提交代码</li>
-<li>command + shif + k 提交远程分支</li>
-</ul>
+    	<p>git merge简要说明</p>
+<ol>
+<li>git merge会产生一次新的commit版本，并且此版本会有2个或者更多个父提交，可以通过HEAD^1，HEAD^2，HEAD^n方法来引用此提交的父提交。</li>
+<li>git merge是非破坏性的(non-destructive)操作，没有负作用，并且被合并的这些分支都可以git push发布到remote公共仓库中。</li>
+<li>由于每次合并会产生一次新的提交历史，如果主分支非常活跃，就会产生很多这种合并分支的提交历史，会对项目本身的提交历史产生污染。<br>git-rebase-test.sh测试脚本</li>
+</ol>
+<p>git rebase简要说明</p>
+<ol>
+<li>git rebase 会产生一个修改过的很干净的项目提交历史，例如在feature分支上git rebase master，会将feature分支上的提交添加到master分支的最顶端。</li>
+<li>git rebase操作有负面效果，影响项目提交历史的安全性(safety)和可追溯性(traceability)。</li>
+<li>git rebase -i master可以交互式压缩提交(squash)或者忽略指定提交。</li>
+<li>git rebase使用黄金守则: NEVER USE IT ON PUBLIC BRANCHES.</li>
+<li>不要将主分支rebase到特性分支上(don’t rebased master onto your feature branch: git rebase feature)。</li>
+<li>其他开发者提交的新特性和修改(如patch)应该创建一个临时分支apply这些修改，再使用git merge合并修改到主分支上，而不是使用git rebase方式操作，因为rebase操作修改了提交历史，很难追溯哪些提交新增了这些特性和修改。</li>
+</ol>
 
   	</div>
 	  
@@ -198,7 +184,7 @@
 </article>
 <script>
 	window.subData = {
-		title: '快捷键',
+		title: 'git merge 和 git rebase',
 		tools: true
 	}
 </script>
